@@ -1,0 +1,320 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:11:40 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 28996@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:11:40 #2 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:11:40 #3 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:11:40 #4 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:11:40 #5 type] 
+Type domain.Usuario is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:18:09 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' has been recovered (tr. 6-6)
+
+[2022-03-09 22:18:09 #2 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 32144@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:18:09 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:18:09 #4 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:18:09 #5 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:18:09 #6 type] 
+Type domain.Usuario is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:18:15 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 29264@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:18:15 #2 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:18:15 #3 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:18:15 #4 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:18:15 #5 type] 
+Type domain.Usuario is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:22:38 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 30968@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:22:38 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 22:22:38 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:22:38 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 22:22:38 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 22:22:38 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 22:22:38 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:22:38 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 22:22:38 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:22:38 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 22:22:38 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 22:22:38 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:22:56 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 31072@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:22:56 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 22:22:56 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:22:56 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 22:22:56 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 22:22:56 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 22:22:56 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:22:56 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 22:22:56 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:22:56 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 22:22:56 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 22:22:57 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:24:18 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 19248@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:24:18 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 22:24:18 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:24:18 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 22:24:18 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 22:24:18 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 22:24:18 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:24:18 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 22:24:18 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:24:18 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 22:24:18 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 22:24:18 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:27:17 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 15964@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:27:17 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 22:27:17 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:27:17 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 22:27:17 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 22:27:17 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 22:27:17 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:27:17 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 22:27:17 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:27:17 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 22:27:17 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 22:27:17 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:31:09 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 24124@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:31:09 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 22:31:09 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:31:09 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 22:31:09 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 22:31:09 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 22:31:09 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:31:09 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 22:31:09 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:31:09 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 22:31:09 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 22:31:09 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 22:34:25 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 15224@LAPTOP-ILS8TMDB
+
+[2022-03-09 22:34:25 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 22:34:25 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 22:34:25 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 22:34:25 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 22:34:25 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 22:34:25 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 22:34:25 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 22:34:25 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 22:34:25 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 22:34:25 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 22:34:25 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-03-09 23:29:02 #1 store] 
+Database 'C:\Users\34600\Documents\Eclipse2\Itera1 (2).zip_expanded\Bets21\src\main\resources\bets.temp' is opened by 35488@LAPTOP-ILS8TMDB
+
+[2022-03-09 23:29:02 #2 type.registry] 
+New type domain.Question
+
+[2022-03-09 23:29:02 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-03-09 23:29:02 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-03-09 23:29:02 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-03-09 23:29:02 #6 type.registry] 
+New type domain.Event
+
+[2022-03-09 23:29:02 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-03-09 23:29:02 #8 type.registry] 
+New type domain.Usuario
+
+[2022-03-09 23:29:02 #9 type] 
+Type domain.Event is not enhanced.
+
+[2022-03-09 23:29:02 #10 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-03-09 23:29:02 #11 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-03-09 23:29:02 #12 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
