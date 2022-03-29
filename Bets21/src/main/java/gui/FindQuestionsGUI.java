@@ -23,6 +23,7 @@ public class FindQuestionsGUI extends JFrame {
 	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Events")); 
 
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
@@ -222,6 +223,14 @@ public class FindQuestionsGUI extends JFrame {
 
 		this.getContentPane().add(scrollPaneEvents, null);
 		this.getContentPane().add(scrollPaneQueries, null);
+		
+		jButtonLogout.setBounds(587, 16, 89, 23);
+		jButtonLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButton2_actionPerformed(e);
+			}
+		});
+		getContentPane().add(jButtonLogout);
 
 	}
 

@@ -2,7 +2,6 @@ package gui;
 
 import java.text.DateFormat;
 import java.util.*;
-import java.util.List;
 
 import javax.swing.*;
 
@@ -42,6 +41,7 @@ public class CreateAndQueryGUI extends JFrame {
 
 	private JButton jButtonCreate = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 	private JLabel  lblNewLabel= new JLabel();
@@ -404,6 +404,14 @@ public class CreateAndQueryGUI extends JFrame {
 		
 		getContentPane().add(jButtonPronostico);
 		
+		
+		jButtonLogout.setBounds(802, 11, 89, 23);
+		jButtonLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonClose_actionPerformed(e);
+			}
+		});
+		getContentPane().add(jButtonLogout);
 
 		
 		
