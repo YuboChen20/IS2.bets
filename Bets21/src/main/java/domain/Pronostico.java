@@ -18,7 +18,8 @@ public class Pronostico implements Serializable {
 	@XmlJavaTypeAdapter(IntegerAdapter.class)
 	@GeneratedValue
 	private Integer pronosNumber;
-	private String pronostico; 
+	private String pronostico;
+	private Integer cuota;
 	private Integer numbApostados; 
 	@XmlIDREF
 	private Question question;
