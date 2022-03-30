@@ -23,7 +23,9 @@ public class ApplicationLauncher {
 	
 		System.out.println(c.getLocale());
 		
-		Locale.setDefault(new Locale(c.getLocale()));
+		//Esto se quedara asi hasta que tengamos todos los demas idiomas traducidos.
+		//Locale.setDefault(new Locale(c.getLocale()));
+		Locale.setDefault(new Locale("es"));
 		
 		System.out.println("Locale: "+Locale.getDefault());
 		

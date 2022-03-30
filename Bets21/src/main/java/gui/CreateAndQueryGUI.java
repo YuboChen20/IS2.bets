@@ -123,9 +123,9 @@ public class CreateAndQueryGUI extends JFrame {
 		jComboBoxEvents.setModel(modelEvents);
 		jComboBoxEvents.setBounds(new Rectangle(275, 47, 250, 20));
 		jLabelListOfEvents.setBounds(new Rectangle(290, 18, 277, 20));
-		jLabelQuery.setBounds(new Rectangle(40, 210, 75, 20));
+		jLabelQuery.setBounds(new Rectangle(24, 210, 91, 20));
 		jTextFieldQuery.setBounds(new Rectangle(138, 211, 391, 18));
-		jLabelMinBet.setBounds(new Rectangle(40, 240, 75, 20));
+		jLabelMinBet.setBounds(new Rectangle(24, 240, 91, 20));
 		jTextFieldPrice.setBounds(new Rectangle(138, 240, 60, 20));
 
 		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));
@@ -406,7 +406,7 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(jButtonPronostico);
 		
 		
-		jButtonLogout.setBounds(802, 11, 89, 23);
+		jButtonLogout.setBounds(780, 11, 111, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonClose_actionPerformed(e);
