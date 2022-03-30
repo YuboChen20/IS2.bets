@@ -1,5 +1,6 @@
 package dataAccess;
 
+import java.util.ArrayList;
 //hello
 import java.util.Calendar;
 import java.util.Date;
@@ -346,6 +347,63 @@ public class DataAccess  {
 			return q;
 	
 	
+	}
+	
+	/**
+	 * Calcula el procentaje de cada pronostico en una apuesta y la asigna a cada una
+	 * @param La apuesta en cuestion
+	 */
+	public void calcularPorcentajePronostico(Question q) {
+		Vector<Pronostico> pronos = q.getListPronosticos();
+		ArrayList<Integer> participantes = this.calcularListaPersonasQuestion(q);
+		int totalPar= this.calcularSumaLista(participantes);
+		if(participantes.size()>0) {
+			float div;
+			for(int i=0; i<participantes.size(); i++){
+				div = ((float)participantes.get(i)/totalPar)*100;
+				db.getTransaction().begin();
+				pronos.get(i).setCuota(div);
+				db.getTransaction().commit();
+			}
+		}
+		
+		return;
+		
+	}
+	
+	/**
+	 * Calcula la lista de cantidad de apostadores que hay en cada apuesta.
+	 * @param La apuesta en cuestion.
+	 * @return Una lista con sus numeros de participantes.
+	 */
+	public ArrayList<Integer> calcularListaPersonasQuestion(Question q) {
+		Vector<Pronostico> pronos = q.getListPronosticos();
+		ArrayList<Integer> participantes = new ArrayList<>();
+		if(pronos.size()>0) {
+			for(Pronostico p: pronos) {
+				participantes.add(p.getNumbApostados());
+			}
+			return participantes;
+		}else {
+			return null;
+		}
+	}
+	
+	/**
+	 * Calcula la suma de una lista de enteros.
+	 * @param Lista 
+	 * @return Sumatorio de todos los numero de las lista.
+	 */
+	public int calcularSumaLista(ArrayList<Integer> listaE) {
+		int total = 0;
+		if(listaE.size()>0) {
+			for(Integer num: listaE) {
+				total= total+num;
+			}
+		}else {
+			return total;
+		}
+		return total;
 	}
 
 
