@@ -173,8 +173,26 @@ public class Question implements Serializable {
         pronosticos.add(p);
         return p;
 	}
+	
+	
 
 	
+	public Integer getNºApuesta() {
+		return NºApuesta;
+	}
+
+	public void setNºApuesta(Integer nºApuesta) {
+		NºApuesta = nºApuesta;
+	}
+
+	public Vector<Pronostico> getPronosticos() {
+		return pronosticos;
+	}
+
+	public void setPronosticos(Vector<Pronostico> pronosticos) {
+		this.pronosticos = pronosticos;
+	}
+
 	/**
 	 * This method checks if the pronostico already exists for that question
 	 * 
