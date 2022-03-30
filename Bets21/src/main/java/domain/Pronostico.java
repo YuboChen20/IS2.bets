@@ -103,6 +103,19 @@ public class Pronostico implements Serializable {
 		return pronosNumber+";"+pronostico+";"+Float.toString(numbApostados);
 	}
 
+	public Integer getCuota() {
+		return cuota;
+	}
+
+	public void setCuota(Integer cuota) {
+		this.cuota = cuota;
+	}
+
+
+
+	
+	
+
 
 
 
