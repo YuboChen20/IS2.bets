@@ -22,6 +22,7 @@ public class Question implements Serializable {
 	private String question; 
 	private float betMinimum;
 	private String result;  
+	private Integer NºApuesta;
 	@XmlIDREF
 	private Event event;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
@@ -38,12 +39,14 @@ public class Question implements Serializable {
 		this.question = query;
 		this.betMinimum=betMinimum;
 		this.event = event;
+		this.NºApuesta=0;
 	}
 	
 	public Question(String query, float betMinimum,  Event event) {
 		super();
 		this.question = query;
 		this.betMinimum=betMinimum;
+		this.NºApuesta=0;
 
 		//this.event = event;
 	}

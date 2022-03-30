@@ -1,6 +1,7 @@
 package domain;
 
 import java.io.*;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,40 +21,37 @@ public class Pronostico implements Serializable {
 	private Integer pronosNumber;
 	private String pronostico;
 	private Float cuota;
-	private Integer numbApostados; 
+	private float porcentajeApuesta; 
 	@XmlIDREF
 	private Question question;
-	private Usuario user;
+	private ArrayList<Usuario> userList;
 
 	public Pronostico(){
 		super();
 	}
 	
-	public Pronostico(Integer pronNumber, String prono, Question quest, Usuario usuario) {
+	public Pronostico(Integer pronNumber, String prono, Question quest, float cuota) {
 		super();
 		this.pronosNumber = pronNumber;
 		this.pronostico = prono;
-		this.numbApostados= 0;
+		this.porcentajeApuesta= 0;
 		this.question = quest;
-		this.user = usuario;
-	}
-	
-	public Pronostico(String prono, Question quest, Usuario usuario) {
-		super();
-		this.pronostico = prono;
-		this.numbApostados= 0;
-		this.question = quest;
-		this.user = usuario;
+		this.cuota=cuota;
+		this.userList= new ArrayList<Usuario>();
 		
 	}
 	
-	public Pronostico(String prono, Question quest) {
+	public Pronostico(String prono, Question quest, float cuota) {
 		super();
 		this.pronostico = prono;
-		this.numbApostados= 0;
+		this.porcentajeApuesta= 0;
 		this.question = quest;
+		this.cuota = cuota;
+		this.userList= new ArrayList<Usuario>();
 		
 	}
+	
+
 
 
 
@@ -75,12 +73,24 @@ public class Pronostico implements Serializable {
 		this.pronostico = pronostico;
 	}
 
-	public Integer getNumbApostados() {
-		return numbApostados;
+
+
+
+
+	public float getPorcentajeApuesta() {
+		return porcentajeApuesta;
 	}
 
-	public void setNumbApostados(Integer numbApostados) {
-		this.numbApostados = numbApostados;
+	public void setPorcentajeApuesta(float porcentajeApuesta) {
+		this.porcentajeApuesta = porcentajeApuesta;
+	}
+
+	public ArrayList<Usuario> getUserList() {
+		return userList;
+	}
+
+	public void setUserList(ArrayList<Usuario> userList) {
+		this.userList = userList;
 	}
 
 	public Question getQuestion() {
@@ -91,16 +101,10 @@ public class Pronostico implements Serializable {
 		this.question = question;
 	}
 
-	public Usuario getUser() {
-		return user;
-	}
 
-	public void setUser(Usuario user) {
-		this.user = user;
-	}
 
 	public String toString(){
-		return pronosNumber+";"+pronostico+";"+Float.toString(numbApostados);
+		return pronosNumber+";"+pronostico+";"+Float.toString(porcentajeApuesta);
 	}
 
 	public Float getCuota() {
