@@ -25,7 +25,7 @@ public class Bet {
 	private double bet;
 	private double ganancia;
 	
-
+ //////////////////
 	
 	public Bet(){
 		super();
