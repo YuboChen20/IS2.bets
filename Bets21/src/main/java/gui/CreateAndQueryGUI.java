@@ -60,7 +60,8 @@ public class CreateAndQueryGUI extends JFrame {
 	};
 	private String[] columnNamesPronostico = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Pronostico")
+			ResourceBundle.getBundle("Etiquetas").getString("Pronostico"),
+			"Cuota"
 
 	};
 	private JTextField textFieldDescripcionEvento;
@@ -71,6 +72,7 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JLabel jLabelPronostico = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jLabelPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private JTextField textField;
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
@@ -221,14 +223,67 @@ public class CreateAndQueryGUI extends JFrame {
 
 					actualizarTabla();
 					
-
+					
+					////Actualizar tabla de pronósticos//
+					int i=tableQueries.getSelectedRow();
+					Event ev= (Event) jComboBoxEvents.getSelectedItem();
+					if(ev!=null && i!=-1) {
+						Question q = ev.getQuest(i);
+					//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
+						
+						BLFacade facade = MainGUI.getBusinessLogic();
+		                try {
+		                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+		                
+						
+	
+		                	tableModelPronostico.setDataVector(null, columnNamesPronostico);
+	
+		   
+		                	for (domain.Pronostico p:pronosticos){
+		                		Vector<Object> row = new Vector<Object>();
+	
+		                		row.add(p.getPronosNumber());
+		                		row.add(p.getPronostico());
+		                		tableModelPronostico.addRow(row);	
+		                	}
+		                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+		                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		                }catch(PronosticAlreadyExist e1) {
+		                	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+		                }
+					/////////////////////////////////////
+					
+					} else { // if ev =null
+						
+						
+							//jButtonPronostico.setEnabled(false);
+							int n=tableModelPronostico.getRowCount();
+							for(int i1=0;i1<n;i1++) {
+								tableModelPronostico.removeRow(0);
+							}
+								
+						
+							//jButtonPronostico.setEnabled(true);
+		                    ////////////////////////////////////////////// 
+						
+						
+					}
 				}
 			}
 		});
 		
 		
 		scrollPaneQueries.setViewportView(tableQueries);
-		tableModelQueries = new DefaultTableModel(null, columnNamesQueries);
+		tableModelQueries = new DefaultTableModel(null, columnNamesQueries){
+				boolean[] columnEditables = new boolean[] {
+					false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+				
+			};
 
 		tableQueries.setModel(tableModelQueries);
 		tableQueries.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -343,7 +398,15 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(lblNewLabel); 
 		
 		getContentPane().add(scrollPanePronostico);
-		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico);
+		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico){
+				boolean[] columnEditables = new boolean[] {
+					false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+				
+			};
 		tablePronosticos.setModel(tableModelPronostico);
 
 		
@@ -386,7 +449,46 @@ public class CreateAndQueryGUI extends JFrame {
       
                             lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticCreated"));
 		
-							actualizarTabla();	
+							actualizarTabla();
+							
+							tableQueries.setRowSelectionInterval(i, i);
+							
+							
+							
+							
+							
+							//////////////////////////////////////////////////
+														
+							ev= (Event) jComboBoxEvents.getSelectedItem();
+							if(ev!=null) {
+							Question q = ev.getQuest(i);
+							//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
+							
+							
+							facade = MainGUI.getBusinessLogic();
+							try {
+								List<Pronostico> pronosticos=facade.findPronosticos(q);
+								
+								
+								
+								tableModelPronostico.setDataVector(null, columnNamesPronostico);
+								
+								
+								for (domain.Pronostico p:pronosticos){
+									Vector<Object> row = new Vector<Object>();
+								
+									row.add(p.getPronosNumber());
+									row.add(p.getPronostico());
+									tableModelPronostico.addRow(row);	
+								}
+								tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+								tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+							}catch(PronosticAlreadyExist e1) {
+								lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+							}
+							
+							
+							}
 			
 					}
 					else lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
@@ -400,7 +502,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 	
 		jButtonPronostico.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonPronostico.setBounds(657, 289, 149, 30);
+		jButtonPronostico.setBounds(718, 290, 149, 30);
 		this.getContentPane().add(jButtonPronostico, null);
 		
 		getContentPane().add(jButtonPronostico);
@@ -413,6 +515,17 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		getContentPane().add(jButtonLogout);
+		
+		JLabel jLabelCuota = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		jLabelCuota.setBounds(610, 275, 46, 14);
+		getContentPane().add(jLabelCuota);
+		
+		textField = new JTextField();
+		//textField.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.textField.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		textField.setBounds(610, 295, 75, 20);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		//////
 
 		
 		
