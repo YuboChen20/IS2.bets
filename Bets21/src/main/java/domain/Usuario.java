@@ -24,11 +24,12 @@ public class Usuario{
 	private String correo;
 	private boolean admin;
 	
-    public Usuario(String userName, String passwor,String cardCode, boolean admi ) {
+    public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
     	this.password=passwor;
     	this.cardCode=cardCode;
     	this.admin=admi;
+    	this.correo=correo;
     	
     }
 
@@ -59,6 +60,22 @@ public class Usuario{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getCardCode() {
+		return cardCode;
+	}
+
+	public void setCardCode(String cardCode) {
+		this.cardCode = cardCode;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
 

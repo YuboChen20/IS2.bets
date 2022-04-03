@@ -117,10 +117,10 @@ public class DataAccess  {
 				q6=ev17.addQuestion("Golak sartuko dira lehenengo zatian?",2);
 				
 			}
-			Pronostico p1=new Pronostico("0-1",q4);
-			Pronostico p2=new Pronostico("0-2",q4);
-			Pronostico p3=new Pronostico("0-3",q4);
-			Pronostico p4=new Pronostico("0-4",q4);
+			Pronostico p1=new Pronostico("0-1",q4,1.2);
+			Pronostico p2=new Pronostico("0-2",q4,1.4);
+			Pronostico p3=new Pronostico("0-3",q4,1.2);
+			Pronostico p4=new Pronostico("0-4",q4,1.2);
 			
 			q4.addPronostico(p1);
 			q4.addPronostico(p2);
@@ -157,12 +157,12 @@ public class DataAccess  {
 			db.persist(ev19);
 			db.persist(ev20);		
 			
-			Usuario admin= new Usuario("Alfredo","12345",null,true);
-			Usuario user= new Usuario("User1","12345",null,false);
-			Usuario admi1= new Usuario("Silvia","contraseña",null,true);
-			Usuario admi2= new Usuario("Yubo","12345",null,true);
-			Usuario admi3= new Usuario("Carlos","12345",null,true);
-			Usuario admi4= new Usuario("Jaime","12345",null,true);
+			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
+			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
+			Usuario admi1= new Usuario("Silvia","contraseña",null,true,null);
+			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
+			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
+			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
 			db.persist(admin);
 			db.persist(user);
 			db.persist(admi1);
@@ -287,10 +287,10 @@ public class DataAccess  {
 			System.out.println("DataBase closed");
 	}
 		
-	public boolean createUser(String userName, String pass,String cCode){
+	public boolean createUser(String userName, String pass,String cCode, String correo){
 		Usuario u= db.find(Usuario.class,userName);
 		if(u!=null) return false;
-		u = new Usuario(userName,pass,cCode,false);
+		u = new Usuario(userName,pass,cCode,false,correo);
 		db.getTransaction().begin();
 		db.persist(u);
 		db.getTransaction().commit();
@@ -339,7 +339,7 @@ public class DataAccess  {
 		}
 		
 			db.getTransaction().begin();
-			Pronostico p = new Pronostico(description, q);
+			Pronostico p = new Pronostico(description, q,1);
 			q.addPronostico(p);
 			db.persist(p); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 							// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)

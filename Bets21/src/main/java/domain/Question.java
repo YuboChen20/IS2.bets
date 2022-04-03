@@ -47,8 +47,7 @@ public class Question implements Serializable {
 		this.question = query;
 		this.betMinimum=betMinimum;
 		this.NºApuesta=0;
-
-		//this.event = event;
+		this.event = event;
 	}
 	
 	public Vector<Pronostico> getListPronosticos() {

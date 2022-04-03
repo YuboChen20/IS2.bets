@@ -128,9 +128,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
     
     @WebMethod
-    public boolean createUser(String us, String pass,String ccode) {
+    public boolean createUser(String us, String pass,String ccode, String correo) {
     	dbManager.open(false);
-    	boolean b = dbManager.createUser(us, pass,ccode);
+    	boolean b = dbManager.createUser(us, pass,ccode,correo);
     	this.dbManager.close();
     	return b;
     }

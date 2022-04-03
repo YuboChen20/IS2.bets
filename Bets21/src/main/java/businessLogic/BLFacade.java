@@ -55,7 +55,7 @@ public interface BLFacade  {
 	 */	
 	@WebMethod public void initializeBD();
 
-	@WebMethod public boolean createUser(String us, String pass,String ccode);
+	@WebMethod public boolean createUser(String us, String pass,String ccode, String correo);
 	
 	@WebMethod public Usuario login(String user, String pass);
 	

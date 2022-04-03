@@ -5,6 +5,8 @@ import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
 import domain.Question;
+import domain.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -16,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class FindQuestionsGUI extends JFrame {
+	private Usuario user;
 	private static final long serialVersionUID = 1L;
 
 	private final JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
@@ -52,10 +55,13 @@ public class FindQuestionsGUI extends JFrame {
 
 	};
 
-	public FindQuestionsGUI()
+	public FindQuestionsGUI(Usuario user)
 	{
+		
 		try
 		{
+			this.user= user;
+			
 			jbInit();
 		}
 		catch(Exception e)
@@ -67,14 +73,14 @@ public class FindQuestionsGUI extends JFrame {
 	
 	private void jbInit() throws Exception
 	{
-
+		
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
 		jLabelQueries.setBounds(138, 248, 406, 14);
-		jLabelEvents.setBounds(295, 19, 259, 16);
+		jLabelEvents.setBounds(295, 19, 78, 16);
 
 		this.getContentPane().add(jLabelEventDate, null);
 		this.getContentPane().add(jLabelQueries);
@@ -97,7 +103,7 @@ public class FindQuestionsGUI extends JFrame {
 
 		BLFacade facade = MainGUI.getBusinessLogic();
 		datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar1.getDate());
-		CreateQuestionGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
+		CreateAndQueryGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
 
 		// Code for JCalendar
 		this.jCalendar1.addPropertyChangeListener(new PropertyChangeListener()
@@ -139,7 +145,7 @@ public class FindQuestionsGUI extends JFrame {
 
 
 
-					CreateQuestionGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
+					CreateAndQueryGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
 													
 					
 
@@ -231,11 +237,23 @@ public class FindQuestionsGUI extends JFrame {
 			}
 		});
 		getContentPane().add(jButtonLogout);
+		
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FindQuestionsGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				JFrame a = new SeeUserInfoGUI(user);
+				
+				
+				a.setVisible(true);	
+			}
+		});
+		btnNewButton.setBounds(447, 17, 112, 21);
+		getContentPane().add(btnNewButton);
 
 	}
 
 	private void jButton2_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 	}
-
 }

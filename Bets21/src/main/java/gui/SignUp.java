@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,6 +20,9 @@ import javax.swing.JTextArea;
 import java.awt.Color;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class SignUp extends JFrame {
 
@@ -31,6 +35,7 @@ public class SignUp extends JFrame {
 	private JPasswordField passwordField;
 	private JTextField numTarjeta;
 	private final Action action = new SwingAction();
+	private JTextField correoField;
 
 
 	/**
@@ -94,9 +99,26 @@ public class SignUp extends JFrame {
 		numTarjeta.setColumns(10);
 		
 		JTextArea textA = new JTextArea();
-		textA.setBounds(71, 203, 294, 50);
+		textA.setBounds(71, 228, 294, 25);
 		contentPane.add(textA);
 		
+		
+		
+	
+		
+		JLabel lblNewLabel = new JLabel("Correo :");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setBounds(62, 144, 62, 21);
+		contentPane.add(lblNewLabel);
+		
+		correoField = new JTextField();
+		correoField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		correoField.setBounds(169, 140, 187, 25);
+		contentPane.add(correoField);
+		correoField.setColumns(10);
+
+	
+	
 		JButton registrarse = new JButton("Registrase");
 		registrarse.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		registrarse.addActionListener(new ActionListener() {
@@ -104,15 +126,23 @@ public class SignUp extends JFrame {
 			   String tipoError=null;
 			   String us= nombreUsuario.getText();
 			   if(us.equals("")) { tipoError= "u";}
-			   
+		   
 			   String ps= new String(passwordField.getPassword());
 			   if(ps.equals("") & tipoError==null ) tipoError="p";
 			   
 			   String code= numTarjeta.getText();
+			   	   
 			   if (code.length()!=12 && tipoError==null) tipoError="n";
+			   String correo = correoField.getText();		
+		
+			   	Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+			   
+		        Matcher mather = pattern.matcher(correo);
+		        if(!mather.find()) tipoError= "c";
+				 
 			   if(tipoError==null) {
 				   BLFacade facade = MainGUI.getBusinessLogic();
-				   boolean b = facade.createUser(us, ps, code);
+				   boolean b = facade.createUser(us, ps, code,correo);
 				   if(!b) textA.setText("Error: Este nombre de usuario ya existe, escriba otra.");
 				   else textA.setText("Usuario " + us+ " registrado correctamente");
 			   }else {
@@ -120,16 +150,17 @@ public class SignUp extends JFrame {
 				   if(tipoError.equals("u")) textA.setText("ERROR:Completa el campo del usuario");
 				   if(tipoError.equals("p"))textA.setText("ERROR:Completa el campo de la contraseña");
 				   if(tipoError.equals("n"))textA.setText("ERROR:El numero de tarjeta debe de tener 12 digitos/letras.");
+				   if(tipoError.equals("c"))textA.setText("ERROR:El correo no es valido.");
 			   }
 			}
 		});
-		
-	 
-		registrarse.setBounds(145, 151, 146, 33);
+			
+		registrarse.setBounds(150, 185, 135, 25);
 		contentPane.add(registrarse);
 		
+	
 
-		}
+	}
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "SwingAction");
@@ -138,4 +169,5 @@ public class SignUp extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 		}
 	}
+
 }

@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import domain.Usuario;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -20,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.JTable;
 
 public class SeeUserInfoGUI extends JFrame {
+	
 
 	private JPanel contentPane;
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
@@ -29,10 +32,12 @@ public class SeeUserInfoGUI extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+	
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SeeUserInfoGUI frame = new SeeUserInfoGUI();
+					Usuario userPrueba= new Usuario("P","R","1",false,"a");
+					SeeUserInfoGUI frame = new SeeUserInfoGUI(userPrueba);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +49,10 @@ public class SeeUserInfoGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SeeUserInfoGUI() {
+
+	
+	public SeeUserInfoGUI(Usuario user) {
+		
 		setTitle("Informacion del usuario");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 477, 609);
@@ -114,17 +122,17 @@ public class SeeUserInfoGUI extends JFrame {
 		lblNewLabel_8.setBounds(231, 484, 110, 21);
 		contentPane.add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_9 = new JLabel("");
+		JLabel lblNewLabel_9 = new JLabel(user.getUserName());
 		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_9.setBounds(115, 34, 286, 21);
+		lblNewLabel_9.setBounds(101, 32, 286, 21);
 		contentPane.add(lblNewLabel_9);
 		
-		JLabel lblNewLabel_10 = new JLabel("");
+		JLabel lblNewLabel_10 = new JLabel(user.getCorreo());
 		lblNewLabel_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10.setBounds(115, 73, 286, 21);
+		lblNewLabel_10.setBounds(90, 75, 286, 21);
 		contentPane.add(lblNewLabel_10);
 		
-		JLabel lblNewLabel_10_1 = new JLabel("");
+		JLabel lblNewLabel_10_1 = new JLabel(user.getCardCode());
 		lblNewLabel_10_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_10_1.setBounds(115, 121, 286, 21);
 		contentPane.add(lblNewLabel_10_1);

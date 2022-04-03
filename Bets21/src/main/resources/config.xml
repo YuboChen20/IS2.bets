@@ -13,5 +13,5 @@
 	<user>admin</user>
 	<password>admin</password>
   </database>
-  <locale>en</locale>
+  <locale>es</locale>
 </config>

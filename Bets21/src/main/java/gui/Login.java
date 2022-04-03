@@ -84,16 +84,16 @@ public class Login extends JFrame {
 				   if(ps.equals("") & tipoError==null ) tipoError="p";
 		
 				   BLFacade facade = MainGUI.getBusinessLogic();
-				   Usuario u = facade.login(us, ps);
-				   if(u==null & tipoError==null) tipoError="n";
+				   Usuario user = facade.login(us, ps);
+				   if(user==null & tipoError==null) tipoError="n";
 				   if(tipoError==null){
-					   if(u.isAdmin()) {
+					   if(user.isAdmin()) {
 						   JFrame b= new CreateAndQueryGUI(new Vector<Event>());
 						   b.setVisible(true);	
 						   
 					   }
 					   else {
-							JFrame a = new FindQuestionsGUI();
+							JFrame a = new FindQuestionsGUI(user);
 							a.setVisible(true);					   
 					   }					   
 				   }else {

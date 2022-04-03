@@ -20,7 +20,7 @@ public class Pronostico implements Serializable {
 	@GeneratedValue
 	private Integer pronosNumber;
 	private String pronostico;
-	private Float cuota;
+	private double cuota;
 	private float porcentajeApuesta; 
 	@XmlIDREF
 	private Question question;
@@ -30,7 +30,7 @@ public class Pronostico implements Serializable {
 		super();
 	}
 	
-	public Pronostico(Integer pronNumber, String prono, Question quest, float cuota) {
+	public Pronostico(Integer pronNumber, String prono, Question quest, double cuota) {
 		super();
 		this.pronosNumber = pronNumber;
 		this.pronostico = prono;
@@ -41,7 +41,7 @@ public class Pronostico implements Serializable {
 		
 	}
 	
-	public Pronostico(String prono, Question quest, float cuota) {
+	public Pronostico(String prono, Question quest, double cuota) {
 		super();
 		this.pronostico = prono;
 		this.porcentajeApuesta= 0;
@@ -107,7 +107,7 @@ public class Pronostico implements Serializable {
 		return pronosNumber+";"+pronostico+";"+Float.toString(porcentajeApuesta);
 	}
 
-	public Float getCuota() {
+	public double getCuota() {
 		return cuota;
 	}
 
