@@ -4,8 +4,12 @@ import businessLogic.BLFacade;
 import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
+
+import domain.Event;
+import domain.Pronostico;
 import domain.Question;
 import domain.Usuario;
+import exceptions.PronosticAlreadyExist;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +17,7 @@ import java.awt.event.*;
 import java.beans.*;
 import java.text.DateFormat;
 import java.util.*;
+import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -34,14 +39,27 @@ public class FindQuestionsGUI extends JFrame {
 	private Calendar calendarAct = null;
 	private JScrollPane scrollPaneEvents = new JScrollPane();
 	private JScrollPane scrollPaneQueries = new JScrollPane();
+	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	
 	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 
 	private JTable tableEvents= new JTable();
 	private JTable tableQueries = new JTable();
+	private final JTable tablePronosticos = new JTable();
 
 	private DefaultTableModel tableModelEvents;
 	private DefaultTableModel tableModelQueries;
+	private DefaultTableModel tableModelPronostico;
+	
+	
+	
+	private String[] columnNamesPronostico = new String[] {
+			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
+			ResourceBundle.getBundle("Etiquetas").getString("Pronostico"),
+            ResourceBundle.getBundle("Etiquetas").getString("Cuota"),
+            ResourceBundle.getBundle("Etiquetas").getString("Usuarios"),
+	};
+	
 
 	
 	private String[] columnNamesEvents = new String[] {
@@ -75,11 +93,11 @@ public class FindQuestionsGUI extends JFrame {
 	{
 		
 		this.getContentPane().setLayout(null);
-		this.setSize(new Dimension(700, 500));
+		this.setSize(new Dimension(800, 500));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
-		jLabelQueries.setBounds(138, 248, 406, 14);
+		jLabelQueries.setBounds(40, 236, 83, 14);
 		jLabelEvents.setBounds(295, 19, 78, 16);
 
 		this.getContentPane().add(jLabelEventDate, null);
@@ -184,7 +202,7 @@ public class FindQuestionsGUI extends JFrame {
 		this.getContentPane().add(jCalendar1, null);
 		
 		scrollPaneEvents.setBounds(new Rectangle(292, 50, 346, 150));
-		scrollPaneQueries.setBounds(new Rectangle(138, 274, 406, 116));
+		scrollPaneQueries.setBounds(new Rectangle(40, 270, 286, 116));
 
 		tableEvents.addMouseListener(new MouseAdapter() {
 			@Override
@@ -229,14 +247,39 @@ public class FindQuestionsGUI extends JFrame {
 
 		this.getContentPane().add(scrollPaneEvents, null);
 		this.getContentPane().add(scrollPaneQueries, null);
+		scrollPanePronostico.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		getContentPane().add(scrollPanePronostico);
+		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico){
+				boolean[] columnEditables = new boolean[] {
+					false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+				
+			};
+		tablePronosticos.setModel(tableModelPronostico);
+
+		
+		tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+		tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
+		tablePronosticos.getColumnModel().getColumn(3).setPreferredWidth(25);
+		scrollPanePronostico.setViewportView(tablePronosticos);
 		
 		jButtonLogout.setBounds(564, 16, 112, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButton2_actionPerformed(e);
 			}
+			
 		});
 		getContentPane().add(jButtonLogout);
+		
+		
+		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
+		scrollPanePronostico.setBounds(389, 246, 336, 146);
 		
 		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FindQuestionsGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
@@ -250,10 +293,57 @@ public class FindQuestionsGUI extends JFrame {
 		});
 		btnNewButton.setBounds(447, 17, 112, 21);
 		getContentPane().add(btnNewButton);
+		
+		
+		
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		tableQueries.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				int i=tableEvents.getSelectedRow();
+				domain.Event ev=(domain.Event)tableModelEvents.getValueAt(i,2);
+				int j=tableQueries.getSelectedRow();
+				Question q = ev.getQuest(j);
+			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
+				
+				BLFacade facade = MainGUI.getBusinessLogic();
+                try {
+                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+                
+                	tableModelPronostico.setDataVector(null, columnNamesPronostico);
+
+                	for (domain.Pronostico p:pronosticos){
+                		Vector<Object> row = new Vector<Object>();
+
+                		row.add(p.getPronosNumber());
+                		row.add(p.getPronostico());
+                		row.add(p.getCuota());
+                		System.out.println(p.getCuota());
+                		tableModelPronostico.addRow(row);	
+                	}
+                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+               
+                }catch(PronosticAlreadyExist e1) {
+                	//lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+                }
+			}
+		});
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		
 
 	}
 
 	private void jButton2_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 	}
+	
+	
+	
 }
