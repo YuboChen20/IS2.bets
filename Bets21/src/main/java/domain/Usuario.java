@@ -2,6 +2,9 @@ package domain;
 
 
 
+import java.util.ArrayList;
+import java.util.Vector;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -23,7 +26,7 @@ public class Usuario{
 	private String cardCode;
 	private String correo;
 	private boolean admin;
-	
+	private Vector<Bet> apuestas = new Vector<Bet>();
     public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
     	this.password=passwor;
@@ -78,7 +81,22 @@ public class Usuario{
 		this.correo = correo;
 	}
 
+	public Bet añadirApuesta(Bet a) {
+	
+		apuestas.add(a);
+		
+		return a;
+		
+	}
 
+	public Vector<Bet> getApuestas() {
+		
+		return apuestas;
+	}
+
+	public void setApuestas(Vector<Bet> apuestas) {
+		this.apuestas = apuestas;
+	}
 	
 	
 	

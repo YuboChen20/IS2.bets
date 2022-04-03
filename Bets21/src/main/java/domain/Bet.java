@@ -48,6 +48,13 @@ public class Bet {
 		ganancia=pronos.getCuota()*bet;
 	}
 	
+	public double getGanancia() {
+		return ganancia;
+	}
+
+	public void setGanancia(double ganancia) {
+		this.ganancia = ganancia;
+	}
 	
 	public Integer getBetNumber() {
 		return betNumber;

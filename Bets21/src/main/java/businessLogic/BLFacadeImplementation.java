@@ -178,7 +178,12 @@ public class BLFacadeImplementation  implements BLFacade {
     	return p;
     }
 
-	
+    @WebMethod public List<Bet> getBet(Usuario user){
+        this.dbManager.open(false);
+        List<Bet> b =this.dbManager.getBets(user);
+        this.dbManager.close();
+        return b;
+    }
 
 
     

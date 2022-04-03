@@ -24,7 +24,7 @@ public class Pronostico implements Serializable {
 	private float porcentajeApuesta; 
 	@XmlIDREF
 	private Question question;
-	private ArrayList<Usuario> userList;
+	private int numUser;
 
 	public Pronostico(){
 		super();
@@ -37,7 +37,7 @@ public class Pronostico implements Serializable {
 		this.porcentajeApuesta= 0;
 		this.question = quest;
 		this.cuota=cuota;
-		this.userList= new ArrayList<Usuario>();
+		this.numUser=0;
 		
 	}
 	
@@ -47,15 +47,10 @@ public class Pronostico implements Serializable {
 		this.porcentajeApuesta= 0;
 		this.question = quest;
 		this.cuota = cuota;
-		this.userList= new ArrayList<Usuario>();
+		this.numUser=0;
 		
 	}
 	
-
-
-
-
-
 
 	public Integer getPronosNumber() {
 		return pronosNumber;
@@ -85,13 +80,6 @@ public class Pronostico implements Serializable {
 		this.porcentajeApuesta = porcentajeApuesta;
 	}
 
-	public ArrayList<Usuario> getUserList() {
-		return userList;
-	}
-
-	public void setUserList(ArrayList<Usuario> userList) {
-		this.userList = userList;
-	}
 
 	public Question getQuestion() {
 		return question;
@@ -100,7 +88,6 @@ public class Pronostico implements Serializable {
 	public void setQuestion(Question question) {
 		this.question = question;
 	}
-
 
 
 	public String toString(){
@@ -115,6 +102,18 @@ public class Pronostico implements Serializable {
 		this.cuota = cuota;
 	}
 
+	public void addUser() {
+		this.numUser++;
+	}
+
+	public int getNumUser() {
+		return numUser;
+	}
+
+	public void setNumUser(int numUser) {
+		this.numUser = numUser;
+	}
+   
 
 
 	

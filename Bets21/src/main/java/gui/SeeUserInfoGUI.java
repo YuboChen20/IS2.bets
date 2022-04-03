@@ -8,7 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import businessLogic.BLFacade;
+import domain.Bet;
+import domain.Event;
+import domain.Pronostico;
+import domain.Question;
 import domain.Usuario;
+import exceptions.PronosticAlreadyExist;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -17,6 +23,13 @@ import javax.swing.JScrollBar;
 import javax.swing.JSpinner;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.text.DecimalFormat;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Vector;
+
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JTextField;
 import javax.swing.JTable;
@@ -28,6 +41,14 @@ public class SeeUserInfoGUI extends JFrame {
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
+	private String[] columnNamesPronostico = new String[] {
+			ResourceBundle.getBundle("Etiquetas").getString("NApuesta"), 
+			ResourceBundle.getBundle("Etiquetas").getString("Pronostico")
+
+	};
+	
+
+
 	/**
 	 * Launch the application.
 	 */
@@ -52,9 +73,12 @@ public class SeeUserInfoGUI extends JFrame {
 
 	
 	public SeeUserInfoGUI(Usuario user) {
+		BLFacade facade = MainGUI.getBusinessLogic(); 
+		List<Bet>apuestas = facade.getBet(user);
+		
 		
 		setTitle("Informacion del usuario");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 477, 609);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 240, 240));
@@ -77,20 +101,6 @@ public class SeeUserInfoGUI extends JFrame {
 		lblNewLabel_2.setBounds(29, 121, 172, 16);
 		contentPane.add(lblNewLabel_2);
 		
-		JScrollPane scrollPanePronostico = new JScrollPane();
-		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPanePronostico.setBounds(42, 185, 378, 146);
-		contentPane.add(scrollPanePronostico);
-		tablePronosticos.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"N\u00BA", "Pronostico"
-			}
-		));
-		tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(41);
-		
-		scrollPanePronostico.setViewportView(tablePronosticos);
 		
 		JLabel lblNewLabel_3 = new JLabel("Evento :");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -149,7 +159,7 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		JLabel lblNewLabel_10_4 = new JLabel("");
 		lblNewLabel_10_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_4.setBounds(123, 448, 97, 21);
+		lblNewLabel_10_4.setBounds(114, 446, 97, 21);
 		contentPane.add(lblNewLabel_10_4);
 		
 		JLabel lblNewLabel_10_4_1 = new JLabel("");
@@ -164,7 +174,50 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		JLabel lblNewLabel_10_4_3 = new JLabel("");
 		lblNewLabel_10_4_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_4_3.setBounds(329, 477, 110, 21);
+		lblNewLabel_10_4_3.setBounds(329, 484, 110, 21);
 		contentPane.add(lblNewLabel_10_4_3);
+		
+		JScrollPane scrollPanePronostico = new JScrollPane();
+		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
+		scrollPanePronostico.setBounds(42, 185, 378, 146);
+		contentPane.add(scrollPanePronostico);
+		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico);
+		tablePronosticos.setModel(tableModelPronostico);	
+		tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+		tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		scrollPanePronostico.setViewportView(tablePronosticos);
+
+		tableModelPronostico.setDataVector(null, columnNamesPronostico);
+        for(Bet a: apuestas) {
+        	Vector<Object> row = new Vector<Object>();
+        	
+    		row.add(a.getBetNumber());
+    		row.add(a.getPronostico());
+    		tableModelPronostico.addRow(row);	
+        }
+		
+        tablePronosticos.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				DecimalFormat formato1 = new DecimalFormat("#.00");
+				int i=tablePronosticos.getSelectedRow();
+			    Bet ap=apuestas.get(i);
+			    Pronostico pro=ap.getPronostico();
+			    Question qu=pro.getQuestion();
+			    Event ev= qu.getEvent();
+			    
+			    lblNewLabel_10_2.setText(ev.getDescription());
+			    lblNewLabel_10_3.setText(qu.getQuestion());
+			    lblNewLabel_10_4_2.setText(pro.getPorcentajeApuesta()+"%");
+			    lblNewLabel_10_4.setText(pro.getCuota()+"");
+			    lblNewLabel_10_4_1.setText(ap.getBet()+"");
+			    lblNewLabel_10_4_3.setText(formato1.format(ap.getGanancia()));
+				
+			}
+		});
+
+    	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+    	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		
 	}
 }
