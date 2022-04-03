@@ -61,8 +61,8 @@ public class CreateAndQueryGUI extends JFrame {
 	private String[] columnNamesPronostico = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
 			ResourceBundle.getBundle("Etiquetas").getString("Pronostico"),
-			"Cuota"
-
+            ResourceBundle.getBundle("Etiquetas").getString("Cuota"),
+            ResourceBundle.getBundle("Etiquetas").getString("Usuarios"),
 	};
 	private JTextField textFieldDescripcionEvento;
 	private final JLabel jLabelMsg2 = new JLabel();
@@ -72,7 +72,7 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JLabel jLabelPronostico = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jLabelPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
-	private JTextField textField;
+	private JTextField textFieldCuota;
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
@@ -382,10 +382,13 @@ public class CreateAndQueryGUI extends JFrame {
 
                 		row.add(p.getPronosNumber());
                 		row.add(p.getPronostico());
+                		row.add(p.getCuota());
+                		System.out.println(p.getCuota());
                 		tableModelPronostico.addRow(row);	
                 	}
                 	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
                 	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+               
                 }catch(PronosticAlreadyExist e1) {
                 	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
                 }
@@ -429,18 +432,20 @@ public class CreateAndQueryGUI extends JFrame {
 					jLabelError.setText("");
 					jLabelMsg.setText("");
 					jLabelMsg2.setText("");
+					//textFieldCuota.setText(""); 
 
 					// Displays an exception if the query field is empty
 					String pr=textFieldPronostico.getText();
 					Event ev= (Event) jComboBoxEvents.getSelectedItem();
 					int i= tableQueries.getSelectedRow();
+					double cuota= Double.parseDouble(textFieldCuota.getText());
 					
 					if (pr.length() > 0 & i>=0) {
 
 							// Obtain the business logic from a StartWindow class (local or remote)
 							BLFacade facade = MainGUI.getBusinessLogic();
                             try {
-                            	Question q= facade.createPronostic(pr,ev,i);
+                            	Question q= facade.createPronostic(pr,ev,i,cuota);
                             }catch(PronosticAlreadyExist e1) {
                             	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
                             	
@@ -479,6 +484,7 @@ public class CreateAndQueryGUI extends JFrame {
 								
 									row.add(p.getPronosNumber());
 									row.add(p.getPronostico());
+									row.add(p.getCuota());
 									tableModelPronostico.addRow(row);	
 								}
 								tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -516,15 +522,15 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		getContentPane().add(jButtonLogout);
 		
-		JLabel jLabelCuota = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel jLabelCuota = new JLabel(); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelCuota.setBounds(610, 275, 46, 14);
 		getContentPane().add(jLabelCuota);
 		
-		textField = new JTextField();
+		textFieldCuota = new JTextField();
 		//textField.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.textField.text")); //$NON-NLS-1$ //$NON-NLS-2$
-		textField.setBounds(610, 295, 75, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		textFieldCuota.setBounds(610, 295, 75, 20);
+		getContentPane().add(textFieldCuota);
+		textFieldCuota.setColumns(10);
 		//////
 
 		

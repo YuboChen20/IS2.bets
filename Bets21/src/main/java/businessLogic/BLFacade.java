@@ -61,7 +61,7 @@ public interface BLFacade  {
 	
 	@WebMethod public Event createEvent(String inputDescription, Date firstDay) throws EventFinished;
 	
-	@WebMethod public Question createPronostic(String pr,Event event,int i) throws PronosticAlreadyExist;
+	@WebMethod public Question createPronostic(String pr,Event event,int i, double cuota) throws PronosticAlreadyExist;
 
 
 	@WebMethod public List<Pronostico> findPronosticos(Question q) throws PronosticAlreadyExist;

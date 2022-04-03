@@ -162,9 +162,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
     
     @WebMethod 
-    public Question createPronostic(String pr,Event event,int i) throws PronosticAlreadyExist {
+    public Question createPronostic(String pr,Event event,int i, double cuota) throws PronosticAlreadyExist {
     	dbManager.open(false);
-    	Question b= dbManager.createPronostic(pr,event,i);
+    	Question b= dbManager.createPronostic(pr,event,i, cuota);
     	if(b==null) throw new PronosticAlreadyExist(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
     	this.dbManager.close();
     	return b;
@@ -177,7 +177,10 @@ public class BLFacadeImplementation  implements BLFacade {
     	this.dbManager.close();
     	return p;
     }
-    
+
+	
+
+
     
 }
 

@@ -1,6 +1,5 @@
 package dataAccess;
 
-import java.util.ArrayList;
 //hello
 import java.util.Calendar;
 import java.util.Date;
@@ -117,10 +116,10 @@ public class DataAccess  {
 				q6=ev17.addQuestion("Golak sartuko dira lehenengo zatian?",2);
 				
 			}
-			Pronostico p1=new Pronostico("0-1",q4,1.2);
-			Pronostico p2=new Pronostico("0-2",q4,1.4);
-			Pronostico p3=new Pronostico("0-3",q4,1.2);
-			Pronostico p4=new Pronostico("0-4",q4,1.2);
+			Pronostico p1=new Pronostico("0-1",q4,0.2);
+			Pronostico p2=new Pronostico("0-2",q4,0.1);
+			Pronostico p3=new Pronostico("0-3",q4,1.1);
+			Pronostico p4=new Pronostico("0-4",q4,2);
 			
 			q4.addPronostico(p1);
 			q4.addPronostico(p2);
@@ -158,7 +157,7 @@ public class DataAccess  {
 			db.persist(ev20);		
 			
 			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
-			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
+			Usuario user= new Usuario("User1","12345",null,false,"usuariomasguapo@gmail.com");
 			Usuario admi1= new Usuario("Silvia","contraseña",null,true,null);
 			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
@@ -290,7 +289,7 @@ public class DataAccess  {
 	public boolean createUser(String userName, String pass,String cCode, String correo){
 		Usuario u= db.find(Usuario.class,userName);
 		if(u!=null) return false;
-		u = new Usuario(userName,pass,cCode,false,correo);
+		u = new Usuario(userName,pass,cCode,false, correo);
 		db.getTransaction().begin();
 		db.persist(u);
 		db.getTransaction().commit();
@@ -331,7 +330,7 @@ public class DataAccess  {
 }
 
 
-	public Question createPronostic(String description, Event event,int i) {
+	public Question createPronostic(String description, Event event,int i, double cuota) {
 		Question q = event.getQuest(i);
 		List<Pronostico> list=findPronosticos(q);
 		for(Pronostico p1:list) {
@@ -339,7 +338,7 @@ public class DataAccess  {
 		}
 		
 			db.getTransaction().begin();
-			Pronostico p = new Pronostico(description, q,1);
+			Pronostico p = new Pronostico(description, q, cuota);
 			q.addPronostico(p);
 			db.persist(p); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 							// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
@@ -349,7 +348,6 @@ public class DataAccess  {
 	
 	}
 	
-
 	/**
 	 * Calcula el procentaje de cada pronostico en una apuesta y la asigna a cada una
 	 * @param La apuesta en cuestion
