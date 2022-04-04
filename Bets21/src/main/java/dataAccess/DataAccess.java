@@ -372,13 +372,14 @@ public class DataAccess  {
 	 * Calcula el procentaje de cada pronostico en una apuesta y la asigna a cada una
 	 * @param La apuesta en cuestion
 	 */
-	public void calcularPorcentajePronostico(Question q) {
+	public void calcularPorcentajePronostico(Question que) {
+		Question q= db.find(Question.class,que);
 		Vector<Pronostico> pronos = q.getListPronosticos();
 		int numTotal= q.getNºApuesta();
 		if(numTotal>0) {
 			float div;
 			for(Pronostico p: pronos){
-				div = (float) p.getNumUser()/numTotal;
+				div = ((float) p.getNumUser()/numTotal)*100;
 				db.getTransaction().begin();
 				p.setPorcentajeApuesta(div);
 				db.persist(p);
@@ -393,6 +394,7 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		user.añadirApuesta(ap);
 		ap.getPronostico().addUser();
+	
 		
 		db.getTransaction().commit();
 		System.out.println(">> DataAccess: createBet=> Usuario= "+user.getUserName() +" Ha apostado " + ap.getBet() +" en " + ap.getPronostico().getPronostico() );
@@ -409,8 +411,8 @@ public class DataAccess  {
 	}
 
 	public int crearApuesta(Usuario user,double apuesta,Pronostico pos ) {
-		Usuario u= db.find(Usuario.class,user);
-		Pronostico p= db.find(Pronostico.class,pos);
+		Usuario u= db.find(Usuario.class,user.getUserName());
+		Pronostico p= db.find(Pronostico.class,pos.getPronosNumber());
 		
 		Question q=p.getQuestion();
 		Vector<Pronostico> pronosticos=q.getListPronosticos();
@@ -421,13 +423,14 @@ public class DataAccess  {
 				if(be.getPronostico().equals(pr))return 1;
 			}
 		}
-	
 		double d= user.getDinero()-apuesta;
 		if(d<0)return 2;
 		
 		db.getTransaction().begin();
+		q. addNºApuesta();
 		user.setDinero(d);
 		Bet b=new Bet(p, u, apuesta);
+		db.persist(q);
 		db.persist(b);
 		db.getTransaction().commit();
 		System.out.println("APUESTA   "+ b);

@@ -180,8 +180,8 @@ public class Question implements Serializable {
 		return NºApuesta;
 	}
 
-	public void setNºApuesta(Integer nºApuesta) {
-		NºApuesta = nºApuesta;
+	public void addNºApuesta() {
+		this.NºApuesta ++;
 	}
 
 	public Vector<Pronostico> getPronosticos() {

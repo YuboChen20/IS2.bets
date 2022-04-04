@@ -326,10 +326,44 @@ public class FindQuestionsGUI extends JFrame {
 
 							BLFacade facade = MainGUI.getBusinessLogic();
                             int i= facade.crearApuesta(user,pr,p);
-                           
+                    
                             
                             if(i==0) {
                             	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
+                            	
+                            ////Actualizar tabla de pronósticos//
+            					
+            					if(numE>=0 && numQ>=0) {
+            						
+            		                try {
+            		                	
+            		                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+            		                	tableModelPronostico.setDataVector(null, columnNamesPronostico);
+
+            		                	for (domain.Pronostico p1:pronosticos){
+            		                		Vector<Object> row = new Vector<Object>();
+
+            		                		row.add(p1.getPronosNumber());
+            		                		row.add(p1.getPronostico());
+            		                		row.add(p1.getCuota());
+            		                		row.add(p1.getPorcentajeApuesta());
+            		                		tableModelPronostico.addRow(row);	
+            		                	}
+            		                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+            		                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+            		                }catch(PronosticAlreadyExist e1) {
+            		                	// lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+            		                }
+  
+            					} else { // if ev =null
+    
+            							int n=tableModelPronostico.getRowCount();
+            							for(int i1=0;i1<n;i1++) {
+            								tableModelPronostico.removeRow(0);
+            							}
+
+            					}
+
                             } 
                             else if(i==1) {
                             	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
