@@ -223,6 +223,8 @@ public class SeeUserInfoGUI extends JFrame {
 					errorLabel.setForeground(Color.BLACK);
 					errorLabel.setText("Se ha recargado correctamente");
 					lblNewLabel_12.setText(user.getDinero()+"");
+					
+					
 				}catch(Exception exc){
 					errorLabel.setForeground(Color.RED);
 					errorLabel.setText("Error: No es un numero");

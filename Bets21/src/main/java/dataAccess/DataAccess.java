@@ -444,11 +444,12 @@ public class DataAccess  {
 	}
 	
 	public void aumentarDinero(Usuario user, double cant) {
-		db.getTransaction().begin();
 		Usuario us=db.find(Usuario.class, user.getUserName());
+		db.getTransaction().begin();
+		user.addDinero(cant);
 		us.addDinero(cant);
 		db.getTransaction().commit();
-		
+		System.out.println(">> DataAccess: addDinero=> Usuario= "+user.getUserName() +" Ha aportado " + cant +" se le queda comp " + us.getDinero() );
 	}
     
 
