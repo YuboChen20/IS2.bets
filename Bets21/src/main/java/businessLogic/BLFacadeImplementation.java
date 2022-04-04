@@ -1,5 +1,6 @@
 package businessLogic;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -9,6 +10,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import configuration.ConfigXML;
+import configuration.UtilDate;
 import dataAccess.DataAccess;
 import domain.*;
 import exceptions.EventFinished;
@@ -47,7 +49,15 @@ public class BLFacadeImplementation  implements BLFacade {
 			da.close();
 
 		}
-		dbManager=da;		
+		dbManager=da;	
+		dbManager.open(false);
+		
+		LocalDateTime time=LocalDateTime.now();
+		Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
+		
+		dbManager.finalizarApuesta(date);
+		
+		dbManager.close();
 	}
 	
 
@@ -202,7 +212,29 @@ public class BLFacadeImplementation  implements BLFacade {
     	this.dbManager.close();
     	return vec;
     }
-
+    @WebMethod public void cerrarApuesta(Pronostico prono) {
+    	this.dbManager.open(false);
+    	this.dbManager.cerrarApuesta(prono);
+    	this.dbManager.close();
+    }
+    @WebMethod public Question getQuestion(Event e,int i) {
+    	this.dbManager.open(false);
+    	Question q= this.dbManager.getQuestion(e,i);
+    	this.dbManager.close();
+    	return q;
+    }
+    @WebMethod public Vector<Question> getQuestionList(Event e) {
+    	this.dbManager.open(false);
+    	Vector<Question> q= this.dbManager.getQuestion(e);
+    	this.dbManager.close();
+    	return q;
+    }
+    @WebMethod public void cerrarEvento(Event e) {
+    	this.dbManager.open(false);
+    	this.dbManager.cerrarEvento(e);
+    	this.dbManager.close();    	this.dbManager.open(false);
+ 
+    }
     
 }
 

@@ -23,6 +23,7 @@ public class Question implements Serializable {
 	private float betMinimum;
 	private String result;  
 	private Integer NºApuesta;
+	private boolean Isclosed;
 	@XmlIDREF
 	private Event event;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
@@ -40,6 +41,7 @@ public class Question implements Serializable {
 		this.betMinimum=betMinimum;
 		this.event = event;
 		this.NºApuesta=0;
+		this.Isclosed=false;
 	}
 	
 	public Question(String query, float betMinimum,  Event event) {
@@ -48,6 +50,7 @@ public class Question implements Serializable {
 		this.betMinimum=betMinimum;
 		this.NºApuesta=0;
 		this.event = event;
+		this.Isclosed=false;
 	}
 	
 	public Vector<Pronostico> getListPronosticos() {
@@ -182,6 +185,16 @@ public class Question implements Serializable {
 
 	public void addNºApuesta() {
 		this.NºApuesta ++;
+	}
+	public void setNºApuesta(Integer nºApuesta) {
+		NºApuesta = nºApuesta;
+	}
+	public boolean isIsclosed() {
+		return Isclosed;
+	}
+
+	public void setIsclosed(boolean isclosed) {
+		Isclosed = isclosed;
 	}
 
 	public Vector<Pronostico> getPronosticos() {

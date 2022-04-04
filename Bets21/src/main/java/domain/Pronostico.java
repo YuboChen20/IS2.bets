@@ -2,6 +2,7 @@ package domain;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,6 +23,8 @@ public class Pronostico implements Serializable {
 	private String pronostico;
 	private double cuota;
 	private float porcentajeApuesta; 
+	private Vector<Bet> apuestas= new Vector<Bet>();
+	
 	@XmlIDREF
 	private Question question;
 	private int numUser;
@@ -51,6 +54,7 @@ public class Pronostico implements Serializable {
 		
 	}
 	
+
 
 	public Integer getPronosNumber() {
 		return pronosNumber;
@@ -90,6 +94,7 @@ public class Pronostico implements Serializable {
 	}
 
 
+
 	public String toString(){
 		return pronosNumber+";"+pronostico+";"+Float.toString(porcentajeApuesta);
 	}
@@ -101,7 +106,7 @@ public class Pronostico implements Serializable {
 	public void setCuota(Float cuota) {
 		this.cuota = cuota;
 	}
-
+	
 	public void addUser() {
 		this.numUser++;
 	}
@@ -113,14 +118,24 @@ public class Pronostico implements Serializable {
 	public void setNumUser(int numUser) {
 		this.numUser = numUser;
 	}
+
+	public Vector<Bet> getApuestas() {
+		return apuestas;
+	}
+
+	public void setApuestas(Vector<Bet> apuestas) {
+		this.apuestas = apuestas;
+	}
+
+	public void setCuota(double cuota) {
+		this.cuota = cuota;
+	}
    
-
+	public void addApuesta(Bet b) {
+		this.apuestas.add(b);
+	}
 
 	
-	
-
-
-
 
 	
 }

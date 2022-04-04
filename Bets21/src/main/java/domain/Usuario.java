@@ -34,7 +34,7 @@ public class Usuario{
     	this.cardCode=cardCode;
     	this.admin=admi;
     	this.correo=correo;
-    	this.dinero=1000;
+    	this.dinero=50;
     	
     }
 

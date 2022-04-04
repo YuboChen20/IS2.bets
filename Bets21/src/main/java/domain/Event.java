@@ -27,7 +27,7 @@ public class Event implements Serializable {
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Question> questions=new Vector<Question>();
 	private boolean estadoCerrado;
-
+	private boolean isClosed;
 	public Vector<Question> getQuestions() {
 		return questions;
 	}
@@ -145,4 +145,12 @@ public class Event implements Serializable {
 	public void setEstadoCerrado(boolean estado) {
 		this.estadoCerrado=estado;
 	}
+	public boolean isClosed() {
+		return isClosed;
+	}
+
+	public void setClosed(boolean isClosed) {
+		this.isClosed = isClosed;
+	}
+	
 }

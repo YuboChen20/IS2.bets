@@ -61,27 +61,27 @@ public class DataAccess  {
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=0; year+=1;}  
 	    
-			Event ev1=new Event(1, "AtlÃ©tico-Athletic", UtilDate.newDate(year,month,17));
+			Event ev1=new Event(1, "Atlético-Athletic", UtilDate.newDate(year,month,17));
 			Event ev2=new Event(2, "Eibar-Barcelona", UtilDate.newDate(year,month,17));
 			Event ev3=new Event(3, "Getafe-Celta", UtilDate.newDate(year,month,17));
-			Event ev4=new Event(4, "AlavÃ©s-Deportivo", UtilDate.newDate(year,month,17));
-			Event ev5=new Event(5, "EspaÃ±ol-Villareal", UtilDate.newDate(year,month,17));
+			Event ev4=new Event(4, "Alavas-Deportivo", UtilDate.newDate(year,month,17));
+			Event ev5=new Event(5, "Español-Villareal", UtilDate.newDate(year,month,17));
 			Event ev6=new Event(6, "Las Palmas-Sevilla", UtilDate.newDate(year,month,17));
 			Event ev7=new Event(7, "Malaga-Valencia", UtilDate.newDate(year,month,17));
-			Event ev8=new Event(8, "Girona-LeganÃ©s", UtilDate.newDate(year,month,17));
+			Event ev8=new Event(8, "Girona-Leganos", UtilDate.newDate(year,month,17));
 			Event ev9=new Event(9, "Real Sociedad-Levante", UtilDate.newDate(year,month,17));
 			Event ev10=new Event(10, "Betis-Real Madrid", UtilDate.newDate(year,month,17));
 
 			Event ev11=new Event(11, "Atletico-Athletic", UtilDate.newDate(year,month,1));
 			Event ev12=new Event(12, "Eibar-Barcelona", UtilDate.newDate(year,month,1));
 			Event ev13=new Event(13, "Getafe-Celta", UtilDate.newDate(year,month,1));
-			Event ev14=new Event(14, "AlavÃ©s-Deportivo", UtilDate.newDate(year,month,1));
+			Event ev14=new Event(14, "Alavas-Deportivo", UtilDate.newDate(year,month,1));
 			Event ev15=new Event(15, "EspaÃ±ol-Villareal", UtilDate.newDate(year,month,1));
 			Event ev16=new Event(16, "Las Palmas-Sevilla", UtilDate.newDate(year,month,1));
 			
 
-			Event ev17=new Event(17, "MÃ¡laga-Valencia", UtilDate.newDate(year,month+1,28));
-			Event ev18=new Event(18, "Girona-LeganÃ©s", UtilDate.newDate(year,month+1,28));
+			Event ev17=new Event(17, "Málaga-Valencia", UtilDate.newDate(year,month+1,28));
+			Event ev18=new Event(18, "Girona-Leganas", UtilDate.newDate(year,month+1,28));
 			Event ev19=new Event(19, "Real Sociedad-Levante", UtilDate.newDate(year,month+1,28));
 			Event ev20=new Event(20, "Betis-Real Madrid", UtilDate.newDate(year,month+1,28));
 			Event ev21=new Event(21, "Betis-Real Madrid", UtilDate.newDate(year,month-2,28));
@@ -97,12 +97,12 @@ public class DataAccess  {
 				
 			q7=ev21.addQuestion("¿Habrá goles en la primera parte?",2);
 			if (Locale.getDefault().equals(new Locale("es"))) {
-				q1=ev1.addQuestion("Â¿QuiÃ©n ganarÃ¡ el partido?",1);
-				q2=ev1.addQuestion("Â¿QuiÃ©n meterÃ¡ el primer gol?",2);
-				q3=ev11.addQuestion("Â¿QuiÃ©n ganarÃ¡ el partido?",1);
-				q4=ev11.addQuestion("Â¿CuÃ¡ntos goles se marcarÃ¡n?",2);
-				q5=ev17.addQuestion("Â¿QuiÃ©n ganarÃ¡ el partido?",1);
-				q6=ev17.addQuestion("Â¿HabrÃ¡ goles en la primera parte?",2);
+				q1=ev1.addQuestion("¿Quién ganará el partido?",1);
+				q2=ev1.addQuestion("¿Quién meterá el primer gol?",2);
+				q3=ev11.addQuestion("¿Quién ganará el partido?",1);
+				q4=ev11.addQuestion("¿Cuántos goles se marcarán?",2);
+				q5=ev17.addQuestion("¿Quién ganará el partido?",1);
+				q6=ev17.addQuestion("¿Habrá goles en la primera parte?",2);
 			}
 			else if (Locale.getDefault().equals(new Locale("en"))) {
 				q1=ev1.addQuestion("Who will win the match?",1);
@@ -131,7 +131,7 @@ public class DataAccess  {
 			q4.addPronostico(p3);
 			q4.addPronostico(p4);
 			
-			Pronostico p5=new Pronostico("0-1",q3,1.2);
+			Pronostico p5=new Pronostico("0-1",q7,1.2);
 			Pronostico p6=new Pronostico("0-2",q3,1.4);
 			Pronostico p7=new Pronostico("0-3",q3,1.2);
 			Pronostico p8=new Pronostico("0-4",q3,1.2);
@@ -169,6 +169,7 @@ public class DataAccess  {
 			db.persist(ev18);
 			db.persist(ev19);
 			db.persist(ev20);		
+			db.persist(ev21);		
 			
 			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
 			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
@@ -177,9 +178,10 @@ public class DataAccess  {
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
 			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
 			
-			//Bet apuesta1= new Bet(p1,user,10);
-			//Bet apuesta2= new Bet(p2,user,12);
-			
+			Bet apuesta1= new Bet(p1,user,10);
+			Bet apuesta2= new Bet(p5,user,12);
+			p5.addApuesta(apuesta2);
+				
 
 			db.persist(admin);
 			db.persist(user);
@@ -191,13 +193,15 @@ public class DataAccess  {
 			db.persist(p2);
 			db.persist(p3);
 			db.persist(p4);
-		//	db.persist(apuesta1);
-		//	db.persist(apuesta2);
-			db.getTransaction().commit();
-		//	this.añadirApuesta(user, apuesta1);
-		//	this.añadirApuesta(user, apuesta2);			
-			System.out.println("Db initialized");
+		    db.persist(apuesta1);
+		    db.persist(apuesta2);
 			
+			
+		    db.getTransaction().commit();		
+			
+			this.añadirApuesta(user, apuesta1);
+		    this.añadirApuesta(user, apuesta2);
+		    System.out.println("Db initialized");
 
 		}
 		catch (Exception e){
@@ -468,7 +472,40 @@ public class DataAccess  {
 		  }
 	 	return res;
 	}
+	public void cerrarApuesta(Pronostico prono) {
+		Pronostico pr= db.find(Pronostico.class, prono.getPronosNumber());
+		 Question quest = db.find(Question.class, prono.getQuestion().getQuestionNumber());
+		db.getTransaction().begin();
+		 for(Bet b: pr.getApuestas()) {
+			Usuario user= db.find(Usuario.class, b.getUsuario().getUserName());
+			user.addDinero(b.getGanancia());
+		 }		
+		 quest.setIsclosed(true);
+		db.getTransaction().commit();
+	}
+	public Question getQuestion(Event ev,int i) {
+		Event e=db.find(Event.class, ev.getEventNumber());
+		return e.getQuest(i);
+	}
+	public Vector<Question> getQuestion(Event ev) {
+		Event e=db.find(Event.class, ev.getEventNumber());
+		return e.getQuestions();
+	}
+	public void cerrarEvento(Event ev) {
+		Event e=db.find(Event.class, ev.getEventNumber());
+		db.getTransaction().begin();
+		e.setClosed(true);
+		db.getTransaction().commit();
+	}
 
-
+	public void finalizarApuesta(Date date) {
+		db.getTransaction().begin();
+		for(Event ev: this.getEventstoClose(date)) {
+			if(!ev.getEstadoCerrado()) {
+				ev.setEstadoCerrado(false);
+				}
+		}
+		db.getTransaction().commit();
+	}
 
 }

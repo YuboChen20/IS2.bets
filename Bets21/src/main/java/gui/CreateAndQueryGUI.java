@@ -1,6 +1,7 @@
 package gui;
 
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.List;
 
@@ -28,7 +29,8 @@ public class CreateAndQueryGUI extends JFrame {
 
 	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
-	DefaultComboBoxModel<Question> modelQuestion = new DefaultComboBoxModel<Question>();
+
+	//DefaultComboBoxModel<Question> modelQuestion = new DefaultComboBoxModel<Question>();
 	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
 	private JLabel jLabelQuery = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Query"));
 	private JLabel jLabelMinBet = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("MinimumBetPrice"));
@@ -72,6 +74,12 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textFieldCuota;
+	private final JButton btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton btnNewButton_2 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblNewLabel_3 = new JLabel(); 
+	private final JLabel lblNewLabel_4 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_4.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblNewLabel_3_1 = new JLabel();
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
@@ -84,14 +92,20 @@ public class CreateAndQueryGUI extends JFrame {
 	private void jbInit(Vector<domain.Event> v) throws Exception {
 
 		this.getContentPane().setLayout(null);
-		this.setSize(new Dimension(915, 435));
+		this.setSize(new Dimension(915, 450));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 					
 					domain.Event ev=(domain.Event)jComboBoxEvents.getSelectedItem(); // obtain ev object
+				
 					if(ev!=null) {
+						if(ev.isClosed()) {
+							lblNewLabel_3_1.setText("Evento  cerrado");
+						}else {
+							lblNewLabel_3_1.setText("Evento sin cerrado");
+						}
 						Vector<Question> queries=ev.getQuestions();
 						
 						
@@ -122,16 +136,16 @@ public class CreateAndQueryGUI extends JFrame {
 		
 
 		jComboBoxEvents.setModel(modelEvents);
-		jComboBoxEvents.setBounds(new Rectangle(275, 47, 250, 20));
-		jLabelListOfEvents.setBounds(new Rectangle(290, 18, 277, 20));
-		jLabelQuery.setBounds(new Rectangle(24, 210, 91, 20));
-		jTextFieldQuery.setBounds(new Rectangle(138, 211, 391, 18));
-		jLabelMinBet.setBounds(new Rectangle(24, 240, 91, 20));
-		jTextFieldPrice.setBounds(new Rectangle(138, 240, 60, 20));
+		jComboBoxEvents.setBounds(new Rectangle(299, 50, 250, 20));
+		jLabelListOfEvents.setBounds(new Rectangle(303, 18, 277, 20));
+		jLabelQuery.setBounds(new Rectangle(40, 318, 91, 20));
+		jTextFieldQuery.setBounds(new Rectangle(120, 319, 425, 18));
+		jLabelMinBet.setBounds(new Rectangle(40, 348, 91, 20));
+		jTextFieldPrice.setBounds(new Rectangle(130, 348, 84, 20));
 
 		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));
 
-		jButtonCreate.setBounds(new Rectangle(138, 275, 130, 30));
+		jButtonCreate.setBounds(new Rectangle(419, 347, 130, 30));
 		jButtonCreate.setEnabled(false);
 
 		jButtonCreate.addActionListener(new ActionListener() {
@@ -140,11 +154,11 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 
-		jLabelMsg.setBounds(new Rectangle(275, 191, 305, 20));
+		jLabelMsg.setBounds(new Rectangle(130, 256, 250, 20));
 		jLabelMsg.setForeground(Color.red);
 		// jLabelMsg.setSize(new Dimension(305, 20));
 
-		jLabelError.setBounds(new Rectangle(208, 239, 305, 20));
+		jLabelError.setBounds(new Rectangle(224, 347, 191, 20));
 		jLabelError.setForeground(Color.red);
 
 		this.getContentPane().add(jLabelMsg, null);
@@ -154,7 +168,7 @@ public class CreateAndQueryGUI extends JFrame {
 		this.getContentPane().add(jLabelQuery, null);
 		this.getContentPane().add(jTextFieldPrice, null);
 		scrollPaneQueries.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPaneQueries.setBounds(275, 78, 250, 115);
+		scrollPaneQueries.setBounds(600, 50, 250, 97);
 		
 		getContentPane().add(scrollPaneQueries);
 
@@ -330,26 +344,26 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		jButtonEvent.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonEvent.setBounds(138, 351, 149, 30);
+		jButtonEvent.setBounds(419, 256, 130, 30);
 		getContentPane().add(jButtonEvent);
 		
 		JLabel jLabelEventDescription = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jLabelEventDescription.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelEventDescription.setBounds(new Rectangle(25, 211, 75, 20));
-		jLabelEventDescription.setBounds(37, 319, 91, 20);
+		jLabelEventDescription.setBounds(40, 225, 91, 20);
 		getContentPane().add(jLabelEventDescription);
 		
 		textFieldDescripcionEvento = new JTextField();
 		textFieldDescripcionEvento.setBounds(new Rectangle(100, 211, 429, 20));
-		textFieldDescripcionEvento.setBounds(138, 320, 429, 20);
+		textFieldDescripcionEvento.setBounds(120, 226, 429, 20);
 		getContentPane().add(textFieldDescripcionEvento);
 		jLabelMsg2.setForeground(Color.RED);
 		jLabelMsg2.setBounds(new Rectangle(275, 191, 305, 20));
-		jLabelMsg2.setBounds(305, 285, 225, 20);
+		jLabelMsg2.setBounds(299, 196, 225, 20);
 		
 		getContentPane().add(jLabelMsg2);
 		
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPanePronostico.setBounds(610, 47, 250, 146);
+		scrollPanePronostico.setBounds(600, 158, 250, 111);
 		
 		tableQueries.addMouseListener(new MouseAdapter() {
 			@Override
@@ -357,6 +371,10 @@ public class CreateAndQueryGUI extends JFrame {
 				int i=tableQueries.getSelectedRow();
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
 				Question q = ev.getQuest(i);
+				boolean isclosedQue=q.isIsclosed();
+				if(isclosedQue) {
+					lblNewLabel_3.setText("Consulta Cerrada");
+				}else {lblNewLabel_3.setText("Consulta sin cerrar");}
 			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
 				BLFacade facade = MainGUI.getBusinessLogic();
@@ -386,7 +404,7 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		
-		lblNewLabel.setBounds(new Rectangle(695, 214, 111, 13));
+		lblNewLabel.setBounds(new Rectangle(738, 309, 112, 20));
 		lblNewLabel.setForeground(Color.red);
 		
 		getContentPane().add(lblNewLabel); 
@@ -408,11 +426,11 @@ public class CreateAndQueryGUI extends JFrame {
 		tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 		scrollPanePronostico.setViewportView(tablePronosticos);
 		jLabelPronostico.setBounds(new Rectangle(63, 210, 75, 20));
-		jLabelPronostico.setBounds(610, 210, 75, 20);
+		jLabelPronostico.setBounds(600, 279, 75, 20);
 		
 		getContentPane().add(jLabelPronostico);
 		textFieldPronostico.setBounds(new Rectangle(138, 240, 60, 20));
-		textFieldPronostico.setBounds(610, 240, 240, 20);
+		textFieldPronostico.setBounds(670, 279, 180, 20);
 		this.getContentPane().add(textFieldPronostico, null);
 		
 		getContentPane().add(textFieldPronostico);
@@ -499,13 +517,13 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 	
 		jButtonPronostico.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonPronostico.setBounds(718, 290, 149, 30);
+		jButtonPronostico.setBounds(600, 347, 160, 30);
 		this.getContentPane().add(jButtonPronostico, null);
 		
 		getContentPane().add(jButtonPronostico);
 		
 		
-		jButtonLogout.setBounds(773, 11, 118, 23);
+		jButtonLogout.setBounds(780, 11, 111, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonClose_actionPerformed(e);
@@ -514,14 +532,96 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(jButtonLogout);
 		
 		JLabel jLabelCuota = new JLabel(); //$NON-NLS-1$ //$NON-NLS-2$
-		jLabelCuota.setBounds(610, 275, 46, 14);
+		jLabelCuota.setBounds(602, 363, 238, -22);
 		getContentPane().add(jLabelCuota);
 		
 		textFieldCuota = new JTextField();
-		//textField.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.textField.text")); //$NON-NLS-1$ //$NON-NLS-2$
-		textFieldCuota.setBounds(610, 295, 75, 20);
+		textFieldCuota.setBounds(670, 309, 58, 20);
 		getContentPane().add(textFieldCuota);
 		textFieldCuota.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblNewLabel_1.setBounds(604, 309, 45, 18);
+		getContentPane().add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Event ev= (Event) jComboBoxEvents.getSelectedItem();
+				if(ev!=null) {
+					int i= tableQueries.getSelectedRow();	
+					Question q = facade.getQuestion(ev,i);
+					if(!q.isIsclosed()) {
+						int ind= tablePronosticos.getSelectedRow();
+						Pronostico pro= q.getPronosticos().elementAt(ind);
+						facade.cerrarApuesta(pro);
+						lblNewLabel_3.setText("Consulta Finalizado");
+					}else {
+						lblNewLabel_3.setText("La consulta ya esta finalizada");
+					}
+					
+				}   
+			}
+		});
+		btnNewButton.setBounds(299, 145, 250, 20);
+		getContentPane().add(btnNewButton);
+		
+		JLabel closebetLabelError = new JLabel(); 
+		closebetLabelError.setBounds(600, 387, 250, 16);
+		getContentPane().add(closebetLabelError);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+						LocalDateTime time=LocalDateTime.now();
+						Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
+						Vector<Event> eventos= facade.getEventosAc(date);
+						modelEvents.removeAllElements();
+						for(Event ev: eventos) {
+							
+							modelEvents.addElement(ev);
+			
+						}
+			}
+		});
+		btnNewButton_1.setBounds(298, 114, 251, 21);
+		
+		getContentPane().add(btnNewButton_1);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Event ev= (Event) jComboBoxEvents.getSelectedItem();
+				boolean comp=true;
+				for(Question q: facade.getQuestionList(ev)) {
+					if(!q.isIsclosed()) comp=false;
+				}
+				if(comp) {
+					facade.cerrarEvento(ev);
+					lblNewLabel_3_1.setText("Evento cerrado");
+				}else lblNewLabel_3_1.setText("Hay consulta sin finalizar");
+			}
+		});
+		btnNewButton_2.setBounds(299, 175, 250, 21);
+		
+		getContentPane().add(btnNewButton_2);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel_2.setBounds(303, 91, 112, 13);
+		
+		getContentPane().add(lblNewLabel_2);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel_3.setBounds(404, 91, 120, 13);
+		
+		getContentPane().add(lblNewLabel_3);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel_4.setBounds(303, 80, 91, 13);
+		
+		getContentPane().add(lblNewLabel_4);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel_3_1.setBounds(404, 80, 145, 13);
+		
+		getContentPane().add(lblNewLabel_3_1);
+		
+
+		
+
 		//////
 
 		
