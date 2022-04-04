@@ -24,6 +24,7 @@ public class Bet {
 	private Usuario us;
 	private double bet;
 	private double ganancia;
+
 	
  //////////////////
 	

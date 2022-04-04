@@ -211,7 +211,9 @@ public class Question implements Serializable {
 	}
 
 
-
+	public Pronostico getPron(int i) {
+		return pronosticos.get(i);
+	}
 
 	
 }

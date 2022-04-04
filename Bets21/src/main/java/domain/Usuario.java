@@ -26,6 +26,7 @@ public class Usuario{
 	private String cardCode;
 	private String correo;
 	private boolean admin;
+	private double dinero;
 	private Vector<Bet> apuestas = new Vector<Bet>();
     public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
@@ -33,6 +34,7 @@ public class Usuario{
     	this.cardCode=cardCode;
     	this.admin=admi;
     	this.correo=correo;
+    	this.dinero=1000;
     	
     }
 
@@ -96,6 +98,14 @@ public class Usuario{
 
 	public void setApuestas(Vector<Bet> apuestas) {
 		this.apuestas = apuestas;
+	}
+
+	public double getDinero() {
+		return dinero;
+	}
+
+	public void setDinero(double dinero) {
+		this.dinero = dinero;
 	}
 	
 	

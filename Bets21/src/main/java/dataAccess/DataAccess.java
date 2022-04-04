@@ -127,6 +127,15 @@ public class DataAccess  {
 			q4.addPronostico(p3);
 			q4.addPronostico(p4);
 			
+			Pronostico p5=new Pronostico("0-1",q3,1.2);
+			Pronostico p6=new Pronostico("0-2",q3,1.4);
+			Pronostico p7=new Pronostico("0-3",q3,1.2);
+			Pronostico p8=new Pronostico("0-4",q3,1.2);
+			q3.addPronostico(p5);
+			q3.addPronostico(p6);
+			q3.addPronostico(p7);
+			q3.addPronostico(p8);
+		
 			
 			db.persist(q1);
 			db.persist(q2);
@@ -164,8 +173,8 @@ public class DataAccess  {
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
 			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
 			
-			Bet apuesta1= new Bet(p1,user,10);
-			Bet apuesta2= new Bet(p2,user,12);
+			//Bet apuesta1= new Bet(p1,user,10);
+			//Bet apuesta2= new Bet(p2,user,12);
 			
 
 			db.persist(admin);
@@ -178,11 +187,11 @@ public class DataAccess  {
 			db.persist(p2);
 			db.persist(p3);
 			db.persist(p4);
-			db.persist(apuesta1);
-			db.persist(apuesta2);
+		//	db.persist(apuesta1);
+		//	db.persist(apuesta2);
 			db.getTransaction().commit();
-			this.añadirApuesta(user, apuesta1);
-			this.añadirApuesta(user, apuesta2);			
+		//	this.añadirApuesta(user, apuesta1);
+		//	this.añadirApuesta(user, apuesta2);			
 			System.out.println("Db initialized");
 			
 
@@ -372,6 +381,7 @@ public class DataAccess  {
 				div = (float) p.getNumUser()/numTotal;
 				db.getTransaction().begin();
 				p.setPorcentajeApuesta(div);
+				db.persist(p);
 				db.getTransaction().commit();
 			}
 		}
@@ -396,10 +406,35 @@ public class DataAccess  {
 		List<Bet> b  =  query.getResultList();
 		return b;
 		
-		
-		
 	}
 
+	public int crearApuesta(Usuario user,double apuesta,Pronostico pos ) {
+		Usuario u= db.find(Usuario.class,user);
+		Pronostico p= db.find(Pronostico.class,pos);
+		
+		Question q=p.getQuestion();
+		Vector<Pronostico> pronosticos=q.getListPronosticos();
+		Vector<Bet> apuestas= u.getApuestas();
+	
+		for(Bet be: apuestas) {
+			for(Pronostico pr: pronosticos) {
+				if(be.getPronostico().equals(pr))return 1;
+			}
+		}
+	
+		double d= user.getDinero()-apuesta;
+		if(d<0)return 2;
+		
+		db.getTransaction().begin();
+		user.setDinero(d);
+		Bet b=new Bet(p, u, apuesta);
+		db.persist(b);
+		db.getTransaction().commit();
+		System.out.println("APUESTA   "+ b);
+		this.añadirApuesta(u,b);
+		this.calcularPorcentajePronostico(q);
+		return 0;	
+	}
 
 
 

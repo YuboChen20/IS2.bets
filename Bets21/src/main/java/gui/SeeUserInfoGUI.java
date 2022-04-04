@@ -181,7 +181,14 @@ public class SeeUserInfoGUI extends JFrame {
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
 		scrollPanePronostico.setBounds(42, 185, 378, 146);
 		contentPane.add(scrollPanePronostico);
-		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico);
+		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico) {
+			boolean[] columnEditables = new boolean[] {
+					false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+		};
 		tablePronosticos.setModel(tableModelPronostico);	
 		tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 		tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);

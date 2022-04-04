@@ -41,7 +41,6 @@ public class CreateAndQueryGUI extends JFrame {
 	private Calendar calendarAnt = null;
 
 	private JButton jButtonCreate = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
@@ -140,12 +139,6 @@ public class CreateAndQueryGUI extends JFrame {
 				jButtonCreate_actionPerformed(e);
 			}
 		});
-		jButtonClose.setBounds(new Rectangle(437, 351, 130, 30));
-		jButtonClose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				jButtonClose_actionPerformed(e);
-			}
-		});
 
 		jLabelMsg.setBounds(new Rectangle(275, 191, 305, 20));
 		jLabelMsg.setForeground(Color.red);
@@ -156,8 +149,6 @@ public class CreateAndQueryGUI extends JFrame {
 
 		this.getContentPane().add(jLabelMsg, null);
 		this.getContentPane().add(jLabelError, null);
-
-		this.getContentPane().add(jButtonClose, null);
 		this.getContentPane().add(jButtonCreate, null);
 		this.getContentPane().add(jTextFieldQuery, null);
 		this.getContentPane().add(jLabelQuery, null);
@@ -514,7 +505,7 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(jButtonPronostico);
 		
 		
-		jButtonLogout.setBounds(780, 11, 111, 23);
+		jButtonLogout.setBounds(773, 11, 118, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonClose_actionPerformed(e);

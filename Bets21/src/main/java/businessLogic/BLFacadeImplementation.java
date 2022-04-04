@@ -184,7 +184,12 @@ public class BLFacadeImplementation  implements BLFacade {
         this.dbManager.close();
         return b;
     }
-
+    @WebMethod public int crearApuesta(Usuario user, double pr, Pronostico p) {
+    	  this.dbManager.open(false);
+          int i=this.dbManager.crearApuesta(user,pr,p);
+          this.dbManager.close();
+          return i;
+    }
 
     
 }

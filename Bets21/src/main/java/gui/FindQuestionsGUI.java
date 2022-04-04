@@ -5,6 +5,7 @@ import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
 
+import domain.Bet;
 import domain.Event;
 import domain.Pronostico;
 import domain.Question;
@@ -29,8 +30,6 @@ public class FindQuestionsGUI extends JFrame {
 	private final JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
 	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries")); 
 	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Events")); 
-
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
 
 	// Code for JCalendar
@@ -51,7 +50,7 @@ public class FindQuestionsGUI extends JFrame {
 	private DefaultTableModel tableModelQueries;
 	private DefaultTableModel tableModelPronostico;
 	
-	
+	private final JLabel jLabelApuesta = new JLabel(); 
 	
 	private String[] columnNamesPronostico = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
@@ -72,6 +71,7 @@ public class FindQuestionsGUI extends JFrame {
 			ResourceBundle.getBundle("Etiquetas").getString("Query")
 
 	};
+	private JTextField textFieldApostar;
 
 	public FindQuestionsGUI(Usuario user)
 	{
@@ -97,24 +97,12 @@ public class FindQuestionsGUI extends JFrame {
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
-		jLabelQueries.setBounds(40, 236, 83, 14);
-		jLabelEvents.setBounds(295, 19, 78, 16);
+		jLabelQueries.setBounds(49, 228, 167, 14);
+		jLabelEvents.setBounds(295, 19, 109, 16);
 
 		this.getContentPane().add(jLabelEventDate, null);
 		this.getContentPane().add(jLabelQueries);
 		this.getContentPane().add(jLabelEvents);
-
-		jButtonClose.setBounds(new Rectangle(274, 419, 130, 30));
-
-		jButtonClose.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				jButton2_actionPerformed(e);
-			}
-		});
-
-		this.getContentPane().add(jButtonClose, null);
 
 
 		jCalendar1.setBounds(new Rectangle(40, 50, 225, 150));
@@ -202,7 +190,7 @@ public class FindQuestionsGUI extends JFrame {
 		this.getContentPane().add(jCalendar1, null);
 		
 		scrollPaneEvents.setBounds(new Rectangle(292, 50, 346, 150));
-		scrollPaneQueries.setBounds(new Rectangle(40, 270, 286, 116));
+		scrollPaneQueries.setBounds(new Rectangle(40, 253, 258, 121));
 
 		tableEvents.addMouseListener(new MouseAdapter() {
 			@Override
@@ -231,7 +219,14 @@ public class FindQuestionsGUI extends JFrame {
 		});
 
 		scrollPaneEvents.setViewportView(tableEvents);
-		tableModelEvents = new DefaultTableModel(null, columnNamesEvents);
+		tableModelEvents = new DefaultTableModel(null, columnNamesEvents) {
+			boolean[] columnEditables = new boolean[] {
+					false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+		};
 
 		tableEvents.setModel(tableModelEvents);
 		tableEvents.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -239,7 +234,15 @@ public class FindQuestionsGUI extends JFrame {
 
 
 		scrollPaneQueries.setViewportView(tableQueries);
-		tableModelQueries = new DefaultTableModel(null, columnNamesQueries);
+		tableModelQueries = new DefaultTableModel(null, columnNamesQueries) {
+			boolean[] columnEditables = new boolean[] {
+					false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+
+		};
 
 		tableQueries.setModel(tableModelQueries);
 		tableQueries.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -268,7 +271,7 @@ public class FindQuestionsGUI extends JFrame {
 		tablePronosticos.getColumnModel().getColumn(3).setPreferredWidth(25);
 		scrollPanePronostico.setViewportView(tablePronosticos);
 		
-		jButtonLogout.setBounds(564, 16, 112, 23);
+		jButtonLogout.setBounds(657, 16, 121, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButton2_actionPerformed(e);
@@ -279,7 +282,7 @@ public class FindQuestionsGUI extends JFrame {
 		
 		
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPanePronostico.setBounds(389, 246, 336, 146);
+		scrollPanePronostico.setBounds(395, 228, 336, 146);
 		
 		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FindQuestionsGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
@@ -291,8 +294,72 @@ public class FindQuestionsGUI extends JFrame {
 				a.setVisible(true);	
 			}
 		});
-		btnNewButton.setBounds(447, 17, 112, 21);
+		JLabel jLabelApuesta = new JLabel();
+		jLabelApuesta.setForeground(Color.RED);
+		jLabelApuesta.setBounds(new Rectangle(208, 239, 305, 20));
+		jLabelApuesta.setBounds(395, 418, 363, 20);
+		getContentPane().add(jLabelApuesta);
+		
+		textFieldApostar = new JTextField();
+		textFieldApostar.setColumns(10);
+		textFieldApostar.setBounds(484, 385, 106, 22);
+		getContentPane().add(textFieldApostar);
+		
+		
+		btnNewButton.setBounds(535, 17, 112, 21);
 		getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FindQuestionsGUI.btnNewButton_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Double pr = Double.parseDouble (textFieldApostar.getText());
+					int numQ= tableQueries.getSelectedRow();
+					int numP= tablePronosticos.getSelectedRow();
+					int numE= tableEvents.getSelectedRow();
+				
+					domain.Event ev=(domain.Event)tableModelEvents.getValueAt(numE,2);
+					Question q = ev.getQuest(numQ);
+					Pronostico p =q.getPron(numP);
+					if (pr.floatValue()>=q.getBetMinimum()) {
+
+							BLFacade facade = MainGUI.getBusinessLogic();
+                            int i= facade.crearApuesta(user,pr,p);
+                           
+                            
+                            if(i==0) {
+                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
+                            } 
+                            else if(i==1) {
+                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
+                            }
+                            else {
+                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBetDinero"));
+                            }
+                            
+					}
+                }catch(Exception e1) {
+               
+                	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
+        	
+                }
+		
+			}
+							
+						
+		});
+		btnNewButton_1.setBounds(589, 385, 91, 23);
+		getContentPane().add(btnNewButton_1);
+		
+	
+		
+		JLabel lblApuesta = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("FindQuestionsGUI.lblApuesta.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblApuesta.setBounds(new Rectangle(63, 210, 75, 20));
+		lblApuesta.setBounds(420, 385, 75, 20);
+		getContentPane().add(lblApuesta);
+		
+		
 		
 		
 		
@@ -321,6 +388,7 @@ public class FindQuestionsGUI extends JFrame {
                 		row.add(p.getPronosNumber());
                 		row.add(p.getPronostico());
                 		row.add(p.getCuota());
+                		row.add(p.getPorcentajeApuesta());
                 		System.out.println(p.getCuota());
                 		tableModelPronostico.addRow(row);	
                 	}
@@ -343,7 +411,4 @@ public class FindQuestionsGUI extends JFrame {
 	private void jButton2_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 	}
-	
-	
-	
 }
