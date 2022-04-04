@@ -139,7 +139,7 @@ public class DataAccess  {
 			q3.addPronostico(p6);
 			q3.addPronostico(p7);
 			q3.addPronostico(p8);
-		
+			q7.addPronostico(p5);
 			
 			db.persist(q1);
 			db.persist(q2);

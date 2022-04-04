@@ -63,7 +63,7 @@ public class CreateAndQueryGUI extends JFrame {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
 			ResourceBundle.getBundle("Etiquetas").getString("Pronostico"),
             ResourceBundle.getBundle("Etiquetas").getString("Cuota"),
-            ResourceBundle.getBundle("Etiquetas").getString("Usuarios"),
+           
 	};
 	private JTextField textFieldDescripcionEvento;
 	private final JLabel jLabelMsg2 = new JLabel();

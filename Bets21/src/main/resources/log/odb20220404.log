@@ -421,3 +421,658 @@ Type domain.Bet is not enhanced.
 [2022-04-04 19:55:10 #15 type.registry] 
 New type java.util.Vector<java.lang.Object>
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:02:55 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 119208@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:02:55 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:02:55 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:02:55 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:02:55 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:02:55 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:02:55 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:02:55 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:02:55 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:02:55 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:02:55 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:02:55 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:02:55 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:02:55 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:02:55 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:06:33 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 121284@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:06:34 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:06:34 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:06:34 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:06:34 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:06:34 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:06:34 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:06:34 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:06:34 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:06:34 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:06:34 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:06:34 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:06:34 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:06:34 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:06:34 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:07:08 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 104684@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:07:08 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:07:08 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:07:08 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:07:08 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:07:08 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:07:08 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:07:08 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:07:08 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:07:08 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:07:08 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:07:08 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:07:08 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:07:08 #14 type] 
+Type domain.Usuario is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:08:54 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 122624@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:08:54 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:08:54 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:08:54 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:08:54 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:08:54 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:08:54 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:08:54 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:08:54 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:08:54 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:08:54 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:08:54 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:08:54 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:08:54 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:08:54 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:10:31 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 122844@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:10:32 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:10:32 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:10:32 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:10:32 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:10:32 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:10:32 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:10:32 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:10:32 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:10:32 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:10:32 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:10:32 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:10:32 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:10:32 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:10:32 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:13:12 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 117960@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:13:13 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:13:13 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:13:13 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:13:13 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:13:13 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:13:13 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:13:13 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:13:13 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:13:13 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:13:13 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:13:13 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:13:13 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:13:13 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:13:13 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:14:07 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 121696@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:14:07 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:14:07 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:14:07 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:14:07 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:14:07 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:14:07 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:14:07 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:14:07 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:14:07 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:14:07 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:14:07 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:14:07 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:14:07 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:14:07 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:16:53 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 94824@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:16:53 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:16:53 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:16:53 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:16:53 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:16:53 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:16:53 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:16:53 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:16:53 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:16:53 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:16:53 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:16:53 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:16:53 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:16:53 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:16:53 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:18:20 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 95408@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:18:20 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:18:20 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:18:20 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:18:20 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:18:20 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:18:20 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:18:20 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:18:20 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:18:20 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:18:20 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:18:20 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:18:20 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:18:20 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:18:20 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:19:23 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 121984@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:19:23 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:19:23 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:19:23 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:19:23 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:19:23 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:19:23 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:19:23 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:19:23 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:19:23 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:19:23 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:19:23 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:19:23 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:19:23 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:19:23 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:22:11 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 122128@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:22:11 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:22:11 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:22:11 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:22:11 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:22:11 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:22:11 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:22:11 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:22:11 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:22:11 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:22:11 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:22:11 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:22:11 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:22:11 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:22:11 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:22:21 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 122756@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:22:21 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:22:21 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:22:21 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:22:21 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:22:21 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:22:21 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:22:21 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:22:21 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:22:21 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:22:21 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:22:21 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:22:21 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:22:21 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:22:21 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:23:34 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 117792@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:23:35 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:23:35 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:23:35 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:23:35 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:23:35 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:23:35 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:23:35 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:23:35 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:23:35 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:23:35 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:23:35 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:23:35 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:23:35 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:23:35 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-04-04 23:25:00 #1 store] 
+Database 'C:\Users\34600\git\Iteracion2.2\Bets21\src\main\resources\bets.temp' is opened by 120436@LAPTOP-ILS8TMDB
+
+[2022-04-04 23:25:00 #2 type.registry] 
+New type domain.Question
+
+[2022-04-04 23:25:00 #3 type] 
+Type domain.Question is not enhanced.
+
+[2022-04-04 23:25:00 #4 type.registry] 
+New type domain.Pronostico
+
+[2022-04-04 23:25:00 #5 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-04-04 23:25:00 #6 type.registry] 
+New type domain.Event
+
+[2022-04-04 23:25:00 #7 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-04-04 23:25:00 #8 type.registry] 
+New type domain.Bet
+
+[2022-04-04 23:25:00 #9 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-04-04 23:25:00 #10 type] 
+Type domain.Event is not enhanced.
+
+[2022-04-04 23:25:00 #11 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-04-04 23:25:00 #12 type] 
+Type domain.Bet is not enhanced.
+
+[2022-04-04 23:25:00 #13 type.registry] 
+New type domain.Usuario
+
+[2022-04-04 23:25:00 #14 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-04-04 23:25:01 #15 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
