@@ -190,6 +190,18 @@ public class BLFacadeImplementation  implements BLFacade {
           this.dbManager.close();
           return i;
     }
+    @WebMethod public void aumentarDinero(Usuario user,double cant) {
+    	this.dbManager.open(false);
+    	this.dbManager.aumentarDinero(user, cant);
+    	this.dbManager.close();
+    }
+    
+    @WebMethod public Vector<Event> getEventosAc(Date date) {
+    	this.dbManager.open(false);
+    	Vector<Event> vec= this.dbManager.getEventstoClose(date);
+    	this.dbManager.close();
+    	return vec;
+    }
 
     
 }

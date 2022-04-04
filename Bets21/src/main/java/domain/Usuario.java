@@ -108,6 +108,11 @@ public class Usuario{
 		this.dinero = dinero;
 	}
 	
+	public void addDinero(double cant){
+		this.dinero=dinero + cant;
+		
+	}
+	
 	
 	
 	

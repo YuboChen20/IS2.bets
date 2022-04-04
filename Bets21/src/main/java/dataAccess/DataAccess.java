@@ -84,6 +84,8 @@ public class DataAccess  {
 			Event ev18=new Event(18, "Girona-LeganÃ©s", UtilDate.newDate(year,month+1,28));
 			Event ev19=new Event(19, "Real Sociedad-Levante", UtilDate.newDate(year,month+1,28));
 			Event ev20=new Event(20, "Betis-Real Madrid", UtilDate.newDate(year,month+1,28));
+			Event ev21=new Event(21, "Betis-Real Madrid", UtilDate.newDate(year,month-2,28));
+			
 			
 			Question q1;
 			Question q2;
@@ -91,7 +93,9 @@ public class DataAccess  {
 			Question q4;
 			Question q5;
 			Question q6;
-					
+			Question q7;
+				
+			q7=ev21.addQuestion("¿Habrá goles en la primera parte?",2);
 			if (Locale.getDefault().equals(new Locale("es"))) {
 				q1=ev1.addQuestion("Â¿QuiÃ©n ganarÃ¡ el partido?",1);
 				q2=ev1.addQuestion("Â¿QuiÃ©n meterÃ¡ el primer gol?",2);
@@ -392,13 +396,13 @@ public class DataAccess  {
 	
 	public void añadirApuesta(Usuario user,Bet ap) {
 		db.getTransaction().begin();
-		user.añadirApuesta(ap);
-		ap.getPronostico().addUser();
-	
+		Usuario us=db.find(Usuario.class, user.getUserName());
+		us.añadirApuesta(ap);
+		Bet b=db.find(Bet.class,ap.getBetNumber());
+		b.getPronostico().addUser();
 		
 		db.getTransaction().commit();
 		System.out.println(">> DataAccess: createBet=> Usuario= "+user.getUserName() +" Ha apostado " + ap.getBet() +" en " + ap.getPronostico().getPronostico() );
-		
 	}
 	
 	public List<Bet> getBets (Usuario user){
@@ -437,6 +441,31 @@ public class DataAccess  {
 		this.añadirApuesta(u,b);
 		this.calcularPorcentajePronostico(q);
 		return 0;	
+	}
+	
+	public void aumentarDinero(Usuario user, double cant) {
+		db.getTransaction().begin();
+		Usuario us=db.find(Usuario.class, user.getUserName());
+		us.addDinero(cant);
+		db.getTransaction().commit();
+		
+	}
+    
+
+
+	public Vector<Event> getEventstoClose(Date date) {
+	
+		Vector<Event> res = new Vector<Event>();	
+		TypedQuery<Event> query = db.createQuery("SELECT ev FROM Event ev WHERE ev.eventDate<=?1",Event.class);   
+		query.setParameter(1, date);
+		List<Event> events = query.getResultList();
+	 	 for (Event ev:events){
+	 	   if(!ev.getEstadoCerrado()) {
+	 		   System.out.println("Eventos ya terminados :"+ev.toString() + "del dia: " +ev.getEventDate().toString());		 
+	 		   res.add(ev);
+		   }
+		  }
+	 	return res;
 	}
 
 

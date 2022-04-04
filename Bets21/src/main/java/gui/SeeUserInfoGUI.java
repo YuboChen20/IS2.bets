@@ -3,6 +3,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -23,6 +24,8 @@ import javax.swing.JScrollBar;
 import javax.swing.JSpinner;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
@@ -46,7 +49,7 @@ public class SeeUserInfoGUI extends JFrame {
 			ResourceBundle.getBundle("Etiquetas").getString("Pronostico")
 
 	};
-	
+	private JTextField textField;
 
 
 	/**
@@ -79,7 +82,7 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		setTitle("Informacion del usuario");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 477, 609);
+		setBounds(100, 100, 477, 652);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 240, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -181,18 +184,60 @@ public class SeeUserInfoGUI extends JFrame {
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
 		scrollPanePronostico.setBounds(42, 185, 378, 146);
 		contentPane.add(scrollPanePronostico);
-		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico) {
-			boolean[] columnEditables = new boolean[] {
-					false, false, false
-				};
-				public boolean isCellEditable(int row, int column) {
-					return columnEditables[column];
-				}
-		};
+		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico);
 		tablePronosticos.setModel(tableModelPronostico);	
 		tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 		tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 		scrollPanePronostico.setViewportView(tablePronosticos);
+		
+		JLabel lblNewLabel_11 = new JLabel("Saldo :");
+		lblNewLabel_11.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_11.setBounds(29, 154, 84, 21);
+		contentPane.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_12 = new JLabel("");
+		lblNewLabel_12.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_12.setBounds(90, 154, 128, 21);
+		contentPane.add(lblNewLabel_12);
+		
+		
+		
+		JLabel errorLabel = new JLabel("");
+		errorLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		errorLabel.setBounds(115, 564, 216, 21);
+		contentPane.add(errorLabel);
+		
+		textField = new JTextField();
+		textField.setForeground(Color.BLACK);
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField.setBounds(204, 532, 216, 22);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		lblNewLabel_12.setText(user.getDinero()+"");
+		
+		JButton btnNewButton = new JButton("Rercargar Saldo");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					facade.aumentarDinero(user, Double.parseDouble(textField.getText()));
+					errorLabel.setForeground(Color.BLACK);
+					errorLabel.setText("Se ha recargado correctamente");
+					lblNewLabel_12.setText(user.getDinero()+"");
+				}catch(Exception exc){
+					errorLabel.setForeground(Color.RED);
+					errorLabel.setText("Error: No es un numero");
+					textField.setText("");
+					
+				}
+				
+				
+			}
+		});
+
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setBounds(29, 533, 165, 21);
+		contentPane.add(btnNewButton);
+
 
 		tableModelPronostico.setDataVector(null, columnNamesPronostico);
         for(Bet a: apuestas) {
@@ -219,6 +264,7 @@ public class SeeUserInfoGUI extends JFrame {
 			    lblNewLabel_10_4.setText(pro.getCuota()+"");
 			    lblNewLabel_10_4_1.setText(ap.getBet()+"");
 			    lblNewLabel_10_4_3.setText(formato1.format(ap.getGanancia()));
+			    lblNewLabel_12.setText(user.getDinero()+"");
 				
 			}
 		});

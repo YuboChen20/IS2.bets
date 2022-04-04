@@ -66,7 +66,7 @@ public interface BLFacade  {
 
 	@WebMethod public List<Pronostico> findPronosticos(Question q) throws PronosticAlreadyExist;
 	@WebMethod public List<Bet> getBet(Usuario user);
-
-
 	@WebMethod public int crearApuesta(Usuario user, double pr, Pronostico p);
+	@WebMethod public void aumentarDinero(Usuario user,double cant);
+	@WebMethod public Vector<Event> getEventosAc(Date date);
 }
