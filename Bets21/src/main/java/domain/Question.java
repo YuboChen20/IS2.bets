@@ -177,6 +177,12 @@ public class Question implements Serializable {
 	}
 	
 	
+	public Pronostico addPronosticoNoHecho(String description,double cuota)  {
+		Pronostico p = new Pronostico(description, this,cuota);
+        pronosticos.add(p);
+        return p;
+	}
+	
 
 	
 	public Integer getNºApuesta() {

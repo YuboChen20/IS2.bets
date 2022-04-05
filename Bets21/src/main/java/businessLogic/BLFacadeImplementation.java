@@ -174,6 +174,7 @@ public class BLFacadeImplementation  implements BLFacade {
     @WebMethod 
     public Question createPronostic(String pr,Event event,int i, double cuota) throws PronosticAlreadyExist {
     	dbManager.open(false);
+    	Pronostico p=null;
     	Question b= dbManager.createPronostic(pr,event,i, cuota);
     	if(b==null) throw new PronosticAlreadyExist(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
     	this.dbManager.close();

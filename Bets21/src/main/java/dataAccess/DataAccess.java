@@ -353,15 +353,15 @@ public class DataAccess  {
 
 
 	public Question createPronostic(String description, Event event,int i,double cuota) {
-		Question q = event.getQuest(i);
+		Question q = db.find(Question.class, event.getQuest(i).getQuestionNumber());
 		List<Pronostico> list=findPronosticos(q);
 		for(Pronostico p1:list) {
 			if(p1.getPronostico().equals(description))return q=null;
 		}
 		
 			db.getTransaction().begin();
-			Pronostico p = new Pronostico(description, q,cuota);
-			q.addPronostico(p);
+			Pronostico p = q.addPronosticoNoHecho(description, cuota);
+
 			db.persist(p); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 							// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 			db.getTransaction().commit();
