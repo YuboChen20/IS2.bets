@@ -178,9 +178,7 @@ public class DataAccess  {
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
 			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
 			
-			Bet apuesta1= new Bet(p1,user,10);
-			Bet apuesta2= new Bet(p5,user,12);
-			p5.addApuesta(apuesta2);
+
 				
 
 			db.persist(admin);
@@ -193,14 +191,10 @@ public class DataAccess  {
 			db.persist(p2);
 			db.persist(p3);
 			db.persist(p4);
-		    db.persist(apuesta1);
-		    db.persist(apuesta2);
-			
 			
 		    db.getTransaction().commit();		
-			
-			this.añadirApuesta(user, apuesta1);
-		    this.añadirApuesta(user, apuesta2);
+			this.crearApuesta(user,10,p1);
+			this.crearApuesta(user,12,p5);
 		    System.out.println("Db initialized");
 
 		}
@@ -423,7 +417,7 @@ public class DataAccess  {
 		Pronostico p= db.find(Pronostico.class,pos.getPronosNumber());
 		
 		Question q=p.getQuestion();
-		Vector<Pronostico> pronosticos=q.getListPronosticos();
+		List<Pronostico> pronosticos = this.findPronosticos(q);
 		Vector<Bet> apuestas= u.getApuestas();
 	
 		for(Bet be: apuestas) {
@@ -438,6 +432,7 @@ public class DataAccess  {
 		q. addNºApuesta();
 		user.setDinero(d);
 		Bet b=new Bet(p, u, apuesta);
+		p.addApuesta(b);
 		db.persist(q);
 		db.persist(b);
 		db.getTransaction().commit();

@@ -110,9 +110,9 @@ public class SeeUserInfoGUI extends JFrame {
 		lblNewLabel_3.setBounds(29, 373, 84, 21);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Pregunta :");
+		JLabel lblNewLabel_4 = new JLabel("Fecha evento :");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_4.setBounds(29, 404, 84, 28);
+		lblNewLabel_4.setBounds(29, 404, 128, 28);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Ganancia :");
@@ -157,7 +157,7 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		JLabel lblNewLabel_10_3 = new JLabel("");
 		lblNewLabel_10_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_3.setBounds(115, 411, 286, 21);
+		lblNewLabel_10_3.setBounds(144, 404, 286, 21);
 		contentPane.add(lblNewLabel_10_3);
 		
 		JLabel lblNewLabel_10_4 = new JLabel("");
@@ -204,7 +204,7 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		JLabel errorLabel = new JLabel("");
 		errorLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		errorLabel.setBounds(115, 564, 216, 21);
+		errorLabel.setBounds(101, 564, 299, 21);
 		contentPane.add(errorLabel);
 		
 		textField = new JTextField();
@@ -219,11 +219,17 @@ public class SeeUserInfoGUI extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					facade.aumentarDinero(user, Double.parseDouble(textField.getText()));
-					errorLabel.setForeground(Color.BLACK);
-					errorLabel.setText("Se ha recargado correctamente");
-					lblNewLabel_12.setText(user.getDinero()+"");
-					
+					if(Double.parseDouble(textField.getText())>0) {
+						facade.aumentarDinero(user, Double.parseDouble(textField.getText()));
+						errorLabel.setForeground(Color.BLACK);
+						errorLabel.setText("Se ha recargado correctamente");
+						lblNewLabel_12.setText(user.getDinero()+"");
+						textField.setText("");
+					}else {
+						errorLabel.setForeground(Color.RED);
+						errorLabel.setText("Error: Poner un saldo mayor que 0");
+						textField.setText("");
+					}
 					
 				}catch(Exception exc){
 					errorLabel.setForeground(Color.RED);
@@ -231,8 +237,7 @@ public class SeeUserInfoGUI extends JFrame {
 					textField.setText("");
 					
 				}
-				
-				
+							
 			}
 		});
 
@@ -246,10 +251,10 @@ public class SeeUserInfoGUI extends JFrame {
         	Vector<Object> row = new Vector<Object>();
         	
     		row.add(a.getBetNumber());
-    		row.add(a.getPronostico());
+    		row.add(a.getPronostico().getQuestion().getQuestion()+ " => " + a.getPronostico().getPronostico());
     		tableModelPronostico.addRow(row);	
         }
-		
+		lblNewLabel_12.setText(user.getDinero()+" €");
         tablePronosticos.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -261,12 +266,12 @@ public class SeeUserInfoGUI extends JFrame {
 			    Event ev= qu.getEvent();
 			    
 			    lblNewLabel_10_2.setText(ev.getDescription());
-			    lblNewLabel_10_3.setText(qu.getQuestion());
+			    lblNewLabel_10_3.setText(ev.getEventDate()+"");
 			    lblNewLabel_10_4_2.setText(pro.getPorcentajeApuesta()+"%");
-			    lblNewLabel_10_4.setText(pro.getCuota()+"");
-			    lblNewLabel_10_4_1.setText(ap.getBet()+"");
-			    lblNewLabel_10_4_3.setText(formato1.format(ap.getGanancia()));
-			    lblNewLabel_12.setText(user.getDinero()+"");
+			    lblNewLabel_10_4.setText(pro.getCuota()+" €");
+			    lblNewLabel_10_4_1.setText(ap.getBet()+" €");
+			    lblNewLabel_10_4_3.setText(formato1.format(ap.getGanancia())+" €");
+			    
 				
 			}
 		});
