@@ -31,6 +31,8 @@ public class FindQuestionsGUI extends JFrame {
 	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries")); 
 	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Events")); 
 	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
+	private final JLabel jLabelApuestaMinima = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ApuestaMinima")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel jLabelApuestaExactaMinima = new JLabel();
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
@@ -100,7 +102,7 @@ public class FindQuestionsGUI extends JFrame {
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
 		jLabelQueries.setBounds(49, 228, 167, 14);
-		jLabelEvents.setBounds(295, 19, 109, 16);
+		jLabelEvents.setBounds(295, 19, 230, 16);
 
 		this.getContentPane().add(jLabelEventDate, null);
 		this.getContentPane().add(jLabelQueries);
@@ -299,7 +301,7 @@ public class FindQuestionsGUI extends JFrame {
 		JLabel jLabelApuesta = new JLabel();
 		jLabelApuesta.setForeground(Color.RED);
 		jLabelApuesta.setBounds(new Rectangle(208, 239, 305, 20));
-		jLabelApuesta.setBounds(395, 418, 363, 20);
+		jLabelApuesta.setBounds(398, 418, 363, 20);
 		getContentPane().add(jLabelApuesta);
 		
 		textFieldApostar = new JTextField();
@@ -316,6 +318,7 @@ public class FindQuestionsGUI extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					jLabelApuesta.setForeground(Color.RED);
 					Double pr = Double.parseDouble (textFieldApostar.getText());
 					int numQ= tableQueries.getSelectedRow();
 					int numP= tablePronosticos.getSelectedRow();
@@ -331,6 +334,7 @@ public class FindQuestionsGUI extends JFrame {
                     
                             
                             if(i==0) {
+                            	jLabelApuesta.setForeground(Color.BLACK);
                             	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
                             	
                             ////Actualizar tabla de pronósticos//
@@ -396,6 +400,14 @@ public class FindQuestionsGUI extends JFrame {
 		getContentPane().add(lblApuesta);
 		
 		
+		jLabelApuestaMinima.setBounds(395, 438, 100, 14);
+		getContentPane().add(jLabelApuestaMinima);
+		
+		
+		jLabelApuestaExactaMinima.setBounds(507, 438, 49, 14);
+		getContentPane().add(jLabelApuestaExactaMinima);
+		
+		
 		
 		
 		
@@ -430,6 +442,7 @@ public class FindQuestionsGUI extends JFrame {
                 	}
                 	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
                 	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+                	jLabelApuestaExactaMinima.setText(q.getBetMinimum()+" ");
                
                 }catch(PronosticAlreadyExist e1) {
                 	//lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
@@ -448,5 +461,4 @@ public class FindQuestionsGUI extends JFrame {
 		MainGUI a =new MainGUI();
 		a.setVisible(true);
 	}
-	
 }
