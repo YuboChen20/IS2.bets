@@ -141,7 +141,7 @@ public class CreateAndQueryGUI extends JFrame {
 
 		jComboBoxEvents.setModel(modelEvents);
 		jComboBoxEvents.setBounds(new Rectangle(299, 50, 250, 20));
-		jLabelListOfEvents.setBounds(new Rectangle(303, 18, 277, 20));
+		jLabelListOfEvents.setBounds(new Rectangle(303, 18, 333, 20));
 		jLabelQuery.setBounds(new Rectangle(40, 318, 91, 20));
 		jTextFieldQuery.setBounds(new Rectangle(120, 319, 425, 18));
 		jLabelMinBet.setBounds(new Rectangle(40, 348, 91, 20));
@@ -190,7 +190,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
-		jLabelEventDate.setBounds(40, 16, 140, 25);
+		jLabelEventDate.setBounds(40, 16, 253, 25);
 		getContentPane().add(jLabelEventDate);
 
 		
@@ -419,7 +419,7 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		
-		lblNewLabel.setBounds(new Rectangle(738, 309, 112, 20));
+		lblNewLabel.setBounds(new Rectangle(612, 333, 238, 20));
 		lblNewLabel.setForeground(Color.red);
 		
 		getContentPane().add(lblNewLabel); 
@@ -462,7 +462,9 @@ public class CreateAndQueryGUI extends JFrame {
 					String pr=textFieldPronostico.getText();
 					Event ev= (Event) jComboBoxEvents.getSelectedItem();
 					int i= tableQueries.getSelectedRow();
-					double cuota= Double.parseDouble(textFieldCuota.getText());
+					try {
+						double cuota= Double.parseDouble(textFieldCuota.getText());
+					
 					
 					if (pr.length() > 0 & i>=0) {
 
@@ -481,6 +483,7 @@ public class CreateAndQueryGUI extends JFrame {
 							actualizarTabla();
 							
 							tableQueries.setRowSelectionInterval(i, i);
+							
 							
 							
 							
@@ -522,23 +525,29 @@ public class CreateAndQueryGUI extends JFrame {
 			
 					}
 					else lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+				
+					}catch(Exception e2) {
+						lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorCuotaNoNumero"));
+					}
+					
 				} catch (Exception e1) {
 					e1.printStackTrace();
 					lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 				}
+
 
 		
 			}
 		});
 	
 		jButtonPronostico.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonPronostico.setBounds(600, 347, 160, 30);
+		jButtonPronostico.setBounds(670, 357, 157, 30);
 		this.getContentPane().add(jButtonPronostico, null);
 		
 		getContentPane().add(jButtonPronostico);
 		
 		
-		jButtonLogout.setBounds(780, 11, 111, 23);
+		jButtonLogout.setBounds(734, 11, 157, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonClose_actionPerformed(e);
@@ -551,7 +560,7 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(jLabelCuota);
 		
 		textFieldCuota = new JTextField();
-		textFieldCuota.setBounds(670, 309, 58, 20);
+		textFieldCuota.setBounds(670, 310, 58, 20);
 		getContentPane().add(textFieldCuota);
 		textFieldCuota.setColumns(10);
 		
