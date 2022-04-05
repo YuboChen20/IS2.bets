@@ -78,6 +78,7 @@ public class FindQuestionsGUI extends JFrame {
 		
 		try
 		{
+			
 			this.user= user;
 			
 			jbInit();
@@ -91,7 +92,8 @@ public class FindQuestionsGUI extends JFrame {
 	
 	private void jbInit() throws Exception
 	{
-		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(800, 500));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
@@ -375,7 +377,7 @@ public class FindQuestionsGUI extends JFrame {
 					}
                 }catch(Exception e1) {
                
-                	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
+                	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorApuesta"));
         	
                 }
 		
@@ -441,8 +443,10 @@ public class FindQuestionsGUI extends JFrame {
 		
 
 	}
-
 	private void jButton2_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
+		MainGUI a =new MainGUI();
+		a.setVisible(true);
 	}
+	
 }

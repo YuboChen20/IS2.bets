@@ -144,7 +144,10 @@ public class SignUp extends JFrame {
 				   BLFacade facade = MainGUI.getBusinessLogic();
 				   boolean b = facade.createUser(us, ps, code,correo);
 				   if(!b) textA.setText("Error: Este nombre de usuario ya existe, escriba otra.");
-				   else textA.setText("Usuario " + us+ " registrado correctamente");
+				   else{
+					   textA.setText("Usuario " + us+ " registrado correctamente");
+					   jButtonSignUp_actionPerformed(e);
+				   }
 			   }else {
 				    
 				   if(tipoError.equals("u")) textA.setText("ERROR:Completa el campo del usuario");
@@ -158,7 +161,15 @@ public class SignUp extends JFrame {
 		registrarse.setBounds(150, 185, 135, 25);
 		contentPane.add(registrarse);
 		
-	
+		JButton btnNewMenu = new JButton("Men\u00FA");
+		btnNewMenu.setBounds(357, 0, 81, 18);
+		contentPane.add(btnNewMenu);
+		
+		btnNewMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonMenu_actionPerformed(e);
+			}
+		});
 
 	}
 	private class SwingAction extends AbstractAction {
@@ -169,5 +180,14 @@ public class SignUp extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 		}
 	}
-
+	private void jButtonSignUp_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		JFrame a=new Login();
+		a.setVisible(true);
+	}
+	private void jButtonMenu_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		MainGUI a=new MainGUI();
+		a.setVisible(true);
+	}
 }

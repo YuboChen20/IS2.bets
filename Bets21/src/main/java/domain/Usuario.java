@@ -28,6 +28,7 @@ public class Usuario{
 	private boolean admin;
 	private double dinero;
 	private Vector<Bet> apuestas = new Vector<Bet>();
+	
     public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
     	this.password=passwor;
@@ -37,7 +38,8 @@ public class Usuario{
     	this.dinero=50;
     	
     }
-
+    public Usuario() {}
+    
 	public boolean isAdmin() {
 		return admin;
 	}

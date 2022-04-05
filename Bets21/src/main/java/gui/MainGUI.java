@@ -30,6 +30,7 @@ public class MainGUI extends JFrame {
 	private JPanel jContentPane = null;
 	private JButton jButtonLogin = null;
 	private JButton jButtonSignUp = null;
+	private JButton btnNewButtonConsultar= null;
 
     private static BLFacade appFacadeInterface;
 	
@@ -63,7 +64,7 @@ public class MainGUI extends JFrame {
 		});
 
 		initialize();
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	
@@ -88,33 +89,35 @@ public class MainGUI extends JFrame {
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
 			jContentPane = new JPanel();
-			jContentPane.setLayout(new GridLayout(4, 1, 0, 0));
+			jContentPane.setLayout(null);
 			jContentPane.add(getLblNewLabel());
 			jContentPane.add(getBoton3());
 			jContentPane.add(getBoton2());
+			jContentPane.add(getBoton1());
+		
 			//jContentPane.add(getPanel());
 		}
 		return jContentPane;
 	}
-
-
+	
 	/**
 	 * This method initializes boton1
 	 * 
 	 * @return javax.swing.JButton
 	 */
-	private JButton getBoton2() {
-		if (jButtonLogin == null) {
-			jButtonLogin = new JButton();
-			jButtonLogin.setText(ResourceBundle.getBundle("Etiquetas").getString("Login"));
-			jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+	private JButton getBoton1() {
+		if (btnNewButtonConsultar == null) {
+			btnNewButtonConsultar = new JButton();
+			btnNewButtonConsultar.setBounds(0, 70, 483, 69);
+			btnNewButtonConsultar.setText(ResourceBundle.getBundle("Etiquetas").getString("Consultar"));
+			btnNewButtonConsultar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					JFrame a = new Login();
-					a.setVisible(true);
+					jB3_actionPerformed(e);
+					
 				}
 			});
 		}
-		return jButtonLogin;
+		return btnNewButtonConsultar;
 	}
 	
 	/**
@@ -122,15 +125,34 @@ public class MainGUI extends JFrame {
 	 * 
 	 * @return javax.swing.JButton
 	 */
+	private JButton getBoton2() {
+		if (jButtonLogin == null) {
+			jButtonLogin = new JButton();
+			jButtonLogin.setBounds(241, 137, 242, 63);
+			jButtonLogin.setText(ResourceBundle.getBundle("Etiquetas").getString("Login"));
+			jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					jB2_actionPerformed(e);
+				}
+			});
+		}
+		return jButtonLogin;
+	}
+	
+	/**
+	 * This method initializes boton3
+	 * 
+	 * @return javax.swing.JButton
+	 */
 	private JButton getBoton3() {
 		if (jButtonSignUp == null) {
 			jButtonSignUp = new JButton();
+			jButtonSignUp.setBounds(0, 137, 242, 63);
 			jButtonSignUp.setText(ResourceBundle.getBundle("Etiquetas").getString("SignUp"));
 			jButtonSignUp.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					JFrame a = new SignUp();
-
-					a.setVisible(true);
+					
+					jB_actionPerformed(e);
 				}
 			});
 		}
@@ -141,6 +163,7 @@ public class MainGUI extends JFrame {
 	private JLabel getLblNewLabel() {
 		if (jLabelSelectOption == null) {
 			jLabelSelectOption = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SelectOption"));
+			jLabelSelectOption.setBounds(0, 1, 483, 63);
 			jLabelSelectOption.setFont(new Font("Tahoma", Font.BOLD, 13));
 			jLabelSelectOption.setForeground(Color.BLACK);
 			jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
@@ -208,5 +231,24 @@ public class MainGUI extends JFrame {
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainTitle"));
 	}
 	
+	private void jB_actionPerformed(ActionEvent e) {
+		JFrame a = new SignUp();
+		a.setVisible(true);
+		this.setVisible(false);
+	}
+	
+	private void jB2_actionPerformed(ActionEvent e) {
+		JFrame a = new Login();
+		a.setVisible(true);
+		this.setVisible(false);
+	}
+	
+	private void jB3_actionPerformed(ActionEvent e) {
+		JFrame a = new FindQuestionInvitadoGUI();
+		a.setVisible(true);
+		this.setVisible(false);
+	}
+	
 } // @jve:decl-index=0:visual-constraint="0,0"
+
 

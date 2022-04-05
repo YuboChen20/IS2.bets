@@ -90,7 +90,8 @@ public class CreateAndQueryGUI extends JFrame {
 	}
 
 	private void jbInit(Vector<domain.Event> v) throws Exception {
-
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(915, 450));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
@@ -732,6 +733,8 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 
 	private void jButtonClose_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
+		MainGUI a =new MainGUI();
+		a.setVisible(true);;
 	}
 	
 

@@ -27,6 +27,7 @@ public class Login extends JFrame {
 	private JTextField usuario;
 	private JPasswordField password;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -88,13 +89,11 @@ public class Login extends JFrame {
 				   if(user==null & tipoError==null) tipoError="n";
 				   if(tipoError==null){
 					   if(user.isAdmin()) {
-						   JFrame b= new CreateAndQueryGUI(new Vector<Event>());
-						   b.setVisible(true);	
+						   btnLoginAdmi_actionPerformed(e);
 						   
 					   }
 					   else {
-							JFrame a = new FindQuestionsGUI(user);
-							a.setVisible(true);					   
+						   btnLoginUser_actionPerformed(e,user);							   
 					   }					   
 				   }else {
 					    
@@ -114,5 +113,34 @@ public class Login extends JFrame {
 		password = new JPasswordField();
 		password.setBounds(162, 81, 229, 26);
 		contentPane.add(password);
+		
+		JButton btnNewMenu = new JButton("Men\u00FA");
+		btnNewMenu.setBounds(357, 0, 81, 18);
+		contentPane.add(btnNewMenu);
+		
+		btnNewMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonMenu_actionPerformed(e);
+			}
+		});
+		
+		
+	}
+	private void btnLoginUser_actionPerformed(ActionEvent e,Usuario u) {
+		
+		 JFrame b= new FindQuestionsGUI(u);
+		 b.setVisible(true);	
+		 this.setVisible(false);;
+	}
+	private void btnLoginAdmi_actionPerformed(ActionEvent e) {
+		JFrame b= new CreateAndQueryGUI(new Vector<Event>());
+		   b.setVisible(true);	
+		
+		 this.setVisible(false);;
+	}
+	private void jButtonMenu_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		MainGUI a=new MainGUI();
+		a.setVisible(true);
 	}
 }

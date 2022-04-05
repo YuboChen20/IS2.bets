@@ -235,6 +235,7 @@ public class BLFacadeImplementation  implements BLFacade {
     	this.dbManager.close();    	this.dbManager.open(false);
  
     }
+  
     
 }
 
