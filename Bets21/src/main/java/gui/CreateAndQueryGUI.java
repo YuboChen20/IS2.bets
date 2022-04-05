@@ -74,12 +74,14 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textFieldCuota;
-	private final JButton btnNewButton_1 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JButton btnNewButton_2 = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton jButtonListaEventosFinalizados = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton jButtonCerrarEvento = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3 = new JLabel(); 
 	private final JLabel lblNewLabel_4 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_4.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3_1 = new JLabel();
+	private final JButton jButtonCerrarConsulta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
@@ -91,6 +93,7 @@ public class CreateAndQueryGUI extends JFrame {
 
 	private void jbInit(Vector<domain.Event> v) throws Exception {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(915, 450));
@@ -98,7 +101,7 @@ public class CreateAndQueryGUI extends JFrame {
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-					
+				jButtonPronostico.setEnabled(false);
 					domain.Event ev=(domain.Event)jComboBoxEvents.getSelectedItem(); // obtain ev object
 				
 					if(ev!=null) {
@@ -194,6 +197,8 @@ public class CreateAndQueryGUI extends JFrame {
 		// Code for JCalendar
 		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent propertychangeevent) {
+				
+				jButtonPronostico.setEnabled(false);
 				jLabelError.setText("");
 				jLabelMsg.setText("");
 				jLabelMsg2.setText("");
@@ -365,7 +370,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
 		scrollPanePronostico.setBounds(600, 158, 250, 111);
-		
+		jButtonPronostico.setEnabled(false);
 		tableQueries.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -373,12 +378,21 @@ public class CreateAndQueryGUI extends JFrame {
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
 				Question q = ev.getQuest(i);
 				boolean isclosedQue=q.isIsclosed();
+				LocalDateTime time=LocalDateTime.now();
+				Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
+				BLFacade facade = MainGUI.getBusinessLogic();
+				boolean isCerrado= facade.isEventoCerrar(date, q.getEvent());
+				if(isCerrado & !isclosedQue) {
+					jButtonCerrarConsulta.setEnabled(true);
+				}else {
+					jButtonPronostico.setEnabled(true);
+				}
 				if(isclosedQue) {
 					lblNewLabel_3.setText("Consulta Cerrada");
 				}else {lblNewLabel_3.setText("Consulta sin cerrar");}
 			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
-				BLFacade facade = MainGUI.getBusinessLogic();
+				
                 try {
                 	List<Pronostico> pronosticos=facade.findPronosticos(q);
                 
@@ -541,54 +555,69 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(textFieldCuota);
 		textFieldCuota.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		
 		lblNewLabel_1.setBounds(604, 309, 45, 18);
 		getContentPane().add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
-		btnNewButton.addActionListener(new ActionListener() {
+
+		jButtonCerrarConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Event ev= (Event) jComboBoxEvents.getSelectedItem();
-				if(ev!=null) {
-					int i= tableQueries.getSelectedRow();	
-					Question q = facade.getQuestion(ev,i);
-					if(!q.isIsclosed()) {
-						int ind= tablePronosticos.getSelectedRow();
-						Pronostico pro= q.getPronosticos().elementAt(ind);
-						facade.cerrarApuesta(pro);
-						lblNewLabel_3.setText("Consulta Finalizado");
-					}else {
-						lblNewLabel_3.setText("La consulta ya esta finalizada");
-					}
+				jButtonCerrarEvento.setEnabled(true);
+				jButtonCerrarConsulta.setEnabled(false);
+				try {
+					Event ev= (Event) jComboBoxEvents.getSelectedItem();
+					if(ev!=null) {
+						int i= tableQueries.getSelectedRow();	
+						Question q = facade.getQuestion(ev,i);
+						if(!q.isIsclosed()) {
+							int ind= tablePronosticos.getSelectedRow();
+							Pronostico pro= q.getPronosticos().elementAt(ind);
+							facade.cerrarApuesta(pro);
+							lblNewLabel_3.setText("Consulta Finalizado");
+						}else {
+							lblNewLabel_3.setText("La consulta ya esta finalizada");
+						}
 					
-				}   
+					}
+				}catch(Exception e1) {
+					e1.printStackTrace();
+					lblNewLabel_3.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosNoSelect"));
+				}
 			}
 		});
-		btnNewButton.setBounds(299, 145, 250, 20);
-		getContentPane().add(btnNewButton);
+		
+		jButtonCerrarConsulta.setBounds(299, 145, 250, 20);
+		getContentPane().add(jButtonCerrarConsulta);
+		jButtonCerrarConsulta.setEnabled(false);
 		
 		JLabel closebetLabelError = new JLabel(); 
 		closebetLabelError.setBounds(600, 387, 250, 16);
 		getContentPane().add(closebetLabelError);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		jButtonListaEventosFinalizados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+						jButtonCreate.setEnabled(false);
 						LocalDateTime time=LocalDateTime.now();
 						Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
 						Vector<Event> eventos= facade.getEventosAc(date);
 						modelEvents.removeAllElements();
 						for(Event ev: eventos) {
-							
-							modelEvents.addElement(ev);
+							if(!ev.isClosed()) {
+								modelEvents.addElement(ev);
+							}
 			
+						}
+						if(modelEvents.getSize()!=0) {
+							jButtonCerrarConsulta.setEnabled(true);
 						}
 			}
 		});
-		btnNewButton_1.setBounds(298, 114, 251, 21);
+		jButtonListaEventosFinalizados.setBounds(298, 114, 251, 21);
 		
-		getContentPane().add(btnNewButton_1);
-		btnNewButton_2.addActionListener(new ActionListener() {
+		jButtonCerrarEvento.setEnabled(false);
+		getContentPane().add(jButtonListaEventosFinalizados);
+		jButtonCerrarEvento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				jButtonCerrarEvento.setEnabled(false);
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
 				boolean comp=true;
 				for(Question q: facade.getQuestionList(ev)) {
@@ -597,12 +626,13 @@ public class CreateAndQueryGUI extends JFrame {
 				if(comp) {
 					facade.cerrarEvento(ev);
 					lblNewLabel_3_1.setText("Evento cerrado");
+					modelEvents.removeElement(jComboBoxEvents.getSelectedItem());
 				}else lblNewLabel_3_1.setText("Hay consulta sin finalizar");
 			}
 		});
-		btnNewButton_2.setBounds(299, 175, 250, 21);
+		jButtonCerrarEvento.setBounds(299, 175, 250, 21);
 		
-		getContentPane().add(btnNewButton_2);
+		getContentPane().add(jButtonCerrarEvento);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblNewLabel_2.setBounds(303, 91, 112, 13);
 		

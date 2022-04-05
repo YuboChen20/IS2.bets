@@ -146,7 +146,8 @@ public class DataAccess  {
 			db.persist(q3);
 			db.persist(q4);
 			db.persist(q5);
-			db.persist(q6); 
+			db.persist(q6);
+			
 	
 	        
 			db.persist(ev1);

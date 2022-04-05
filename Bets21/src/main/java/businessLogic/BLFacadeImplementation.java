@@ -212,6 +212,12 @@ public class BLFacadeImplementation  implements BLFacade {
     	this.dbManager.close();
     	return vec;
     }
+    @WebMethod public boolean isEventoCerrar(Date date,Event evento) {
+    	Vector<Event> vec= this.getEventosAc(date);
+    	boolean res=vec.contains(evento);
+    	return res;
+    }
+    
     @WebMethod public void cerrarApuesta(Pronostico prono) {
     	this.dbManager.open(false);
     	this.dbManager.cerrarApuesta(prono);

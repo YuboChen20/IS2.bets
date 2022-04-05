@@ -69,6 +69,7 @@ public interface BLFacade  {
 	@WebMethod public int crearApuesta(Usuario user, double pr, Pronostico p);
 	@WebMethod public void aumentarDinero(Usuario user,double cant);
 	@WebMethod public Vector<Event> getEventosAc(Date date);
+	@WebMethod public boolean isEventoCerrar(Date date,Event evento);
 	@WebMethod public void cerrarApuesta(Pronostico prono);
 	@WebMethod public Question getQuestion(Event e,int i);
 	@WebMethod public Vector<Question> getQuestionList(Event e);
