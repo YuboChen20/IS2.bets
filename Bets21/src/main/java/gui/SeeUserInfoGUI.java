@@ -117,22 +117,22 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		JLabel lblNewLabel_5 = new JLabel("Ganancia :");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_5.setBounds(29, 448, 84, 17);
+		lblNewLabel_5.setBounds(29, 484, 84, 17);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("% De Apuesta :");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_6.setBounds(221, 446, 128, 21);
+		lblNewLabel_6.setBounds(221, 482, 128, 21);
 		contentPane.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("Inversi\u00F3n :");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_7.setBounds(29, 484, 120, 21);
+		lblNewLabel_7.setBounds(29, 515, 120, 21);
 		contentPane.add(lblNewLabel_7);
 		
 		JLabel lblNewLabel_8 = new JLabel("Cuota Final :");
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_8.setBounds(231, 484, 110, 21);
+		lblNewLabel_8.setBounds(221, 515, 110, 21);
 		contentPane.add(lblNewLabel_8);
 		
 		JLabel lblNewLabel_9 = new JLabel(user.getUserName());
@@ -157,27 +157,27 @@ public class SeeUserInfoGUI extends JFrame {
 		
 		JLabel lblNewLabel_10_3 = new JLabel("");
 		lblNewLabel_10_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_3.setBounds(144, 404, 286, 21);
+		lblNewLabel_10_3.setBounds(138, 404, 286, 28);
 		contentPane.add(lblNewLabel_10_3);
 		
 		JLabel lblNewLabel_10_4 = new JLabel("");
 		lblNewLabel_10_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_4.setBounds(114, 446, 97, 21);
+		lblNewLabel_10_4.setBounds(114, 480, 97, 21);
 		contentPane.add(lblNewLabel_10_4);
 		
 		JLabel lblNewLabel_10_4_1 = new JLabel("");
 		lblNewLabel_10_4_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_4_1.setBounds(115, 484, 106, 21);
+		lblNewLabel_10_4_1.setBounds(115, 515, 106, 21);
 		contentPane.add(lblNewLabel_10_4_1);
 		
 		JLabel lblNewLabel_10_4_2 = new JLabel("");
 		lblNewLabel_10_4_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_4_2.setBounds(342, 448, 97, 21);
+		lblNewLabel_10_4_2.setBounds(340, 480, 97, 21);
 		contentPane.add(lblNewLabel_10_4_2);
 		
 		JLabel lblNewLabel_10_4_3 = new JLabel("");
 		lblNewLabel_10_4_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_10_4_3.setBounds(329, 484, 110, 21);
+		lblNewLabel_10_4_3.setBounds(314, 515, 110, 21);
 		contentPane.add(lblNewLabel_10_4_3);
 		
 		JScrollPane scrollPanePronostico = new JScrollPane();
@@ -210,7 +210,7 @@ public class SeeUserInfoGUI extends JFrame {
 		textField = new JTextField();
 		textField.setForeground(Color.BLACK);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField.setBounds(204, 532, 216, 22);
+		textField.setBounds(204, 563, 216, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		lblNewLabel_12.setText(user.getDinero()+"");
@@ -242,7 +242,7 @@ public class SeeUserInfoGUI extends JFrame {
 		});
 
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnNewButton.setBounds(29, 533, 165, 21);
+		btnNewButton.setBounds(29, 564, 165, 21);
 		contentPane.add(btnNewButton);
 
 
@@ -255,6 +255,16 @@ public class SeeUserInfoGUI extends JFrame {
     		tableModelPronostico.addRow(row);	
         }
 		lblNewLabel_12.setText(user.getDinero()+" €");
+		
+		JLabel lblNewLabel_13 = new JLabel("Estado de la apuesta :");
+		lblNewLabel_13.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_13.setBounds(29, 442, 172, 20);
+		contentPane.add(lblNewLabel_13);
+		
+		JLabel lblNewLabel_14 = new JLabel("");
+		lblNewLabel_14.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_14.setBounds(191, 442, 199, 21);
+		contentPane.add(lblNewLabel_14);
         tablePronosticos.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -264,6 +274,13 @@ public class SeeUserInfoGUI extends JFrame {
 			    Pronostico pro=ap.getPronostico();
 			    Question qu=pro.getQuestion();
 			    Event ev= qu.getEvent();
+			    Question q= facade.getQuestion(qu);
+			   
+			    if(!ev.isClosed())lblNewLabel_14.setText("Abierto");
+			    else if(q.isIsclosed()) lblNewLabel_14.setText("Finalizado");
+			    else lblNewLabel_14.setText("En proceso");
+			    	
+			  
 			    
 			    lblNewLabel_10_2.setText(ev.getDescription());
 			    lblNewLabel_10_3.setText(ev.getEventDate()+"");

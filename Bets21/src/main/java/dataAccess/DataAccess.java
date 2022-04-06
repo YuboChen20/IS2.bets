@@ -85,7 +85,7 @@ public class DataAccess  {
 			Event ev19=new Event(19, "Real Sociedad-Levante", UtilDate.newDate(year,month+1,28));
 			Event ev20=new Event(20, "Betis-Real Madrid", UtilDate.newDate(year,month+1,28));
 			Event ev21=new Event(21, "Betis-Real Madrid", UtilDate.newDate(year,month-2,28));
-			
+			Event ev22=new Event(22, "FCB-Real Madrid", UtilDate.newDate(year,month-2,28));
 			
 			Question q1;
 			Question q2;
@@ -94,8 +94,12 @@ public class DataAccess  {
 			Question q5;
 			Question q6;
 			Question q7;
-				
+			Question q8;
+			Question q9;	
+			
 			q7=ev21.addQuestion("¿Habrá goles en la primera parte?",2);
+			q8=ev21.addQuestion("¿Habrá goles en la segunda parte?",2);
+			q9=ev22.addQuestion("¿Habrá goles en la segunda parte?",2);
 			if (Locale.getDefault().equals(new Locale("es"))) {
 				q1=ev1.addQuestion("¿Quién ganará el partido?",1);
 				q2=ev1.addQuestion("¿Quién meterá el primer gol?",2);
@@ -132,23 +136,31 @@ public class DataAccess  {
 			q4.addPronostico(p4);
 			
 			Pronostico p5=new Pronostico("0-1",q7,1.2);
+			Pronostico p9=new Pronostico("1-0",q7,1.4);
+			Pronostico p10=new Pronostico("0-4",q8,1.2);
+			Pronostico p11=new Pronostico("0-4",q9,1.2);
+		
 			Pronostico p6=new Pronostico("0-2",q3,1.4);
 			Pronostico p7=new Pronostico("0-3",q3,1.2);
 			Pronostico p8=new Pronostico("0-4",q3,1.2);
-			q3.addPronostico(p5);
+			
+			
 			q3.addPronostico(p6);
 			q3.addPronostico(p7);
 			q3.addPronostico(p8);
 			q7.addPronostico(p5);
-			
+			q7.addPronostico(p9);
+			q8.addPronostico(p10);
+			q9.addPronostico(p11);
 			db.persist(q1);
 			db.persist(q2);
 			db.persist(q3);
 			db.persist(q4);
 			db.persist(q5);
 			db.persist(q6);
-			
-	
+			db.persist(q7);
+			db.persist(q8);
+			db.persist(q9);
 	        
 			db.persist(ev1);
 			db.persist(ev2);
@@ -171,6 +183,7 @@ public class DataAccess  {
 			db.persist(ev19);
 			db.persist(ev20);		
 			db.persist(ev21);		
+			db.persist(ev22);	
 			
 			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
 			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
@@ -192,7 +205,13 @@ public class DataAccess  {
 			db.persist(p2);
 			db.persist(p3);
 			db.persist(p4);
-			
+			db.persist(p5);
+			db.persist(p6);
+			db.persist(p7);
+			db.persist(p8);
+			db.persist(p9);
+			db.persist(p10);
+			db.persist(p11);
 		    db.getTransaction().commit();		
 			this.crearApuesta(user,10,p1);
 			this.crearApuesta(user,12,p5);
@@ -461,7 +480,7 @@ public class DataAccess  {
 		query.setParameter(1, date);
 		List<Event> events = query.getResultList();
 	 	 for (Event ev:events){
-	 	   if(!ev.getEstadoCerrado()) {
+	 	   if(!ev.getisFinished()) {
 	 		   System.out.println("Eventos ya terminados :"+ev.toString() + "del dia: " +ev.getEventDate().toString());		 
 	 		   res.add(ev);
 		   }
@@ -491,19 +510,23 @@ public class DataAccess  {
 		Event e=db.find(Event.class, ev.getEventNumber());
 		db.getTransaction().begin();
 		e.setClosed(true);
+		db.persist(e);
 		db.getTransaction().commit();
 	}
 
 	public void finalizarApuesta(Date date) {
 		db.getTransaction().begin();
 		for(Event ev: this.getEventstoClose(date)) {
-			if(!ev.getEstadoCerrado()) {
-				ev.setEstadoCerrado(false);
+			if(!ev.getisFinished()) {
+				ev.setisFinished(false);
 				}
 		}
 		db.getTransaction().commit();
 	}
 	
-	
+	public Question getQuestion(Question q) {
+		Question qu=db.find(Question.class, q.getQuestionNumber());
+		return qu;
+	}
 
 }

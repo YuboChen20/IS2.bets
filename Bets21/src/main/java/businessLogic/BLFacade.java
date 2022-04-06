@@ -74,5 +74,5 @@ public interface BLFacade  {
 	@WebMethod public Question getQuestion(Event e,int i);
 	@WebMethod public Vector<Question> getQuestionList(Event e);
 	@WebMethod public void cerrarEvento(Event e);
-	
+	@WebMethod public Question getQuestion(Question q);
 }

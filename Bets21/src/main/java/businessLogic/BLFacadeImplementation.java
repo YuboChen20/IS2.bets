@@ -242,6 +242,12 @@ public class BLFacadeImplementation  implements BLFacade {
     	this.dbManager.close();    	this.dbManager.open(false);
  
     }
+    @WebMethod public Question getQuestion(Question q) {
+    	this.dbManager.open(false);
+    	Question qu= this.dbManager.getQuestion(q);
+    	this.dbManager.close();
+    	return qu;
+    }
   
     
 }
