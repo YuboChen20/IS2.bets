@@ -8,7 +8,7 @@
   <database local="true">
 	<databaseNode>0.0.0.0</databaseNode>
 	<dbFilename>src/main/resources/bets.temp</dbFilename>
-	<dataBaseOpenMode>initialize</dataBaseOpenMode>
+	<dataBaseOpenMode>open</dataBaseOpenMode>
 	<databasePort>6136</databasePort>
 	<user>admin</user>
 	<password>admin</password>

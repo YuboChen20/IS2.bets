@@ -75,10 +75,10 @@ public class SeeUserInfoGUI extends JFrame {
 	 */
 
 	
-	public SeeUserInfoGUI(Usuario user) {
+	public SeeUserInfoGUI(Usuario us) {
 		BLFacade facade = MainGUI.getBusinessLogic(); 
-		List<Bet>apuestas = facade.getBet(user);
-		
+		List<Bet>apuestas = facade.getBet(us);
+		Usuario user =facade.getUser(us);
 		
 		setTitle("Informacion del usuario");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

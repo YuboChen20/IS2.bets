@@ -222,8 +222,7 @@ public class BLFacadeImplementation  implements BLFacade {
     @WebMethod public void cerrarApuesta(Pronostico prono) {
     	this.dbManager.open(false);
     	this.dbManager.cerrarApuesta(prono);
-    	this.dbManager.close();
-    }
+    	this.dbManager.close();    }
     @WebMethod public Question getQuestion(Event e,int i) {
     	this.dbManager.open(false);
     	Question q= this.dbManager.getQuestion(e,i);
@@ -247,8 +246,14 @@ public class BLFacadeImplementation  implements BLFacade {
     	Question qu= this.dbManager.getQuestion(q);
     	this.dbManager.close();
     	return qu;
+    	
     }
   
-    
+    @WebMethod public Usuario getUser(Usuario user) {
+    	this.dbManager.open(false);
+    	Usuario u= this.dbManager.getUser(user);
+    	this.dbManager.close();
+    	return u;
+    }
 }
 

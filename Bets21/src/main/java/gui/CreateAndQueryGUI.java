@@ -108,7 +108,7 @@ public class CreateAndQueryGUI extends JFrame {
 						if(ev.isClosed()) {
 							lblNewLabel_3_1.setText("Evento  cerrado");
 						}else {
-							lblNewLabel_3_1.setText("Evento sin cerrado");
+							lblNewLabel_3_1.setText("Evento sin cerrar");
 						}
 						Vector<Question> queries=ev.getQuestions();
 						
@@ -379,7 +379,7 @@ public class CreateAndQueryGUI extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				int i=tableQueries.getSelectedRow();
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
-				Question q = ev.getQuest(i);
+				Question q = facade.getQuestion(ev, i);
 				boolean isclosedQue=q.isIsclosed();
 				LocalDateTime time=LocalDateTime.now();
 				Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
@@ -586,7 +586,7 @@ public class CreateAndQueryGUI extends JFrame {
 							int ind= tablePronosticos.getSelectedRow();
 							Pronostico pro= q.getPronosticos().elementAt(ind);
 							facade.cerrarApuesta(pro);
-							lblNewLabel_3.setText("Consulta Finalizado");
+							lblNewLabel_3.setText("Consulta Finalizada");
 						}else {
 							lblNewLabel_3.setText("La consulta ya esta finalizada");
 						}

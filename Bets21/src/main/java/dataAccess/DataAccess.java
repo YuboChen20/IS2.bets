@@ -450,6 +450,7 @@ public class DataAccess  {
 		
 		db.getTransaction().begin();
 		q. addNºApuesta();
+		u.setDinero(d);
 		user.setDinero(d);
 		Bet b=new Bet(p, u, apuesta);
 		p.addApuesta(b);
@@ -465,8 +466,8 @@ public class DataAccess  {
 	public void aumentarDinero(Usuario user, double cant) {
 		Usuario us=db.find(Usuario.class, user.getUserName());
 		db.getTransaction().begin();
-		user.addDinero(cant);
 		us.addDinero(cant);
+		user.addDinero(cant);
 		db.getTransaction().commit();
 		System.out.println(">> DataAccess: addDinero=> Usuario= "+user.getUserName() +" Ha aportado " + cant +" se le queda comp " + us.getDinero() );
 	}
@@ -528,5 +529,9 @@ public class DataAccess  {
 		Question qu=db.find(Question.class, q.getQuestionNumber());
 		return qu;
 	}
-
+	
+	public Usuario getUser(Usuario user) {
+		Usuario u= db.find(Usuario.class, user.getUserName());
+		return u;
+	}
 }
