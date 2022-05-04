@@ -1,5 +1,7 @@
 package dataAccess;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 //hello
 import java.util.Calendar;
@@ -144,7 +146,6 @@ public class DataAccess  {
 			Pronostico p7=new Pronostico("0-3",q3,1.2);
 			Pronostico p8=new Pronostico("0-4",q3,1.2);
 			
-			
 			q3.addPronostico(p6);
 			q3.addPronostico(p7);
 			q3.addPronostico(p8);
@@ -152,6 +153,15 @@ public class DataAccess  {
 			q7.addPronostico(p9);
 			q8.addPronostico(p10);
 			q9.addPronostico(p11);
+			
+			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
+			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
+			Usuario admi1= new Usuario("Silvia","contraseña",null,true,null);
+			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
+			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
+			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
+			
+						
 			db.persist(q1);
 			db.persist(q2);
 			db.persist(q3);
@@ -185,13 +195,7 @@ public class DataAccess  {
 			db.persist(ev21);		
 			db.persist(ev22);	
 			
-			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
-			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
-			Usuario admi1= new Usuario("Silvia","contraseña",null,true,null);
-			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
-			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
-			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
-			
+
 
 				
 
@@ -215,6 +219,13 @@ public class DataAccess  {
 		    db.getTransaction().commit();		
 			this.crearApuesta(user,10,p1);
 			this.crearApuesta(user,12,p5);
+			
+		    LocalDateTime now = LocalDateTime.now();     
+		    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+		    String formatDateTime = now.format(format);  
+			
+			this.createComent("Hola", ev11, user, formatDateTime);
+			this.createComent("Va a ganar Atletico", ev11, user, formatDateTime);
 		    System.out.println("Db initialized");
 
 		}
@@ -533,5 +544,22 @@ public class DataAccess  {
 	public Usuario getUser(Usuario user) {
 		Usuario u= db.find(Usuario.class, user.getUserName());
 		return u;
+	}
+	
+	public Comentarios createComent (String text, Event ev, Usuario us, String Date) {
+		Usuario user= db.find(Usuario.class, us.getUserName());
+		Event eve=db.find(Event.class, ev.getEventNumber());
+		db.getTransaction().begin();
+		Comentarios cm= new Comentarios(text, eve,  user, Date);
+		db.persist(cm);
+		eve.addCom(cm);
+		user.addCom(cm);
+		db.getTransaction().commit();
+		return cm;
+	}
+	
+	public Event getEventoActualizado(Event ev) {
+		Event eve=db.find(Event.class,ev.getEventNumber() );
+		return eve;
 	}
 }

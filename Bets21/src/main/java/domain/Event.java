@@ -26,6 +26,9 @@ public class Event implements Serializable {
 	private Date eventDate;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Question> questions=new Vector<Question>();
+	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private Vector<Comentarios> comentarios= new Vector<Comentarios>();
 	private boolean isFinished;
 	private boolean isClosed;
 	public Vector<Question> getQuestions() {
@@ -110,8 +113,20 @@ public class Event implements Serializable {
 		return false;
 	}
 		
-
+	public Comentarios addCom(Comentarios c) {
+		comentarios.add(c);
+		return c;
+	}
 	
+	
+	public Vector<Comentarios> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(Vector<Comentarios> comentarios) {
+		this.comentarios = comentarios;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

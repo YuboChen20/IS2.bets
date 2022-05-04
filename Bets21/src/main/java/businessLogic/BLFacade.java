@@ -76,4 +76,6 @@ public interface BLFacade  {
 	@WebMethod public void cerrarEvento(Event e);
 	@WebMethod public Question getQuestion(Question q);
 	@WebMethod public Usuario getUser(Usuario user);	
+	@WebMethod public Comentarios createComent(String text,Event ev, Usuario us);
+	@WebMethod public Event getEventoactualizado(Event ev);
 }

@@ -1,6 +1,7 @@
 package businessLogic;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -254,6 +255,23 @@ public class BLFacadeImplementation  implements BLFacade {
     	Usuario u= this.dbManager.getUser(user);
     	this.dbManager.close();
     	return u;
+    }
+    
+    @WebMethod public Comentarios createComent(String text,Event ev, Usuario us) {
+	    LocalDateTime now = LocalDateTime.now();     
+	    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+	    String formatDateTime = now.format(format);  
+		this.dbManager.open(false);
+		Comentarios com= dbManager.createComent(text, ev, us, formatDateTime);
+		this.dbManager.close();
+		return com;
+    }
+    
+    @WebMethod public Event getEventoactualizado(Event ev) {
+    	this.dbManager.open(false);
+    	Event eve = this.dbManager.getEventoActualizado(ev);
+    	this.dbManager.close();
+    	return eve;
     }
 }
 

@@ -28,7 +28,8 @@ public class Usuario{
 	private boolean admin;
 	private double dinero;
 	private Vector<Bet> apuestas = new Vector<Bet>();
-	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private Vector<Comentarios> comentarios= new Vector<Comentarios>();
     public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
     	this.password=passwor;
@@ -113,6 +114,10 @@ public class Usuario{
 	public void addDinero(double cant){
 		this.dinero=dinero + cant;
 		
+	}
+	public Comentarios addCom(Comentarios c) {
+		comentarios.add(c);
+		return c;
 	}
 	
 	
