@@ -50,8 +50,7 @@ public class SeeUserInfoGUI extends JFrame {
 
 	};
 	private JTextField textField;
-
-
+   
 	/**
 	 * Launch the application.
 	 */
