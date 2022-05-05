@@ -273,5 +273,12 @@ public class BLFacadeImplementation  implements BLFacade {
     	this.dbManager.close();
     	return eve;
     }
+    @WebMethod 
+    public Vector<Event> getEventosFinalizadosNoCerrados(Date date){
+    	dbManager.open(false);
+		Vector<Event>  events=dbManager.getEventosFinalizadosNoCerrados(date);
+		dbManager.close();
+		return events;
+    }
 }
 

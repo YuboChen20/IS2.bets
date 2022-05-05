@@ -562,4 +562,15 @@ public class DataAccess  {
 		Event eve=db.find(Event.class,ev.getEventNumber() );
 		return eve;
 	}
+	public Vector<Event> getEventosFinalizadosNoCerrados(Date date){
+		Vector<Event> eventos = getEventstoClose(date);
+		Vector<Event> even = new Vector<Event>();
+ 		for(Event ev: eventos) {
+			if(!ev.isClosed()) {
+				even.add(ev);
+			}
+		}
+ 		return even;
+		
+	}
 }

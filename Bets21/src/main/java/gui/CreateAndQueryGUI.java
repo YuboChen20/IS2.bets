@@ -74,14 +74,10 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textFieldCuota;
-	private final JButton jButtonListaEventosFinalizados = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JButton jButtonCerrarEvento = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3 = new JLabel(); 
-	private final JLabel lblNewLabel_4 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_4.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3_1 = new JLabel();
-	private final JButton jButtonCerrarConsulta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton btnButtonCerrarApuesta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
@@ -380,19 +376,10 @@ public class CreateAndQueryGUI extends JFrame {
 				int i=tableQueries.getSelectedRow();
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
 				Question q = facade.getQuestion(ev, i);
-				boolean isclosedQue=q.isIsclosed();
 				LocalDateTime time=LocalDateTime.now();
 				Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
 				BLFacade facade = MainGUI.getBusinessLogic();
-				boolean isCerrado= facade.isEventoCerrar(date, q.getEvent());
-				if(isCerrado & !isclosedQue) {
-					jButtonCerrarConsulta.setEnabled(true);
-				}else {
-					jButtonPronostico.setEnabled(true);
-				}
-				if(isclosedQue) {
-					lblNewLabel_3.setText("Consulta Cerrada");
-				}else {lblNewLabel_3.setText("Consulta sin cerrar");}
+		
 			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
 				
@@ -572,99 +559,26 @@ public class CreateAndQueryGUI extends JFrame {
 		lblNewLabel_1.setBounds(604, 309, 45, 18);
 		getContentPane().add(lblNewLabel_1);
 		
-
-		jButtonCerrarConsulta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				jButtonCerrarEvento.setEnabled(true);
-				jButtonCerrarConsulta.setEnabled(false);
-				try {
-					Event ev= (Event) jComboBoxEvents.getSelectedItem();
-					if(ev!=null) {
-						int i= tableQueries.getSelectedRow();	
-						Question q = facade.getQuestion(ev,i);
-						if(!q.isIsclosed()) {
-							int ind= tablePronosticos.getSelectedRow();
-							Pronostico pro= q.getPronosticos().elementAt(ind);
-							facade.cerrarApuesta(pro);
-							lblNewLabel_3.setText("Consulta Finalizada");
-						}else {
-							lblNewLabel_3.setText("La consulta ya esta finalizada");
-						}
-					
-					}
-				}catch(Exception e1) {
-					e1.printStackTrace();
-					lblNewLabel_3.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosNoSelect"));
-				}
-			}
-		});
-		
-		jButtonCerrarConsulta.setBounds(299, 145, 250, 20);
-		getContentPane().add(jButtonCerrarConsulta);
-		jButtonCerrarConsulta.setEnabled(false);
-		
 		JLabel closebetLabelError = new JLabel(); 
 		closebetLabelError.setBounds(600, 387, 250, 16);
 		getContentPane().add(closebetLabelError);
-		jButtonListaEventosFinalizados.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-						jButtonCreate.setEnabled(false);
-						LocalDateTime time=LocalDateTime.now();
-						Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
-						Vector<Event> eventos= facade.getEventosAc(date);
-						modelEvents.removeAllElements();
-						for(Event ev: eventos) {
-							if(!ev.isClosed()) {
-								modelEvents.addElement(ev);
-							}
-			
-						}
-						if(modelEvents.getSize()!=0) {
-							jButtonCerrarConsulta.setEnabled(true);
-						}
-			}
-		});
-		jButtonListaEventosFinalizados.setBounds(298, 114, 251, 21);
-		
-		jButtonCerrarEvento.setEnabled(false);
-		getContentPane().add(jButtonListaEventosFinalizados);
-		jButtonCerrarEvento.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				jButtonCerrarEvento.setEnabled(false);
-				Event ev= (Event) jComboBoxEvents.getSelectedItem();
-				boolean comp=true;
-				for(Question q: facade.getQuestionList(ev)) {
-					if(!q.isIsclosed()) comp=false;
-				}
-				if(comp) {
-					facade.cerrarEvento(ev);
-					lblNewLabel_3_1.setText("Evento cerrado");
-					modelEvents.removeElement(jComboBoxEvents.getSelectedItem());
-				}else lblNewLabel_3_1.setText("Hay consulta sin finalizar");
-			}
-		});
-		jButtonCerrarEvento.setBounds(299, 175, 250, 21);
-		
-		getContentPane().add(jButtonCerrarEvento);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblNewLabel_2.setBounds(303, 91, 112, 13);
-		
-		getContentPane().add(lblNewLabel_2);
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblNewLabel_3.setBounds(404, 91, 120, 13);
 		
 		getContentPane().add(lblNewLabel_3);
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblNewLabel_4.setBounds(303, 80, 91, 13);
-		
-		getContentPane().add(lblNewLabel_4);
 		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblNewLabel_3_1.setBounds(404, 80, 145, 13);
 		
 		getContentPane().add(lblNewLabel_3_1);
 		
 
-		
+		btnButtonCerrarApuesta.setBounds(591, 11, 133, 23);
+		btnButtonCerrarApuesta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonCerrarApuesta_actionPerformed(e);
+			}
+		});
+		getContentPane().add(btnButtonCerrarApuesta);
 
 		//////
 
@@ -783,7 +697,11 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 
 	
 	
-	
+	private void jButtonCerrarApuesta_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		CloseBetGUI a =new CloseBetGUI(new Vector<Event>());
+		a.setVisible(true);;
+	}
 	
 	
 	

@@ -78,4 +78,5 @@ public interface BLFacade  {
 	@WebMethod public Usuario getUser(Usuario user);	
 	@WebMethod public Comentarios createComent(String text,Event ev, Usuario us);
 	@WebMethod public Event getEventoactualizado(Event ev);
+	@WebMethod public Vector<Event> getEventosFinalizadosNoCerrados(Date date);	
 }
