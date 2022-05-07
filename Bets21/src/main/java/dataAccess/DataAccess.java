@@ -22,6 +22,7 @@ import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.*;
 import exceptions.QuestionAlreadyExist;
+import exceptions.UnknownTeamException;
 
 /**
  * It implements the data access to the objectDb database
@@ -55,6 +56,26 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		try {
 
+			Equipo atleticoDeMadrid= new Equipo("Atlético de Madrid");
+			Equipo atlheticDeBilbao= new Equipo("Athletic de Bilbao");
+			Equipo barcelona= new Equipo("Barcelona");
+			Equipo cadiz= new Equipo("Cádiz");
+			Equipo alaves= new Equipo("Alavés");
+			Equipo celtaDeVigo= new Equipo("Celta de Vigo");
+			Equipo elche= new Equipo("Elche");
+			Equipo espanyol= new Equipo("Espanyol");
+			Equipo getafe= new Equipo("Getafe");
+			Equipo granada= new Equipo("Granada");
+			Equipo levante= new Equipo("Levante");  
+			Equipo mallorca= new Equipo("Mallorca");
+			Equipo osasuna= new Equipo("Osasuna");
+			Equipo rayoVallecano= new Equipo("RayoVallecano");
+			Equipo realBetis= new Equipo("Real Betis");
+			Equipo realMadrid= new Equipo("Real Madrid");
+			Equipo realSociedad= new Equipo("Real Sociedad");
+			Equipo sevilla= new Equipo("Sevilla");
+			Equipo valencia= new Equipo("Valencia");
+			Equipo villareal= new Equipo("Villarreal");
 			
 		   Calendar today = Calendar.getInstance();
 		   
@@ -63,31 +84,31 @@ public class DataAccess  {
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=0; year+=1;}  
 	    
-			Event ev1=new Event(1, "Atlético-Athletic", UtilDate.newDate(year,month,17));
-			Event ev2=new Event(2, "Eibar-Barcelona", UtilDate.newDate(year,month,17));
-			Event ev3=new Event(3, "Getafe-Celta", UtilDate.newDate(year,month,17));
-			Event ev4=new Event(4, "Alavas-Deportivo", UtilDate.newDate(year,month,17));
-			Event ev5=new Event(5, "Español-Villareal", UtilDate.newDate(year,month,17));
-			Event ev6=new Event(6, "Las Palmas-Sevilla", UtilDate.newDate(year,month,17));
-			Event ev7=new Event(7, "Malaga-Valencia", UtilDate.newDate(year,month,17));
-			Event ev8=new Event(8, "Girona-Leganos", UtilDate.newDate(year,month,17));
-			Event ev9=new Event(9, "Real Sociedad-Levante", UtilDate.newDate(year,month,17));
-			Event ev10=new Event(10, "Betis-Real Madrid", UtilDate.newDate(year,month,17));
+		    Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,17));
+			Event ev2=new Event(2, "Elche-Barcelona", UtilDate.newDate(year,month,17));
+			Event ev3=new Event(3, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,17));
+			Event ev4=new Event(4, "Alavés-Osasuna", UtilDate.newDate(year,month,17));
+			Event ev5=new Event(5, "Espanyol-Villareal", UtilDate.newDate(year,month,17));
+			Event ev6=new Event(6, "Granada-Sevilla", UtilDate.newDate(year,month,17));
+			Event ev7=new Event(7, "Mallorca-Valencia", UtilDate.newDate(year,month,17));
+			Event ev8=new Event(8, "Cádiz-Rayo Vallecano", UtilDate.newDate(year,month,17));
+			Event ev9=new Event(9, "Real Betis-Levante", UtilDate.newDate(year,month,17));
+			Event ev10=new Event(10, "Real Sociedad-Real Madrid", UtilDate.newDate(year,month,17));
 
-			Event ev11=new Event(11, "Atletico-Athletic", UtilDate.newDate(year,month,1));
-			Event ev12=new Event(12, "Eibar-Barcelona", UtilDate.newDate(year,month,1));
-			Event ev13=new Event(13, "Getafe-Celta", UtilDate.newDate(year,month,1));
-			Event ev14=new Event(14, "Alavas-Deportivo", UtilDate.newDate(year,month,1));
-			Event ev15=new Event(15, "EspaÃ±ol-Villareal", UtilDate.newDate(year,month,1));
-			Event ev16=new Event(16, "Las Palmas-Sevilla", UtilDate.newDate(year,month,1));
+			Event ev11=new Event(11, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,1));
+			Event ev12=new Event(12, "Elche-Barcelona", UtilDate.newDate(year,month,1));
+			Event ev13=new Event(13, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,1));
+			Event ev14=new Event(14, "Alavés-Osasuna", UtilDate.newDate(year,month,1));
+			Event ev15=new Event(15, "Espanyol-Villareal", UtilDate.newDate(year,month,1));
+			Event ev16=new Event(16, "Granada-Sevilla", UtilDate.newDate(year,month,1));
 			
 
-			Event ev17=new Event(17, "Málaga-Valencia", UtilDate.newDate(year,month+1,28));
-			Event ev18=new Event(18, "Girona-Leganas", UtilDate.newDate(year,month+1,28));
-			Event ev19=new Event(19, "Real Sociedad-Levante", UtilDate.newDate(year,month+1,28));
-			Event ev20=new Event(20, "Betis-Real Madrid", UtilDate.newDate(year,month+1,28));
+			Event ev17=new Event(17, "Mallorca-Valencia", UtilDate.newDate(year,month+1,28));
+			Event ev18=new Event(18, "Cádiz-Rayo Vallecano", UtilDate.newDate(year,month+1,28));
+			Event ev19=new Event(19, "Real Betis-Levante", UtilDate.newDate(year,month+1,28));
+			Event ev20=new Event(20, "Real Sociedad-Real Madrid", UtilDate.newDate(year,month+1,28));
 			Event ev21=new Event(21, "Betis-Real Madrid", UtilDate.newDate(year,month-2,28));
-			Event ev22=new Event(22, "FCB-Real Madrid", UtilDate.newDate(year,month-2,28));
+			Event ev22=new Event(22, "Barcelona-Real Madrid", UtilDate.newDate(year,month-2,28));
 			
 			Question q1;
 			Question q2;
@@ -160,6 +181,29 @@ public class DataAccess  {
 			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
 			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
+			
+			
+			
+			db.persist(atleticoDeMadrid);
+			db.persist(atlheticDeBilbao);
+			db.persist(barcelona);
+			db.persist(cadiz);
+			db.persist(alaves);
+			db.persist(celtaDeVigo);
+			db.persist(elche);
+			db.persist(espanyol);
+			db.persist(getafe);
+			db.persist(granada);
+			db.persist(levante);
+			db.persist(mallorca);
+			db.persist(osasuna);
+			db.persist(rayoVallecano);
+			db.persist(realBetis);
+			db.persist(realMadrid);
+			db.persist(realSociedad);
+			db.persist(sevilla);
+			db.persist(valencia);
+			db.persist(villareal);
 			
 						
 			db.persist(q1);
@@ -354,8 +398,33 @@ public class DataAccess  {
 		if(!u.getPassword().equals(pass))return null;
 		return u;
 	}	
-	public Event createEvent(String inputDescription, Date firstDay) {
+	public Event createEvent(String inputDescription, Date firstDay) throws UnknownTeamException {
 		
+		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
+		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
+		query.setParameter(1, firstDay);
+		List<Event> eventos = query.getResultList();
+		if(eventos!=null) 
+			for(Event e: eventos)if(e.getDescription().equals(inputDescription))return null;
+		
+		db.getTransaction().begin();
+		Event ev=new Event(inputDescription,firstDay);
+		
+		
+		String[] equipos=inputDescription.split("-");
+		Equipo local= db.find(Equipo.class,equipos[0]);
+		Equipo visitante=db.find(Equipo.class,equipos[1]);
+		if(local==null || visitante==null) throw new UnknownTeamException();
+		ev.setEquipos(local, visitante);
+		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
+						// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		db.getTransaction().commit();
+		return ev;
+		
+	}
+	
+public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws UnknownTeamException {
+		String inputDescription=local.getNombre()+"-"+visitante.getNombre();
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
 		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
 		query.setParameter(1, firstDay);
@@ -367,6 +436,7 @@ public class DataAccess  {
 		Event ev=new Event(inputDescription,firstDay);
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 						// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		ev.setEquipos(local, visitante);
 		db.getTransaction().commit();
 		return ev;
 		
@@ -572,5 +642,12 @@ public class DataAccess  {
 		}
  		return even;
 		
+	}
+	
+	public List<Equipo> obtenerEquipos() {
+			TypedQuery<Equipo>  query = db.createQuery("SELECT e FROM Equipo e ",Equipo.class);
+			List<Equipo> equipos = query.getResultList();
+			for(Equipo eq:equipos)System.out.println(eq);
+			return equipos;
 	}
 }

@@ -14,9 +14,11 @@ import configuration.ConfigXML;
 import configuration.UtilDate;
 import dataAccess.DataAccess;
 import domain.*;
-import exceptions.EventFinished;
+import exceptions.EventAlreadyExistsException;
+import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
+import exceptions.UnknownTeamException;
 
 /**
  * It implements the business logic as a web service.
@@ -69,11 +71,11 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param question text of the question
 	 * @param betMinimum minimum quantity of the bet
 	 * @return the created question, or null, or an exception
-	 * @throws EventFinished if current data is after data of the event
+	 * @throws EventFinishedException if current data is after data of the event
  	 * @throws QuestionAlreadyExist if the same question already exists for the event
 	 */
    @WebMethod
-   public Question createQuestion(Event event, String question, float betMinimum) throws EventFinished, QuestionAlreadyExist{
+   public Question createQuestion(Event event, String question, float betMinimum) throws EventFinishedException, QuestionAlreadyExist{
 	   
 	    //The minimum bed must be greater than 0
 		dbManager.open(false);
@@ -81,7 +83,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		
 	    
 		if(new Date().compareTo(event.getEventDate())>0)
-			throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
+			throw new EventFinishedException(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
 				
 		
 		 qry=dbManager.createQuestion(event,question,betMinimum);		
@@ -154,19 +156,41 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     @WebMethod
-	public Event createEvent(String inputDescription, Date firstDay) throws EventFinished {
+	public Event createEvent(String inputDescription, Date firstDay) throws EventFinishedException, UnknownTeamException {
 		
 		dbManager.open(false);
 		Event ev=null;
 		
 	    
 		if(new Date().compareTo(firstDay)>0)
-			throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
+			throw new EventFinishedException(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
 				
 		
 		 //qry=dbManager.createQuestion(event,question,betMinimum);	
 		 ev=dbManager.createEvent(inputDescription,firstDay);
 		dbManager.close();
+		
+		return ev;
+		
+	}
+    
+    @WebMethod
+	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws EventFinishedException, UnknownTeamException, EventAlreadyExistsException {
+		
+		dbManager.open(false);
+		Event ev=null;
+		
+	    
+		if(new Date().compareTo(firstDay)>0)
+			throw new EventFinishedException(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
+		
+		
+		 //qry=dbManager.createQuestion(event,question,betMinimum);	
+		 ev=dbManager.createEvent(local, visitante, firstDay);
+		dbManager.close();
+		
+		if(ev==null)
+			throw new EventAlreadyExistsException();
 		
 		return ev;
 		
@@ -279,6 +303,15 @@ public class BLFacadeImplementation  implements BLFacade {
 		Vector<Event>  events=dbManager.getEventosFinalizadosNoCerrados(date);
 		dbManager.close();
 		return events;
+    }
+    
+    
+    @WebMethod 
+    public List<Equipo> obtenerEquipos(){
+    	dbManager.open(false);
+		List<Equipo>  equipos=dbManager.obtenerEquipos();
+		dbManager.close();
+		return equipos;
     }
 }
 

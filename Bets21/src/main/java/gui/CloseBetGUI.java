@@ -19,7 +19,7 @@ import configuration.UtilDate;
 import domain.Event;
 import domain.Pronostico;
 import domain.Question;
-import exceptions.EventFinished;
+import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import javax.swing.table.DefaultTableModel;

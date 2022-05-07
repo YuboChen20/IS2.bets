@@ -6,9 +6,11 @@ import java.util.List;
 
 //import domain.Booking;
 import domain.*;
-import exceptions.EventFinished;
+import exceptions.EventAlreadyExistsException;
+import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
+import exceptions.UnknownTeamException;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -27,10 +29,10 @@ public interface BLFacade  {
 	 * @param question text of the question
 	 * @param betMinimum minimum quantity of the bet
 	 * @return the created question, or null, or an exception
-	 * @throws EventFinished if current data is after data of the event
+	 * @throws EventFinishedException if current data is after data of the event
  	 * @throws QuestionAlreadyExist if the same question already exists for the event
 	 */
-	@WebMethod Question createQuestion(Event event, String question, float betMinimum) throws EventFinished, QuestionAlreadyExist;
+	@WebMethod Question createQuestion(Event event, String question, float betMinimum) throws EventFinishedException, QuestionAlreadyExist;
 	
 	
 	/**
@@ -59,7 +61,9 @@ public interface BLFacade  {
 	
 	@WebMethod public Usuario login(String user, String pass);
 	
-	@WebMethod public Event createEvent(String inputDescription, Date firstDay) throws EventFinished;
+	@WebMethod public Event createEvent(String inputDescription, Date firstDay) throws EventFinishedException, UnknownTeamException;
+	
+	@WebMethod public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws EventFinishedException, UnknownTeamException, EventAlreadyExistsException;
 	
 	@WebMethod public Question createPronostic(String pr,Event event,int i, double cuota) throws PronosticAlreadyExist;
 
@@ -79,4 +83,5 @@ public interface BLFacade  {
 	@WebMethod public Comentarios createComent(String text,Event ev, Usuario us);
 	@WebMethod public Event getEventoactualizado(Event ev);
 	@WebMethod public Vector<Event> getEventosFinalizadosNoCerrados(Date date);	
+	@WebMethod public List<Equipo> obtenerEquipos();
 }

@@ -27,6 +27,9 @@ public class Event implements Serializable {
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Question> questions=new Vector<Question>();
 	
+	@OneToMany(fetch=FetchType.EAGER)
+	private Equipo[] equipos= new Equipo[2];
+	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Comentarios> comentarios= new Vector<Comentarios>();
 	private boolean isFinished;
@@ -167,5 +170,15 @@ public class Event implements Serializable {
 	public void setClosed(boolean isClosed) {
 		this.isClosed = isClosed;
 	}
+
+	public Equipo[] getEquipos() {
+		return equipos;
+	}
+
+	public void setEquipos(Equipo local, Equipo visitante) {
+		this.equipos[0] = local;
+		this.equipos[1] = visitante;
+	}
+	
 	
 }

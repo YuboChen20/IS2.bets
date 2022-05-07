@@ -15,13 +15,18 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import businessLogic.BLFacade;
+import businessLogic.BLFacadeImplementation;
 import configuration.UtilDate;
+import domain.Equipo;
 import domain.Event;
 import domain.Pronostico;
 import domain.Question;
-import exceptions.EventFinished;
+import exceptions.EventAlreadyExistsException;
+import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
+import exceptions.UnknownTeamException;
+
 import javax.swing.table.DefaultTableModel;
 
 public class CreateAndQueryGUI extends JFrame {
@@ -65,7 +70,6 @@ public class CreateAndQueryGUI extends JFrame {
             ResourceBundle.getBundle("Etiquetas").getString("Cuota"),
            
 	};
-	private JTextField textFieldDescripcionEvento;
 	private final JLabel jLabelMsg2 = new JLabel();
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
@@ -78,6 +82,15 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JLabel lblNewLabel_3_1 = new JLabel();
 	private final JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton btnButtonCerrarApuesta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	
+	private JComboBox<Equipo> jComboBoxLocal = new JComboBox<Equipo>();
+	DefaultComboBoxModel<Equipo> modelLocal = new DefaultComboBoxModel<Equipo>();
+	private JComboBox<Equipo> jComboBoxVisitante = new JComboBox<Equipo>();
+	DefaultComboBoxModel<Equipo> modelVisitante = new DefaultComboBoxModel<Equipo>();
+	
+	int seleccionLocal=0;
+	int seleccionVisitante=1;
+	
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
@@ -155,7 +168,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		jLabelMsg.setFont(new Font("Tahoma", Font.PLAIN, 10));
 
-		jLabelMsg.setBounds(new Rectangle(130, 256, 250, 20));
+		jLabelMsg.setBounds(new Rectangle(303, 195, 250, 20));
 		jLabelMsg.setForeground(Color.red);
 		jLabelError.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		// jLabelMsg.setSize(new Dimension(305, 20));
@@ -312,54 +325,37 @@ public class CreateAndQueryGUI extends JFrame {
 					jLabelMsg2.setText("");
 
 					// Displays an exception if the query field is empty
-					String inputDescription=textFieldDescripcionEvento.getText();
+					//String inputDescription=textFieldDescripcionEvento.getText();
 
-					if (inputDescription.length() > 0 && firstDay!=null) {
-                            boolean NoErrorDiaPasado=true;
-                            boolean NoErrorYaCreado=true;
-							// Obtain the business logic from a StartWindow class (local or remote)
-							BLFacade facade = MainGUI.getBusinessLogic();
+					if (firstDay!=null) {
+						Equipo local= (Equipo) jComboBoxLocal.getSelectedItem();
+						Equipo visitante= (Equipo) jComboBoxVisitante.getSelectedItem();
+                         
+						// Obtain the business logic from a StartWindow class (local or remote)
+						BLFacade facade = MainGUI.getBusinessLogic();
 							
-							try {
-								Event event1=facade.createEvent(inputDescription,firstDay);
-								if(event1==null)NoErrorYaCreado=false;
-							}catch(Exception e1) {
-								jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
-								NoErrorDiaPasado=false;
-							}
-							
-                            if(NoErrorDiaPasado) {
-                            	if(NoErrorYaCreado) {
-                           		jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("EventCreated"));     
-        							jCalendar.setCalendar(calendarAct);
-        							facade = MainGUI.getBusinessLogic();
-        							datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar.getDate());
-        							paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
-                            		actualizarTabla();	
-                            	}else jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventAlreadyExisted"));
-                            }
-							
+						facade.createEvent(local,visitante,firstDay);
+						
+						jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("EventCreated"));     
+						jCalendar.setCalendar(calendarAct);
+						datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar.getDate());
+						paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
+                		actualizarTabla();		
 					}
-				} catch (Exception e1) {
-					e1.printStackTrace();
+				} catch(EventAlreadyExistsException e2) {
+					jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventAlreadyExisted"));
+				} catch(EventFinishedException e1) {
+					jLabelMsg2.setText("El evento a finalizado");
+				}  catch(Exception e3) {
+					e3.printStackTrace();
 				}
 	
 				
 			}
 		});
 		jButtonEvent.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonEvent.setBounds(419, 256, 130, 30);
+		jButtonEvent.setBounds(419, 231, 130, 30);
 		getContentPane().add(jButtonEvent);
-		
-		JLabel jLabelEventDescription = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jLabelEventDescription.text")); //$NON-NLS-1$ //$NON-NLS-2$
-		jLabelEventDescription.setBounds(new Rectangle(25, 211, 75, 20));
-		jLabelEventDescription.setBounds(40, 225, 91, 20);
-		getContentPane().add(jLabelEventDescription);
-		
-		textFieldDescripcionEvento = new JTextField();
-		textFieldDescripcionEvento.setBounds(new Rectangle(100, 211, 429, 20));
-		textFieldDescripcionEvento.setBounds(120, 226, 429, 20);
-		getContentPane().add(textFieldDescripcionEvento);
 		jLabelMsg2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		jLabelMsg2.setForeground(Color.RED);
 		jLabelMsg2.setBounds(new Rectangle(275, 191, 305, 20));
@@ -583,9 +579,83 @@ public class CreateAndQueryGUI extends JFrame {
 		//////
 
 		
+		jComboBoxLocal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				
+				int i = jComboBoxLocal.getSelectedIndex();
+				int j = jComboBoxVisitante.getSelectedIndex();
+				if(i==j) {
+					modelVisitante.setSelectedItem(modelVisitante.getElementAt(seleccionLocal));
+					seleccionVisitante=seleccionLocal;
+				}
+				
+				
+				seleccionLocal=i;
+				
+			}
+			
+				
+		});
 		
 		
 		
+		
+		
+		
+		jComboBoxLocal.setModel(modelLocal);
+		jComboBoxLocal.setBounds(new Rectangle(40, 231, 180, 20));
+		jComboBoxLocal.setVisible(true);
+		getContentPane().add(jComboBoxLocal);
+		
+		jComboBoxVisitante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int i = jComboBoxLocal.getSelectedIndex();
+				int j = jComboBoxVisitante.getSelectedIndex();
+				
+				if(i==j) {
+					modelLocal.setSelectedItem(modelLocal.getElementAt(seleccionVisitante));
+					seleccionLocal=seleccionVisitante;
+				}
+				seleccionVisitante=j;
+				
+				/*
+				if(i==j) {
+					System.out.println("ddddd "+seleccionVisitante);
+					jComboBoxLocal.setSelectedIndex(seleccionVisitante);
+					modelLocal.setSelectedItem(modelLocal.getElementAt(seleccionVisitante));
+					seleccionLocal=seleccionVisitante;
+				}
+				seleccionVisitante=j;
+				
+				*/
+				
+			}
+				
+			
+		});
+		
+
+		jComboBoxVisitante.setModel(modelVisitante);
+		jComboBoxVisitante.setBounds(new Rectangle(224, 231, 180, 20));
+		jComboBoxVisitante.setVisible(true);
+		
+		getContentPane().add(jComboBoxVisitante);
+		
+		
+		//obtener todos los equipos y meterselos a la jComboBoxLocal y a la jComboBoxVisitante
+		
+		
+				List<domain.Equipo> equipos=facade.obtenerEquipos();
+				
+				for (domain.Equipo eq : equipos) {
+					modelLocal.addElement(eq);
+					modelVisitante.addElement(eq);
+				}
+				//jComboBoxLocal.repaint();
+				//jComboBoxVisitante.repaint();
+				jComboBoxLocal.setSelectedIndex(0);
+				jComboBoxVisitante.setSelectedIndex(1);
 		
         
 	}
@@ -674,7 +744,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 				}
 			} else
 				jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorQuery"));
-		} catch (EventFinished e1) {
+		} catch (EventFinishedException e1) {
 			jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished") + ": "
 					+ event.getDescription());
 		} catch (QuestionAlreadyExist e1) {
