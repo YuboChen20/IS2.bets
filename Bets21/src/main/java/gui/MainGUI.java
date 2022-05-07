@@ -244,7 +244,7 @@ public class MainGUI extends JFrame {
 	}
 	
 	private void jB3_actionPerformed(ActionEvent e) {
-		JFrame a = new FindQuestionInvitadoGUI();
+		JFrame a = new FQuestionInvitado2();
 		a.setVisible(true);
 		this.setVisible(false);
 	}
