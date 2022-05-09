@@ -91,4 +91,6 @@ public interface BLFacade  {
 	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli);
 	@WebMethod public List<String> getAllNoticiasAuthor();
 	@WebMethod public List<Noticia> getNoticiasAuthor(String aut);
+	@WebMethod public List<String> getAllNoticiasMedio();
+	@WebMethod public List<Noticia> getNoticiasMedio(String med);
 }

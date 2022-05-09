@@ -865,4 +865,21 @@ public class DataAccess  {
 	 	for(Noticia no: noticias)System.out.println(no);
 	 	return noticias;
 	}
+	
+	public List<String> getAllNoticiasMedio() {
+		System.out.println(">> DataAccess: getAllNoticiasMedio");
+		TypedQuery<String> query = db.createQuery("SELECT DISTINCT no.nomMedio FROM Noticia no ",String.class);   
+		List<String> medios = query.getResultList();
+	 	for(String me: medios)System.out.println(me);
+	 	return medios;
+	}
+	
+	public List<Noticia> getNoticiasMedio(String med) {
+		System.out.println(">> DataAccess: getNoticiasMedios");
+		TypedQuery<Noticia> query = db.createQuery("SELECT DISTINCT no FROM Noticia no WHERE no.getNomMedio()=?1 ",Noticia.class);
+		query.setParameter(1, med);
+		List<Noticia> noticias = query.getResultList();
+	 	for(Noticia no: noticias)System.out.println(no);
+	 	return noticias;
+	}
 }

@@ -369,5 +369,19 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		return noticias;
 	}
+	
+	@WebMethod public List<String> getAllNoticiasMedio(){
+		dbManager.open(false);
+		List<String> medios = dbManager.getAllNoticiasMedio();
+		dbManager.close();
+		return medios;
+	}
+	
+	@WebMethod public List<Noticia> getNoticiasMedio(String med){
+		dbManager.open(false);
+		List<Noticia> noticias = dbManager.getNoticiasMedio(med);
+		dbManager.close();
+		return noticias;
+	}
 }
 
