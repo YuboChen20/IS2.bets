@@ -1,0 +1,148 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-09 20:18:19 #1 store] 
+Database 'C:\Users\Carlos Diez\git\Iteracion_III\Bets21\src\main\resources\bets.temp' is opened by 14480@Carlosdi
+
+[2022-05-09 20:18:19 #2 type.registry] 
+New type domain.Noticia
+
+[2022-05-09 20:18:19 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-05-09 20:18:19 #4 type.registry] 
+New type domain.Equipo
+
+[2022-05-09 20:18:19 #5 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-05-09 20:18:19 #6 type.registry] 
+New type domain.Event
+
+[2022-05-09 20:18:19 #7 type.registry] 
+New type java.util.Vector<domain.Event>
+
+[2022-05-09 20:18:19 #8 type] 
+Type domain.Event is not enhanced.
+
+[2022-05-09 20:18:19 #9 type.registry] 
+New type domain.Comentarios
+
+[2022-05-09 20:18:19 #10 type.registry] 
+New type java.util.Vector<domain.Comentarios>
+
+[2022-05-09 20:18:19 #11 type.registry] 
+New type domain.Equipo[]
+
+[2022-05-09 20:18:19 #12 type.registry] 
+New type domain.Question
+
+[2022-05-09 20:18:19 #13 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-05-09 20:18:19 #14 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-05-09 20:18:19 #15 type.registry] 
+New type domain.Usuario
+
+[2022-05-09 20:18:19 #16 type] 
+Type domain.Question is not enhanced.
+
+[2022-05-09 20:18:19 #17 type.registry] 
+New type domain.Pronostico
+
+[2022-05-09 20:18:19 #18 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-05-09 20:18:19 #19 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-09 20:18:19 #20 type.registry] 
+New type domain.Bet
+
+[2022-05-09 20:18:19 #21 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-05-09 20:18:19 #22 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-09 20:18:19 #23 type] 
+Type domain.Bet is not enhanced.
+
+[2022-05-09 20:18:19 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-05-09 20:24:18 #1 store] 
+Database 'C:\Users\Carlos Diez\git\Iteracion_III\Bets21\src\main\resources\bets.temp' is opened by 15916@Carlosdi
+
+[2022-05-09 20:24:18 #2 type.registry] 
+New type domain.Noticia
+
+[2022-05-09 20:24:18 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-05-09 20:24:18 #4 type.registry] 
+New type domain.Equipo
+
+[2022-05-09 20:24:18 #5 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-05-09 20:24:18 #6 type.registry] 
+New type domain.Event
+
+[2022-05-09 20:24:18 #7 type.registry] 
+New type java.util.Vector<domain.Event>
+
+[2022-05-09 20:24:18 #8 type] 
+Type domain.Event is not enhanced.
+
+[2022-05-09 20:24:18 #9 type.registry] 
+New type domain.Comentarios
+
+[2022-05-09 20:24:18 #10 type.registry] 
+New type java.util.Vector<domain.Comentarios>
+
+[2022-05-09 20:24:18 #11 type.registry] 
+New type domain.Equipo[]
+
+[2022-05-09 20:24:18 #12 type.registry] 
+New type domain.Question
+
+[2022-05-09 20:24:18 #13 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-05-09 20:24:18 #14 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-05-09 20:24:18 #15 type.registry] 
+New type domain.Usuario
+
+[2022-05-09 20:24:18 #16 type] 
+Type domain.Question is not enhanced.
+
+[2022-05-09 20:24:18 #17 type.registry] 
+New type domain.Pronostico
+
+[2022-05-09 20:24:18 #18 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-05-09 20:24:18 #19 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-05-09 20:24:18 #20 type.registry] 
+New type domain.Bet
+
+[2022-05-09 20:24:18 #21 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-05-09 20:24:18 #22 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-05-09 20:24:18 #23 type] 
+Type domain.Bet is not enhanced.
+
+[2022-05-09 20:24:18 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+

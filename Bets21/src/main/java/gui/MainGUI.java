@@ -30,6 +30,7 @@ public class MainGUI extends JFrame {
 	private JPanel jContentPane = null;
 	private JButton jButtonLogin = null;
 	private JButton jButtonSignUp = null;
+	private JButton jButtonNoticias = null;
 	private JButton btnNewButtonConsultar= null;
 
     private static BLFacade appFacadeInterface;
@@ -94,6 +95,7 @@ public class MainGUI extends JFrame {
 			jContentPane.add(getBoton3());
 			jContentPane.add(getBoton2());
 			jContentPane.add(getBoton1());
+			jContentPane.add(getBoton4());
 		
 			//jContentPane.add(getPanel());
 		}
@@ -157,6 +159,26 @@ public class MainGUI extends JFrame {
 			});
 		}
 		return jButtonSignUp;
+	}
+	
+	/**
+	 * This method initializes boton4
+	 * 
+	 * @return javax.swing.JButton
+	 */
+	private JButton getBoton4() {
+		if (jButtonNoticias == null) {
+			jButtonNoticias = new JButton();
+			jButtonNoticias.setBounds(127, 198, 242, 44);
+			jButtonNoticias.setText("Ver noticias");
+			jButtonNoticias.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					
+					jB4_actionPerformed(e);
+				}
+			});
+		}
+		return jButtonNoticias;
 	}
 	
 
@@ -249,6 +271,11 @@ public class MainGUI extends JFrame {
 		this.setVisible(false);
 	}
 	
+	private void jB4_actionPerformed(ActionEvent e) {
+		JFrame a = new NoticiasGUI();
+		a.setVisible(true);
+		this.setVisible(false);
+	}
 } // @jve:decl-index=0:visual-constraint="0,0"
 
 

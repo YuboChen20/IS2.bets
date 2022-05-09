@@ -84,4 +84,11 @@ public interface BLFacade  {
 	@WebMethod public Event getEventoactualizado(Event ev);
 	@WebMethod public Vector<Event> getEventosFinalizadosNoCerrados(Date date);	
 	@WebMethod public List<Equipo> obtenerEquipos();
+	@WebMethod public List<Noticia> getNoticiasMonth(Date date);
+	@WebMethod public List<Noticia> getNoticias(Date date);
+	@WebMethod public List<Noticia> getAllNoticias();
+	@WebMethod public void eliminarNoticia(Noticia no);
+	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli);
+	@WebMethod public List<String> getAllNoticiasAuthor();
+	@WebMethod public List<Noticia> getNoticiasAuthor(String aut);
 }

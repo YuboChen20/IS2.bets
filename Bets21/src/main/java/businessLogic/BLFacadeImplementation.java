@@ -313,5 +313,61 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		return equipos;
     }
+    
+	/**
+	 * This method invokes the data access to retrieve the dates a month for which there are events
+	 * 
+	 * @param date of the month for which days with events want to be retrieved 
+	 * @return collection of dates
+	 */
+	@WebMethod public List<Noticia> getNoticiasMonth(Date date) {
+		dbManager.open(false);
+		List<Noticia> noticias=dbManager.getNoticiasMonth(date);
+		dbManager.close();
+		return noticias;
+	}
+	
+	@WebMethod public List<Noticia> getNoticias(Date date){
+		dbManager.open(false);
+		List<Noticia> noticias = dbManager.getNoticias(date);
+		dbManager.close();
+		return noticias;
+	}
+	
+	@WebMethod public List<Noticia> getAllNoticias(){
+		dbManager.open(false);
+		List<Noticia> noticias = dbManager.getAllNoticias();
+		dbManager.close();
+		return noticias;
+	}
+	
+	
+	@WebMethod public void eliminarNoticia(Noticia no) {
+		dbManager.open(false);
+		dbManager.eliminarNoticia(no);
+		dbManager.close();
+		
+	}
+	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
+		dbManager.open(false);
+		Noticia noticia = dbManager.createNoticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
+		dbManager.close();
+		return noticia;
+		
+	}
+	
+	@WebMethod public List<String> getAllNoticiasAuthor(){
+		dbManager.open(false);
+		List<String> autores = dbManager.getAllNoticiasAuthor();
+		dbManager.close();
+		return autores;
+	}
+	
+	@WebMethod public List<Noticia> getNoticiasAuthor(String aut){
+		dbManager.open(false);
+		List<Noticia> noticias = dbManager.getNoticiasAuthor(aut);
+		dbManager.close();
+		return noticias;
+	}
 }
 

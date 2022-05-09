@@ -83,6 +83,12 @@ public class DataAccess  {
 		   month+=1;
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=0; year+=1;}  
+		   
+		   
+		   	Noticia no1 = new Noticia("TITULO1", "SUBTITULOS", "trarrarrar", "Yubo Chen", "Marca", UtilDate.newDate(year,month,17));
+		   	Noticia no2 = new Noticia("TITULO2", "SUBTITULOS", "trarrarrar", "Yubo Chen", "Marca", UtilDate.newDate(year,month,17));
+		   	db.persist(no1);
+		   	db.persist(no2);
 	    
 		    Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,17));
 			Event ev2=new Event(2, "Elche-Barcelona", UtilDate.newDate(year,month,17));
@@ -785,5 +791,78 @@ public class DataAccess  {
 			List<Equipo> equipos = query.getResultList();
 			for(Equipo eq:equipos)System.out.println(eq);
 			return equipos;
+	}
+	
+	/**
+	 * This method retrieves from the database the dates a month for which there are events
+	 * 
+	 * @param date of the month for which days with events want to be retrieved 
+	 * @return collection of dates
+	 */
+	public List<Noticia> getNoticiasMonth(Date date) {
+		System.out.println(">> DataAccess: getEventsMonth");
+			
+		
+		Date firstDayMonthDate= UtilDate.firstDayMonth(date);
+		Date lastDayMonthDate= UtilDate.lastDayMonth(date);
+				
+		
+		TypedQuery<Noticia> query = db.createQuery("SELECT DISTINCT no FROM Noticia no WHERE no.fechaPubli BETWEEN ?1 and ?2",Noticia.class);   
+		query.setParameter(1, firstDayMonthDate);
+		query.setParameter(2, lastDayMonthDate);
+		List<Noticia> noticias = query.getResultList();
+		for(Noticia no: noticias)System.out.println(no);
+	 	return noticias;
+	}
+	
+	public List<Noticia> getNoticias(Date date) {
+		System.out.println(">> DataAccess: getNoticia");	
+		TypedQuery<Noticia> query = db.createQuery("SELECT no FROM Noticia no WHERE no.fechaPubli=?1",Noticia.class);   
+		query.setParameter(1, date);
+		List<Noticia> noticias = query.getResultList();
+		for(Noticia no: noticias)System.out.println(no);
+	 	return noticias;
+	}
+	
+	public List<Noticia> getAllNoticias() {
+		System.out.println(">> DataAccess: getAllNoticias");
+		TypedQuery<Noticia> query = db.createQuery("SELECT no FROM Noticia no ",Noticia.class);   
+		List<Noticia> noticias = query.getResultList();
+	 	for(Noticia no: noticias)System.out.println(no);
+	 	return noticias;
+	}
+	
+	public void eliminarNoticia(Noticia no) {
+		Noticia not=db.find(Noticia.class, no.getNumNoticia());
+		db.getTransaction().begin();
+		
+		db.persist(not);
+		db.getTransaction().commit();
+	}
+	
+	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
+		
+		db.getTransaction().begin();
+		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
+		db.persist(not);
+		db.getTransaction().commit();
+		return not;
+	}
+	
+	public List<String> getAllNoticiasAuthor() {
+		System.out.println(">> DataAccess: getAllNoticiasAuthor");
+		TypedQuery<String> query = db.createQuery("SELECT DISTINCT no.nomAutor FROM Noticia no ",String.class);   
+		List<String> autores = query.getResultList();
+	 	for(String au: autores)System.out.println(au);
+	 	return autores;
+	}
+	
+	public List<Noticia> getNoticiasAuthor(String aut) {
+		System.out.println(">> DataAccess: getNoticiasAuthor");
+		TypedQuery<Noticia> query = db.createQuery("SELECT DISTINCT no FROM Noticia no WHERE no.getNomAutor()=?1 ",Noticia.class);
+		query.setParameter(1, aut);
+		List<Noticia> noticias = query.getResultList();
+	 	for(Noticia no: noticias)System.out.println(no);
+	 	return noticias;
 	}
 }
