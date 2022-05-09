@@ -6,6 +6,7 @@ import configuration.UtilDate;
 import com.toedter.calendar.JCalendar;
 
 import domain.Bet;
+import domain.Comentarios;
 import domain.Event;
 import domain.Pronostico;
 import domain.Question;
@@ -23,7 +24,7 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 
-public class OtrasApuestasGUI extends JFrame {
+public class OtrasApuestas2GUI extends JFrame {
 	private Usuario user;
 	private static final long serialVersionUID = 1L;
 	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries")); 
@@ -64,14 +65,25 @@ public class OtrasApuestasGUI extends JFrame {
 			ResourceBundle.getBundle("Etiquetas").getString("Query")
 
 	};
-	private final JButton btnLogin = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Login")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("SignUp")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton btnLogout = new JButton("Cerrar Sesión"); //$NON-NLS-1$ //$NON-NLS-2$
+	private JTextField textApuesta;
+	private final JButton btnApostar = new JButton("Apostar"); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblMinima = new JLabel("Apuesta mínima"); //$NON-NLS-1$ //$NON-NLS-2$
+	
+	
+	//////////////////////////////
+	private JTextArea textArea;
+	private JScrollPane scrollpane1;
+	private JTextField textField;
+    private int pos;
+    ///////////////////////////////
 
-	public OtrasApuestasGUI(Event event1, Date date1, int i1)
+	public OtrasApuestas2GUI(Event event1, Date date1, int i1, Usuario u)
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
 			try {
-				jbInit(event1,date1,i1);
+				jbInit(event1,date1,i1,u);
+				this.user=u;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -80,11 +92,10 @@ public class OtrasApuestasGUI extends JFrame {
 	}
 
 	
-	private void jbInit(Event event1, Date date1, int i1) throws Exception
+	private void jbInit(Event event1, Date date1, int i1, Usuario user) throws Exception
 	{
-		this.setSize(new Dimension(800, 500));
+		this.setSize(new Dimension(800, 613));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
-		
 		getContentPane().setLayout(null);
 		jLabelQueries.setBounds(20, 68, 249, 14);
 		this.getContentPane().add(jLabelQueries);
@@ -94,15 +105,9 @@ public class OtrasApuestasGUI extends JFrame {
 		CreateAndQueryGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
 		jCalendar1.setBounds(40, 65, 273, 167);
 
-		btnLogin.addActionListener(new ActionListener() {
+		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnLogin_actionPerformed(e);
-			}
-		});
-			
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				btnSignUp_actionPerformed(e);
 			}
 		});
 		tableModelEvents = new DefaultTableModel(null, columnNamesEvents) {
@@ -152,20 +157,16 @@ public class OtrasApuestasGUI extends JFrame {
 		tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
 		tablePronosticos.getColumnModel().getColumn(3).setPreferredWidth(25);
 		scrollPanePronostico.setViewportView(tablePronosticos);
-		btnLogin.setBounds(665, 0, 123, 23);
+		btnLogout.setBounds(665, 0, 123, 23);
 		
-		getContentPane().add(btnLogin);
-		btnNewButton.setForeground(Color.RED);
-		btnNewButton.setBounds(556, 0, 107, 23);
-		
-		getContentPane().add(btnNewButton);
+		getContentPane().add(btnLogout);
 		
 		JButton btnAtras = new JButton("Atrás");
 		
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				FQuestionInvitado2 a = new FQuestionInvitado2(date1,i1);
+				FQuestion2 a = new FQuestion2(date1,i1, user);
 				a.setVisible(true);
 				setVisible(false);
 			}
@@ -181,6 +182,108 @@ public class OtrasApuestasGUI extends JFrame {
 		
 		
 		
+		
+		JButton btnPrueba = new JButton("Prueba");
+		
+		btnPrueba.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		btnPrueba.setBounds(500, 100, 89, 23);
+		btnPrueba.setVisible(true);
+		getContentPane().add(btnPrueba);
+		
+		JLabel lblApuesta = new JLabel("Apuesta"); //$NON-NLS-1$ //$NON-NLS-2$
+		lblApuesta.setBounds(30, 259, 50, 14);
+		getContentPane().add(lblApuesta);
+		
+		textApuesta = new JTextField();
+		textApuesta.setText(""); //$NON-NLS-1$ //$NON-NLS-2$
+		textApuesta.setBounds(90, 255, 134, 23);
+		getContentPane().add(textApuesta);
+		textApuesta.setColumns(10);
+		btnApostar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				try {
+					jLabelApuesta.setForeground(Color.RED);
+					Double pr = Double.parseDouble (textApuesta.getText());
+					int numQ= tableQueries.getSelectedRow()+1;
+					int numP= tablePronosticos.getSelectedRow();
+	
+				
+					
+					Question q = event1.getQuest(numQ);
+					Pronostico p =q.getPron(numP);
+					if (pr.floatValue()>=q.getBetMinimum()) {
+
+							BLFacade facade = MainGUI.getBusinessLogic();
+                            int i= facade.crearApuesta(user,pr,p);
+                    
+                            
+                            if(i==0) {
+                            	jLabelApuesta.setForeground(Color.BLACK);
+                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
+                            	
+                            ////Actualizar tabla de pronósticos//
+            					
+            					if(numQ>=1) {
+            						
+            		                try {
+            		                	
+            		                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+            		                	tableModelPronostico.setDataVector(null, columnNamesPronostico);
+
+            		                	for (domain.Pronostico p1:pronosticos){
+            		                		Vector<Object> row = new Vector<Object>();
+
+            		                		row.add(p1.getPronosNumber());
+            		                		row.add(p1.getPronostico());
+            		                		row.add(p1.getCuota());
+            		                		row.add(p1.getPorcentajeApuesta());
+            		                		tableModelPronostico.addRow(row);	
+            		                	}
+            		                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+            		                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+            		                }catch(PronosticAlreadyExist e1) {
+            		                	// lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+            		                }
+  
+            					} else { // if ev =null
+    
+            							int n=tableModelPronostico.getRowCount();
+            							for(int i1=0;i1<n;i1++) {
+            								tableModelPronostico.removeRow(0);
+            							}
+
+            					}
+
+                            } 
+                            else if(i==1) {
+                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
+                            }
+                            else {
+                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBetDinero"));
+                            }
+                            
+					}
+                }catch(Exception e1) {
+               
+                	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorApuesta"));
+        	
+                }
+				
+			}
+		});
+		btnApostar.setBounds(249, 254, 89, 24);
+		
+		getContentPane().add(btnApostar);
+		lblMinima.setBounds(72, 289, 152, 14);
+		
+		getContentPane().add(lblMinima);
 		
 		
 		
@@ -201,8 +304,8 @@ public class OtrasApuestasGUI extends JFrame {
         	}
         	tableQueries.getColumnModel().getColumn(0).setPreferredWidth(25);
         	tableQueries.getColumnModel().getColumn(1).setPreferredWidth(268);
-        	tableModelQueries.removeRow(0);
         	
+        	tableModelQueries.removeRow(0);
        
         }catch(Exception e1) {
         	//lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
@@ -245,6 +348,7 @@ public class OtrasApuestasGUI extends JFrame {
                 		System.out.println(p.getCuota());
                 		tableModelPronostico.addRow(row);	
                 	}
+                	
                 	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
                 	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
                 	tablePronosticos.getColumnModel().getColumn(2).setWidth(25);
@@ -257,16 +361,49 @@ public class OtrasApuestasGUI extends JFrame {
 		});
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setLineWrap(true);
+		scrollpane1=new JScrollPane(textArea);
+		scrollpane1.setBounds(45,325,584,20);
+		scrollpane1.setBounds(new Rectangle(45, 325, 500, 100));
+		getContentPane().add(scrollpane1);
+		pos=0;
+		Event eventoactualizado = facade.getEventoactualizado(event1);
+		for(Comentarios c : eventoactualizado.getComentarios()) {
+			textArea.insert(c.toString(), pos);
+			pos=textArea.getCaretPosition();
+		}
+		textField = new JTextField();
+		textField.setText("");
+		textField.setBounds(85, 449, 461, 19);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btnComentar = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Comentar")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnComentar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Comentarios coment = facade.createComent(textField.getText(), event1, user);
+				textArea.insert(coment.toString(), pos);
+				pos=textArea.getCaretPosition();
+				textField.setText("");
+			}
+		});
+		btnComentar.setBounds(561, 449, 134, 21);
+		getContentPane().add(btnComentar);
+		
+		JLabel lblNewLabel = new JLabel(user.getUserName() + " :");
+		lblNewLabel.setBounds(30, 453, 45, 13);
+		getContentPane().add(lblNewLabel);
+	
+	
 	}
 	private void btnLogin_actionPerformed(ActionEvent e) {
-		JFrame a = new Login();
-		a.setVisible(true);
 		this.setVisible(false);
-	}
-	private void btnSignUp_actionPerformed(ActionEvent e) {
-		JFrame a = new SignUp();
+		MainGUI a =new MainGUI();
 		a.setVisible(true);
-		this.setVisible(false);
 	}
 }
 

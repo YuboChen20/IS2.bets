@@ -59,8 +59,8 @@ public class BetGUI extends JFrame {
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Comentar")); //$NON-NLS-1$ //$NON-NLS-2$
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnComentar = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Comentar")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnComentar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Comentarios coment = facade.createComent(textField.getText(), ev, user);
 				textArea.insert(coment.toString(), pos);
@@ -68,8 +68,8 @@ public class BetGUI extends JFrame {
 				textField.setText("");
 			}
 		});
-		btnNewButton.setBounds(121, 527, 134, 21);
-		getContentPane().add(btnNewButton);
+		btnComentar.setBounds(121, 527, 134, 21);
+		getContentPane().add(btnComentar);
 		
 		JLabel lblNewLabel = new JLabel(user.getUserName() + " :");
 		lblNewLabel.setBounds(55, 501, 45, 13);

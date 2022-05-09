@@ -118,36 +118,100 @@ public class DataAccess  {
 			Question q6;
 			Question q7;
 			Question q8;
-			Question q9;	
+			Question q9;
+			/*
+			Question q01;
+			Question q02;
+			Question q03;
+			Question q04;
+			Question q05;
+			*/
 			
+			//q01=ev21.addQuestion("1X2",(float) 5.0);
 			q7=ev21.addQuestion("¿Habrá goles en la primera parte?",2);
 			q8=ev21.addQuestion("¿Habrá goles en la segunda parte?",2);
+			//q02=ev22.addQuestion("1X2",(float) 5.0);
 			q9=ev22.addQuestion("¿Habrá goles en la segunda parte?",2);
 			if (Locale.getDefault().equals(new Locale("es"))) {
+			//	q03=ev1.addQuestion("1X2",(float) 5.0);
 				q1=ev1.addQuestion("¿Quién ganará el partido?",1);
 				q2=ev1.addQuestion("¿Quién meterá el primer gol?",2);
+				//q04=ev11.addQuestion("1X2",(float) 5.0);
 				q3=ev11.addQuestion("¿Quién ganará el partido?",1);
 				q4=ev11.addQuestion("¿Cuántos goles se marcarán?",2);
+				//q05=ev17.addQuestion("1X2",(float) 5.0);
 				q5=ev17.addQuestion("¿Quién ganará el partido?",1);
 				q6=ev17.addQuestion("¿Habrá goles en la primera parte?",2);
 			}
 			else if (Locale.getDefault().equals(new Locale("en"))) {
+				//q03=ev1.addQuestion("1X2",(float) 5.0);
 				q1=ev1.addQuestion("Who will win the match?",1);
 				q2=ev1.addQuestion("Who will score first?",2);
+				//q04=ev11.addQuestion("1X2",(float) 5.0);
 				q3=ev11.addQuestion("Who will win the match?",1);
 				q4=ev11.addQuestion("How many goals will be scored in the match?",2);
+				//q05=ev17.addQuestion("1X2",(float) 5.0);
 				q5=ev17.addQuestion("Who will win the match?",1);
 				q6=ev17.addQuestion("Will there be goals in the first half?",2);
 			}			
 			else {
+				//q03=ev1.addQuestion("1X2",(float) 5.0);
 				q1=ev1.addQuestion("Zeinek irabaziko du partidua?",1);
 				q2=ev1.addQuestion("Zeinek sartuko du lehenengo gola?",2);
+				//q04=ev11.addQuestion("1X2",(float) 5.0);
 				q3=ev11.addQuestion("Zeinek irabaziko du partidua?",1);
 				q4=ev11.addQuestion("Zenbat gol sartuko dira?",2);
+				//q05=ev17.addQuestion("1X2",(float) 5.0);
 				q5=ev17.addQuestion("Zeinek irabaziko du partidua?",1);
 				q6=ev17.addQuestion("Golak sartuko dira lehenengo zatian?",2);
 				
 			}
+		/*	
+			Pronostico p011=new Pronostico("1",q01,0.22);
+			Pronostico p01X=new Pronostico("x",q01,1.48);
+			Pronostico p012=new Pronostico("2",q01,1.88);
+			
+			
+			Pronostico p021=new Pronostico("1",q02,0.22);
+			Pronostico p02X=new Pronostico("x",q02,1.48);
+			Pronostico p022=new Pronostico("2",q02,1.88);
+			
+			Pronostico p031=new Pronostico("1",q03,0.22);
+			Pronostico p03X=new Pronostico("x",q03,1.48);
+			Pronostico p032=new Pronostico("2",q03,1.88);
+			
+			Pronostico p041=new Pronostico("1",q04,0.22);
+			Pronostico p04X=new Pronostico("x",q04,1.48);
+			Pronostico p042=new Pronostico("2",q04,1.88);
+			
+			Pronostico p051=new Pronostico("1",q05,0.22);
+			Pronostico p05X=new Pronostico("x",q05,1.48);
+			Pronostico p052=new Pronostico("2",q05,1.88);
+		 
+			q01.addPronostico(p011);
+			q01.addPronostico(p01X);
+			q01.addPronostico(p012);
+			
+			q02.addPronostico(p021);
+			q02.addPronostico(p02X);
+			q02.addPronostico(p022);
+			
+			q03.addPronostico(p031);
+			q03.addPronostico(p03X);
+			q03.addPronostico(p032);
+			
+			q04.addPronostico(p041);
+			q04.addPronostico(p04X);
+			q04.addPronostico(p042);
+			
+			q05.addPronostico(p051);
+			q05.addPronostico(p05X);
+			q05.addPronostico(p052);
+			*/
+			
+			
+			
+			
 			Pronostico p1=new Pronostico("0-1",q4,1.2);
 			Pronostico p2=new Pronostico("0-2",q4,1.4);
 			Pronostico p3=new Pronostico("0-3",q4,1.2);
@@ -215,7 +279,13 @@ public class DataAccess  {
 			db.persist(q7);
 			db.persist(q8);
 			db.persist(q9);
-	        
+			/*
+			db.persist(q01);
+			db.persist(q02);
+			db.persist(q03);
+			db.persist(q04);
+			db.persist(q05);
+	        */
 			db.persist(ev1);
 			db.persist(ev2);
 			db.persist(ev3);
@@ -260,6 +330,29 @@ public class DataAccess  {
 			db.persist(p9);
 			db.persist(p10);
 			db.persist(p11);
+			
+			/*
+			db.persist(p011);
+			db.persist(p01X);
+			db.persist(p012);
+			
+			db.persist(p021);
+			db.persist(p02X);
+			db.persist(p022);
+			
+			db.persist(p031);
+			db.persist(p03X);
+			db.persist(p032);
+			
+			db.persist(p041);
+			db.persist(p04X);
+			db.persist(p042);
+			
+			db.persist(p051);
+			db.persist(p05X);
+			db.persist(p052);
+			*/
+			
 		    db.getTransaction().commit();		
 			this.crearApuesta(user,10,p1);
 			this.crearApuesta(user,12,p5);
@@ -416,14 +509,36 @@ public class DataAccess  {
 		Equipo visitante=db.find(Equipo.class,equipos[1]);
 		if(local==null || visitante==null) throw new UnknownTeamException();
 		ev.setEquipos(local, visitante);
+		
+		Question q1=ev.addQuestion("1X2",(float) 5.0);
+		
+		Pronostico p1= new Pronostico("1", q1, 0.22);
+		Pronostico p2= new Pronostico("X", q1, 1.48);
+		Pronostico p3= new Pronostico("2", q1, 2.33);
+		
+		
+		q1.addPronostico(p1);
+		q1.addPronostico(p2);
+		q1.addPronostico(p3);
+		
+		db.persist(q1);
+		
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
-						// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		
+		db.persist(p1);
+		db.persist(p2);
+		db.persist(p3);
+		
+		for(Pronostico p: ev.getQuestions().get(0).getPronosticos())System.out.println(p.getCuota());
+		
+		
 		db.getTransaction().commit();
 		return ev;
 		
 	}
 	
-public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws UnknownTeamException {
+	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws UnknownTeamException {
 		String inputDescription=local.getNombre()+"-"+visitante.getNombre();
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
 		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
@@ -434,9 +549,30 @@ public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws U
 		
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);
-		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
-						// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		
 		ev.setEquipos(local, visitante);
+		Question q1=ev.addQuestion("1X2",(float) 5.0);
+		
+		Pronostico p1= new Pronostico("1", q1, 0.22);
+		Pronostico p2= new Pronostico("X", q1, 1.48);
+		Pronostico p3= new Pronostico("2", q1, 2.33);
+		
+		
+		q1.addPronostico(p1);
+		q1.addPronostico(p2);
+		q1.addPronostico(p3);
+		
+		db.persist(q1);
+		
+		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
+		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		
+		db.persist(p1);
+		db.persist(p2);
+		db.persist(p3);
+		
+		for(Pronostico p: ev.getQuestions().get(0).getPronosticos())System.out.println(p.getCuota());
+		
 		db.getTransaction().commit();
 		return ev;
 		
@@ -501,7 +637,7 @@ public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws U
 		b.getPronostico().addUser();
 		
 		db.getTransaction().commit();
-		System.out.println(">> DataAccess: createBet=> Usuario= "+user.getUserName() +" Ha apostado " + ap.getBet() +" en " + ap.getPronostico().getPronostico() );
+		System.out.println(">> DataAccess: createBet=> Usuario= "+user.getUserName() +" Ha apostado " + ap.getBet() +" en " + ap.getPronostico().getPronostico()+" en el evento "+ ap.getPronostico().getQuestion().getEvent().getDescription() );
 	}
 	
 	public List<Bet> getBets (Usuario user){

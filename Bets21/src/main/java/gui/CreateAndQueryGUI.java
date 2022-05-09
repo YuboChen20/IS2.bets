@@ -47,7 +47,7 @@ public class CreateAndQueryGUI extends JFrame {
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 
-	private JButton jButtonCreate = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
+	private JButton jButtonCreateQuery = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
 	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
@@ -110,7 +110,6 @@ public class CreateAndQueryGUI extends JFrame {
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				jButtonPronostico.setEnabled(false);
 					domain.Event ev=(domain.Event)jComboBoxEvents.getSelectedItem(); // obtain ev object
 				
 					if(ev!=null) {
@@ -123,6 +122,14 @@ public class CreateAndQueryGUI extends JFrame {
 						
 						
 						tableModelQueries.setDataVector(null, columnNamesQueries);
+						
+						if(queries.size()<=1) {
+							
+							while(tableModelPronostico.getRowCount()>0)
+								tableModelPronostico.removeRow(0);
+								
+						}
+						
 
 						//if (queries.isEmpty())
 							//jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("NoQueries")+": "+ev.getDescription());
@@ -138,7 +145,36 @@ public class CreateAndQueryGUI extends JFrame {
 						}
 						tableQueries.getColumnModel().getColumn(0).setPreferredWidth(25);
 						tableQueries.getColumnModel().getColumn(1).setPreferredWidth(268);
+						tableModelQueries.removeRow(0);
+						if(tableModelQueries.getRowCount()>0) {
+							tableQueries.setRowSelectionInterval(0, 0);
+							Question q=queries.get(1);
+							
+							
+							BLFacade facade = MainGUI.getBusinessLogic();
+			                try {
+			                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+			                
+							
+		
+			                	tableModelPronostico.setDataVector(null, columnNamesPronostico);
+		
+			   
+			                	for (domain.Pronostico p:pronosticos){
+			                		Vector<Object> row = new Vector<Object>();
+		
+			                		row.add(p.getPronosNumber());
+			                		row.add(p.getPronostico());
+			                		tableModelPronostico.addRow(row);	
+			                	}
+			                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+			                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+			                	
+			                }catch(PronosticAlreadyExist e1) {
+			                	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+			                }
 						
+						}
 						
 					}
 					
@@ -158,12 +194,15 @@ public class CreateAndQueryGUI extends JFrame {
 
 		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));
 
-		jButtonCreate.setBounds(new Rectangle(419, 347, 130, 30));
-		jButtonCreate.setEnabled(false);
+		jButtonCreateQuery.setBounds(new Rectangle(419, 347, 130, 30));
+		jButtonCreateQuery.setEnabled(false);
 
-		jButtonCreate.addActionListener(new ActionListener() {
+		jButtonCreateQuery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonCreate_actionPerformed(e);
+				jButtonPronostico.setEnabled(true);
+				int n=tableQueries.getRowCount();
+				tableQueries.setRowSelectionInterval(n-1, n-1);
 			}
 		});
 		jLabelMsg.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -178,7 +217,7 @@ public class CreateAndQueryGUI extends JFrame {
 
 		this.getContentPane().add(jLabelMsg, null);
 		this.getContentPane().add(jLabelError, null);
-		this.getContentPane().add(jButtonCreate, null);
+		this.getContentPane().add(jButtonCreateQuery, null);
 		this.getContentPane().add(jTextFieldQuery, null);
 		this.getContentPane().add(jLabelQuery, null);
 		this.getContentPane().add(jTextFieldPrice, null);
@@ -245,11 +284,14 @@ public class CreateAndQueryGUI extends JFrame {
 
 					actualizarTabla();
 					
+					if(tableQueries.getRowCount()>0)
+						tableQueries.addRowSelectionInterval(0, 0);
 					
 					////Actualizar tabla de pronósticos//
-					int i=tableQueries.getSelectedRow();
+					int i=tableQueries.getSelectedRow()+1;
+					
 					Event ev= (Event) jComboBoxEvents.getSelectedItem();
-					if(ev!=null && i!=-1) {
+					if(ev!=null && i!=0) {
 						Question q = ev.getQuest(i);
 					//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 						
@@ -271,12 +313,15 @@ public class CreateAndQueryGUI extends JFrame {
 		                	}
 		                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 		                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		                	if(tableModelQueries.getRowCount()>0) jButtonPronostico.setEnabled(true);
 		                }catch(PronosticAlreadyExist e1) {
 		                	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 		                }
+		                
+					}
 					/////////////////////////////////////
 					
-					} else { // if ev =null
+					 else { // if ev =null
 						
 						
 							//jButtonPronostico.setEnabled(false);
@@ -291,6 +336,7 @@ public class CreateAndQueryGUI extends JFrame {
 						
 						
 					}
+					
 				}
 			}
 		});
@@ -369,7 +415,7 @@ public class CreateAndQueryGUI extends JFrame {
 		tableQueries.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int i=tableQueries.getSelectedRow();
+				int i=tableQueries.getSelectedRow()+1;
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
 				Question q = facade.getQuestion(ev, i);
 				LocalDateTime time=LocalDateTime.now();
@@ -378,7 +424,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
-				
+				jButtonPronostico.setEnabled(true);
                 try {
                 	List<Pronostico> pronosticos=facade.findPronosticos(q);
                 
@@ -448,7 +494,7 @@ public class CreateAndQueryGUI extends JFrame {
 					// Displays an exception if the query field is empty
 					String pr=textFieldPronostico.getText();
 					Event ev= (Event) jComboBoxEvents.getSelectedItem();
-					int i= tableQueries.getSelectedRow();
+					int i= tableQueries.getSelectedRow()+1;
 					try {
 						double cuota= Double.parseDouble(textFieldCuota.getText());
 					
@@ -469,7 +515,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 							actualizarTabla();
 							
-							tableQueries.setRowSelectionInterval(i, i);
+							tableQueries.setRowSelectionInterval(i-1, i-1);
 							
 							
 							
@@ -656,6 +702,11 @@ public class CreateAndQueryGUI extends JFrame {
 				//jComboBoxVisitante.repaint();
 				jComboBoxLocal.setSelectedIndex(0);
 				jComboBoxVisitante.setSelectedIndex(1);
+				
+				
+				
+				Calendar calendar = Calendar.getInstance();
+				jCalendar.setCalendar(calendar);
 		
         
 	}
@@ -803,14 +854,14 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 					jComboBoxEvents.repaint();
 				
 				if (events.size() == 0) {
-					jButtonCreate.setEnabled(false);
+					jButtonCreateQuery.setEnabled(false);
 					int n=tableModelQueries.getRowCount();
 					for(int i=0;i<n;i++) {
 						tableModelQueries.removeRow(0);
 					}
 						
 				}else {
-					jButtonCreate.setEnabled(true);
+					jButtonCreateQuery.setEnabled(true);
                     ////////////////////////////////////////////// 
 				}
 					

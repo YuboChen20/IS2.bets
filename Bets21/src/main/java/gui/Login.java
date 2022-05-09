@@ -128,7 +128,7 @@ public class Login extends JFrame {
 	}
 	private void btnLoginUser_actionPerformed(ActionEvent e,Usuario u) {
 		
-		 JFrame b= new FindQuestionsGUI(u);
+		 JFrame b= new FQuestion2(u);
 		 b.setVisible(true);	
 		 this.setVisible(false);;
 	}

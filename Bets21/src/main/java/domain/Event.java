@@ -51,12 +51,31 @@ public class Event implements Serializable {
 		this.description = description;
 		this.eventDate=eventDate;
 		this.isFinished=false;
+		
+		Question q1=new Question("1X2",5,this);
+		Pronostico p1=new Pronostico("1",q1,0.22);
+		Pronostico p2=new Pronostico("X",q1,1.48);
+		Pronostico p3=new Pronostico("2",q1,2.34);
+		q1.addPronostico(p1);
+		q1.addPronostico(p2);
+		q1.addPronostico(p3);
+		
+		
+		this.questions.add(q1);
 	}
 	
 	public Event( String description,Date eventDate) {
 		this.description = description;
 		this.eventDate=eventDate;
 		this.isFinished=false;
+		
+		Question q1=new Question("1X2",5,this);
+		Pronostico p1=new Pronostico("1",q1,0.22);
+		Pronostico p2=new Pronostico("X",q1,1.48);
+		Pronostico p3=new Pronostico("2",q1,2.34);
+		q1.addPronostico(p1);
+		q1.addPronostico(p2);
+		q1.addPronostico(p3);
 	}
 
 	public Integer getEventNumber() {
