@@ -45,7 +45,12 @@ public class CreateNoticiaGUI extends JFrame {
 	private Calendar calendarAnt = null;
 	private final JButton jButtonCerrar = new JButton("Cerrar");
 	private final JButton jButtonCrearNoticia = new JButton("Crear Noticia");
-	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroupAutor = new ButtonGroup();
+	private final JComboBox JComboBoxMedios = new JComboBox();
+	private final TextField textFieldMedios = new TextField();
+	private final JRadioButton jRadioButtonExisteMedio = new JRadioButton("Existe Medio");
+	private final JRadioButton jRadioButtonNuevoMedio = new JRadioButton("Nuevo Medio");
+	private final ButtonGroup buttonGroupMedio = new ButtonGroup();
 
 
 	/**
@@ -168,14 +173,28 @@ public class CreateNoticiaGUI extends JFrame {
 		contentPane.add(textFieldAutor);
 		
 		JRadioButton jRadioButtonExisteAutor = new JRadioButton("Existe Autor");
-		buttonGroup.add(jRadioButtonExisteAutor);
+		buttonGroupAutor.add(jRadioButtonExisteAutor);
 		jRadioButtonExisteAutor.setBounds(10, 393, 111, 23);
 		contentPane.add(jRadioButtonExisteAutor);
 		
 		JRadioButton jRadioButtonNuevoAutor = new JRadioButton("Nuevo Autor");
-		buttonGroup.add(jRadioButtonNuevoAutor);
+		buttonGroupAutor.add(jRadioButtonNuevoAutor);
 		jRadioButtonNuevoAutor.setBounds(10, 451, 111, 23);
 		contentPane.add(jRadioButtonNuevoAutor);
+		JComboBoxMedios.setBounds(127, 290, 225, 32);
+		
+		contentPane.add(JComboBoxMedios);
+		textFieldMedios.setBounds(127, 328, 225, 32);
+		
+		contentPane.add(textFieldMedios);
+		buttonGroupMedio.add(jRadioButtonExisteMedio);
+		jRadioButtonExisteMedio.setBounds(20, 299, 111, 23);
+		
+		contentPane.add(jRadioButtonExisteMedio);
+		buttonGroupMedio.add(jRadioButtonNuevoMedio);
+		jRadioButtonNuevoMedio.setBounds(23, 341, 111, 23);
+		
+		contentPane.add(jRadioButtonNuevoMedio);
 		jButtonCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnCerrar_actionPerformed(e);
