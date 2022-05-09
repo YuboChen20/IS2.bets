@@ -46,7 +46,7 @@ public class Event implements Serializable {
 		super();
 	}
 
-	public Event(Integer eventNumber, String description,Date eventDate) {
+	public Event(Integer eventNumber, String description,Date eventDate, Equipo local, Equipo visitante) {
 		this.eventNumber = eventNumber;
 		this.description = description;
 		this.eventDate=eventDate;
@@ -62,6 +62,7 @@ public class Event implements Serializable {
 		
 		
 		this.questions.add(q1);
+		
 	}
 	
 	public Event( String description,Date eventDate) {
@@ -76,6 +77,8 @@ public class Event implements Serializable {
 		q1.addPronostico(p1);
 		q1.addPronostico(p2);
 		q1.addPronostico(p3);
+		
+		questions.add(q1);
 	}
 
 	public Integer getEventNumber() {

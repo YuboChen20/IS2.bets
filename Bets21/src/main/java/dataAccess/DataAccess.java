@@ -90,31 +90,31 @@ public class DataAccess  {
 		   	db.persist(no1);
 		   	db.persist(no2);
 	    
-		    Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,17));
-			Event ev2=new Event(2, "Elche-Barcelona", UtilDate.newDate(year,month,17));
-			Event ev3=new Event(3, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,17));
-			Event ev4=new Event(4, "Alavés-Osasuna", UtilDate.newDate(year,month,17));
-			Event ev5=new Event(5, "Espanyol-Villareal", UtilDate.newDate(year,month,17));
-			Event ev6=new Event(6, "Granada-Sevilla", UtilDate.newDate(year,month,17));
-			Event ev7=new Event(7, "Mallorca-Valencia", UtilDate.newDate(year,month,17));
-			Event ev8=new Event(8, "Cádiz-Rayo Vallecano", UtilDate.newDate(year,month,17));
-			Event ev9=new Event(9, "Real Betis-Levante", UtilDate.newDate(year,month,17));
-			Event ev10=new Event(10, "Real Sociedad-Real Madrid", UtilDate.newDate(year,month,17));
+		    Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,17), atleticoDeMadrid, atlheticDeBilbao);
+			Event ev2=new Event(2, "Elche-Barcelona", UtilDate.newDate(year,month,17), elche, barcelona);
+			Event ev3=new Event(3, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,17), getafe, celtaDeVigo);
+			Event ev4=new Event(4, "Alavés-Osasuna", UtilDate.newDate(year,month,17), alaves, osasuna);
+			Event ev5=new Event(5, "Espanyol-Villareal", UtilDate.newDate(year,month,17), espanyol, villareal);
+			Event ev6=new Event(6, "Granada-Sevilla", UtilDate.newDate(year,month,17), granada, sevilla);
+			Event ev7=new Event(7, "Mallorca-Valencia", UtilDate.newDate(year,month,17), mallorca, valencia);
+			Event ev8=new Event(8, "Cádiz-Rayo Vallecano", UtilDate.newDate(year,month,17), cadiz, rayoVallecano);
+			Event ev9=new Event(9, "Real Betis-Levante", UtilDate.newDate(year,month,17), realBetis, levante);
+			Event ev10=new Event(10, "Real Sociedad-Real Madrid", UtilDate.newDate(year,month,17), realSociedad, realMadrid);
 
-			Event ev11=new Event(11, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,1));
-			Event ev12=new Event(12, "Elche-Barcelona", UtilDate.newDate(year,month,1));
-			Event ev13=new Event(13, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,1));
-			Event ev14=new Event(14, "Alavés-Osasuna", UtilDate.newDate(year,month,1));
-			Event ev15=new Event(15, "Espanyol-Villareal", UtilDate.newDate(year,month,1));
-			Event ev16=new Event(16, "Granada-Sevilla", UtilDate.newDate(year,month,1));
+			Event ev11=new Event(11, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,1), atleticoDeMadrid, atlheticDeBilbao);
+			Event ev12=new Event(12, "Elche-Barcelona", UtilDate.newDate(year,month,1), elche, barcelona);
+			Event ev13=new Event(13, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,1), getafe, celtaDeVigo);
+			Event ev14=new Event(14, "Alavés-Osasuna", UtilDate.newDate(year,month,1), alaves, osasuna);
+			Event ev15=new Event(15, "Espanyol-Villareal", UtilDate.newDate(year,month,1), espanyol, villareal);
+			Event ev16=new Event(16, "Granada-Sevilla", UtilDate.newDate(year,month,1), granada, sevilla);
 			
 
-			Event ev17=new Event(17, "Mallorca-Valencia", UtilDate.newDate(year,month+1,28));
-			Event ev18=new Event(18, "Cádiz-Rayo Vallecano", UtilDate.newDate(year,month+1,28));
-			Event ev19=new Event(19, "Real Betis-Levante", UtilDate.newDate(year,month+1,28));
-			Event ev20=new Event(20, "Real Sociedad-Real Madrid", UtilDate.newDate(year,month+1,28));
-			Event ev21=new Event(21, "Betis-Real Madrid", UtilDate.newDate(year,month-2,28));
-			Event ev22=new Event(22, "Barcelona-Real Madrid", UtilDate.newDate(year,month-2,28));
+			Event ev17=new Event(17, "Mallorca-Valencia", UtilDate.newDate(year,month+1,28), mallorca, valencia);
+			Event ev18=new Event(18, "Cádiz-Rayo Vallecano", UtilDate.newDate(year,month+1,28), cadiz, rayoVallecano);
+			Event ev19=new Event(19, "Real Betis-Levante", UtilDate.newDate(year,month+1,28), realBetis, levante);
+			Event ev20=new Event(20, "Real Sociedad-Real Madrid", UtilDate.newDate(year,month+1,28), realSociedad, realMadrid);
+			Event ev21=new Event(21, "Betis-Real Madrid", UtilDate.newDate(year,month-2,28),realBetis, realMadrid);
+			Event ev22=new Event(22, "Barcelona-Real Madrid", UtilDate.newDate(year,month-2,28), barcelona, realMadrid);
 			
 			Question q1;
 			Question q2;
@@ -509,35 +509,16 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);
 		
-		
 		String[] equipos=inputDescription.split("-");
 		Equipo local= db.find(Equipo.class,equipos[0]);
 		Equipo visitante=db.find(Equipo.class,equipos[1]);
 		if(local==null || visitante==null) throw new UnknownTeamException();
 		ev.setEquipos(local, visitante);
 		
-		Question q1=ev.addQuestion("1X2",(float) 5.0);
-		
-		Pronostico p1= new Pronostico("1", q1, 0.22);
-		Pronostico p2= new Pronostico("X", q1, 1.48);
-		Pronostico p3= new Pronostico("2", q1, 2.33);
-		
-		
-		q1.addPronostico(p1);
-		q1.addPronostico(p2);
-		q1.addPronostico(p3);
-		
-		db.persist(q1);
-		
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-		
-		db.persist(p1);
-		db.persist(p2);
-		db.persist(p3);
-		
+	
 		for(Pronostico p: ev.getQuestions().get(0).getPronosticos())System.out.println(p.getCuota());
-		
 		
 		db.getTransaction().commit();
 		return ev;
@@ -555,33 +536,15 @@ public class DataAccess  {
 		
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);
-		
 		ev.setEquipos(local, visitante);
-		Question q1=ev.addQuestion("1X2",(float) 5.0);
-		
-		Pronostico p1= new Pronostico("1", q1, 0.22);
-		Pronostico p2= new Pronostico("X", q1, 1.48);
-		Pronostico p3= new Pronostico("2", q1, 2.33);
-		
-		
-		q1.addPronostico(p1);
-		q1.addPronostico(p2);
-		q1.addPronostico(p3);
-		
-		db.persist(q1);
 		
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-		
-		db.persist(p1);
-		db.persist(p2);
-		db.persist(p3);
 		
 		for(Pronostico p: ev.getQuestions().get(0).getPronosticos())System.out.println(p.getCuota());
 		
 		db.getTransaction().commit();
 		return ev;
-		
 	}
 
 	public List<Pronostico> findPronosticos(Question q) {

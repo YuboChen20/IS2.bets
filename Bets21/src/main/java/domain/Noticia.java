@@ -97,6 +97,12 @@ public class Noticia {
 		this.fechaPubli = fechaPubli;
 	}
 	
+	@Override
+	public String toString() {
+		return titulo;
+		
+	}
+	
 	
 
 }
