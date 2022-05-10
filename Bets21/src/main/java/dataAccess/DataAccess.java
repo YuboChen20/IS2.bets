@@ -779,7 +779,8 @@ public class DataAccess  {
 	}
 	
 	public List<Noticia> getNoticias(Date date) {
-		System.out.println(">> DataAccess: getNoticia");	
+		System.out.println(">> DataAccess: getNoticia");
+		System.out.println(date);
 		TypedQuery<Noticia> query = db.createQuery("SELECT no FROM Noticia no WHERE no.fechaPubli=?1",Noticia.class);   
 		query.setParameter(1, date);
 		List<Noticia> noticias = query.getResultList();

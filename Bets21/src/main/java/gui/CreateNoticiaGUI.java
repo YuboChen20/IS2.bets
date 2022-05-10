@@ -27,6 +27,7 @@ import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 
 public class CreateNoticiaGUI extends JFrame {
 
@@ -45,12 +46,16 @@ public class CreateNoticiaGUI extends JFrame {
 	private Calendar calendarAnt = null;
 	private final JButton jButtonCerrar = new JButton("Cerrar");
 	private final JButton jButtonCrearNoticia = new JButton("Crear Noticia");
+	private final JRadioButton jRadioButtonExisteAutor = new JRadioButton("Existe Autor");
+	private final JRadioButton jRadioButtonNuevoAutor = new JRadioButton("Nuevo Autor");
 	private final ButtonGroup buttonGroupAutor = new ButtonGroup();
 	private final JComboBox JComboBoxMedios = new JComboBox();
+	DefaultComboBoxModel<String> modelMedios = new DefaultComboBoxModel<String>();
 	private final TextField textFieldMedios = new TextField();
 	private final JRadioButton jRadioButtonExisteMedio = new JRadioButton("Existe Medio");
 	private final JRadioButton jRadioButtonNuevoMedio = new JRadioButton("Nuevo Medio");
 	private final ButtonGroup buttonGroupMedio = new ButtonGroup();
+	
 
 
 	/**
@@ -102,6 +107,7 @@ public class CreateNoticiaGUI extends JFrame {
 			modelAutores.addElement(au);
 		}
 		JComboBoxAutores.repaint();
+
 		
 		
 		JComboBoxNoticias.addActionListener(new ActionListener() {
@@ -121,11 +127,13 @@ public class CreateNoticiaGUI extends JFrame {
 			
 		});
 		
+		
+		
 		contentPane.add(textTitulo);
-		textTitulo.setEditable(false);
+		textTitulo.setEditable(true);
 		textTitulo.setFont(fontTitulo);
 		textSubTitulo.setBounds(565, 142, 354, 32);
-		textSubTitulo.setEditable(false);
+		textSubTitulo.setEditable(true);
 		textSubTitulo.setFont(fontSubTitulo);
 		
 		contentPane.add(textSubTitulo);
@@ -133,7 +141,7 @@ public class CreateNoticiaGUI extends JFrame {
 		
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(textTexto);
-		textTexto.setEditable(false);
+		textTexto.setEditable(true);
 		textTexto.setFont(fontTexto);
 		textTexto.setWrapStyleWord(true);
 		jCalendar.setBounds(54, 24, 225, 150);
@@ -172,16 +180,22 @@ public class CreateNoticiaGUI extends JFrame {
 		textFieldAutor.setBounds(127, 442, 227, 32);
 		contentPane.add(textFieldAutor);
 		
-		JRadioButton jRadioButtonExisteAutor = new JRadioButton("Existe Autor");
+
 		buttonGroupAutor.add(jRadioButtonExisteAutor);
 		jRadioButtonExisteAutor.setBounds(10, 393, 111, 23);
 		contentPane.add(jRadioButtonExisteAutor);
 		
-		JRadioButton jRadioButtonNuevoAutor = new JRadioButton("Nuevo Autor");
+
 		buttonGroupAutor.add(jRadioButtonNuevoAutor);
 		jRadioButtonNuevoAutor.setBounds(10, 451, 111, 23);
 		contentPane.add(jRadioButtonNuevoAutor);
 		JComboBoxMedios.setBounds(127, 290, 225, 32);
+		JComboBoxMedios.setModel(modelMedios);
+		List<String> medios=facade.getAllNoticiasMedio();
+		for(String me: medios) {
+			modelMedios.addElement(me);
+		}
+		JComboBoxAutores.repaint();
 		
 		contentPane.add(JComboBoxMedios);
 		textFieldMedios.setBounds(127, 328, 225, 32);
@@ -201,6 +215,33 @@ public class CreateNoticiaGUI extends JFrame {
 			}
 		});
 		
+		jButtonCrearNoticia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String titulo = textTitulo.getSelectedText();
+				String subtitulo = textSubTitulo.getSelectedText();
+				String texto = textTexto.getSelectedText();
+				String nomAutor = "Anonimo";
+				String nomMedio = "Desconocido";
+				if(jRadioButtonExisteAutor.isSelected()) {
+					nomAutor = (String) JComboBoxAutores.getSelectedItem();
+				} else if(jRadioButtonNuevoAutor.isSelected()) {
+					nomAutor = textFieldAutor.getSelectedText();
+				}
+				if(jRadioButtonExisteMedio.isSelected()) {
+					nomMedio = (String) JComboBoxMedios.getSelectedItem();
+				} else if(jRadioButtonNuevoAutor.isSelected()) {
+					nomMedio= textFieldMedios.getSelectedText();
+				}
+				Date dat = jCalendar.getDate();
+				BLFacade facade = MainGUI.getBusinessLogic();
+				try {
+					
+					facade.createNoticia(titulo, subtitulo, texto, nomAutor, nomMedio, dat);
+				}catch(Exception e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 
 
 		

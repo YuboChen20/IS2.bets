@@ -90,6 +90,7 @@ public class CreateAndQueryGUI extends JFrame {
 	
 	int seleccionLocal=0;
 	int seleccionVisitante=1;
+	private final JButton jButtonCrearNoticia = new JButton("Crear Noticias"); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
@@ -707,6 +708,16 @@ public class CreateAndQueryGUI extends JFrame {
 				
 				Calendar calendar = Calendar.getInstance();
 				jCalendar.setCalendar(calendar);
+				jButtonCrearNoticia.setBounds(346, 124, 130, 23);
+				
+				getContentPane().add(jButtonCrearNoticia);
+				
+				
+		jButtonCrearNoticia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonCrearNoticia_actionPerformed(e);
+			}
+		});
 		
         
 	}
@@ -821,6 +832,12 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 	private void jButtonCerrarApuesta_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 		CloseBetGUI a =new CloseBetGUI(new Vector<Event>());
+		a.setVisible(true);;
+	}
+	
+	private void jButtonCrearNoticia_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		CreateNoticiaGUI a =new CreateNoticiaGUI();
 		a.setVisible(true);;
 	}
 	

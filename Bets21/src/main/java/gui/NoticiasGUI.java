@@ -182,6 +182,7 @@ public class NoticiasGUI extends JFrame {
 		jButtonFiltrarDia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Date dat = jCalendar.getDate();
+				
 				BLFacade facade = MainGUI.getBusinessLogic();
 				List<Noticia> noticias=facade.getNoticias(dat);
 				modelNoticia.removeAllElements();
