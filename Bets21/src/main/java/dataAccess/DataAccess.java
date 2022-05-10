@@ -635,6 +635,7 @@ public class DataAccess  {
 		if(d<0)return 2;
 		
 		db.getTransaction().begin();
+		
 		q. addNºApuesta();
 		u.setDinero(d);
 		user.setDinero(d);
@@ -642,8 +643,35 @@ public class DataAccess  {
 		p.addApuesta(b);
 		db.persist(q);
 		db.persist(b);
+
+		if(q.getQuestion().equals("1X2")) {
+			
+			Equipo local=q.getEvent().getEquipos().get(0);
+			Equipo visitante=q.getEvent().getEquipos().get(1);
+			
+			if(pos.getPronostico().equals("1")) {
+				local.incrNumUsuariosApuestan();
+			} else if(pos.getPronostico().equals("X")) {
+				local.halfIncrNumUsuariosApuestan();
+				visitante.halfIncrNumUsuariosApuestan();
+			} else if(pos.getPronostico().equals("2")) {
+				visitante.incrNumUsuariosApuestan();
+			}
+			
+			if(local != null && visitante !=null) {
+				db.persist(local);
+				db.persist(visitante);
+			}
+			
+			System.out.println("Local: "+local + " Visitante"+visitante);
+			
+		}
+		
 		db.getTransaction().commit();
+		
 		System.out.println("APUESTA   "+ b);
+		
+		
 		this.añadirApuesta(u,b);
 		this.calcularPorcentajePronostico(q);
 		return 0;	
@@ -846,4 +874,14 @@ public class DataAccess  {
 	 	for(Noticia no: noticias)System.out.println(no);
 	 	return noticias;
 	}
+	
+	public List<Equipo> getAllEquiposPorUsuarios() {
+		System.out.println(">> DataAccess: getAllEquiposPorUsuarios");
+		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq order by numUsuariosApuestan desc",Equipo.class);
+		List<Equipo> equipos = query.getResultList();
+	 	for(Equipo eq: equipos)System.out.println(eq);
+	 	return equipos;
+	}
+	
+	
 }

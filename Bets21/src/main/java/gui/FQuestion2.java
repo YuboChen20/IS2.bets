@@ -356,6 +356,17 @@ public class FQuestion2 extends JFrame {
 		lblApuestaMinima.setBounds(45, 284, 80, 14);
 		getContentPane().add(lblApuestaMinima);
 		
+		JButton btnVerRanking = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FQuestion2.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnVerRanking.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				RankingGUI a= new RankingGUI();
+				a.setVisible(true);
+			}
+		});
+		btnVerRanking.setBounds(26, 387, 89, 23);
+		getContentPane().add(btnVerRanking);
+		
 		tablePronosticos.setDefaultRenderer(Object.class, new Render());
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////

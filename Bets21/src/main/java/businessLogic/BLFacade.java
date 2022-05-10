@@ -93,4 +93,5 @@ public interface BLFacade  {
 	@WebMethod public List<Noticia> getNoticiasAuthor(String aut);
 	@WebMethod public List<String> getAllNoticiasMedio();
 	@WebMethod public List<Noticia> getNoticiasMedio(String med);
+	@WebMethod public List<Equipo> getAllEquiposPorUsuarios();
 }

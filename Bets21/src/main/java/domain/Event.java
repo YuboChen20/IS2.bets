@@ -28,7 +28,7 @@ public class Event implements Serializable {
 	private Vector<Question> questions=new Vector<Question>();
 	
 	@OneToMany(fetch=FetchType.EAGER)
-	private Equipo[] equipos= new Equipo[2];
+	private Vector<Equipo> equipos=new Vector<Equipo>();
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Comentarios> comentarios= new Vector<Comentarios>();
@@ -62,6 +62,11 @@ public class Event implements Serializable {
 		
 		
 		this.questions.add(q1);
+		
+		equipos.add(local);
+		equipos.add(visitante);
+		local.anadirEvento(this);
+		visitante.anadirEvento(this);
 		
 	}
 	
@@ -193,13 +198,13 @@ public class Event implements Serializable {
 		this.isClosed = isClosed;
 	}
 
-	public Equipo[] getEquipos() {
+	public Vector<Equipo> getEquipos() {
 		return equipos;
 	}
 
 	public void setEquipos(Equipo local, Equipo visitante) {
-		this.equipos[0] = local;
-		this.equipos[1] = visitante;
+		equipos.add(local);
+		equipos.add(visitante);
 	}
 	
 	

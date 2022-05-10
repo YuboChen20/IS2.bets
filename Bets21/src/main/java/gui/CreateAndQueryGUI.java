@@ -381,7 +381,10 @@ public class CreateAndQueryGUI extends JFrame {
 						// Obtain the business logic from a StartWindow class (local or remote)
 						BLFacade facade = MainGUI.getBusinessLogic();
 							
-						facade.createEvent(local,visitante,firstDay);
+						Event eventi=facade.createEvent(local,visitante,firstDay);
+						
+						
+						for(Equipo eq:eventi.getEquipos())System.out.println(eq);
 						
 						jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("EventCreated"));     
 						jCalendar.setCalendar(calendarAct);

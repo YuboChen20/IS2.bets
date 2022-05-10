@@ -17,12 +17,15 @@ public class Equipo {
 	@Id 
 	private String nombre;
 
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Event> events=new Vector<Event>();
+	
+	private double numUsuariosApuestan;
 
 	
 	public Equipo(String nombre) {
 		this.nombre=nombre;
+		this.setNumUsuariosApuestan(0);
 	}
 	public String getNombre() {
 		return nombre;
@@ -62,6 +65,19 @@ public class Equipo {
 	public String toString() {
 		return nombre;
 	}
+	public double getNumUsuariosApuestan() {
+		return numUsuariosApuestan;
+	}
+	public void setNumUsuariosApuestan(double numUsuariosApuestan) {
+		this.numUsuariosApuestan = numUsuariosApuestan;
+	}
+	public void incrNumUsuariosApuestan() {
+		this.numUsuariosApuestan = numUsuariosApuestan+1;
+	}
+	public void halfIncrNumUsuariosApuestan() {
+		this.numUsuariosApuestan = numUsuariosApuestan+0.5;
+	}
+	
 	
 	
 	
