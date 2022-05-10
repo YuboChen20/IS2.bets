@@ -217,20 +217,20 @@ public class CreateNoticiaGUI extends JFrame {
 		
 		jButtonCrearNoticia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String titulo = textTitulo.getSelectedText();
-				String subtitulo = textSubTitulo.getSelectedText();
-				String texto = textTexto.getSelectedText();
+				String titulo = textTitulo.getText();
+				String subtitulo = textSubTitulo.getText();
+				String texto = textTexto.getText();
 				String nomAutor = "Anonimo";
 				String nomMedio = "Desconocido";
 				if(jRadioButtonExisteAutor.isSelected()) {
 					nomAutor = (String) JComboBoxAutores.getSelectedItem();
 				} else if(jRadioButtonNuevoAutor.isSelected()) {
-					nomAutor = textFieldAutor.getSelectedText();
+					nomAutor = textFieldAutor.getText();
 				}
 				if(jRadioButtonExisteMedio.isSelected()) {
 					nomMedio = (String) JComboBoxMedios.getSelectedItem();
 				} else if(jRadioButtonNuevoAutor.isSelected()) {
-					nomMedio= textFieldMedios.getSelectedText();
+					nomMedio= textFieldMedios.getText();
 				}
 				Date dat = jCalendar.getDate();
 				BLFacade facade = MainGUI.getBusinessLogic();
