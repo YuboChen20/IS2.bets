@@ -153,6 +153,7 @@ public class NoticiasGUI extends JFrame {
 		scrollPane.setViewportView(textTexto);
 		textTexto.setEditable(false);
 		textTexto.setFont(fontTexto);
+		textTexto.setLineWrap(true);
 		textTexto.setWrapStyleWord(true);
 		jCalendar.setBounds(54, 24, 225, 150);
 		jCalendar.setTodayButtonVisible(false);

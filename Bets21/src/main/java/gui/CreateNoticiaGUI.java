@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JCalendar;
@@ -141,6 +142,7 @@ public class CreateNoticiaGUI extends JFrame {
 		
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(textTexto);
+		textTexto.setLineWrap(true);
 		textTexto.setEditable(true);
 		textTexto.setFont(fontTexto);
 		textTexto.setWrapStyleWord(true);
