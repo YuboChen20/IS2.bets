@@ -44,7 +44,7 @@ public class OtrasApuestas2GUI extends JFrame {
 	private DefaultTableModel tableModelQueries;
 	private DefaultTableModel tableModelPronostico;
 	
-	private final JLabel jLabelApuesta = new JLabel(); 
+	
 	
 	private String[] columnNamesPronostico = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
@@ -76,6 +76,7 @@ public class OtrasApuestas2GUI extends JFrame {
 	private JScrollPane scrollpane1;
 	private JTextField textField;
     private int pos;
+    private final JLabel lblErrorApostar = new JLabel(""); //$NON-NLS-1$ //$NON-NLS-2$
     ///////////////////////////////
 
 	public OtrasApuestas2GUI(Event event1, Date date1, int i1, Usuario u)
@@ -136,6 +137,10 @@ public class OtrasApuestas2GUI extends JFrame {
 		tableQueries.getColumnModel().getColumn(0).setPreferredWidth(25);
 		tableQueries.getColumnModel().getColumn(1).setPreferredWidth(268);
 		this.getContentPane().add(scrollPaneQueries);
+		
+		
+		
+		
 		scrollPanePronostico.setBounds(382, 93, 379, 146);
 		scrollPanePronostico.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
@@ -209,7 +214,7 @@ public class OtrasApuestas2GUI extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				
 				try {
-					jLabelApuesta.setForeground(Color.RED);
+					lblErrorApostar.setForeground(Color.RED);
 					Double pr = Double.parseDouble (textApuesta.getText());
 					int numQ= tableQueries.getSelectedRow()+1;
 					int numP= tablePronosticos.getSelectedRow();
@@ -225,8 +230,8 @@ public class OtrasApuestas2GUI extends JFrame {
                     
                             
                             if(i==0) {
-                            	jLabelApuesta.setForeground(Color.BLACK);
-                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
+                            	lblErrorApostar.setForeground(Color.BLACK);
+                            	lblErrorApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
                             	
                             ////Actualizar tabla de pronósticos//
             					
@@ -248,6 +253,7 @@ public class OtrasApuestas2GUI extends JFrame {
             		                	}
             		                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
             		                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+            		                	if(tablePronosticos.getRowCount()>0)tablePronosticos.setRowSelectionInterval(numP, numP);
             		                }catch(PronosticAlreadyExist e1) {
             		                	// lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
             		                }
@@ -263,16 +269,16 @@ public class OtrasApuestas2GUI extends JFrame {
 
                             } 
                             else if(i==1) {
-                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
+                            	lblErrorApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
                             }
                             else {
-                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBetDinero"));
+                            	lblErrorApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBetDinero"));
                             }
                             
 					}
                 }catch(Exception e1) {
                
-                	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorApuesta"));
+                	lblErrorApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorApuesta"));
         	
                 }
 				
@@ -306,6 +312,46 @@ public class OtrasApuestas2GUI extends JFrame {
         	tableQueries.getColumnModel().getColumn(1).setPreferredWidth(268);
         	
         	tableModelQueries.removeRow(0);
+        	
+        	if(tableQueries.getRowCount()>0) {
+        		tableQueries.setRowSelectionInterval(0,0);
+        		
+        		
+        		
+        		
+				
+				Question q = event1.getQuest(1);
+				
+				lblMinima.setText("Apuesta Mínima: "+q.getBetMinimum());
+				
+				
+                try {
+                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+                	
+                	tableModelPronostico.setDataVector(null, columnNamesPronostico);
+                	
+                	for (domain.Pronostico p:pronosticos){
+                		System.out.println(p.toString());
+                		Vector<Object> row = new Vector<Object>();
+
+                		row.add(p.getPronosNumber());
+                		row.add(p.getPronostico());
+                		row.add(p.getCuota());
+                		row.add(p.getPorcentajeApuesta());
+                		System.out.println(p.getCuota());
+                		tableModelPronostico.addRow(row);	
+                	}
+                	
+                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+                	tablePronosticos.getColumnModel().getColumn(2).setWidth(25);
+                	tablePronosticos.setRowSelectionInterval(0, 0);
+            		//tablePronosticos.getColumnModel().getColumn(3).setPreferredWidth(25);
+                	
+                }catch(PronosticAlreadyExist e1) {
+                	//lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+                }
+        	}
        
         }catch(Exception e1) {
         	//lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
@@ -328,6 +374,8 @@ public class OtrasApuestas2GUI extends JFrame {
 				
 				Question q = event1.getQuest(j);
 			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
+				
+				lblMinima.setText("Apuesta Mínima: "+q.getBetMinimum());
 				
 				System.out.println(q.toString());
 				
@@ -352,6 +400,7 @@ public class OtrasApuestas2GUI extends JFrame {
                 	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
                 	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
                 	tablePronosticos.getColumnModel().getColumn(2).setWidth(25);
+                	tablePronosticos.setRowSelectionInterval(0, 0);
             		//tablePronosticos.getColumnModel().getColumn(3).setPreferredWidth(25);
                 	
                 }catch(PronosticAlreadyExist e1) {
@@ -394,9 +443,12 @@ public class OtrasApuestas2GUI extends JFrame {
 		btnComentar.setBounds(561, 449, 134, 21);
 		getContentPane().add(btnComentar);
 		
-		JLabel lblNewLabel = new JLabel(user.getUserName() + " :");
-		lblNewLabel.setBounds(30, 453, 45, 13);
-		getContentPane().add(lblNewLabel);
+		JLabel lblUserComentarios = new JLabel(user.getUserName() + " :");
+		lblUserComentarios.setBounds(30, 453, 45, 13);
+		getContentPane().add(lblUserComentarios);
+		lblErrorApostar.setBounds(207, 300, 131, 14);
+		
+		getContentPane().add(lblErrorApostar);
 	
 	
 	}

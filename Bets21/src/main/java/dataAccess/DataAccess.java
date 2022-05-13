@@ -527,12 +527,25 @@ public class DataAccess  {
 	
 	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws UnknownTeamException {
 		String inputDescription=local.getNombre()+"-"+visitante.getNombre();
+		String reverseDescription=visitante.getNombre()+"-"+ local.getNombre();
+		
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
 		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
 		query.setParameter(1, firstDay);
 		List<Event> eventos = query.getResultList();
-		if(eventos!=null) 
-			for(Event e: eventos)if(e.getDescription().equals(inputDescription))return null;
+		if(eventos!=null) {
+			
+			for(Event e: eventos) {
+				String [] equipos=e.getDescription().split("-");
+				
+				//if(e.getDescription().equals(inputDescription)||e.getDescription().equals(reverseDescription))return null;
+				
+				if(local.getNombre().equals(equipos[0])||local.getNombre().equals(equipos[1])) return null;
+				if(visitante.getNombre().equals(equipos[0])||visitante.getNombre().equals(equipos[1])) return null;
+			}
+			
+		}
+			
 		
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);

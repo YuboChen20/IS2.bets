@@ -78,9 +78,8 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textFieldCuota;
-	private final JLabel lblNewLabel_3 = new JLabel(); 
-	private final JLabel lblNewLabel_3_1 = new JLabel();
-	private final JLabel lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblEventoCerrado = new JLabel();
+	private final JLabel lblCuota = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton btnButtonCerrarApuesta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	private JComboBox<Equipo> jComboBoxLocal = new JComboBox<Equipo>();
@@ -91,6 +90,8 @@ public class CreateAndQueryGUI extends JFrame {
 	int seleccionLocal=0;
 	int seleccionVisitante=1;
 	private final JButton jButtonCrearNoticia = new JButton("Crear Noticias"); //$NON-NLS-1$ //$NON-NLS-2$
+	
+	private JLabel lblConsultaCreada = new JLabel("");
 	
 	
 	public CreateAndQueryGUI(Vector<domain.Event> v) {
@@ -115,9 +116,9 @@ public class CreateAndQueryGUI extends JFrame {
 				
 					if(ev!=null) {
 						if(ev.isClosed()) {
-							lblNewLabel_3_1.setText("Evento  cerrado");
+							lblEventoCerrado.setText("Evento  cerrado");
 						}else {
-							lblNewLabel_3_1.setText("Evento sin cerrar");
+							lblEventoCerrado.setText("Evento sin cerrar");
 						}
 						Vector<Question> queries=ev.getQuestions();
 						
@@ -253,6 +254,7 @@ public class CreateAndQueryGUI extends JFrame {
 				jLabelError.setText("");
 				jLabelMsg.setText("");
 				jLabelMsg2.setText("");
+				lblConsultaCreada.setText("");
 				
 //				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
 //					public void propertyChange(PropertyChangeEvent propertychangeevent) {
@@ -370,6 +372,7 @@ public class CreateAndQueryGUI extends JFrame {
 					jLabelError.setText("");
 					jLabelMsg.setText("");
 					jLabelMsg2.setText("");
+					lblConsultaCreada.setText("");
 
 					// Displays an exception if the query field is empty
 					//String inputDescription=textFieldDescripcionEvento.getText();
@@ -390,7 +393,10 @@ public class CreateAndQueryGUI extends JFrame {
 						jCalendar.setCalendar(calendarAct);
 						datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar.getDate());
 						paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
-                		actualizarTabla();		
+						
+                		actualizarTabla();	
+                		jComboBoxEvents.setSelectedIndex(jComboBoxEvents.getItemCount()-1);
+                		
 					}
 				} catch(EventAlreadyExistsException e2) {
 					jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventAlreadyExisted"));
@@ -493,6 +499,7 @@ public class CreateAndQueryGUI extends JFrame {
 					jLabelError.setText("");
 					jLabelMsg.setText("");
 					jLabelMsg2.setText("");
+					lblConsultaCreada.setText("");
 					//textFieldCuota.setText(""); 
 
 					// Displays an exception if the query field is empty
@@ -602,20 +609,16 @@ public class CreateAndQueryGUI extends JFrame {
 		textFieldCuota.setColumns(10);
 		
 		
-		lblNewLabel_1.setBounds(604, 309, 45, 18);
-		getContentPane().add(lblNewLabel_1);
+		lblCuota.setBounds(604, 309, 45, 18);
+		getContentPane().add(lblCuota);
 		
 		JLabel closebetLabelError = new JLabel(); 
 		closebetLabelError.setBounds(600, 387, 250, 16);
 		getContentPane().add(closebetLabelError);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblNewLabel_3.setBounds(404, 91, 120, 13);
+		lblEventoCerrado.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblEventoCerrado.setBounds(404, 80, 145, 13);
 		
-		getContentPane().add(lblNewLabel_3);
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblNewLabel_3_1.setBounds(404, 80, 145, 13);
-		
-		getContentPane().add(lblNewLabel_3_1);
+		getContentPane().add(lblEventoCerrado);
 		
 
 		btnButtonCerrarApuesta.setBounds(591, 11, 133, 23);
@@ -716,6 +719,10 @@ public class CreateAndQueryGUI extends JFrame {
 				getContentPane().add(jButtonCrearNoticia);
 				
 				
+				lblConsultaCreada.setBounds(247, 355, 46, 14);
+				getContentPane().add(lblConsultaCreada);
+				
+				
 		jButtonCrearNoticia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonCrearNoticia_actionPerformed(e);
@@ -775,11 +782,12 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 	 
 	private void jButtonCreate_actionPerformed(ActionEvent e) {
 		domain.Event event = ((domain.Event) jComboBoxEvents.getSelectedItem());
-
+		lblConsultaCreada.setText("");
 		try {
 			jLabelError.setText("");
 			jLabelMsg.setText("");
 			jLabelMsg2.setText("");
+			lblConsultaCreada.setText("");
 
 			// Displays an exception if the query field is empty
 			String inputQuery = jTextFieldQuery.getText();
@@ -798,7 +806,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 
 					facade.createQuestion(event, inputQuery, inputPrice);
 
-					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryCreated"));
+					lblConsultaCreada.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryCreated"));
 					
 				
 				

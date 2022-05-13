@@ -1,6 +1,8 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,10 +23,23 @@ public class Render extends DefaultTableCellRenderer{
 			ImageIcon ii=(ImageIcon) value;
 			label.setIcon(ii);
 			return label;
-		}
-		*/
-		
+		}*/
+			
+		if (isSelected && table.getSelectedColumn()==column && table.getSelectedRow()==row) {
+			Color myBlue=new Color(0, 23, 255,150);
+            this.setBackground(Color.cyan);
+            this.setBackground(myBlue);
+            this.setText(table.getValueAt(row, column).toString());
+            return this;
+        }else if(!isSelected && (table.getSelectedColumn()!=column && table.getSelectedRow()!=row)) {
+        	this.setBackground(Color.white);
+        }
+       
 		return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 	}
+	
+	
+	       
+	  
 
 }

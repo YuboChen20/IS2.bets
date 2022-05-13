@@ -44,7 +44,7 @@ public class FQuestion2 extends JFrame {
 	private DefaultTableModel tableModelPronostico;
 	
 	
-	private final JLabel jLabelApuesta = new JLabel(); 
+	
 	
 	private String[] columnNamesPronostico = new String[] {
 			"",
@@ -61,6 +61,9 @@ public class FQuestion2 extends JFrame {
 
 	private final JButton btnLogout = new JButton("Cerrar Sesión"); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textField;
+	
+	private JButton btnApostar = new JButton("Apostar");
+	private final JLabel lblErrorAlApostar = new JLabel(""); //$NON-NLS-1$ //$NON-NLS-2$
     
 	public FQuestion2(Usuario u)
 	{
@@ -132,6 +135,8 @@ public class FQuestion2 extends JFrame {
 		{
 			public void propertyChange(PropertyChangeEvent propertychangeevent)
 			{
+				
+				lblErrorAlApostar.setText("");
 
 				if (propertychangeevent.getPropertyName().equals("locale"))
 				{
@@ -221,6 +226,8 @@ public class FQuestion2 extends JFrame {
 					
 					tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(6)); // not shown in JTable
 					
+					btnApostar.setEnabled(false);
+					
 					
 				} 
 				
@@ -238,6 +245,11 @@ public class FQuestion2 extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				int i = tablePronosticos.getSelectedRow();
 				int j= tablePronosticos.getSelectedColumn();
+				
+				lblErrorAlApostar.setText("");
+				
+				if(1<j && j<5) btnApostar.setEnabled(true);
+				else btnApostar.setEnabled(false);
 				
 				if(j==5) {
 					domain.Event ev=(domain.Event)tableModelPronostico.getValueAt(i,6); // obtain ev object 
@@ -281,7 +293,7 @@ public class FQuestion2 extends JFrame {
 		getContentPane().add(btnLogout);
 		
 		JLabel lblApuesta = new JLabel("Apuesta"); //$NON-NLS-1$ //$NON-NLS-2$
-		lblApuesta.setBounds(33, 259, 46, 14);
+		lblApuesta.setBounds(33, 259, 62, 14);
 		getContentPane().add(lblApuesta);
 		
 		textField = new JTextField();
@@ -290,7 +302,7 @@ public class FQuestion2 extends JFrame {
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JButton btnApostar = new JButton("Apostar"); //$NON-NLS-1$ //$NON-NLS-2$
+		
 		btnApostar.setBounds(211, 255, 89, 23);
 		btnApostar.addMouseListener(new MouseAdapter() {
 			@Override
@@ -300,7 +312,7 @@ public class FQuestion2 extends JFrame {
 					
 					int i=tablePronosticos.getSelectedRow();
 					int j=tablePronosticos.getSelectedColumn();
-					jLabelApuesta.setForeground(Color.RED);
+					lblErrorAlApostar.setForeground(Color.RED);
 					Double pr = Double.parseDouble (textField.getText());
 					
 	
@@ -317,26 +329,29 @@ public class FQuestion2 extends JFrame {
                     
                             
                             if(k==0) {
-                            	jLabelApuesta.setForeground(Color.BLACK);
-                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
+                            	lblErrorAlApostar.setForeground(Color.BLACK);
+                           
+                            	
+                            	lblErrorAlApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateApuesta"));
 
                             } 
                             else if(k==1) {
-                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
+                            	lblErrorAlApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBet"));
                             }
                             else {
-                            	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBetDinero"));
+                            	lblErrorAlApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorBetDinero"));
                             }
                             
 					}
                 }catch(Exception e1) {
                
-                	jLabelApuesta.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorApuesta"));
+                	lblErrorAlApostar.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorApuesta"));
         	
                 }
 				
 			}
 		});
+		btnApostar.setEnabled(false);
 		getContentPane().add(btnApostar);
 		
 		JButton btnVerPerfil = new JButton("Ver perfil"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -352,8 +367,8 @@ public class FQuestion2 extends JFrame {
 		btnVerPerfil.setBounds(26, 353, 89, 23);
 		getContentPane().add(btnVerPerfil);
 		
-		JLabel lblApuestaMinima = new JLabel("Apuesta Mínima:"); //$NON-NLS-1$ //$NON-NLS-2$
-		lblApuestaMinima.setBounds(45, 284, 80, 14);
+		JLabel lblApuestaMinima = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("FQuestion2.lblApuestaMinima.text")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-2$
+		lblApuestaMinima.setBounds(45, 284, 156, 14);
 		getContentPane().add(lblApuestaMinima);
 		
 		JButton btnVerRanking = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FQuestion2.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
@@ -366,6 +381,9 @@ public class FQuestion2 extends JFrame {
 		});
 		btnVerRanking.setBounds(26, 387, 89, 23);
 		getContentPane().add(btnVerRanking);
+		lblErrorAlApostar.setBounds(89, 308, 252, 14);
+		
+		getContentPane().add(lblErrorAlApostar);
 		
 		tablePronosticos.setDefaultRenderer(Object.class, new Render());
 		
