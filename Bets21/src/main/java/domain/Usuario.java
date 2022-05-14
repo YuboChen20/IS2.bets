@@ -3,12 +3,14 @@ package domain;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -30,13 +32,21 @@ public class Usuario{
 	private Vector<Bet> apuestas = new Vector<Bet>();
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Comentarios> comentarios= new Vector<Comentarios>();
-    public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
+	@XmlIDREF
+	private Historial h;
+	private boolean bloqueado;
+	private Date fecha;    //fecha de bloque o última entrada
+	private int numIntento;
+	
+	public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
     	this.password=passwor;
     	this.cardCode=cardCode;
     	this.admin=admi;
     	this.correo=correo;
     	this.dinero=50;
+    	this.bloqueado=false;
+    	this.numIntento=0;
     	
     }
     public Usuario() {}
@@ -119,7 +129,32 @@ public class Usuario{
 		comentarios.add(c);
 		return c;
 	}
+	public Historial getH() {
+		return h;
+	}
 	
+	public void setH(Historial hi) {
+		this.h=hi;
+	}
+	public boolean isBloqueado() {
+		return bloqueado;
+	}
+	public void setBloqueado(boolean b) {
+		this.bloqueado = b;
+	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public void setNumIntento(int i) {
+		this.numIntento = i;
+	}
+	public int getNumIntento() {
+		return numIntento;
+	}
 	
 	
 	

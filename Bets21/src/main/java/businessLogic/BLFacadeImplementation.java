@@ -390,5 +390,25 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 	 	return equipos;
 	}
+	   @WebMethod 
+	    public List<Usuario> getUsuarios(String s, String s2){
+	    	dbManager.open(false);
+			List<Usuario>  usuarios=dbManager.getUsuarios(s,s2);
+			dbManager.close();
+			return usuarios;
+	    }
+	    @WebMethod 
+	    public Usuario getUsuario(String s, String s2, int i) {
+	    	dbManager.open(false);
+			Usuario  u=dbManager.getUsuario(s,s2,i);
+			dbManager.close();
+			return u;
+	    }
+		@WebMethod 
+		public void desBloquear(String s, Usuario u) {
+			dbManager.open(false);
+			dbManager.desBloquear(s,u);
+			dbManager.close();
+		}
 }
 

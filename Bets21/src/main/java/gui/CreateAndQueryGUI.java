@@ -49,6 +49,8 @@ public class CreateAndQueryGUI extends JFrame {
 
 	private JButton jButtonCreateQuery = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
 	private JButton jButtonLogout = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Logout"));
+	private final JButton btnButtonHistorial = new JButton(ResourceBundle.getBundle("Etiquetas").getString("VerHistorial")); //$NON-NLS-1$ //$NON-NLS-2$
+	
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 	private JLabel  lblNewLabel= new JLabel();
@@ -729,6 +731,13 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		
+		btnButtonHistorial.setBounds(343, 90, 157, 23);
+		btnButtonHistorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonVerHistorial_actionPerformed(e);
+			}
+		});
+		getContentPane().add(btnButtonHistorial);
         
 	}
 
@@ -852,7 +861,11 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		a.setVisible(true);;
 	}
 	
-	
+	private void jButtonVerHistorial_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		HistorialGUI a =new HistorialGUI();
+		a.setVisible(true);;
+	}
 	
 	
 	

@@ -89,12 +89,15 @@ public class Login extends JFrame {
 				   if(user==null & tipoError==null) tipoError="n";
 				   if(tipoError==null){
 					   if(user.isAdmin()) {
-						   btnLoginAdmi_actionPerformed(e);
-						   
+						   if(user.isBloqueado())editorPane.setText("Administrador bloqueado");
+						   else if(user.getPassword().equals(ps)) btnLoginAdmi_actionPerformed(e);
+						   else  editorPane.setText("Contraseña incorrecta intento "+user.getNumIntento()+"/5 ."); 
 					   }
 					   else {
-						   btnLoginUser_actionPerformed(e,user);							   
-					   }					   
+						   if(user.isBloqueado())editorPane.setText("Usuario bloqueado");
+						   else if(user.getPassword().equals(ps)) btnLoginUser_actionPerformed(e,user);	
+						   else editorPane.setText("Contraseña incorrecta intento "+user.getNumIntento()+"/5 ."); 
+					   }						   
 				   }else {
 					    
 					   if(tipoError.equals("u")) editorPane.setText("Introduzca el nombre de usuario.");
