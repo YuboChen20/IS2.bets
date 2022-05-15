@@ -97,4 +97,5 @@ public interface BLFacade  {
 	@WebMethod public List<Usuario> getUsuarios(String s, String s2);
 	@WebMethod public Usuario getUsuario(String s, String s2,int i);
 	@WebMethod public void desBloquear(String s,Usuario u);
+	@WebMethod public Vector<Date> getNoticiasDateMonth(Date date);
 }

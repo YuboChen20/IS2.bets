@@ -849,7 +849,7 @@ public class DataAccess  {
 	 * @return collection of dates
 	 */
 	public List<Noticia> getNoticiasMonth(Date date) {
-		System.out.println(">> DataAccess: getEventsMonth");
+		System.out.println(">> DataAccess: getNoticiasMonth");
 			
 		
 		Date firstDayMonthDate= UtilDate.firstDayMonth(date);
@@ -863,6 +863,26 @@ public class DataAccess  {
 		for(Noticia no: noticias)System.out.println(no);
 	 	return noticias;
 	}
+	
+	public Vector<Date> getNoticiasDateMonth(Date date) {
+		System.out.println(">> DataAccess: getNoticiasDateMonth");
+		Vector<Date> res = new Vector<Date>();	
+		
+		Date firstDayMonthDate= UtilDate.firstDayMonth(date);
+		Date lastDayMonthDate= UtilDate.lastDayMonth(date);
+				
+		
+		TypedQuery<Date> query = db.createQuery("SELECT DISTINCT no.fechaPubli FROM Noticia no WHERE no.fechaPubli BETWEEN ?1 and ?2",Date.class);   
+		query.setParameter(1, firstDayMonthDate);
+		query.setParameter(2, lastDayMonthDate);
+		List<Date> dates = query.getResultList();
+	 	 for (Date d:dates){
+	 	   System.out.println(d.toString());		 
+		   res.add(d);
+		  }
+	 	return res;
+	}
+	
 	
 	public List<Noticia> getNoticias(Date date) {
 		System.out.println(">> DataAccess: getNoticia");

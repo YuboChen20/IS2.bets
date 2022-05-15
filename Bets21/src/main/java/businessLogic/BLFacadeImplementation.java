@@ -410,5 +410,12 @@ public class BLFacadeImplementation  implements BLFacade {
 			dbManager.desBloquear(s,u);
 			dbManager.close();
 		}
+		
+		@WebMethod public Vector<Date> getNoticiasDateMonth(Date date){
+			dbManager.open(false);
+			Vector<Date>  dates=dbManager.getNoticiasDateMonth(date);
+			dbManager.close();
+			return dates;
+		}
 }
 
