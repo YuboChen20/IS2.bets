@@ -31,6 +31,7 @@ import com.toedter.calendar.JCalendar;
 
 import businessLogic.BLFacade;
 import configuration.UtilDate;
+import domain.Event;
 import domain.Noticia;
 import java.awt.TextField;
 import javax.swing.JLabel;
@@ -54,7 +55,7 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
-	private final JButton jButtonCerrar = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private final JButton jButtonAtras = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back"));
 	private final JButton jButtonCrearNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateNoticia"));
 	private final JRadioButton jRadioButtonExisteAutor = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("AuthorExist"));
 	private final JRadioButton jRadioButtonNuevoAutor = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("NewAuthor"));
@@ -259,8 +260,8 @@ public class CreateNoticiaGUI extends JFrame {
 		contentPane.add(JComboBoxAutores);
 		
 
-		jButtonCerrar.setBounds(771, 408, 148, 40);
-		contentPane.add(jButtonCerrar);
+		jButtonAtras.setBounds(771, 408, 148, 40);
+		contentPane.add(jButtonAtras);
 		jButtonCrearNoticia.setBounds(608, 405, 114, 46);
 		
 		contentPane.add(jButtonCrearNoticia);
@@ -332,9 +333,9 @@ public class CreateNoticiaGUI extends JFrame {
 		jLabelMedio.setBounds(127, 185, 225, 14);
 		
 		contentPane.add(jLabelMedio);
-		jButtonCerrar.addActionListener(new ActionListener() {
+		jButtonAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnCerrar_actionPerformed(e);
+				jButtonAtras_actionPerformed(e);
 			}
 		});
 		
@@ -391,10 +392,10 @@ public class CreateNoticiaGUI extends JFrame {
 
 	}
 	
-	private void btnCerrar_actionPerformed(ActionEvent e) {
-		JFrame a = new MainGUI();
-		a.setVisible(true);
+	private void jButtonAtras_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
+		CreateAndQueryGUI a =new CreateAndQueryGUI(new Vector<Event>());
+		a.setVisible(true);
 	}
 	
 	public static void paintDaysWithNoticias(JCalendar jCalendar,Vector<Date> datesWithNoticiasCurrentMonth) {
