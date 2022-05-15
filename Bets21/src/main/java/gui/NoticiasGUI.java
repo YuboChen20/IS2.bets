@@ -54,8 +54,6 @@ public class NoticiasGUI extends JFrame {
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 	private final JButton jButtonFiltrarAutor = new JButton("Filtrar por Autor");
-	private final JButton jButtonFiltrarMes = new JButton("Filtrar por mes");
-	private final JButton jButtonFiltrarDia = new JButton("Filtrar por dia");
 	private final JButton jButtonCerrar = new JButton("Cerrar");
 	private final JComboBox JComboBoxMedios = new JComboBox();
 	DefaultComboBoxModel<String> modelMedios = new DefaultComboBoxModel<String>();
@@ -84,7 +82,7 @@ public class NoticiasGUI extends JFrame {
 	 */
 	public NoticiasGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 986, 536);
+		setBounds(100, 100, 986, 476);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -168,42 +166,10 @@ public class NoticiasGUI extends JFrame {
 		jCalendar.setTodayButtonVisible(false);
 		
 		contentPane.add(jCalendar);
-		jButtonFiltrarAutor.setBounds(54, 364, 225, 32);
+		jButtonFiltrarAutor.setBounds(54, 272, 225, 32);
 		
 		
 		contentPane.add(jButtonFiltrarAutor);
-		jButtonFiltrarMes.setBounds(54, 210, 225, 32);
-		jButtonFiltrarMes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Date dat = jCalendar.getDate();
-				BLFacade facade = MainGUI.getBusinessLogic();
-				List<Noticia> noticias=facade.getNoticiasMonth(dat);
-				modelNoticia.removeAllElements();
-				for(Noticia no:noticias) {
-					modelNoticia.addElement(no);
-				}
-				JComboBoxNoticias.repaint();
-			}
-			
-		});
-		
-		contentPane.add(jButtonFiltrarMes);
-		jButtonFiltrarDia.setBounds(54, 260, 225, 32);
-		jButtonFiltrarDia.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Date dat = jCalendar.getDate();
-				
-				BLFacade facade = MainGUI.getBusinessLogic();
-				List<Noticia> noticias=facade.getNoticias(dat);
-				modelNoticia.removeAllElements();
-				for(Noticia no:noticias) {
-					modelNoticia.addElement(no);
-				}
-				JComboBoxNoticias.repaint();
-			}
-			
-		});
-		contentPane.add(jButtonFiltrarDia);
 		
 		
 		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
@@ -292,17 +258,17 @@ public class NoticiasGUI extends JFrame {
 		}});
 		
 		
-		JComboBoxAutores.setBounds(54, 321, 225, 32);
+		JComboBoxAutores.setBounds(54, 229, 225, 32);
 		contentPane.add(JComboBoxAutores);
 		
 
-		jButtonCerrar.setBounds(566, 426, 192, 40);
+		jButtonCerrar.setBounds(567, 379, 192, 40);
 		contentPane.add(jButtonCerrar);
-		JComboBoxMedios.setBounds(54, 419, 225, 32);
+		JComboBoxMedios.setBounds(54, 340, 225, 32);
 		JComboBoxMedios.setModel(modelMedios);
 		
 		contentPane.add(JComboBoxMedios);
-		jButtonFiltrarMedios.setBounds(54, 456, 225, 32);
+		jButtonFiltrarMedios.setBounds(54, 383, 225, 32);
 		
 		jButtonFiltrarMedios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
