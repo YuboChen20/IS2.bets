@@ -57,15 +57,9 @@ public class CreateNoticiaGUI extends JFrame {
 	private Calendar calendarAnt = null;
 	private final JButton jButtonAtras = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back"));
 	private final JButton jButtonCrearNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateNoticia"));
-	private final JRadioButton jRadioButtonExisteAutor = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("AuthorExist"));
-	private final JRadioButton jRadioButtonNuevoAutor = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("NewAuthor"));
-	private final ButtonGroup buttonGroupAutor = new ButtonGroup();
 	private final JComboBox JComboBoxMedios = new JComboBox();
 	DefaultComboBoxModel<String> modelMedios = new DefaultComboBoxModel<String>();
 	private final TextField textFieldMedios = new TextField();
-	private final JRadioButton jRadioButtonExisteMedio = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("MedioExist"));
-	private final JRadioButton jRadioButtonNuevoMedio = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("NewMedio"));
-	private final ButtonGroup buttonGroupMedio = new ButtonGroup();
 	private Vector<Date> datesWithNoticiasCurrentMonth = new Vector<Date>();
 	private final JLabel jLabelErrorTitulo = new JLabel("");
 	private final JLabel jLabelErrorSubTitulo = new JLabel("");
@@ -101,7 +95,7 @@ public class CreateNoticiaGUI extends JFrame {
 	 */
 	public CreateNoticiaGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 950, 501);
+		setBounds(100, 100, 829, 501);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -112,11 +106,11 @@ public class CreateNoticiaGUI extends JFrame {
 		Font fontTexto = new Font("Verdana", Font.PLAIN, 10);
 		
 
-		JComboBoxNoticias.setBounds(566, 39, 353, 32);
+		JComboBoxNoticias.setBounds(429, 39, 353, 32);
 		JComboBoxNoticias.setModel(modelNoticia);
 		JComboBoxAutores.setModel(modelAutores);
 		contentPane.add(JComboBoxNoticias);
-		textTitulo.setBounds(565, 98, 353, 22);
+		textTitulo.setBounds(429, 98, 353, 22);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
 
@@ -237,12 +231,12 @@ public class CreateNoticiaGUI extends JFrame {
 		contentPane.add(textTitulo);
 		textTitulo.setEditable(true);
 		textTitulo.setFont(fontTitulo);
-		textSubTitulo.setBounds(565, 142, 354, 32);
+		textSubTitulo.setBounds(429, 142, 354, 32);
 		textSubTitulo.setEditable(true);
 		textSubTitulo.setFont(fontSubTitulo);
 		
 		contentPane.add(textSubTitulo);
-		scrollPane.setBounds(566, 216, 353, 148);
+		scrollPane.setBounds(429, 216, 353, 148);
 		
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(textTexto);
@@ -256,46 +250,36 @@ public class CreateNoticiaGUI extends JFrame {
 		contentPane.add(jCalendar);
 		
 		
-		JComboBoxAutores.setBounds(127, 340, 225, 32);
+		JComboBoxAutores.setBounds(54, 332, 225, 32);
 		contentPane.add(JComboBoxAutores);
 		
 
-		jButtonAtras.setBounds(771, 408, 148, 40);
+		jButtonAtras.setBounds(668, 408, 100, 40);
 		contentPane.add(jButtonAtras);
-		jButtonCrearNoticia.setBounds(608, 405, 114, 46);
+		jButtonCrearNoticia.setBounds(429, 405, 157, 46);
 		
 		contentPane.add(jButtonCrearNoticia);
 		
 
-		jTitleListaNoticias.setBounds(469, 44, 87, 23);
+		jTitleListaNoticias.setBounds(329, 44, 87, 23);
 		contentPane.add(jTitleListaNoticias);
 		
 
-		jTitleTitulo.setBounds(500, 105, 92, 14);
+		jTitleTitulo.setBounds(329, 105, 92, 14);
 		contentPane.add(jTitleTitulo);
 		
 		
-		jTitleSubTitle.setBounds(487, 146, 92, 14);
+		jTitleSubTitle.setBounds(329, 146, 92, 14);
 		contentPane.add(jTitleSubTitle);
 		
 		
-		jTitleText.setBounds(502, 229, 54, 14);
+		jTitleText.setBounds(329, 228, 54, 14);
 		contentPane.add(jTitleText);
 		
 		
-		textFieldAutor.setBounds(127, 378, 227, 32);
+		textFieldAutor.setBounds(52, 370, 227, 32);
 		contentPane.add(textFieldAutor);
-		
-
-		buttonGroupAutor.add(jRadioButtonExisteAutor);
-		jRadioButtonExisteAutor.setBounds(13, 345, 111, 23);
-		contentPane.add(jRadioButtonExisteAutor);
-		
-
-		buttonGroupAutor.add(jRadioButtonNuevoAutor);
-		jRadioButtonNuevoAutor.setBounds(13, 387, 111, 23);
-		contentPane.add(jRadioButtonNuevoAutor);
-		JComboBoxMedios.setBounds(127, 210, 225, 32);
+		JComboBoxMedios.setBounds(54, 210, 225, 32);
 		JComboBoxMedios.setModel(modelMedios);
 		List<String> medios=facade.getAllNoticiasMedio();
 		for(String me: medios) {
@@ -304,33 +288,25 @@ public class CreateNoticiaGUI extends JFrame {
 		JComboBoxAutores.repaint();
 		
 		contentPane.add(JComboBoxMedios);
-		textFieldMedios.setBounds(127, 248, 225, 32);
+		textFieldMedios.setBounds(54, 248, 225, 32);
 		
 		contentPane.add(textFieldMedios);
-		buttonGroupMedio.add(jRadioButtonExisteMedio);
-		jRadioButtonExisteMedio.setBounds(10, 215, 114, 23);
-		
-		contentPane.add(jRadioButtonExisteMedio);
-		buttonGroupMedio.add(jRadioButtonNuevoMedio);
-		jRadioButtonNuevoMedio.setBounds(10, 248, 111, 32);
-		
-		contentPane.add(jRadioButtonNuevoMedio);
-		jLabelErrorTitulo.setBounds(566, 117, 353, 22);
+		jLabelErrorTitulo.setBounds(429, 118, 353, 22);
 		jLabelErrorTitulo.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorTitulo);
-		jLabelErrorSubTitulo.setBounds(566, 183, 353, 22);
+		jLabelErrorSubTitulo.setBounds(429, 183, 353, 22);
 		jLabelErrorSubTitulo.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorSubTitulo);
-		jLabelErrorTexto.setBounds(566, 375, 353, 22);
+		jLabelErrorTexto.setBounds(429, 375, 353, 22);
 		jLabelErrorTexto.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorTexto);
-		jLabelAutor.setBounds(127, 320, 225, 14);
+		jLabelAutor.setBounds(54, 312, 225, 14);
 		
 		contentPane.add(jLabelAutor);
-		jLabelMedio.setBounds(127, 185, 225, 14);
+		jLabelMedio.setBounds(54, 191, 225, 14);
 		
 		contentPane.add(jLabelMedio);
 		jButtonAtras.addActionListener(new ActionListener() {
@@ -362,14 +338,14 @@ public class CreateNoticiaGUI extends JFrame {
 					jLabelErrorTexto.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorTexto"));
 					return;
 				}
-				if(jRadioButtonExisteAutor.isSelected()) {
+				if((textFieldAutor.getText()).isEmpty()) {
 					nomAutor = (String) JComboBoxAutores.getSelectedItem();
-				} else if(jRadioButtonNuevoAutor.isSelected()) {
+				} else {
 					nomAutor = textFieldAutor.getText();
 				}
-				if(jRadioButtonExisteMedio.isSelected()) {
+				if((textFieldMedios.getText()).isEmpty()) {
 					nomMedio = (String) JComboBoxMedios.getSelectedItem();
-				} else if(jRadioButtonNuevoAutor.isSelected()) {
+				} else{
 					nomMedio= textFieldMedios.getText();
 				}
 				Date dat = jCalendar.getDate();
