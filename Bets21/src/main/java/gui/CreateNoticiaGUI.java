@@ -1,13 +1,20 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.Vector;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -22,6 +29,7 @@ import javax.swing.border.EmptyBorder;
 import com.toedter.calendar.JCalendar;
 
 import businessLogic.BLFacade;
+import configuration.UtilDate;
 import domain.Noticia;
 import java.awt.TextField;
 import javax.swing.JLabel;
@@ -56,6 +64,7 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JRadioButton jRadioButtonExisteMedio = new JRadioButton("Existe Medio");
 	private final JRadioButton jRadioButtonNuevoMedio = new JRadioButton("Nuevo Medio");
 	private final ButtonGroup buttonGroupMedio = new ButtonGroup();
+	private Vector<Date> datesWithNoticiasCurrentMonth = new Vector<Date>();
 	
 
 
@@ -98,11 +107,8 @@ public class CreateNoticiaGUI extends JFrame {
 		textTitulo.setBounds(565, 98, 353, 22);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
-		List<Noticia> noticias=facade.getAllNoticias();
-		for(Noticia no:noticias) {
-			modelNoticia.addElement(no);
-		}
-		JComboBoxNoticias.repaint();
+
+
 		List<String> autores=facade.getAllNoticiasAuthor();
 		for(String au: autores) {
 			modelAutores.addElement(au);
@@ -110,15 +116,17 @@ public class CreateNoticiaGUI extends JFrame {
 		JComboBoxAutores.repaint();
 
 		
-		
 		JComboBoxNoticias.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					domain.Noticia no=(domain.Noticia)JComboBoxNoticias.getSelectedItem(); // obtain ev object
-					textTitulo.setText(no.getTitulo());
-					textSubTitulo.setText(no.getSubTitulo());
-					textTexto.setText(no.getTexto());
-					
+					if(no!=null) {
+						textTitulo.setText(no.getTitulo());
+						textSubTitulo.setText(no.getSubTitulo());
+						textTexto.setText(no.getTexto());
+					}else {
+						System.out.println("No existe una noticia");
+					}
 					
 				}catch(Exception el) {
 					el.printStackTrace();
@@ -128,6 +136,90 @@ public class CreateNoticiaGUI extends JFrame {
 			
 		});
 		
+		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
+			public void propertyChange(PropertyChangeEvent propertychangeevent) {
+				
+				//jLabelError.setText("");
+				//jLabelMsg.setText("");
+				//jLabelMsg2.setText("");
+				//lblConsultaCreada.setText("");
+				
+//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
+//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
+				if (propertychangeevent.getPropertyName().equals("locale")) {
+					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
+				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
+					calendarAnt = (Calendar) propertychangeevent.getOldValue();
+					calendarAct = (Calendar) propertychangeevent.getNewValue();
+					System.out.println("calendarAnt: "+calendarAnt.getTime());
+					System.out.println("calendarAct: "+calendarAct.getTime());
+					
+					int monthAnt = calendarAnt.get(Calendar.MONTH);
+					int monthAct = calendarAct.get(Calendar.MONTH);
+					if (monthAct!=monthAnt) {
+						if (monthAct==monthAnt+2) { 
+							// Si en JCalendar estÃ¡ 30 de enero y se avanza al mes siguiente, devolverÃ­a 2 de marzo (se toma como equivalente a 30 de febrero)
+							// Con este cÃ³digo se dejarÃ¡ como 1 de febrero en el JCalendar
+							calendarAct.set(Calendar.MONTH, monthAnt+1);
+							calendarAct.set(Calendar.DAY_OF_MONTH, 1);
+						}
+						
+						jCalendar.setCalendar(calendarAct);
+						
+						BLFacade facade = MainGUI.getBusinessLogic();
+
+						datesWithNoticiasCurrentMonth=facade.getNoticiasDateMonth(jCalendar.getDate());
+					}
+
+					paintDaysWithNoticias(jCalendar,datesWithNoticiasCurrentMonth);
+
+					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
+					
+					Date firstDay = UtilDate.trim(calendarAct.getTime());
+
+					try {
+						BLFacade facade = MainGUI.getBusinessLogic();
+						JComboBoxNoticias.removeAllItems();
+						List<domain.Noticia> noticias = facade.getNoticiasMonth(firstDay);
+
+						if (noticias.isEmpty())
+							/*jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
+									+ ": " + dateformat1.format(calendarAct.getTime()));*/
+							System.out.println("No hay noticias en este mes.");
+						else
+							/*jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+								+ dateformat1.format(calendarAct.getTime())); */
+	
+							System.out.println("Noticias " + noticias);
+
+							
+							for (domain.Noticia no : noticias)
+								modelNoticia.addElement(no);
+								JComboBoxNoticias.repaint();
+							
+							if (noticias.size() == 0) {
+								/*jButtonCreateQuery.setEnabled(false);
+								int n=tableModelQueries.getRowCount();
+								for(int i=0;i<n;i++) {
+									tableModelQueries.removeRow(0);
+								}*/
+									
+							}else {
+								//jButtonCreateQuery.setEnabled(true);
+			                    ////////////////////////////////////////////// 
+							}
+								
+
+							} catch (Exception e1) {
+
+								//jLabelError.setText(e1.getMessage());
+								e1.printStackTrace();
+								System.out.println("No se ha podido acceder al las noticias");
+							}
+					
+
+			}
+		}});
 		
 		
 		contentPane.add(textTitulo);
@@ -256,5 +348,51 @@ public class CreateNoticiaGUI extends JFrame {
 		JFrame a = new MainGUI();
 		a.setVisible(true);
 		this.setVisible(false);
+	}
+	
+	public static void paintDaysWithNoticias(JCalendar jCalendar,Vector<Date> datesWithNoticiasCurrentMonth) {
+		// For each day with events in current month, the background color for that day is changed.
+
+		
+		Calendar calendar = jCalendar.getCalendar();
+		
+		int month = calendar.get(Calendar.MONTH);
+		int today=calendar.get(Calendar.DAY_OF_MONTH);
+		int year=calendar.get(Calendar.YEAR);
+		
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		int offset = calendar.get(Calendar.DAY_OF_WEEK);
+
+		if (Locale.getDefault().equals(new Locale("es")))
+			offset += 5;
+		else
+			offset += 5;
+		
+		
+	 	for (Date d:datesWithNoticiasCurrentMonth){
+
+	 		calendar.setTime(d);
+	 		System.out.println(d);
+	 		
+
+			
+			// Obtain the component of the day in the panel of the DayChooser of the
+			// JCalendar.
+			// The component is located after the decorator buttons of "Sun", "Mon",... or
+			// "Lun", "Mar"...,
+			// the empty days before day 1 of month, and all the days previous to each day.
+			// That number of components is calculated with "offset" and is different in
+			// English and Spanish
+//			    		  Component o=(Component) jCalendar.getDayChooser().getDayPanel().getComponent(i+offset);; 
+			Component o = (Component) jCalendar.getDayChooser().getDayPanel()
+					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
+			o.setBackground(Color.CYAN);
+	 	}
+	 	
+ 			calendar.set(Calendar.DAY_OF_MONTH, today);
+	 		calendar.set(Calendar.MONTH, month);
+	 		calendar.set(Calendar.YEAR, year);
+
+	 	
 	}
 }
