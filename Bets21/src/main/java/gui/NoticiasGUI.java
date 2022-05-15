@@ -34,10 +34,13 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
+
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
 import businessLogic.BLFacade;
 import configuration.UtilDate;
+import javax.swing.JLabel;
 
 public class NoticiasGUI extends JFrame {
 
@@ -53,12 +56,14 @@ public class NoticiasGUI extends JFrame {
 	private final JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
-	private final JButton jButtonFiltrarAutor = new JButton("Filtrar por Autor");
-	private final JButton jButtonCerrar = new JButton("Cerrar");
+	private final JButton jButtonFiltrarAutor = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FiltroAutor"));
+	private final JButton jButtonCerrar = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private final JComboBox JComboBoxMedios = new JComboBox();
 	DefaultComboBoxModel<String> modelMedios = new DefaultComboBoxModel<String>();
-	private final JButton jButtonFiltrarMedios = new JButton("Filtrar por Medio");
+	private final JButton jButtonFiltrarMedios = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FiltroMedio"));
+	private final JLabel jTitleListaNoticias = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("ListaNoticia"));
 	private Vector<Date> datesWithNoticiasCurrentMonth = new Vector<Date>();
+
 
 
 	/**
@@ -152,6 +157,8 @@ public class NoticiasGUI extends JFrame {
 		textSubTitulo.setBounds(430, 130, 354, 32);
 		textSubTitulo.setEditable(false);
 		textSubTitulo.setFont(fontSubTitulo);
+		jTitleListaNoticias.setBounds(305, 29, 129, 23);
+		contentPane.add(jTitleListaNoticias);
 		
 		contentPane.add(textSubTitulo);
 		scrollPane.setBounds(430, 195, 353, 148);

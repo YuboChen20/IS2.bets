@@ -911,7 +911,11 @@ public class DataAccess  {
 	}
 	
 	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
-		
+		TypedQuery<Noticia>  query = db.createQuery("SELECT no FROM Noticia no WHERE no.fechaPubli=?1",Noticia.class);
+		query.setParameter(1, fechaPubli);
+		List<Noticia> noticias = query.getResultList();
+		if(noticias!=null) 
+			for(Noticia no: noticias)if(no.getTexto().equals(texto))return null;
 		db.getTransaction().begin();
 		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
 		db.persist(not);
