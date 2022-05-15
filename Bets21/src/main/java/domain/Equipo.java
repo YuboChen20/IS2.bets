@@ -21,11 +21,12 @@ public class Equipo {
 	private Vector<Event> events=new Vector<Event>();
 	
 	private double numUsuariosApuestan;
-
+	private double dineroApostado;
 	
 	public Equipo(String nombre) {
 		this.nombre=nombre;
 		this.setNumUsuariosApuestan(0);
+		this.setDineroApostado(0);
 	}
 	public String getNombre() {
 		return nombre;
@@ -43,6 +44,12 @@ public class Equipo {
 		this.events = questions;
 	}
 	
+	public double getDineroApostado() {
+		return dineroApostado;
+	}
+	public void setDineroApostado(double dineroApostado) {
+		this.dineroApostado = dineroApostado;
+	}
 	public void anadirEvento(Event ev) {
 		this.events.add(ev);
 	}

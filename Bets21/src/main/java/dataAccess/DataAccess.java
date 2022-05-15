@@ -689,7 +689,7 @@ public class DataAccess  {
 				if(be.getPronostico().equals(pr))return 1;
 			}
 		}
-		double d= user.getDinero()-apuesta;
+		double d= u.getDinero()-apuesta;
 		if(d<0)return 2;
 		
 		db.getTransaction().begin();
@@ -709,11 +709,15 @@ public class DataAccess  {
 			
 			if(pos.getPronostico().equals("1")) {
 				local.incrNumUsuariosApuestan();
+				local.setDineroApostado(local.getDineroApostado()+apuesta);
 			} else if(pos.getPronostico().equals("X")) {
 				local.halfIncrNumUsuariosApuestan();
 				visitante.halfIncrNumUsuariosApuestan();
+				local.setDineroApostado(local.getDineroApostado()+apuesta/2);
+				visitante.setDineroApostado(visitante.getDineroApostado()+apuesta/2);
 			} else if(pos.getPronostico().equals("2")) {
 				visitante.incrNumUsuariosApuestan();
+				visitante.setDineroApostado(visitante.getDineroApostado()+apuesta);
 			}
 			
 			if(local != null && visitante !=null) {
@@ -740,6 +744,7 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		us.addDinero(cant);
 		user.addDinero(cant);
+		db.persist(us);
 		db.getTransaction().commit();
 		System.out.println(">> DataAccess: addDinero=> Usuario= "+user.getUserName() +" Ha aportado " + cant +" se le queda comp " + us.getDinero() );
 	}
@@ -957,9 +962,24 @@ public class DataAccess  {
 	 	return noticias;
 	}
 	
-	public List<Equipo> getAllEquiposPorUsuarios() {
+	public List<Equipo> getAllEquipos(int mode) {
 		System.out.println(">> DataAccess: getAllEquiposPorUsuarios");
-		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq order by numUsuariosApuestan desc",Equipo.class);
+		String atributo;
+		switch(mode) {
+		case 0:
+			atributo="dineroApostado";
+			break;
+		case 1:
+			atributo="numUsuariosApuestan";
+			break;
+		default:
+			atributo="nombre";
+			break;
+					
+		}
+		
+		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq order by "+ atributo +" desc",Equipo.class);
+		
 		List<Equipo> equipos = query.getResultList();
 	 	for(Equipo eq: equipos)System.out.println(eq);
 	 	return equipos;

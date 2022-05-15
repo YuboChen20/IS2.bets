@@ -384,9 +384,9 @@ public class BLFacadeImplementation  implements BLFacade {
 		return noticias;
 	}
 	
-	@WebMethod public List<Equipo> getAllEquiposPorUsuarios() {
+	@WebMethod public List<Equipo> getAllEquipos(int mode) {
 		dbManager.open(false);
-		List<Equipo> equipos = dbManager.getAllEquiposPorUsuarios();
+		List<Equipo> equipos = dbManager.getAllEquipos(mode);
 		dbManager.close();
 	 	return equipos;
 	}

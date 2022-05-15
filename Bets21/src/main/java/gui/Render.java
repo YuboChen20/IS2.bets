@@ -25,7 +25,8 @@ public class Render extends DefaultTableCellRenderer{
 			return label;
 		}*/
 			
-		if (isSelected && table.getSelectedColumn()==column && table.getSelectedRow()==row) {
+		if (isSelected && table.getSelectedColumn()==column && table.getSelectedRow()==row
+				&& !(table.getSelectedColumn()<2 || 4<table.getSelectedColumn())) {
 			Color myBlue=new Color(0, 23, 255,150);
             this.setBackground(Color.cyan);
             this.setBackground(myBlue);
@@ -33,7 +34,8 @@ public class Render extends DefaultTableCellRenderer{
             return this;
         }else if(!isSelected && (table.getSelectedColumn()!=column && table.getSelectedRow()!=row)) {
         	this.setBackground(Color.white);
-        }
+        }else if(isSelected && (table.getSelectedColumn()<2 || 4<table.getSelectedColumn()) )
+        		this.setBackground(Color.white);
        
 		return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 	}

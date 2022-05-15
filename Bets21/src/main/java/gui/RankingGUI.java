@@ -45,13 +45,20 @@ public class RankingGUI extends JFrame {
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
-	private String[] columnNamesPronostico = new String[] {
+	private String[] columnNamesPronosticoMode1 = new String[] {
 			"#", 
 			"Equipo",
 			"Usuarios"
 
 	};
-	private JTextField textField;
+	
+	private String[] columnNamesPronosticoMode0 = new String[] {
+			"#", 
+			"Equipo",
+			"Dinero"
+
+	};
+	
    
 	/**
 	 * Launch the application.
@@ -80,7 +87,7 @@ public class RankingGUI extends JFrame {
 		BLFacade facade = MainGUI.getBusinessLogic(); 
 		
 		
-		setTitle("Informacion del usuario");
+		setTitle("Ranking");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 477, 652);
 		contentPane = new JPanel();
@@ -93,34 +100,92 @@ public class RankingGUI extends JFrame {
 		
 		JScrollPane scrollPanePronostico = new JScrollPane();
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPanePronostico.setBounds(33, 28, 378, 390);
+		scrollPanePronostico.setBounds(33, 77, 378, 390);
 		contentPane.add(scrollPanePronostico);
-		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico);
+		tableModelPronostico = new DefaultTableModel(null, columnNamesPronosticoMode0);
 		tablePronosticos.setModel(tableModelPronostico);	
 		tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 		tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 		scrollPanePronostico.setViewportView(tablePronosticos);
 		
+		JLabel lblTipoDeRanking = new JLabel("Equipo por el que más dinero se apuesta");
+		lblTipoDeRanking.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTipoDeRanking.setBounds(33, 22, 378, 44);
+		contentPane.add(lblTipoDeRanking);
+		
+		JButton btnPorUsuarios = new JButton("Por apuestas");
+		btnPorUsuarios.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lblTipoDeRanking.setText("Equipo por el que más veces se ha apostado");
+				tableModelPronostico.setDataVector(null, columnNamesPronosticoMode1);
+				while(tableModelPronostico.getRowCount()>0) tableModelPronostico.removeRow(0);
+				List<Equipo> equipos=facade.getAllEquipos(1);
+				int n=equipos.size();
+				
+		        for(int i=0;i<n;i++) {
+		        	Vector<Object> row = new Vector<Object>();
+		        	row.add(i+1);
+		        	row.add(equipos.get(i).getNombre());
+		    		row.add((int)equipos.get(i).getNumUsuariosApuestan());
+		    		
+		    		tableModelPronostico.addRow(row);	
+		        }
+		        tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+		    	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		    	tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
+			}
+		});
+		btnPorUsuarios.setBounds(33, 490, 105, 23);
+		contentPane.add(btnPorUsuarios);
+		
+		JButton btnPorDinero = new JButton("Por dinero");
+		btnPorDinero.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lblTipoDeRanking.setText("Equipo por el que más dinero se apuesta");
+				tableModelPronostico.setDataVector(null, columnNamesPronosticoMode0);
+				
+				while(tableModelPronostico.getRowCount()>0) tableModelPronostico.removeRow(0);
+				List<Equipo> equipos=facade.getAllEquipos(0);
+				int n=equipos.size();
+				
+		        for(int i=0;i<n;i++) {
+		        	Vector<Object> row = new Vector<Object>();
+		        	row.add(i+1);
+		        	row.add(equipos.get(i).getNombre());
+		    		row.add((int)equipos.get(i).getDineroApostado());
+		    		
+		    		tableModelPronostico.addRow(row);	
+		        }
+		        
+		        tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+		    	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+		    	tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
+			}
+		});
+		btnPorDinero.setBounds(136, 490, 89, 23);
+		contentPane.add(btnPorDinero);
 		
 		
 		
 		
 		
+		
+		
+		lblTipoDeRanking.setText("Equipo por el que más dinero se apuesta");
 		
 
+		tableModelPronostico.setDataVector(null, columnNamesPronosticoMode0);
 		
-
-
-		tableModelPronostico.setDataVector(null, columnNamesPronostico);
-		
-		List<Equipo> equipos=facade.getAllEquiposPorUsuarios();
+		List<Equipo> equipos=facade.getAllEquipos(0);
 		int n=equipos.size();
 		
         for(int i=0;i<n;i++) {
         	Vector<Object> row = new Vector<Object>();
         	row.add(i+1);
         	row.add(equipos.get(i).getNombre());
-    		row.add((int)equipos.get(i).getNumUsuariosApuestan());
+    		row.add((int)equipos.get(i).getDineroApostado());
     		
     		tableModelPronostico.addRow(row);	
         }

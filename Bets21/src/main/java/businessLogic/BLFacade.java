@@ -93,7 +93,7 @@ public interface BLFacade  {
 	@WebMethod public List<Noticia> getNoticiasAuthor(String aut);
 	@WebMethod public List<String> getAllNoticiasMedio();
 	@WebMethod public List<Noticia> getNoticiasMedio(String med);
-	@WebMethod public List<Equipo> getAllEquiposPorUsuarios();
+	@WebMethod public List<Equipo> getAllEquipos(int mode);
 	@WebMethod public List<Usuario> getUsuarios(String s, String s2);
 	@WebMethod public Usuario getUsuario(String s, String s2,int i);
 	@WebMethod public void desBloquear(String s,Usuario u);
