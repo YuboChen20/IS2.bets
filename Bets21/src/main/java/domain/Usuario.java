@@ -32,11 +32,11 @@ public class Usuario{
 	private Vector<Bet> apuestas = new Vector<Bet>();
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Comentarios> comentarios= new Vector<Comentarios>();
-	@XmlIDREF
-	private Historial h;
 	private boolean bloqueado;
 	private Date fecha;    //fecha de bloque o última entrada
 	private int numIntento;
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private Vector<Entrada> fechas;
 	
 	public Usuario(String userName, String passwor,String cardCode, boolean admi , String correo) {
     	this.userName= userName;
@@ -47,6 +47,7 @@ public class Usuario{
     	this.dinero=50;
     	this.bloqueado=false;
     	this.numIntento=0;
+    	this.fechas = new Vector <Entrada>();
     	
     }
     public Usuario() {}
@@ -129,13 +130,6 @@ public class Usuario{
 		comentarios.add(c);
 		return c;
 	}
-	public Historial getH() {
-		return h;
-	}
-	
-	public void setH(Historial hi) {
-		this.h=hi;
-	}
 	public boolean isBloqueado() {
 		return bloqueado;
 	}
@@ -155,7 +149,12 @@ public class Usuario{
 	public int getNumIntento() {
 		return numIntento;
 	}
-	
+	public Vector<Entrada> getFechas(){
+		return this.fechas;
+	}
+	public void addFechas(Entrada e){
+		this.fechas.add(e);
+	}
 	
 	
 

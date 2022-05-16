@@ -246,23 +246,12 @@ public class DataAccess  {
 			q9.addPronostico(p11);
 			
 			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
-			Historial ha= new Historial(admin);
-			admin.setH(ha);
 			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
-			Historial h= new Historial(user);
-			user.setH(h);
 			Usuario admi1= new Usuario("Silvia","12345",null,true,null);
-			Historial h1= new Historial(admi1);
-			admi1.setH(h1);
 			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
-			Historial h2= new Historial(admi2);
-			admi2.setH(h2);
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
-			Historial h3= new Historial(admi3);
-			admi3.setH(h3);
 			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
-			Historial h4= new Historial(admi4);
-			admi4.setH(h4);
+	
 			
 			
 			db.persist(atleticoDeMadrid);
@@ -347,12 +336,7 @@ public class DataAccess  {
 			db.persist(p9);
 			db.persist(p10);
 			db.persist(p11);
-			db.persist(ha);
-			db.persist(h);
-			db.persist(h1);
-			db.persist(h2);
-			db.persist(h3);
-			db.persist(h4);
+	
 			
 			/*
 			db.persist(p011);
@@ -511,8 +495,6 @@ public class DataAccess  {
 	public Usuario login(String uName, String pass) {
 		Usuario u = db.find(Usuario.class,uName);
 		if(u==null)return null;
-		
-		Historial h=u.getH();
 		Calendar calendar = Calendar.getInstance();
 	    Date d = calendar.getTime();
 		if(!u.getPassword().equals(pass) | u.isBloqueado()==true) {
@@ -522,22 +504,22 @@ public class DataAccess  {
 			Entrada f=null;
 			if(i+1==5) {
 				u.setBloqueado(true);     //se acaban de bloquear
-				f = new Entrada(d,false,h,true,false);
+				f = new Entrada(d,false,u,true,false);
 				u.setFecha(d);
 			}
-			else if(i<5) f = new Entrada(d,false,h,false,false);   //no están bloqueados
-			else f=new Entrada(d,false,h,true,false); //estaban bloqueados de antes
+			else if(i<5) f = new Entrada(d,false,u,false,false);   //no están bloqueados
+			else f=new Entrada(d,false,u,true,false); //estaban bloqueados de antes
 			db.persist(f);
-			h.addFecha(f);
+			u.addFechas(f);
 			db.persist(u);
 			db.getTransaction().commit();
 			return u;
 		}
 		db.getTransaction().begin();
 		u.setNumIntento(0);
-		Entrada f = new Entrada(d,true,h,false,false);
+		Entrada f = new Entrada(d,true,u,false,false);
 		db.persist(f);
-	    h.addFecha(f);
+	    u.addFechas(f);
 	    u.setFecha(d);
 	    db.getTransaction().commit();
 		return u;
@@ -985,48 +967,37 @@ public class DataAccess  {
 	 	return equipos;
 	}
 	public List<Usuario> getUsuarios(String s, String s2) {
-		if(s.equals("Bloqueados")) {
-			TypedQuery<Usuario> query = db.createQuery("SELECT us FROM Usuario us WHERE us.bloqueado=true and us.admin<=?1 ",Usuario.class);   
-			if(s2.equals("Admin")) query.setParameter(1, true);
-			else query.setParameter(1, false);
-			List<Usuario> u  =  query.getResultList();
-			return u;
-		}
-		if(s.equals("No Bloqueados")) {
-			TypedQuery<Usuario> query = db.createQuery("SELECT us FROM Usuario us WHERE us.bloqueado=false and us.admin<=?1",Usuario.class); 
-			if(s2.equals("Admin")) query.setParameter(1, true);
-			else query.setParameter(1, false);
-			List<Usuario> u  =  query.getResultList();
-			return u;
-		}
-		return null;
+		TypedQuery<Usuario> query= db.createQuery("SELECT us FROM Usuario us WHERE us.isBloqueado()=?1 and us.isAdmin()=?2",Usuario.class); 
+		if(s.equals("Bloqueados")) query.setParameter(1, true); 
+		if(s.equals("No Bloqueados")) query.setParameter(1,false);
+		if(s2.equals("Admin"))query.setParameter(2, true); 
+		if(s2.equals("Usuarios"))  query.setParameter(2, false);  
+		List<Usuario> u  =  query.getResultList();
+		return u;
 		
 	}
 
 	public Usuario getUsuario(String s, String s2, int i) {
-		if(s.equals("Bloqueados")) {
-			TypedQuery<Usuario> query = db.createQuery("SELECT us FROM Usuario us WHERE us.bloqueado=true",Usuario.class);   
-			List<Usuario> u  =  query.getResultList();
-			return u.get(i);
-		}
-		if(s.equals("No Bloqueados")) {
-			TypedQuery<Usuario> query = db.createQuery("SELECT us FROM Usuario us WHERE us.bloqueado=false",Usuario.class);   
-			List<Usuario> u  =  query.getResultList();
-			return u.get(i);
-		}
-		return null;
+		TypedQuery<Usuario> query= db.createQuery("SELECT us FROM Usuario us WHERE us.isBloqueado()=?1 and us.isAdmin()=?2",Usuario.class); 
+		if(s.equals("Bloqueados")) query.setParameter(1, true); 
+		if(s.equals("No Bloqueados")) query.setParameter(1,false);
+		if(s2.equals("Admin"))query.setParameter(2, true); 
+		if(s2.equals("Usuarios"))  query.setParameter(2, false);  
+		List<Usuario> u  =  query.getResultList();
+
+		return u.get(i);
+
 	}
 
 	public void desBloquear(String s,Usuario u) {
 		Usuario us=db.find(Usuario.class,u);
-		Historial h=us.getH();
 		Calendar calendar = Calendar.getInstance();
 	    Date d = calendar.getTime();
 	    Entrada f =null;
 		db.getTransaction().begin();
 		if(us.isBloqueado()) {
 			us.setBloqueado(false);
-			Vector<Entrada> e=h.getFechas();
+			Vector<Entrada> e=us.getFechas();
 			for(int i=e.size()-1; i>=0; i--) {
 				Entrada en = e.get(i);
 				if(!en.isBloqueado() & en.isExito()) {
@@ -1034,14 +1005,14 @@ public class DataAccess  {
 					break;
 				}
 			}
-		f = new Entrada(d,false,h,false,true); 
+		f = new Entrada(d,false,us,false,true); 
 		}
 		else {
 			us.setBloqueado(true);
-			f = new Entrada(d,false,h,true,true); 
+			f = new Entrada(d,false,us,true,true); 
 			us.setFecha(d);
 		}
-		h.addFecha(f);
+		us.addFechas(f);
 		db.persist(f);
 		db.persist(us);
 		db.getTransaction().commit();

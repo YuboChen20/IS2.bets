@@ -3,24 +3,34 @@ package domain;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class Entrada {
-	
+	@Id 
+	@XmlJavaTypeAdapter(IntegerAdapter.class)
+	@GeneratedValue
+    private Integer num;
 	private boolean exito;
 	private Date fecha;
-	private Historial h;
+	@XmlIDREF
+	private Usuario us;
 	private boolean bloqueado;
 	private boolean bloqueoAdmin;
 	
-	public Entrada() {}
-	public Entrada(Date f, boolean e,Historial h,boolean b,boolean ba) {
+	public Entrada() {
+		super();
+	}
+	public Entrada(Date f, boolean e,Usuario u,boolean b,boolean ba) {
 		this.exito=e;
 		this.fecha=f;
-		this.h=h;
+		this.us=u;
 		this.bloqueado=b;
 		this.bloqueoAdmin=ba;
 	}

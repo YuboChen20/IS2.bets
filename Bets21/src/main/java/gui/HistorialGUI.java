@@ -112,6 +112,7 @@ public class HistorialGUI extends JFrame {
 				lblErrorButton.setText(" ");
 				String s= (String) jComboBoxTipoUsers.getSelectedItem(); // obtain object
 				actualizarTabla1(s);
+				tableUser.getSelectionModel().setSelectionInterval(0,0);
 			}
 		});
 		
@@ -130,6 +131,7 @@ public class HistorialGUI extends JFrame {
 				lblErrorButton.setText(" ");
 				String s= (String) jComboBoxTipoUsers.getSelectedItem(); 
 				actualizarTabla1(s);
+				tableUser.getSelectionModel().setSelectionInterval(0,0);
 			}
 		});
 		
@@ -150,7 +152,6 @@ public class HistorialGUI extends JFrame {
 		tableUser.getColumnModel().getColumn(0).setPreferredWidth(80);
 		tableUser.getColumnModel().getColumn(1).setPreferredWidth(213);
 		scrollPaneUserBlo.setViewportView(tableUser);
-		
 		
 		
 		JScrollPane scrollPaneUserBlo_1 = new JScrollPane();
@@ -204,6 +205,7 @@ public class HistorialGUI extends JFrame {
 					Usuario u=facade.getUsuario(s,s2,i);
 					facade.desBloquear(s,u);
 					actualizarTabla1(s);
+					tableUser.getSelectionModel().setSelectionInterval(0,0);
 				}else {
 					lblErrorButton.setText("No se ha seleccionado un usuario");
 				}
@@ -224,6 +226,7 @@ public class HistorialGUI extends JFrame {
 					Usuario u=facade.getUsuario(s,s2,i);
 					facade.desBloquear(s,u);
 					actualizarTabla1(s);
+					tableUser.getSelectionModel().setSelectionInterval(0,0);
 				}else {
 					lblErrorButton.setText("No se ha seleccionado un usuario");
 				}
@@ -249,6 +252,7 @@ public class HistorialGUI extends JFrame {
 				tableModelUserBlo.removeRow(0);
 			}
 			String s2= (String) jcbUserAdmin.getSelectedItem(); 
+			System.out.println("Seleccion: "+ s+" y "+s2);
 			BLFacade facade = MainGUI.getBusinessLogic();
 			List<Usuario> usuarios=facade.getUsuarios(s,s2);  //todos los usuarios q estenbloqueado/noestenbloqueados
 			for (domain.Usuario u:usuarios){
@@ -291,7 +295,7 @@ public class HistorialGUI extends JFrame {
 		else if(!u.isBloqueado())btnBloquear.setEnabled(true);
 		
 		
-		Vector<Entrada> historial= u.getH().getFechas();
+		Vector<Entrada> historial= u.getFechas();
 		
 			for (int j=historial.size()-1; j>=0; j--){   //añadir su historial a la tabla2
 				Vector<Object> row = new Vector<Object>();
