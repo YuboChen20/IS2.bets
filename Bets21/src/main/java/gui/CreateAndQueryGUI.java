@@ -238,7 +238,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		jLabelMsg.setFont(new Font("Tahoma", Font.PLAIN, 10));
 
-		jLabelMsg.setBounds(new Rectangle(43, 377, 250, 20));
+		jLabelMsg.setBounds(new Rectangle(43, 377, 271, 20));
 		jLabelMsg.setForeground(Color.red);
 		jLabelError.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		// jLabelMsg.setSize(new Dimension(305, 20));
@@ -444,7 +444,7 @@ public class CreateAndQueryGUI extends JFrame {
 		jLabelMsg2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		jLabelMsg2.setForeground(Color.RED);
 		jLabelMsg2.setBounds(new Rectangle(275, 191, 305, 20));
-		jLabelMsg2.setBounds(256, 377, 225, 20);
+		jLabelMsg2.setBounds(324, 383, 225, 20);
 		
 		getContentPane().add(jLabelMsg2);
 		
@@ -491,7 +491,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
-		lblNewLabel.setBounds(new Rectangle(612, 333, 238, 20));
+		lblNewLabel.setBounds(new Rectangle(600, 332, 238, 20));
 		lblNewLabel.setForeground(Color.red);
 		
 		getContentPane().add(lblNewLabel); 

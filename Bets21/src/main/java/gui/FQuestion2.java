@@ -411,7 +411,7 @@ public class FQuestion2 extends JFrame {
 		});
 		btnVerRanking.setBounds(526, 0, 129, 23);
 		getContentPane().add(btnVerRanking);
-		lblErrorAlApostar.setBounds(40, 357, 252, 14);
+		lblErrorAlApostar.setBounds(25, 357, 299, 16);
 		
 		getContentPane().add(lblErrorAlApostar);
 		

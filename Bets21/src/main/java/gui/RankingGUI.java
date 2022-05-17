@@ -48,7 +48,7 @@ public class RankingGUI extends JFrame {
 	private String[] columnNamesPronosticoMode1 = new String[] {
 			"#", 
 			"Equipo",
-			"Usuarios"
+			"#Apuestas"
 
 	};
 	
@@ -110,7 +110,7 @@ public class RankingGUI extends JFrame {
 		
 		JLabel lblTipoDeRanking = new JLabel("Equipo por el que más dinero se apuesta");
 		lblTipoDeRanking.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTipoDeRanking.setBounds(33, 22, 378, 44);
+		lblTipoDeRanking.setBounds(33, 22, 401, 44);
 		contentPane.add(lblTipoDeRanking);
 		
 		JButton btnPorUsuarios = new JButton("Por apuestas");
@@ -136,7 +136,7 @@ public class RankingGUI extends JFrame {
 		    	tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
 			}
 		});
-		btnPorUsuarios.setBounds(33, 490, 105, 23);
+		btnPorUsuarios.setBounds(33, 490, 125, 23);
 		contentPane.add(btnPorUsuarios);
 		
 		JButton btnPorDinero = new JButton("Por dinero");
@@ -164,7 +164,7 @@ public class RankingGUI extends JFrame {
 		    	tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
 			}
 		});
-		btnPorDinero.setBounds(136, 490, 89, 23);
+		btnPorDinero.setBounds(156, 490, 113, 23);
 		contentPane.add(btnPorDinero);
 		
 		

@@ -288,29 +288,29 @@ public class CrearLigaGUI extends JFrame {
 		contentPane.add(btnCrearLiga);
 		
 		JLabel lblNombreLigaIns = new JLabel("Nombre Liga:");
-		lblNombreLigaIns.setBounds(430, 477, 70, 23);
+		lblNombreLigaIns.setBounds(430, 477, 108, 23);
 		contentPane.add(lblNombreLigaIns);
 		
 		textFieldNombreLiga = new JTextField();
-		textFieldNombreLiga.setBounds(430, 510, 199, 20);
+		textFieldNombreLiga.setBounds(430, 496, 199, 20);
 		contentPane.add(textFieldNombreLiga);
 		textFieldNombreLiga.setColumns(10);
 		
 		JLabel lblNumeroMaxEquiposIns = new JLabel("Num. max equipos: ");
-		lblNumeroMaxEquiposIns.setBounds(428, 540, 132, 14);
+		lblNumeroMaxEquiposIns.setBounds(429, 527, 132, 14);
 		contentPane.add(lblNumeroMaxEquiposIns);
 		
 		textFieldNumMaxEquipos = new JTextField();
-		textFieldNumMaxEquipos.setBounds(537, 540, 92, 20);
+		textFieldNumMaxEquipos.setBounds(544, 527, 85, 20);
 		contentPane.add(textFieldNumMaxEquipos);
 		textFieldNumMaxEquipos.setColumns(10);
 		
 		JLabel lblNombreEquipo = new JLabel("Nombre Equipo:");
-		lblNombreEquipo.setBounds(33, 512, 89, 14);
+		lblNombreEquipo.setBounds(33, 499, 120, 14);
 		contentPane.add(lblNombreEquipo);
 		
 		textFieldNombreEquipo = new JTextField();
-		textFieldNombreEquipo.setBounds(145, 510, 223, 20);
+		textFieldNombreEquipo.setBounds(145, 496, 223, 20);
 		contentPane.add(textFieldNombreEquipo);
 		textFieldNombreEquipo.setColumns(10);
 		
@@ -422,11 +422,11 @@ public class CrearLigaGUI extends JFrame {
 		getContentPane().add(btnAtras);
 		
 		
-		lblErrorCrearEquipo.setBounds(78, 540, 198, 14);
+		lblErrorCrearEquipo.setBounds(33, 540, 335, 14);
 		contentPane.add(lblErrorCrearEquipo);
 		
 		
-		lblErrorCrearLiga.setBounds(440, 588, 189, 14);
+		lblErrorCrearLiga.setBounds(357, 598, 306, 14);
 		contentPane.add(lblErrorCrearLiga);
 				
 		tableModelLigas.setDataVector(null, columnNamesLiga);

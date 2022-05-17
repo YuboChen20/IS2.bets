@@ -131,7 +131,7 @@ public class FQuestionInvitado2 extends JFrame {
 		jLabelEventDate.setBounds(45, 34, 140, 25);
 
 		this.getContentPane().add(jLabelEventDate);
-		jLabelEvents.setBounds(365, 38, 343, 16);
+		jLabelEvents.setBounds(286, 25, 343, 16);
 		this.getContentPane().add(jLabelEvents);
 
 		BLFacade facade = MainGUI.getBusinessLogic();
@@ -326,7 +326,7 @@ public class FQuestionInvitado2 extends JFrame {
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		JLabel lblNombreLiga = new JLabel("Liga Santander");
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombreLiga.setBounds(428, 32, 346, 44);
+		lblNombreLiga.setBounds(460, 34, 346, 44);
 		getContentPane().add(lblNombreLiga);
 		
     	tableLigas.setDefaultRenderer(Object.class, new Render());
