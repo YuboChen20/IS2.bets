@@ -21,7 +21,9 @@ import javax.persistence.TypedQuery;
 import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.*;
+import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.QuestionAlreadyExist;
+import exceptions.TeamAlreadyExistsException;
 import exceptions.UnknownTeamException;
 
 /**
@@ -55,27 +57,27 @@ public class DataAccess  {
 		
 		db.getTransaction().begin();
 		try {
-
-			Equipo atleticoDeMadrid= new Equipo("Atlético de Madrid");
-			Equipo atlheticDeBilbao= new Equipo("Athletic de Bilbao");
-			Equipo barcelona= new Equipo("Barcelona");
-			Equipo cadiz= new Equipo("Cádiz");
-			Equipo alaves= new Equipo("Alavés");
-			Equipo celtaDeVigo= new Equipo("Celta de Vigo");
-			Equipo elche= new Equipo("Elche");
-			Equipo espanyol= new Equipo("Espanyol");
-			Equipo getafe= new Equipo("Getafe");
-			Equipo granada= new Equipo("Granada");
-			Equipo levante= new Equipo("Levante");  
-			Equipo mallorca= new Equipo("Mallorca");
-			Equipo osasuna= new Equipo("Osasuna");
-			Equipo rayoVallecano= new Equipo("RayoVallecano");
-			Equipo realBetis= new Equipo("Real Betis");
-			Equipo realMadrid= new Equipo("Real Madrid");
-			Equipo realSociedad= new Equipo("Real Sociedad");
-			Equipo sevilla= new Equipo("Sevilla");
-			Equipo valencia= new Equipo("Valencia");
-			Equipo villareal= new Equipo("Villarreal");
+			Liga ligaSantander=new Liga("Liga Santander",20);
+			Equipo atleticoDeMadrid= new Equipo("Atlético de Madrid", ligaSantander);
+			Equipo atlheticDeBilbao= new Equipo("Athletic de Bilbao", ligaSantander);
+			Equipo barcelona= new Equipo("Barcelona", ligaSantander);
+			Equipo cadiz= new Equipo("Cádiz", ligaSantander);
+			Equipo alaves= new Equipo("Alavés", ligaSantander);
+			Equipo celtaDeVigo= new Equipo("Celta de Vigo", ligaSantander);
+			Equipo elche= new Equipo("Elche", ligaSantander);
+			Equipo espanyol= new Equipo("Espanyol", ligaSantander);
+			Equipo getafe= new Equipo("Getafe", ligaSantander);
+			Equipo granada= new Equipo("Granada", ligaSantander);
+			Equipo levante= new Equipo("Levante", ligaSantander);  
+			Equipo mallorca= new Equipo("Mallorca", ligaSantander);
+			Equipo osasuna= new Equipo("Osasuna", ligaSantander);
+			Equipo rayoVallecano= new Equipo("RayoVallecano", ligaSantander);
+			Equipo realBetis= new Equipo("Real Betis", ligaSantander);
+			Equipo realMadrid= new Equipo("Real Madrid", ligaSantander);
+			Equipo realSociedad= new Equipo("Real Sociedad", ligaSantander);
+			Equipo sevilla= new Equipo("Sevilla", ligaSantander);
+			Equipo valencia= new Equipo("Valencia", ligaSantander);
+			Equipo villareal= new Equipo("Villarreal", ligaSantander);
 			
 		   Calendar today = Calendar.getInstance();
 		   
@@ -253,6 +255,7 @@ public class DataAccess  {
 			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
 	
 			
+			db.persist(ligaSantander);
 			
 			db.persist(atleticoDeMadrid);
 			db.persist(atlheticDeBilbao);
@@ -1018,5 +1021,103 @@ public class DataAccess  {
 		db.getTransaction().commit();
 		
 	}
+	
+	
+	public void crearLiga(String nombre, int numEquipos) {
+		db.getTransaction().begin();
+		Liga liga= new Liga(nombre, numEquipos);
+		db.persist(liga);
+		db.getTransaction().commit();
+		System.out.println(">> DataAccess: crearLiga=> Nombre= "+nombre +" Numero máximo de equipos " + numEquipos);
+	}
+	
+	public void anadirEquipoALiga(String nombreEquipo, Liga liga) throws TeamAlreadyExistsException, MaximumNumberOfTeamsReached {
+		Liga l=db.find(Liga.class,liga.getNombre());
+		if(l.getEquipos().size()>=l.getNumEquipos()) throw new MaximumNumberOfTeamsReached();
+		for(Equipo eq: l.getEquipos())
+			if(nombreEquipo.equals(eq.getNombre())) throw new TeamAlreadyExistsException();
+		Equipo equipo=new Equipo(nombreEquipo, l);
+		db.getTransaction().begin();
+		db.persist(equipo);
+		db.persist(l);
+		db.getTransaction().commit();
+		System.out.println(">> DataAccess: anadirEquipoALiga=> Equipo: "+equipo.getNombre() +" a liga: " + liga.getNombre());
+	}
+	
+	public void eliminarEquipoDeLiga(String nombreEquipo, Liga liga) {
+		Liga l=db.find(Liga.class,liga.getNombre());
+		Equipo equipo=db.find(Equipo.class,nombreEquipo);
+
+		db.getTransaction().begin();
+		l.eliminarEquipo(equipo);
+		db.createQuery("DELETE FROM Equipo eq WHERE Eq.nombre='"+equipo.getNombre()+"'").executeUpdate();
+		db.persist(l);
+		db.getTransaction().commit();
+		System.out.println(">> DataAccess: eliminarEquipoALiga=> Equipo: "+equipo.getNombre() +" de liga: " + liga.getNombre());
+		
+		
+	}
+
+	public List<Equipo> getEquiposPorLiga(int mode, Liga liga) {
+		System.out.println(">> DataAccess: getEquiposPorLiga");
+		String atributo;
+		String nombreLiga=liga.getNombre();
+		String orden=" desc";
+		switch(mode) {
+		case 0:
+			atributo="dineroApostado";
+			break;
+		case 1:
+			atributo="numUsuariosApuestan";
+			break;
+		default:
+			atributo="nombre";
+			orden=" asc";
+			break;
+					
+		}
+		
+		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq where eq.liga.nombre='"+nombreLiga+"' order by "+ atributo + orden,Equipo.class);
+		
+		List<Equipo> equipos = query.getResultList();
+	 	for(Equipo eq: equipos)System.out.println(eq);
+	 	return equipos;
+	}
+	
+	public List<Liga> getAllLigas() {
+		System.out.println(">> DataAccess: getAllLigas");
+		TypedQuery<Liga> query = db.createQuery("select l from Liga l  order by l.nombre asc",Liga.class);
+		List<Liga> ligas = query.getResultList();
+	 	for(Liga lig: ligas)System.out.println(lig);
+	 	return ligas;
+	}
+	
+	
+	public List<Equipo> getEquiposPorLiga(int mode, String nombreLiga) {
+		System.out.println(">> DataAccess: getEquiposPorLiga");
+		String atributo;
+		String orden=" desc";
+		switch(mode) {
+		case 0:
+			atributo="dineroApostado";
+			break;
+		case 1:
+			atributo="numUsuariosApuestan";
+			break;
+		default:
+			atributo="nombre";
+			orden=" asc";
+			break;
+					
+		}
+		
+		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq where eq.liga.nombre='"+nombreLiga+"' order by "+ atributo + orden,Equipo.class);
+		
+		List<Equipo> equipos = query.getResultList();
+	 	for(Equipo eq: equipos)System.out.println(eq);
+	 	return equipos;
+	}
+	
+	
 	
 }

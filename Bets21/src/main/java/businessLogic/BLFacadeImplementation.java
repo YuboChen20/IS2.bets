@@ -16,8 +16,10 @@ import dataAccess.DataAccess;
 import domain.*;
 import exceptions.EventAlreadyExistsException;
 import exceptions.EventFinishedException;
+import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
+import exceptions.TeamAlreadyExistsException;
 import exceptions.UnknownTeamException;
 
 /**
@@ -416,6 +418,50 @@ public class BLFacadeImplementation  implements BLFacade {
 			Vector<Date>  dates=dbManager.getNoticiasDateMonth(date);
 			dbManager.close();
 			return dates;
+		}
+
+		@Override
+		public void crearLiga(String nombre, int numEquipos) {
+			dbManager.open(false);
+			dbManager.crearLiga(nombre, numEquipos);
+			dbManager.close();
+		}
+
+		@Override
+		public void anadirEquipoALiga(String nombreEquipo, Liga liga) throws TeamAlreadyExistsException, MaximumNumberOfTeamsReached {
+			dbManager.open(false);
+			dbManager.anadirEquipoALiga(nombreEquipo, liga);
+			dbManager.close();
+		}
+
+		@Override
+		public void eliminarEquipoDeLiga(String nombreEquipo, Liga liga) {
+			dbManager.open(false);
+			dbManager.eliminarEquipoDeLiga(nombreEquipo, liga);
+			dbManager.close();
+		}
+		
+		@WebMethod public List<Equipo> getEquiposPorLiga(int mode, Liga liga) {
+			dbManager.open(false);
+			List<Equipo> equipos = dbManager.getEquiposPorLiga(mode,liga);
+			dbManager.close();
+		 	return equipos;
+		}
+
+		@Override
+		public List<Liga> getAllLigas() {
+			dbManager.open(false);
+			List<Liga> ligas = dbManager.getAllLigas();
+			dbManager.close();
+		 	return ligas;
+		}
+
+		@Override
+		public List<Equipo> getEquiposPorLiga(int mode, String nombreLiga) {
+			dbManager.open(false);
+			List<Equipo> equipos = dbManager.getEquiposPorLiga(mode,nombreLiga);
+			dbManager.close();
+		 	return equipos;
 		}
 }
 

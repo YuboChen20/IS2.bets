@@ -370,7 +370,7 @@ public class CreateNoticiaGUI extends JFrame {
 	
 	private void jButtonAtras_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
-		CreateAndQueryGUI a =new CreateAndQueryGUI(new Vector<Event>());
+		CreateAndQueryGUI a = CreateAndQueryGUI.getInstance();
 		a.setVisible(true);
 	}
 	

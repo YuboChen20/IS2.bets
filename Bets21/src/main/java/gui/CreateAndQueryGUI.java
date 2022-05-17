@@ -19,6 +19,7 @@ import businessLogic.BLFacadeImplementation;
 import configuration.UtilDate;
 import domain.Equipo;
 import domain.Event;
+import domain.Liga;
 import domain.Pronostico;
 import domain.Question;
 import exceptions.EventAlreadyExistsException;
@@ -26,6 +27,7 @@ import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.UnknownTeamException;
+
 
 import javax.swing.table.DefaultTableModel;
 
@@ -96,7 +98,37 @@ public class CreateAndQueryGUI extends JFrame {
 	private JLabel lblConsultaCreada = new JLabel("");
 	
 	
-	public CreateAndQueryGUI(Vector<domain.Event> v) {
+	private final JTable tableLigas = new JTable();
+	private DefaultTableModel tableModelLigas;
+	private String[] columnNamesLiga = new String[] {
+			"Liga",
+			"ObjetoLiga"
+	};
+	private JLabel lblNombreLiga = new JLabel("Liga Santander");
+	
+	
+	
+	private static CreateAndQueryGUI instance;
+
+	
+	public static CreateAndQueryGUI getInstance() {
+		if (instance==null) {
+			instance=new CreateAndQueryGUI(new Vector<Event>());
+			
+		} 
+		return instance;
+	}
+	
+	
+	public static void destroy() {
+		instance.setVisible(false);
+		instance=null;
+		
+	}
+	
+	
+	
+	private CreateAndQueryGUI(Vector<domain.Event> v) {
 		try {
 			jbInit(v);
 		} catch (Exception e) {
@@ -109,7 +141,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 	
 		this.getContentPane().setLayout(null);
-		this.setSize(new Dimension(915, 450));
+		this.setSize(new Dimension(1102, 450));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateQuery"));
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -412,7 +444,7 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		jButtonEvent.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonEvent.setBounds(419, 231, 130, 30);
+		jButtonEvent.setBounds(419, 274, 130, 30);
 		getContentPane().add(jButtonEvent);
 		jLabelMsg2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		jLabelMsg2.setForeground(Color.RED);
@@ -658,7 +690,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 		
 		jComboBoxLocal.setModel(modelLocal);
-		jComboBoxLocal.setBounds(new Rectangle(40, 231, 180, 20));
+		jComboBoxLocal.setBounds(new Rectangle(40, 279, 180, 20));
 		jComboBoxLocal.setVisible(true);
 		getContentPane().add(jComboBoxLocal);
 		
@@ -692,7 +724,7 @@ public class CreateAndQueryGUI extends JFrame {
 		
 
 		jComboBoxVisitante.setModel(modelVisitante);
-		jComboBoxVisitante.setBounds(new Rectangle(224, 231, 180, 20));
+		jComboBoxVisitante.setBounds(new Rectangle(224, 279, 180, 20));
 		jComboBoxVisitante.setVisible(true);
 		
 		getContentPane().add(jComboBoxVisitante);
@@ -701,7 +733,7 @@ public class CreateAndQueryGUI extends JFrame {
 		//obtener todos los equipos y meterselos a la jComboBoxLocal y a la jComboBoxVisitante
 		
 		
-				List<domain.Equipo> equipos=facade.obtenerEquipos();
+				List<domain.Equipo> equipos=facade.getEquiposPorLiga(2, "Liga Santander");
 				
 				for (domain.Equipo eq : equipos) {
 					modelLocal.addElement(eq);
@@ -738,6 +770,96 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		getContentPane().add(btnButtonHistorial);
+		
+		JButton btnCrearLiga = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text_1")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnCrearLiga.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CrearLigaGUI a= new CrearLigaGUI();
+				a.setVisible(true);
+			}
+		});
+		btnCrearLiga.setBounds(346, 161, 89, 23);
+		getContentPane().add(btnCrearLiga);
+		
+		
+		
+		///////////////////////////////////////////////
+		
+		
+		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNombreLiga.setBounds(40, 225, 313, 44);
+		getContentPane().add(lblNombreLiga);
+		
+    	tableLigas.setDefaultRenderer(Object.class, new Render());
+		
+    	tableLigas.addMouseListener(new MouseAdapter() {
+    		@Override
+    		public void mouseClicked(MouseEvent e) {
+    				
+    			modelLocal.removeAllElements();
+    			modelVisitante.removeAllElements();
+    			
+    			int i=tableLigas.getSelectedRow();
+    			
+    			Liga l=(Liga) tableModelLigas.getValueAt(i, 1);
+    			System.out.println(l.getNombre());
+    			List<domain.Equipo> equipos=facade.getEquiposPorLiga(2, l);
+				
+				for (domain.Equipo eq : equipos) {
+					modelLocal.addElement(eq);
+					modelVisitante.addElement(eq);
+				}
+			
+				if(equipos.size()>=1) {
+					jComboBoxLocal.setSelectedIndex(0);
+					if(equipos.size()==1) jComboBoxVisitante.setSelectedIndex(0);
+					else jComboBoxVisitante.setSelectedIndex(1);
+				}
+				lblNombreLiga.setText(l.getNombre());
+    			
+    		}
+    	});
+		
+    	JScrollPane scrollPaneLigas = new JScrollPane();
+		scrollPaneLigas.setBounds(901, 76, 144, 278);
+		getContentPane().add(scrollPaneLigas);
+		
+		tableModelLigas = new DefaultTableModel(null, columnNamesLiga) {
+			boolean[] columnEditables = new boolean[] {
+					false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+			
+		};
+		
+		
+		tableLigas.setModel(tableModelLigas);	
+		tableLigas.getColumnModel().getColumn(0).setPreferredWidth(268);
+		scrollPaneLigas.setViewportView(tableLigas);
+		
+	
+		tableModelLigas.setDataVector(null, columnNamesLiga);
+		
+		List<Liga> ligas=facade.getAllLigas();
+		int nL=ligas.size();
+		
+        for(int i=0;i<nL;i++) {
+        	Vector<Object> row = new Vector<Object>();
+        	
+        	JButton l=new JButton(ligas.get(i).getNombre());
+        	row.add(l);
+    		row.add(ligas.get(i));
+    		
+    		tableModelLigas.addRow(row);	
+        }
+        
+    	tableLigas.getColumnModel().getColumn(0).setPreferredWidth(25);
+    	tableLigas.getColumnModel().removeColumn(tableLigas.getColumnModel().getColumn(1));
+    	
+    	tableLigas.setRowSelectionInterval(0, 0);
         
 	}
 
@@ -913,5 +1035,49 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 				}
 		
 		
+	}
+	
+	public void updateTeams() {
+		BLFacade facade = MainGUI.getBusinessLogic();
+		int i=tableLigas.getSelectedRow();
+		if(i<0)i=0;
+		Liga l=(Liga) tableModelLigas.getValueAt(i, 1);
+		List<domain.Equipo> equipos=facade.getEquiposPorLiga(2, l);
+		
+		modelLocal.removeAllElements();
+		modelVisitante.removeAllElements();
+		
+		for (domain.Equipo eq : equipos) {
+			modelLocal.addElement(eq);
+			modelVisitante.addElement(eq);
+		}
+		
+		if(equipos.size()>=1) {
+			jComboBoxLocal.setSelectedIndex(0);
+			if(equipos.size()==1) jComboBoxVisitante.setSelectedIndex(0);
+			else jComboBoxVisitante.setSelectedIndex(1);
+		}
+		
+	}
+	
+	public void updateLeagues() {
+		BLFacade facade = MainGUI.getBusinessLogic();
+		List<Liga> ligas=facade.getAllLigas();
+		int nL=ligas.size();
+		
+		while(tableModelLigas.getRowCount()>0)tableModelLigas.removeRow(0);
+		
+        for(int i=0;i<nL;i++) {
+        	Vector<Object> row = new Vector<Object>();
+        	
+        	JButton l=new JButton(ligas.get(i).getNombre());
+        	row.add(l);
+    		row.add(ligas.get(i));
+    		
+    		tableModelLigas.addRow(row);	
+        }
+        
+    	tableLigas.getColumnModel().getColumn(0).setPreferredWidth(25);
+    	
 	}
 }

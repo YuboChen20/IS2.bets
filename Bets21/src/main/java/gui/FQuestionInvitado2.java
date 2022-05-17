@@ -6,7 +6,9 @@ import configuration.UtilDate;
 import com.toedter.calendar.JCalendar;
 
 import domain.Bet;
+import domain.Equipo;
 import domain.Event;
+import domain.Liga;
 import domain.Pronostico;
 import domain.Question;
 import domain.Usuario;
@@ -45,6 +47,8 @@ public class FQuestionInvitado2 extends JFrame {
 
 	private DefaultTableModel tableModelPronostico;
 	
+	private Date firstDay;
+	
 	
 	private final JLabel jLabelApuesta = new JLabel(); 
 	
@@ -64,6 +68,15 @@ public class FQuestionInvitado2 extends JFrame {
 	private final JButton btnLogin = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Login")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("SignUp")); //$NON-NLS-1$ //$NON-NLS-2$
 
+	private final JTable tableLigas = new JTable();
+	private DefaultTableModel tableModelLigas;
+	private String[] columnNamesLiga = new String[] {
+			"Liga",
+			"ObjetoLiga"
+	};
+	private JTextField textFieldNombreLiga;
+	
+	
 	public FQuestionInvitado2()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
@@ -155,7 +168,7 @@ public class FQuestionInvitado2 extends JFrame {
 					calendarAct = (Calendar) propertychangeevent.getNewValue();
 					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar1.getLocale());
 //					jCalendar1.setCalendar(calendarAct);
-					Date firstDay=UtilDate.trim(new Date(jCalendar1.getCalendar().getTime().getTime()));
+					firstDay=UtilDate.trim(new Date(jCalendar1.getCalendar().getTime().getTime()));
 
 					 
 					
@@ -190,30 +203,39 @@ public class FQuestionInvitado2 extends JFrame {
 					if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
 					else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
 					for (domain.Event ev:events){
-						Vector<Object> row = new Vector<Object>();
-
-						System.out.println("Events "+ev);
 						
-						row.add(ev.getEventNumber());
+						if(ev.getEquipos().get(0).getLiga().getNombre().equals("Liga Santander")) {
+							Vector<Object> row = new Vector<Object>();
+	
+							System.out.println("Events "+ev);
+							
+							row.add(ev.getEventNumber());
+							
+							String[] equipos =ev.getDescription().split("-");
+							row.add("<html>"+equipos[0]+"<br>"+equipos[1]+"</html>"); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,2)
+							row.add("    "+"0.22");
+							row.add("    "+"1.48");
+							row.add("    "+ "1.88");
+							
+							JButton btn1 =new JButton("<html>Otras<br>apuestas</html>");
 						
+							row.add(btn1);
+							//row.add("<html>Otras<br>apuestas</html>");
+							row.add(ev);
+							
+							tableModelPronostico.addRow(row);
 						
-						
-						
-						
-						String[] equipos =ev.getDescription().split("-");
-						row.add("<html>"+equipos[0]+"<br>"+equipos[1]+"</html>"); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,2)
-						row.add("    "+"0.22");
-						row.add("    "+"1.48");
-						row.add("    "+ "1.88");
-						
-						JButton btn1 =new JButton("<html>Otras<br>apuestas</html>");
+						}
 					
-						row.add(btn1);
-						//row.add("<html>Otras<br>apuestas</html>");
-						row.add(ev);
-						
-						tableModelPronostico.addRow(row);		
 					}
+					int pos=-1;
+					List<Liga> ligas=facade.getAllLigas();
+					for(int i=0; i<ligas.size();i++)
+						if(ligas.get(i).getNombre().equals("Liga Santander")) pos=i;
+					tableLigas.setRowSelectionInterval(pos, pos);
+					//tablePronosticos.getColumnModel().getColumn(0).setCellRenderer(tablePronosticos.getTableHeader().getDefaultRenderer());
+					
+					
 					
 					//tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(2)); // not shown in JTable
 					
@@ -299,6 +321,103 @@ public class FQuestionInvitado2 extends JFrame {
 		tablePronosticos.setDefaultRenderer(Object.class, new Render());
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////
+		JLabel lblNombreLiga = new JLabel("Liga Santander");
+		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNombreLiga.setBounds(428, 32, 346, 44);
+		getContentPane().add(lblNombreLiga);
+		
+    	tableLigas.setDefaultRenderer(Object.class, new Render());
+    	
+    	tableLigas.addMouseListener(new MouseAdapter() {
+    		@Override
+    		public void mouseClicked(MouseEvent e) {
+    			DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar1.getLocale());
+    			
+    			int j=tableLigas.getSelectedRow();
+    			Liga l = (Liga)tableModelLigas.getValueAt(j, 1);
+    			lblNombreLiga.setText(l.getNombre());
+    			while(tableModelPronostico.getRowCount()>0)tableModelPronostico.removeRow(0);
+    			
+    			Vector<domain.Event> events=facade.getEvents(firstDay);
+				if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+				else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
+				for (domain.Event ev:events){
+					
+					System.out.println(ev.getEquipos().get(0).getLiga().getNombre()+ "  "+ l.getNombre());
+					if(ev.getEquipos().get(0).getLiga().getNombre().equals(l.getNombre())) {
+						Vector<Object> row = new Vector<Object>();
+
+						System.out.println("Events "+ev);
+						
+						row.add(ev.getEventNumber());
+						
+						String[] equipos =ev.getDescription().split("-");
+						row.add("<html>"+equipos[0]+"<br>"+equipos[1]+"</html>"); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,2)
+						row.add("    "+"0.22");
+						row.add("    "+"1.48");
+						row.add("    "+ "1.88");
+						
+						JButton btn1 =new JButton("<html>Otras<br>apuestas</html>");
+					
+						row.add(btn1);
+						//row.add("<html>Otras<br>apuestas</html>");
+						row.add(ev);
+						
+						tableModelPronostico.addRow(row);
+					
+					}
+				
+				}
+				
+				tableLigas.setRowSelectionInterval(0, 0);
+    			
+    			
+    			
+    		}
+    	});
+    	
+    	
+    	JScrollPane scrollPaneLigas = new JScrollPane();
+		scrollPaneLigas.setBounds(40, 243, 144, 209);
+		getContentPane().add(scrollPaneLigas);
+		
+		tableModelLigas = new DefaultTableModel(null, columnNamesLiga) {
+			boolean[] columnEditables = new boolean[] {
+					false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+			
+		};
+		
+		
+		tableLigas.setModel(tableModelLigas);	
+		tableLigas.getColumnModel().getColumn(0).setPreferredWidth(268);
+		scrollPaneLigas.setViewportView(tableLigas);
+		
+		
+		
+		tableModelLigas.setDataVector(null, columnNamesLiga);
+		
+		List<Liga> ligas=facade.getAllLigas();
+		int nL=ligas.size();
+		
+        for(int i=0;i<nL;i++) {
+        	Vector<Object> row = new Vector<Object>();
+        	
+        	JButton l=new JButton(ligas.get(i).getNombre());
+        	row.add(l);
+    		row.add(ligas.get(i));
+    		
+    		tableModelLigas.addRow(row);	
+        }
+        
+    	tableLigas.getColumnModel().getColumn(0).setPreferredWidth(25);
+    	tableLigas.getColumnModel().removeColumn(tableLigas.getColumnModel().getColumn(1));
+    	
+    	tableLigas.setRowSelectionInterval(0, 0);
+	
 	}
 	private void btnLogin_actionPerformed(ActionEvent e) {
 		JFrame a = new Login();

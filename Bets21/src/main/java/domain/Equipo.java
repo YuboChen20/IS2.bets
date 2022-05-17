@@ -20,13 +20,18 @@ public class Equipo {
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private Vector<Event> events=new Vector<Event>();
 	
+	@ManyToOne
+	private Liga liga;
+	
 	private double numUsuariosApuestan;
 	private double dineroApostado;
 	
-	public Equipo(String nombre) {
+	public Equipo(String nombre, Liga liga) {
 		this.nombre=nombre;
 		this.setNumUsuariosApuestan(0);
 		this.setDineroApostado(0);
+		this.liga=liga;
+		liga.anadirEquipo(this);
 	}
 	public String getNombre() {
 		return nombre;
@@ -49,6 +54,12 @@ public class Equipo {
 	}
 	public void setDineroApostado(double dineroApostado) {
 		this.dineroApostado = dineroApostado;
+	}
+	public Liga getLiga() {
+		return liga;
+	}
+	public void setLiga(Liga liga) {
+		this.liga = liga;
 	}
 	public void anadirEvento(Event ev) {
 		this.events.add(ev);

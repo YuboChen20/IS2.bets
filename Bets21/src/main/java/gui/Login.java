@@ -136,7 +136,7 @@ public class Login extends JFrame {
 		 this.setVisible(false);;
 	}
 	private void btnLoginAdmi_actionPerformed(ActionEvent e) {
-		JFrame b= new CreateAndQueryGUI(new Vector<Event>());
+		JFrame b= CreateAndQueryGUI.getInstance();
 		   b.setVisible(true);	
 		
 		 this.setVisible(false);;
