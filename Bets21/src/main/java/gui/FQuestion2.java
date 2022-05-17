@@ -76,6 +76,7 @@ public class FQuestion2 extends JFrame {
 			"ObjetoLiga"
 	};
 	private JTextField textFieldNombreLiga;
+	private final JButton btnNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("VerNoticia"));
 	
 	
 	/**
@@ -492,7 +493,14 @@ public class FQuestion2 extends JFrame {
 		tableLigas.setModel(tableModelLigas);	
 		tableLigas.getColumnModel().getColumn(0).setPreferredWidth(268);
 		scrollPaneLigas.setViewportView(tableLigas);
+		btnNoticia.setBounds(0, 0, 129, 23);
 		
+		getContentPane().add(btnNoticia);
+		btnNoticia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNoticia_actionPerformed(e);
+			}
+		});	
 		
 		
 		tableModelLigas.setDataVector(null, columnNamesLiga);
@@ -523,5 +531,10 @@ public class FQuestion2 extends JFrame {
 		JFrame a = new Login();
 		a.setVisible(true);
 		this.setVisible(false);
+	}
+	private void btnNoticia_actionPerformed(ActionEvent e) {
+		Integer num=2;
+		JFrame a = new NoticiasGUI(num);
+		a.setVisible(true);
 	}
 }

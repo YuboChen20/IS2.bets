@@ -41,6 +41,7 @@ import com.toedter.calendar.JCalendar;
 import businessLogic.BLFacade;
 import configuration.UtilDate;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class NoticiasGUI extends JFrame {
 
@@ -53,42 +54,28 @@ public class NoticiasGUI extends JFrame {
 	private final JScrollPane scrollPane = new JScrollPane();
 	private final JTextArea textTitulo = new JTextArea();
 	private final JTextArea textSubTitulo = new JTextArea();
-	private final JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 	private final JButton jButtonFiltrarAutor = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FiltroAutor"));
-	private final JButton jButtonCerrar = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private final JButton jButtonAtras = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back"));
 	private final JComboBox JComboBoxMedios = new JComboBox();
 	DefaultComboBoxModel<String> modelMedios = new DefaultComboBoxModel<String>();
 	private final JButton jButtonFiltrarMedios = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FiltroMedio"));
 	private final JLabel jTitleListaNoticias = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("ListaNoticia"));
 	private Vector<Date> datesWithNoticiasCurrentMonth = new Vector<Date>();
+	private final JLabel JLabelNoticia = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Noticia")); //$NON-NLS-1$ //$NON-NLS-2$
 
 
 
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					NoticiasGUI frame = new NoticiasGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
 	 */
-	public NoticiasGUI() {
+	public NoticiasGUI(Integer backNum) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 986, 476);
+		setBounds(100, 100, 801, 421);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -99,14 +86,19 @@ public class NoticiasGUI extends JFrame {
 		Font fontTexto = new Font("Verdana", Font.PLAIN, 10);
 		
 
-		JComboBoxNoticias.setBounds(430, 24, 477, 45);
+		JComboBoxNoticias.setBounds(298, 24, 477, 45);
 		JComboBoxNoticias.setModel(modelNoticia);
 		JComboBoxAutores.setModel(modelAutores);
 		contentPane.add(JComboBoxNoticias);
-		textTitulo.setBounds(430, 80, 477, 39);
+		textTitulo.setBounds(298, 80, 477, 39);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
 
+		List<Noticia> noticias=facade.getAllNoticias();
+		for(Noticia no: noticias) {
+			modelNoticia.addElement(no);
+		}
+		JComboBoxNoticias.repaint();
 		List<String> autores=facade.getAllNoticiasAuthor();
 		for(String au: autores) {
 			modelAutores.addElement(au);
@@ -127,6 +119,8 @@ public class NoticiasGUI extends JFrame {
 						textTitulo.setText(no.getTitulo());
 						textSubTitulo.setText(no.getSubTitulo());
 						textTexto.setText(no.getTexto());
+						JComboBoxMedios.setSelectedItem(no.getNomMedio());
+						JComboBoxAutores.setSelectedItem(no.getNomAutor());
 					}else {
 						System.out.println("No existe una noticia");
 					}
@@ -155,16 +149,16 @@ public class NoticiasGUI extends JFrame {
 		contentPane.add(textTitulo);
 		textTitulo.setEditable(false);
 		textTitulo.setFont(fontTitulo);
-		textSubTitulo.setBounds(430, 130, 477, 54);
+		textSubTitulo.setBounds(298, 130, 477, 54);
 		textSubTitulo.setEditable(false);
 		textSubTitulo.setFont(fontSubTitulo);
-		jTitleListaNoticias.setBounds(305, 29, 129, 23);
+		jTitleListaNoticias.setBounds(193, 35, 95, 23);
 		contentPane.add(jTitleListaNoticias);
 		textTitulo.setLineWrap(true);
 		textTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(textSubTitulo);
-		scrollPane.setBounds(430, 195, 477, 173);
+		scrollPane.setBounds(298, 195, 477, 173);
 		textSubTitulo.setLineWrap(true);
 		textSubTitulo.setWrapStyleWord(true);
 		
@@ -174,113 +168,23 @@ public class NoticiasGUI extends JFrame {
 		textTexto.setFont(fontTexto);
 		textTexto.setLineWrap(true);
 		textTexto.setWrapStyleWord(true);
-		jCalendar.setBounds(54, 24, 225, 150);
-		jCalendar.setTodayButtonVisible(false);
-		
-		contentPane.add(jCalendar);
-		jButtonFiltrarAutor.setBounds(54, 272, 225, 32);
+		jButtonFiltrarAutor.setBounds(26, 232, 225, 32);
 		
 		
 		contentPane.add(jButtonFiltrarAutor);
 		
 		
-		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-			public void propertyChange(PropertyChangeEvent propertychangeevent) {
-				
-				//jLabelError.setText("");
-				//jLabelMsg.setText("");
-				//jLabelMsg2.setText("");
-				//lblConsultaCreada.setText("");
-				
-//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
-				if (propertychangeevent.getPropertyName().equals("locale")) {
-					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
-				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
-					calendarAnt = (Calendar) propertychangeevent.getOldValue();
-					calendarAct = (Calendar) propertychangeevent.getNewValue();
-					System.out.println("calendarAnt: "+calendarAnt.getTime());
-					System.out.println("calendarAct: "+calendarAct.getTime());
-					
-					int monthAnt = calendarAnt.get(Calendar.MONTH);
-					int monthAct = calendarAct.get(Calendar.MONTH);
-					if (monthAct!=monthAnt) {
-						if (monthAct==monthAnt+2) { 
-							// Si en JCalendar estÃ¡ 30 de enero y se avanza al mes siguiente, devolverÃ­a 2 de marzo (se toma como equivalente a 30 de febrero)
-							// Con este cÃ³digo se dejarÃ¡ como 1 de febrero en el JCalendar
-							calendarAct.set(Calendar.MONTH, monthAnt+1);
-							calendarAct.set(Calendar.DAY_OF_MONTH, 1);
-						}
-						
-						jCalendar.setCalendar(calendarAct);
-						
-						BLFacade facade = MainGUI.getBusinessLogic();
-
-						datesWithNoticiasCurrentMonth=facade.getNoticiasDateMonth(jCalendar.getDate());
-					}
-
-					paintDaysWithNoticias(jCalendar,datesWithNoticiasCurrentMonth);
-
-					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
-					
-					Date firstDay = UtilDate.trim(calendarAct.getTime());
-
-					try {
-						BLFacade facade = MainGUI.getBusinessLogic();
-						JComboBoxNoticias.removeAllItems();
-						List<domain.Noticia> noticias = facade.getNoticiasMonth(firstDay);
-
-						if (noticias.isEmpty())
-							/*jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
-									+ ": " + dateformat1.format(calendarAct.getTime()));*/
-							System.out.println("No hay noticias en este mes.");
-						else
-							/*jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
-								+ dateformat1.format(calendarAct.getTime())); */
-	
-							System.out.println("Noticias " + noticias);
-
-							
-							for (domain.Noticia no : noticias)
-								modelNoticia.addElement(no);
-								JComboBoxNoticias.repaint();
-							
-							if (noticias.size() == 0) {
-								/*jButtonCreateQuery.setEnabled(false);
-								int n=tableModelQueries.getRowCount();
-								for(int i=0;i<n;i++) {
-									tableModelQueries.removeRow(0);
-								}*/
-									
-							}else {
-								//jButtonCreateQuery.setEnabled(true);
-			                    ////////////////////////////////////////////// 
-							}
-								
-
-							} catch (Exception e1) {
-
-								//jLabelError.setText(e1.getMessage());
-								e1.printStackTrace();
-								System.out.println("No se ha podido acceder al las noticias");
-							}
-					
-
-			}
-		}});
-		
-		
-		JComboBoxAutores.setBounds(54, 229, 225, 32);
+		JComboBoxAutores.setBounds(26, 189, 225, 32);
 		contentPane.add(JComboBoxAutores);
 		
 
-		jButtonCerrar.setBounds(567, 379, 192, 40);
-		contentPane.add(jButtonCerrar);
-		JComboBoxMedios.setBounds(54, 340, 225, 32);
+		jButtonAtras.setBounds(10, 11, 112, 32);
+		contentPane.add(jButtonAtras);
+		JComboBoxMedios.setBounds(26, 275, 225, 32);
 		JComboBoxMedios.setModel(modelMedios);
 		
 		contentPane.add(JComboBoxMedios);
-		jButtonFiltrarMedios.setBounds(54, 383, 225, 32);
+		jButtonFiltrarMedios.setBounds(26, 318, 225, 32);
 		
 		jButtonFiltrarMedios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -296,10 +200,21 @@ public class NoticiasGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonFiltrarMedios);
+		JLabelNoticia.setHorizontalAlignment(SwingConstants.CENTER);
+		JLabelNoticia.setFont(new Font("Tahoma", Font.BOLD, 30));
+		JLabelNoticia.setBounds(10, 87, 260, 76);
+		
+		contentPane.add(JLabelNoticia);
 
-		jButtonCerrar.addActionListener(new ActionListener() {
+		jButtonAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnCerrar_actionPerformed(e);
+				if(backNum==1) {
+					jButtonAtras_actionPerformed1(e);
+				}else if(backNum==2) {
+					jButtonAtras_actionPerformed2(e);
+				}else {
+					System.out.println("ERROR NOTICIAGUI");
+				}
 			}
 		});
 		
@@ -311,9 +226,12 @@ public class NoticiasGUI extends JFrame {
 
 	}
 	
-	private void btnCerrar_actionPerformed(ActionEvent e) {
-		JFrame a = new MainGUI();
+	private void jButtonAtras_actionPerformed1(ActionEvent e) {
+		this.setVisible(false);
+		FQuestionInvitado2 a = new FQuestionInvitado2();
 		a.setVisible(true);
+	}
+	private void jButtonAtras_actionPerformed2(ActionEvent e) {
 		this.setVisible(false);
 	}
 	

@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 //hello
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -918,6 +919,7 @@ public class DataAccess  {
 		System.out.println(">> DataAccess: getAllNoticias");
 		TypedQuery<Noticia> query = db.createQuery("SELECT no FROM Noticia no ",Noticia.class);   
 		List<Noticia> noticias = query.getResultList();
+		Collections.reverse(noticias);
 	 	for(Noticia no: noticias)System.out.println(no);
 	 	return noticias;
 	}
@@ -956,6 +958,7 @@ public class DataAccess  {
 		TypedQuery<Noticia> query = db.createQuery("SELECT DISTINCT no FROM Noticia no WHERE no.getNomAutor()=?1 ",Noticia.class);
 		query.setParameter(1, aut);
 		List<Noticia> noticias = query.getResultList();
+		Collections.reverse(noticias);
 	 	for(Noticia no: noticias)System.out.println(no);
 	 	return noticias;
 	}
@@ -973,6 +976,7 @@ public class DataAccess  {
 		TypedQuery<Noticia> query = db.createQuery("SELECT DISTINCT no FROM Noticia no WHERE no.getNomMedio()=?1 ",Noticia.class);
 		query.setParameter(1, med);
 		List<Noticia> noticias = query.getResultList();
+		Collections.reverse(noticias);
 	 	for(Noticia no: noticias)System.out.println(no);
 	 	return noticias;
 	}
