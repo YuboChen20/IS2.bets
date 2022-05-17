@@ -22,6 +22,8 @@ import javax.persistence.TypedQuery;
 import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.*;
+import exceptions.LeagueAlreadyExist;
+import exceptions.LessThanMinimumTeamException;
 import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.QuestionAlreadyExist;
 import exceptions.TeamAlreadyExistsException;
@@ -1057,7 +1059,12 @@ public class DataAccess  {
 	}
 	
 	
-	public void crearLiga(String nombre, int numEquipos) {
+	public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException {
+		
+		if(numEquipos<2) throw new LessThanMinimumTeamException();
+		List<Liga> ligas=this.getAllLigas();
+		for(Liga lig:ligas)
+			if(lig.getNombre().equals(nombre)) throw new LeagueAlreadyExist();
 		db.getTransaction().begin();
 		Liga liga= new Liga(nombre, numEquipos);
 		db.persist(liga);

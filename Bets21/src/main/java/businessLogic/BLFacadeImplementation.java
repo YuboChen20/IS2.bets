@@ -16,6 +16,8 @@ import dataAccess.DataAccess;
 import domain.*;
 import exceptions.EventAlreadyExistsException;
 import exceptions.EventFinishedException;
+import exceptions.LeagueAlreadyExist;
+import exceptions.LessThanMinimumTeamException;
 import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
@@ -421,7 +423,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		}
 
 		@Override
-		public void crearLiga(String nombre, int numEquipos) {
+		public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException {
 			dbManager.open(false);
 			dbManager.crearLiga(nombre, numEquipos);
 			dbManager.close();

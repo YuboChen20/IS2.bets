@@ -17,6 +17,8 @@ import domain.Liga;
 import domain.Pronostico;
 import domain.Question;
 import domain.Usuario;
+import exceptions.LeagueAlreadyExist;
+import exceptions.LessThanMinimumTeamException;
 import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.PronosticAlreadyExist;
 import exceptions.TeamAlreadyExistsException;
@@ -61,6 +63,11 @@ public class CrearLigaGUI extends JFrame {
 	private JTextField textFieldNombreLiga;
 	private JTextField textFieldNumMaxEquipos;
 	private JTextField textFieldNombreEquipo;
+	
+	private JLabel lblErrorCrearEquipo = new JLabel("");
+
+	
+	private JLabel lblErrorCrearLiga = new JLabel("");
 	
 	
    
@@ -145,6 +152,9 @@ public class CrearLigaGUI extends JFrame {
     		@Override
     		public void mouseClicked(MouseEvent e) {
     			while(tableModelEquipos.getRowCount()>0) tableModelEquipos.removeRow(0);
+    			
+    			lblErrorCrearEquipo.setText("");
+				lblErrorCrearLiga.setText("");
     			
     			int j=tableLigas.getSelectedRow();
     			Liga l = (Liga)tableModelLigas.getValueAt(j, 1);
@@ -231,16 +241,41 @@ public class CrearLigaGUI extends JFrame {
 				    	textFieldNombreLiga.setText("");
 						textFieldNumMaxEquipos.setText("");
 				    
-						int k=tableLigas.getRowCount()-1;
-						tableLigas.setRowSelectionInterval(k, k);
+						
 						while(tableModelEquipos.getRowCount()>0) tableModelEquipos.removeRow(0);
-						lblNombreLiga.setText(tableModelLigas.getValueAt(k, 1).toString());
+						
 						
 						CreateAndQueryGUI.getInstance().updateLeagues();
 						
+						List<Liga> ligas2= facade.getAllLigas();
+						int pos=-1;
+						for(int i=0; i<ligas2.size();i++) 
+							if(ligas.get(i).getNombre().equals(nombre)) pos=i;
+						tableLigas.setRowSelectionInterval(pos, pos);
+						lblNombreLiga.setText(nombre);
+						
+						List<Equipo> teams=facade.getEquiposPorLiga(2, nombre);
+			
+						int n=teams.size();
+						
+		    	        for(int i=0;i<n;i++) {
+		    	        	Vector<Object> row = new Vector<Object>();
+		    	        	row.add(i+1);
+		    	        	row.add(teams.get(i).getNombre());
+		    	    		tableModelEquipos.addRow(row);	
+		    	        }
+						
+						
+						
 					}catch(NumberFormatException eNFE) {
-						System.out.println("nombre: "+nombre+" num: "+numMaxString);
+						lblErrorCrearLiga.setText("No se ha insertado un número máximo de equipos");
+					} catch(LessThanMinimumTeamException eLTMTE) {
+						lblErrorCrearLiga.setText("Una liga debe tener al menos dos participantes");
+					}catch(LeagueAlreadyExist eLAE) {
+						lblErrorCrearLiga.setText("La liga ya existe");
 					}
+					
+					
 					
 					
 				}
@@ -287,6 +322,8 @@ public class CrearLigaGUI extends JFrame {
 		btnCrearEquipo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				lblErrorCrearEquipo.setText("");
+				lblErrorCrearLiga.setText("");
 				String nombreEquipo=textFieldNombreEquipo.getText();
 				if(nombreEquipo!=null) {
 					Liga l=(Liga) tableModelLigas.getValueAt(tableLigas.getSelectedRow(), 1);
@@ -294,8 +331,11 @@ public class CrearLigaGUI extends JFrame {
 						facade.anadirEquipoALiga(nombreEquipo, l);
 					} catch (TeamAlreadyExistsException e1) {
 						System.out.println("TeamAlreadyExistsException");
+						lblErrorCrearEquipo.setText("No puede haber dos equipos con el mismo nombre");
 					} catch (MaximumNumberOfTeamsReached e1) {
-						System.out.println("MaximumNumberOfTeamsReached");
+						lblErrorCrearEquipo.setText("Se ha alcanzado el número máximo de Equipos");
+					} catch(Exception e1) {
+						lblErrorCrearEquipo.setText("No puede haber dos equipos con el mismo nombre");
 					}
 					
 					while(tableModelEquipos.getRowCount()>0) tableModelEquipos.removeRow(0);
@@ -335,6 +375,10 @@ public class CrearLigaGUI extends JFrame {
 		btnEliminarEquipo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				lblErrorCrearEquipo.setText("");
+				lblErrorCrearLiga.setText("");
+				
 				int j=tableEquiposLiga.getSelectedRow();
 				String nombreEquipo=(String) tableModelEquipos.getValueAt(j, 1);
 				Liga l=(Liga)tableModelLigas.getValueAt(tableLigas.getSelectedRow(), 1);
@@ -376,6 +420,14 @@ public class CrearLigaGUI extends JFrame {
 			}
 		});
 		getContentPane().add(btnAtras);
+		
+		
+		lblErrorCrearEquipo.setBounds(78, 540, 198, 14);
+		contentPane.add(lblErrorCrearEquipo);
+		
+		
+		lblErrorCrearLiga.setBounds(440, 588, 189, 14);
+		contentPane.add(lblErrorCrearLiga);
 				
 		tableModelLigas.setDataVector(null, columnNamesLiga);
 		

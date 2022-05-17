@@ -8,6 +8,8 @@ import java.util.List;
 import domain.*;
 import exceptions.EventAlreadyExistsException;
 import exceptions.EventFinishedException;
+import exceptions.LeagueAlreadyExist;
+import exceptions.LessThanMinimumTeamException;
 import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
@@ -101,7 +103,7 @@ public interface BLFacade  {
 	@WebMethod public void desBloquear(String s,Usuario u);
 	@WebMethod public Vector<Date> getNoticiasDateMonth(Date date);
 	
-	@WebMethod public void crearLiga(String nombre, int numEquipos);
+	@WebMethod public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException;
 	@WebMethod public void anadirEquipoALiga(String nombreEquipo, Liga liga) throws TeamAlreadyExistsException, MaximumNumberOfTeamsReached;
 	@WebMethod public void eliminarEquipoDeLiga(String nombreEquipo, Liga liga);
 	@WebMethod public List<Equipo> getEquiposPorLiga(int mode, Liga liga);
