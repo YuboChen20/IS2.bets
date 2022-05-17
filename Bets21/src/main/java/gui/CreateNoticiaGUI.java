@@ -64,8 +64,8 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JLabel jLabelErrorTitulo = new JLabel("");
 	private final JLabel jLabelErrorSubTitulo = new JLabel("");
 	private final JLabel jLabelErrorTexto = new JLabel("");
-	private final JLabel jLabelAutor = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Anonimo"));
-	private final JLabel jLabelMedio = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Desconocido"));
+	private final JLabel jLabelAutor = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("AutorAviso"));
+	private final JLabel jLabelMedio = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("MedioAviso"));
 	private final JLabel jTitleListaNoticias = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("ListaNoticia"));
 	private final JLabel jTitleTitulo = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("Titulo"));
 	private final JLabel jTitleSubTitle = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("SubTitulo"));
@@ -96,7 +96,7 @@ public class CreateNoticiaGUI extends JFrame {
 	 */
 	public CreateNoticiaGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 829, 501);
+		setBounds(100, 100, 942, 510);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -107,11 +107,11 @@ public class CreateNoticiaGUI extends JFrame {
 		Font fontTexto = new Font("Verdana", Font.PLAIN, 10);
 		
 
-		JComboBoxNoticias.setBounds(429, 39, 353, 32);
+		JComboBoxNoticias.setBounds(429, 39, 478, 32);
 		JComboBoxNoticias.setModel(modelNoticia);
 		JComboBoxAutores.setModel(modelAutores);
 		contentPane.add(JComboBoxNoticias);
-		textTitulo.setBounds(429, 98, 353, 22);
+		textTitulo.setBounds(430, 80, 477, 39);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
 
@@ -232,12 +232,16 @@ public class CreateNoticiaGUI extends JFrame {
 		contentPane.add(textTitulo);
 		textTitulo.setEditable(true);
 		textTitulo.setFont(fontTitulo);
-		textSubTitulo.setBounds(429, 142, 354, 32);
+		textSubTitulo.setBounds(430, 145, 477, 39);
 		textSubTitulo.setEditable(true);
 		textSubTitulo.setFont(fontSubTitulo);
+		textTitulo.setLineWrap(true);
+		textTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(textSubTitulo);
-		scrollPane.setBounds(429, 216, 353, 148);
+		scrollPane.setBounds(430, 218, 477, 150);
+		textSubTitulo.setLineWrap(true);
+		textSubTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(textTexto);
@@ -292,15 +296,15 @@ public class CreateNoticiaGUI extends JFrame {
 		textFieldMedios.setBounds(54, 248, 225, 32);
 		
 		contentPane.add(textFieldMedios);
-		jLabelErrorTitulo.setBounds(429, 118, 353, 22);
+		jLabelErrorTitulo.setBounds(429, 118, 478, 22);
 		jLabelErrorTitulo.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorTitulo);
-		jLabelErrorSubTitulo.setBounds(429, 183, 353, 22);
+		jLabelErrorSubTitulo.setBounds(429, 183, 478, 22);
 		jLabelErrorSubTitulo.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorSubTitulo);
-		jLabelErrorTexto.setBounds(429, 375, 353, 22);
+		jLabelErrorTexto.setBounds(429, 375, 478, 22);
 		jLabelErrorTexto.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorTexto);

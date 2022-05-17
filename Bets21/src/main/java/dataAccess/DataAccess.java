@@ -87,11 +87,41 @@ public class DataAccess  {
 		   if (month==12) { month=0; year+=1;}  
 		   
 		   
-		   	Noticia no1 = new Noticia("TITULO1", "SUBTITULOS", "trarrarrar", "Yubo Chen", "Marca", UtilDate.newDate(year,month,17));
-		   	Noticia no2 = new Noticia("TITULO2", "SUBTITULOS", "trarrarrar", "Yubo Chen", "Marca", UtilDate.newDate(year,month,17));
+		   	Noticia no1 = new Noticia("TITULO1", "SUBTITULOS", "ESCRIBIR TEXTO AQUI.	PLANTILLA", "YUBO CHEN", "MARCA", UtilDate.newDate(year,month,17));
+		   	Noticia no2 = new Noticia("El fin del futbol", "Debido a unos sucesos, el futbol se acaba", "ME HAN DESPEDIDO.", "YUBO CHEN", "MARCA", UtilDate.newDate(year,month,17));
 		   	db.persist(no1);
 		   	db.persist(no2);
+		   	String titulo3="Seis jugadores del Sevilla, nominados al once de LaLiga";
+		   	String subTitulo3="Bono, Jesús Navas, Koundé, Diego Carlos, Acuña y Joan Jordán optan al reconocimiento entre más de 45 futbolistas";
+		   	String texto3="Seis jugadores del Sevilla han sido nominados por LaLiga para la elección del mejor once de la temporada 21-22, premios que se entregarán en una gala que será presidida por Javier Tebas. A través de la aplicación Player App, los aficionados al fútbol podrán votar a los mejores jugadores de la Liga entre un total de 46 futbolistas de todos los equipos que conforman la Liga Santander. Además, un comité de expertos formado por periodistas también participará en la votación.\n"
+		   			+ "\n"
+		   			+ "Bono, Jesús Navas, Koundé, Diego Carlos, Acuña, Joan Jordán optan a formar parte de este once de estrellas a los que acompañarán los cuatro siguientes jugadores más votados.\n"
+		   			+ "\n"
+		   			+ "La lista completa de nominados la forman los siguientes futbolistas:\n"
+		   			+ "\n"
+		   			+ "-Porteros: Yassine Bounou (Sevilla FC); Thibaut Courtois (Real Madrid); Gero Rulli (Villarreal CF); Diego López (RCD Espanyol); Jan Oblak (Atlético de Madrid) y Matías Dituro (Celta de Vigo).\n"
+		   			+ "\n"
+		   			+ "-Defensas: Jordi Alba (FC Barcelona); Militao (Real Madrid); Marcos Acuña (Sevilla); Ronald Araújo (Barcelona); Le Normand (Real Sociedad); David García (CA Osasuna); Alaba (Real Madrid); Álex Moreno (Real Betis); Íñigo Martínez (Athletic Club); Diego Carlos (Sevilla); Kounde (Sevilla) y Jesús Navas (Sevilla).\n"
+		   			+ "\n"
+		   			+ "-Centrocampistas: Kroos (Real Madrid); Casemiro (Real Madrid); Joan Jordán (Sevilla); Fekir (Betis); Muniain (Athletic Club); Modric (Real Madrid); Juanmi (Betis); Mikel Merino (Real Sociedad); Carlos Soler (Valencia CF); Canales (Betis); Lemar (Atlético de Madrid); Pedri (Barcelona); Trejo (Rayo Vallecano); Brais Méndez (Celta); Capoué (Villareal); Yeremi Pino (Villareal) y Frenkie De Jong (Barcelona).\n"
+		   			+ "\n"
+		   			+ "-Delanteros: Benzema (Real Madrid); Vini Jr (Real Madrid); Aspas (Celta); Joao Félix (Atlético de Madrid); Mikel Oyarzabal (Real Sociedad); Joselu (Deportivo Alavés); Raul de Tomás (Espanyol); Enes Ünal (Getafe CF); Ángel Correa (Atlético de Madrid); Guedes (Valencia) y Borja Iglesias (Betis).";
+		   	Noticia no3 =new Noticia(titulo3, subTitulo3, texto3, "JUAN PELEGRÍN", "MUNDODEPORTIVO", UtilDate.newDate(year,month,18));
+		   	db.persist(no3);
+		   	
+		   	String titulo4="Alberto De la Bella anuncia su retirada del fútbol profesional";
+		   	String subTitulo4="El lateral zurdo, ex de la Real Sociedad y ahora en el Cartagena, cuelga las botas a los 36 años";
+		   	String texto4="Una de las muchas leyendas que ha tenido la Real Sociedad,Alberto de la Bella, da un paso al lado y deja el fútbol profesional, tal y como ha anunciado el mismo jugador a través de sus redes sociales. El jugador catalán, quién militaba en las filas del FC Cartagena, cuelga las botas con un emotivo reportaje en el que se muestran algunos de sus mejores momentos que ha vivido en sus diferentes equipos.\n"
+		   			+ "\n"
+		   			+ "En el vídeo, De la Bella, agradece no sólo a todos los aficionados, sino también, a todos y cada uno de los entrenadores y compañeros que ha tenido a lo largo de su vida deportiva. El jugador ha disputado, aproximadamente, la cifra de 300 partidos en el fútbol profesional, con un total de 22.155 minutos, aportando un total de 9 goles. Donde más partidos ha jugado, y donde más temporadas ha militado, ha sido en la Real Sociedad, club en el que más veces ha lucido la camiseta. En total han sido 6 equipos en los que ha defendido los colores, en las últimas dos temporadas, en el FC Cartagena."
+		   			+ "\n"
+		   			+ "Con los albinegros ha jugado dos temporadas, disputando un total de 53 partidos, sumando un total de 2.937 minutos, aportando un gol fundamental para la salvación del cuadro albinegro. Su tanto ante el Málaga en la temporada 2020/2021, le permitió al Efesé sumar los tres puntos en su pelea por la permanencia.\n"
+		   			+ "\n"
+		   			+ "Finalmente, y después de algunas muchas temporadas, Alberto de la Bella, decide dejar a un lado la élite del fútbol profesional.";
 	    
+		   	Noticia no4 =new Noticia(titulo4, subTitulo4, texto4, "ÁLVARO PRIAN", "MARCA", UtilDate.newDate(year,month+1,3));
+		   	db.persist(no4);
+		   	
 		    Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,17), atleticoDeMadrid, atlheticDeBilbao);
 			Event ev2=new Event(2, "Elche-Barcelona", UtilDate.newDate(year,month,17), elche, barcelona);
 			Event ev3=new Event(3, "Getafe-Celta de Vigo", UtilDate.newDate(year,month,17), getafe, celtaDeVigo);

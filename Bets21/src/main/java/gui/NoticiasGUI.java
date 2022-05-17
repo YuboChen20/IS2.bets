@@ -66,6 +66,7 @@ public class NoticiasGUI extends JFrame {
 
 
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -98,11 +99,11 @@ public class NoticiasGUI extends JFrame {
 		Font fontTexto = new Font("Verdana", Font.PLAIN, 10);
 		
 
-		JComboBoxNoticias.setBounds(430, 24, 353, 32);
+		JComboBoxNoticias.setBounds(430, 24, 477, 45);
 		JComboBoxNoticias.setModel(modelNoticia);
 		JComboBoxAutores.setModel(modelAutores);
 		contentPane.add(JComboBoxNoticias);
-		textTitulo.setBounds(430, 85, 353, 22);
+		textTitulo.setBounds(430, 80, 477, 39);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
 
@@ -154,14 +155,18 @@ public class NoticiasGUI extends JFrame {
 		contentPane.add(textTitulo);
 		textTitulo.setEditable(false);
 		textTitulo.setFont(fontTitulo);
-		textSubTitulo.setBounds(430, 130, 354, 32);
+		textSubTitulo.setBounds(430, 130, 477, 54);
 		textSubTitulo.setEditable(false);
 		textSubTitulo.setFont(fontSubTitulo);
 		jTitleListaNoticias.setBounds(305, 29, 129, 23);
 		contentPane.add(jTitleListaNoticias);
+		textTitulo.setLineWrap(true);
+		textTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(textSubTitulo);
-		scrollPane.setBounds(430, 195, 353, 148);
+		scrollPane.setBounds(430, 195, 477, 173);
+		textSubTitulo.setLineWrap(true);
+		textSubTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(textTexto);
@@ -291,6 +296,7 @@ public class NoticiasGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonFiltrarMedios);
+
 		jButtonCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnCerrar_actionPerformed(e);
