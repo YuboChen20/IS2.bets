@@ -206,9 +206,11 @@ public class FQuestion2 extends JFrame {
 							
 							String[] equipos =ev.getDescription().split("-");
 							row.add("<html>"+equipos[0]+"<br>"+equipos[1]+"</html>"); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,2)
-							row.add("    "+"0.22");
-							row.add("    "+"1.48");
-							row.add("    "+ "1.88");
+							Vector <Pronostico> list= ev.getQuest(0).getListPronosticos();
+							System.out.println(ev.getQuest(0).getQuestion());
+							row.add("    "+list.get(0).getCuota());
+							row.add("    "+list.get(1).getCuota());
+							row.add("    "+list.get(2).getCuota());
 							
 							JButton btn1 =new JButton("<html>Otras<br>apuestas</html>");
 						
