@@ -71,6 +71,7 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JLabel jTitleSubTitle = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("SubTitulo"));
 	private final JLabel jTitleText = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("Texto"));
 	private final TextField textFieldAutor = new TextField();
+	private final JButton jButtonNew = new JButton(ResourceBundle.getBundle("Etiquetas").getString("New"));
 	
 
 
@@ -256,7 +257,7 @@ public class CreateNoticiaGUI extends JFrame {
 
 		jButtonAtras.setBounds(668, 408, 100, 40);
 		contentPane.add(jButtonAtras);
-		jButtonCrearNoticia.setBounds(429, 405, 157, 46);
+		jButtonCrearNoticia.setBounds(429, 408, 120, 40);
 		
 		contentPane.add(jButtonCrearNoticia);
 		
@@ -309,6 +310,19 @@ public class CreateNoticiaGUI extends JFrame {
 		jLabelMedio.setBounds(54, 191, 225, 14);
 		
 		contentPane.add(jLabelMedio);
+		
+
+		jButtonNew.setBounds(551, 408, 114, 40);
+		contentPane.add(jButtonNew);
+		jButtonNew.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textTitulo.setText("");
+				textSubTitulo.setText("");
+				textTexto.setText("");
+			}
+		});
+		
+		
 		jButtonAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonAtras_actionPerformed(e);
