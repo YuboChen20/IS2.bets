@@ -90,8 +90,8 @@ public class DataAccess  {
 		   if (month==12) { month=0; year+=1;}  
 		   
 		   
-		   	Noticia no1 = new Noticia("TITULO1", "SUBTITULOS", "ESCRIBIR TEXTO AQUI.	PLANTILLA", "YUBO CHEN", "MARCA", UtilDate.newDate(year,month,17));
-		   	Noticia no2 = new Noticia("El fin del futbol", "Debido a unos sucesos, el futbol se acaba", "ME HAN DESPEDIDO.", "YUBO CHEN", "MARCA", UtilDate.newDate(year,month,17));
+		   	Noticia no1 = new Noticia("TITULO1", "SUBTITULOS", "ESCRIBIR TEXTO AQUI.	PLANTILLA", "YUBO CHEN", "MARCA", UtilDate.newDate(year,month-3,17));
+		   	Noticia no2 = new Noticia("El fin del futbol", "Debido a unos sucesos, el futbol se acaba", "ME HAN DESPEDIDO.", "YUBO CHEN", "MARCA", UtilDate.newDate(year,month-2,17));
 		   	db.persist(no1);
 		   	db.persist(no2);
 		   	String titulo3="Seis jugadores del Sevilla, nominados al once de LaLiga";
@@ -109,7 +109,7 @@ public class DataAccess  {
 		   			+ "-Centrocampistas: Kroos (Real Madrid); Casemiro (Real Madrid); Joan Jordán (Sevilla); Fekir (Betis); Muniain (Athletic Club); Modric (Real Madrid); Juanmi (Betis); Mikel Merino (Real Sociedad); Carlos Soler (Valencia CF); Canales (Betis); Lemar (Atlético de Madrid); Pedri (Barcelona); Trejo (Rayo Vallecano); Brais Méndez (Celta); Capoué (Villareal); Yeremi Pino (Villareal) y Frenkie De Jong (Barcelona).\n"
 		   			+ "\n"
 		   			+ "-Delanteros: Benzema (Real Madrid); Vini Jr (Real Madrid); Aspas (Celta); Joao Félix (Atlético de Madrid); Mikel Oyarzabal (Real Sociedad); Joselu (Deportivo Alavés); Raul de Tomás (Espanyol); Enes Ünal (Getafe CF); Ángel Correa (Atlético de Madrid); Guedes (Valencia) y Borja Iglesias (Betis).";
-		   	Noticia no3 =new Noticia(titulo3, subTitulo3, texto3, "JUAN PELEGRÍN", "MUNDODEPORTIVO", UtilDate.newDate(year,month,18));
+		   	Noticia no3 =new Noticia(titulo3, subTitulo3, texto3, "JUAN PELEGRÍN", "MUNDODEPORTIVO", UtilDate.newDate(year,month-1,17));
 		   	db.persist(no3);
 		   	
 		   	String titulo4="Alberto De la Bella anuncia su retirada del fútbol profesional";
@@ -122,7 +122,7 @@ public class DataAccess  {
 		   			+ "\n"
 		   			+ "Finalmente, y después de algunas muchas temporadas, Alberto de la Bella, decide dejar a un lado la élite del fútbol profesional.";
 	    
-		   	Noticia no4 =new Noticia(titulo4, subTitulo4, texto4, "ÁLVARO PRIAN", "MARCA", UtilDate.newDate(year,month+1,3));
+		   	Noticia no4 =new Noticia(titulo4, subTitulo4, texto4, "ÁLVARO PRIAN", "MARCA", UtilDate.newDate(year,month,17));
 		   	db.persist(no4);
 		   	
 		    Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(year,month,17), atleticoDeMadrid, atlheticDeBilbao);
@@ -934,14 +934,20 @@ public class DataAccess  {
 		db.getTransaction().commit();
 	}
 	
-	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
+	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
+		Calendar today = Calendar.getInstance();
+		int day=today.get(Calendar.DAY_OF_MONTH);
+		int month=today.get(Calendar.MONTH);
+		month+=1;
+		int year=today.get(Calendar.YEAR);
+		Date data = UtilDate.newDate(year, month, day);
 		TypedQuery<Noticia>  query = db.createQuery("SELECT no FROM Noticia no WHERE no.fechaPubli=?1",Noticia.class);
-		query.setParameter(1, fechaPubli);
+		query.setParameter(1, data);
 		List<Noticia> noticias = query.getResultList();
 		if(noticias!=null) 
 			for(Noticia no: noticias)if(no.getTexto().equals(texto))return null;
 		db.getTransaction().begin();
-		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
+		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, data);
 		db.persist(not);
 		db.getTransaction().commit();
 		return not;

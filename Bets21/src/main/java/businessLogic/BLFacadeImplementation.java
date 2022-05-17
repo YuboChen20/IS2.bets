@@ -352,9 +352,9 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		
 	}
-	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
+	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
 		dbManager.open(false);
-		Noticia noticia = dbManager.createNoticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
+		Noticia noticia = dbManager.createNoticia(titulo, subTitulo, texto, nomAutor, nomMedio);
 		dbManager.close();
 		return noticia;
 		
