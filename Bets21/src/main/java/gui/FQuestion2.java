@@ -78,6 +78,9 @@ public class FQuestion2 extends JFrame {
 	private JTextField textFieldNombreLiga;
 	
 	
+	/**
+	 * @wbp.parser.constructor
+	 */
 	public FQuestion2(Usuario u)
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
@@ -119,19 +122,19 @@ public class FQuestion2 extends JFrame {
 	
 	private void jbInit() throws Exception
 	{
-		this.setSize(new Dimension(800, 500));
+		this.setSize(new Dimension(932, 430));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 		getContentPane().setLayout(null);
-		jLabelEventDate.setBounds(45, 34, 140, 25);
+		jLabelEventDate.setBounds(33, 34, 140, 25);
 
 		this.getContentPane().add(jLabelEventDate);
-		jLabelEvents.setBounds(365, 38, 343, 16);
+		jLabelEvents.setBounds(351, 38, 343, 16);
 		this.getContentPane().add(jLabelEvents);
 
 		BLFacade facade = MainGUI.getBusinessLogic();
 		datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar1.getDate());
 		CreateAndQueryGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
-		jCalendar1.setBounds(40, 65, 273, 167);
+		jCalendar1.setBounds(33, 111, 273, 167);
 
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -286,7 +289,7 @@ public class FQuestion2 extends JFrame {
 			}
 		});
 		
-		scrollPanePronostico.setBounds(351, 73, 379, 270);
+		scrollPanePronostico.setBounds(351, 70, 379, 305);
 		scrollPanePronostico.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		getContentPane().add(scrollPanePronostico);
@@ -310,22 +313,22 @@ public class FQuestion2 extends JFrame {
 		tablePronosticos.getColumnModel().getColumn(5).setPreferredWidth(80);
 		tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(6)); // not shown in JTable
 		scrollPanePronostico.setViewportView(tablePronosticos);
-		btnLogout.setBounds(665, 0, 123, 23);
+		btnLogout.setBounds(795, 0, 123, 23);
 		
 		getContentPane().add(btnLogout);
 		
 		JLabel lblApuesta = new JLabel("Apuesta"); //$NON-NLS-1$ //$NON-NLS-2$
-		lblApuesta.setBounds(33, 259, 62, 14);
+		lblApuesta.setBounds(25, 304, 62, 14);
 		getContentPane().add(lblApuesta);
 		
 		textField = new JTextField();
 		textField.setText(""); //$NON-NLS-1$ //$NON-NLS-2$
-		textField.setBounds(89, 256, 112, 20);
+		textField.setBounds(81, 301, 112, 20);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		
-		btnApostar.setBounds(211, 255, 89, 23);
+		btnApostar.setBounds(203, 300, 89, 23);
 		btnApostar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -386,14 +389,18 @@ public class FQuestion2 extends JFrame {
 		
 		
 		
-		btnVerPerfil.setBounds(26, 353, 89, 23);
+		btnVerPerfil.setBounds(662, 0, 123, 23);
 		getContentPane().add(btnVerPerfil);
 		
 		JLabel lblApuestaMinima = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("FQuestion2.lblApuestaMinima.text")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-2$
-		lblApuestaMinima.setBounds(45, 284, 156, 14);
+		lblApuestaMinima.setBounds(29, 333, 156, 14);
 		getContentPane().add(lblApuestaMinima);
 		
 		JButton btnVerRanking = new JButton(ResourceBundle.getBundle("Etiquetas").getString("FQuestion2.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnVerRanking.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnVerRanking.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -401,9 +408,9 @@ public class FQuestion2 extends JFrame {
 				a.setVisible(true);
 			}
 		});
-		btnVerRanking.setBounds(26, 387, 89, 23);
+		btnVerRanking.setBounds(526, 0, 129, 23);
 		getContentPane().add(btnVerRanking);
-		lblErrorAlApostar.setBounds(89, 308, 252, 14);
+		lblErrorAlApostar.setBounds(40, 357, 252, 14);
 		
 		getContentPane().add(lblErrorAlApostar);
 		
@@ -413,7 +420,7 @@ public class FQuestion2 extends JFrame {
 		
 		JLabel lblNombreLiga = new JLabel("Liga Santander");
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombreLiga.setBounds(552, 30, 222, 44);
+		lblNombreLiga.setBounds(33, 57, 222, 44);
 		getContentPane().add(lblNombreLiga);
 		
     	tableLigas.setDefaultRenderer(Object.class, new Render());
@@ -468,7 +475,7 @@ public class FQuestion2 extends JFrame {
     	
     	
     	JScrollPane scrollPaneLigas = new JScrollPane();
-		scrollPaneLigas.setBounds(197, 302, 144, 148);
+		scrollPaneLigas.setBounds(749, 70, 144, 305);
 		getContentPane().add(scrollPaneLigas);
 		
 		tableModelLigas = new DefaultTableModel(null, columnNamesLiga) {

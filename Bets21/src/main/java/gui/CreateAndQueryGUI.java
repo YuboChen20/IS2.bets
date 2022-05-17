@@ -82,9 +82,8 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textFieldCuota;
-	private final JLabel lblEventoCerrado = new JLabel();
 	private final JLabel lblCuota = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JButton btnButtonCerrarApuesta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton btnButtonCerrarApuesta = new JButton("Cerrar Apuesta");
 	
 	private JComboBox<Equipo> jComboBoxLocal = new JComboBox<Equipo>();
 	DefaultComboBoxModel<Equipo> modelLocal = new DefaultComboBoxModel<Equipo>();
@@ -149,11 +148,7 @@ public class CreateAndQueryGUI extends JFrame {
 					domain.Event ev=(domain.Event)jComboBoxEvents.getSelectedItem(); // obtain ev object
 				
 					if(ev!=null) {
-						if(ev.isClosed()) {
-							lblEventoCerrado.setText("Evento  cerrado");
-						}else {
-							lblEventoCerrado.setText("Evento sin cerrar");
-						}
+					
 						Vector<Question> queries=ev.getQuestions();
 						
 						
@@ -222,7 +217,7 @@ public class CreateAndQueryGUI extends JFrame {
 
 		jComboBoxEvents.setModel(modelEvents);
 		jComboBoxEvents.setBounds(new Rectangle(299, 50, 250, 20));
-		jLabelListOfEvents.setBounds(new Rectangle(303, 18, 333, 20));
+		jLabelListOfEvents.setBounds(new Rectangle(303, 20, 333, 20));
 		jLabelQuery.setBounds(new Rectangle(40, 318, 91, 20));
 		jTextFieldQuery.setBounds(new Rectangle(120, 319, 425, 18));
 		jLabelMinBet.setBounds(new Rectangle(40, 348, 91, 20));
@@ -243,7 +238,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		jLabelMsg.setFont(new Font("Tahoma", Font.PLAIN, 10));
 
-		jLabelMsg.setBounds(new Rectangle(303, 195, 250, 20));
+		jLabelMsg.setBounds(new Rectangle(43, 377, 250, 20));
 		jLabelMsg.setForeground(Color.red);
 		jLabelError.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		// jLabelMsg.setSize(new Dimension(305, 20));
@@ -258,7 +253,7 @@ public class CreateAndQueryGUI extends JFrame {
 		this.getContentPane().add(jLabelQuery, null);
 		this.getContentPane().add(jTextFieldPrice, null);
 		scrollPaneQueries.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPaneQueries.setBounds(600, 50, 250, 97);
+		scrollPaneQueries.setBounds(303, 80, 250, 184);
 		
 		getContentPane().add(scrollPaneQueries);
 
@@ -449,12 +444,12 @@ public class CreateAndQueryGUI extends JFrame {
 		jLabelMsg2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		jLabelMsg2.setForeground(Color.RED);
 		jLabelMsg2.setBounds(new Rectangle(275, 191, 305, 20));
-		jLabelMsg2.setBounds(299, 196, 225, 20);
+		jLabelMsg2.setBounds(256, 377, 225, 20);
 		
 		getContentPane().add(jLabelMsg2);
 		
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPanePronostico.setBounds(600, 158, 250, 111);
+		scrollPanePronostico.setBounds(600, 80, 250, 184);
 		jButtonPronostico.setEnabled(false);
 		tableQueries.addMouseListener(new MouseAdapter() {
 			@Override
@@ -619,13 +614,13 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 	
 		jButtonPronostico.setBounds(new Rectangle(399, 275, 130, 30));
-		jButtonPronostico.setBounds(670, 357, 157, 30);
+		jButtonPronostico.setBounds(600, 347, 157, 30);
 		this.getContentPane().add(jButtonPronostico, null);
 		
 		getContentPane().add(jButtonPronostico);
 		
 		
-		jButtonLogout.setBounds(734, 11, 157, 23);
+		jButtonLogout.setBounds(931, 0, 157, 23);
 		jButtonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonClose_actionPerformed(e);
@@ -649,13 +644,9 @@ public class CreateAndQueryGUI extends JFrame {
 		JLabel closebetLabelError = new JLabel(); 
 		closebetLabelError.setBounds(600, 387, 250, 16);
 		getContentPane().add(closebetLabelError);
-		lblEventoCerrado.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblEventoCerrado.setBounds(404, 80, 145, 13);
-		
-		getContentPane().add(lblEventoCerrado);
 		
 
-		btnButtonCerrarApuesta.setBounds(591, 11, 133, 23);
+		btnButtonCerrarApuesta.setBounds(776, 0, 145, 23);
 		btnButtonCerrarApuesta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonCerrarApuesta_actionPerformed(e);
@@ -748,12 +739,12 @@ public class CreateAndQueryGUI extends JFrame {
 				
 				Calendar calendar = Calendar.getInstance();
 				jCalendar.setCalendar(calendar);
-				jButtonCrearNoticia.setBounds(346, 124, 130, 23);
+				jButtonCrearNoticia.setBounds(457, 0, 145, 23);
 				
 				getContentPane().add(jButtonCrearNoticia);
 				
 				
-				lblConsultaCreada.setBounds(247, 355, 46, 14);
+				lblConsultaCreada.setBounds(224, 373, 46, 14);
 				getContentPane().add(lblConsultaCreada);
 				
 				
@@ -763,7 +754,7 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		
-		btnButtonHistorial.setBounds(343, 90, 157, 23);
+		btnButtonHistorial.setBounds(612, 0, 157, 23);
 		btnButtonHistorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jButtonVerHistorial_actionPerformed(e);
@@ -772,6 +763,10 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(btnButtonHistorial);
 		
 		JButton btnCrearLiga = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text_1")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnCrearLiga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnCrearLiga.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -779,7 +774,7 @@ public class CreateAndQueryGUI extends JFrame {
 				a.setVisible(true);
 			}
 		});
-		btnCrearLiga.setBounds(346, 161, 89, 23);
+		btnCrearLiga.setBounds(875, 351, 203, 23);
 		getContentPane().add(btnCrearLiga);
 		
 		
@@ -822,7 +817,7 @@ public class CreateAndQueryGUI extends JFrame {
     	});
 		
     	JScrollPane scrollPaneLigas = new JScrollPane();
-		scrollPaneLigas.setBounds(901, 76, 144, 278);
+		scrollPaneLigas.setBounds(875, 80, 203, 255);
 		getContentPane().add(scrollPaneLigas);
 		
 		tableModelLigas = new DefaultTableModel(null, columnNamesLiga) {

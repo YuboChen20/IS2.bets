@@ -93,7 +93,7 @@ public class CrearLigaGUI extends JFrame {
 		
 		setTitle("Crear Liga");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 741, 652);
+		setBounds(100, 100, 685, 652);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 240, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -104,7 +104,7 @@ public class CrearLigaGUI extends JFrame {
 		
 		JScrollPane scrollPaneEquipos = new JScrollPane();
 		scrollPaneEquipos.setBounds(new Rectangle(138, 274, 406, 116));
-		scrollPaneEquipos.setBounds(33, 77, 378, 390);
+		scrollPaneEquipos.setBounds(33, 77, 335, 390);
 		contentPane.add(scrollPaneEquipos);
 		tableModelEquipos = new DefaultTableModel(null, columnNamesEquipos);
 		tableEquiposLiga.setModel(tableModelEquipos);	
@@ -172,7 +172,7 @@ public class CrearLigaGUI extends JFrame {
     	
     	
     	JScrollPane scrollPaneLigas = new JScrollPane();
-		scrollPaneLigas.setBounds(499, 77, 144, 390);
+		scrollPaneLigas.setBounds(430, 77, 199, 390);
 		contentPane.add(scrollPaneLigas);
 		
 		tableModelLigas = new DefaultTableModel(null, columnNamesLiga) {
@@ -249,37 +249,41 @@ public class CrearLigaGUI extends JFrame {
 			}
 		});
 		
-		btnCrearLiga.setBounds(608, 551, 89, 23);
+		btnCrearLiga.setBounds(430, 564, 199, 23);
 		contentPane.add(btnCrearLiga);
 		
 		JLabel lblNombreLigaIns = new JLabel("Nombre Liga:");
-		lblNombreLigaIns.setBounds(410, 492, 82, 14);
+		lblNombreLigaIns.setBounds(430, 477, 70, 23);
 		contentPane.add(lblNombreLigaIns);
 		
 		textFieldNombreLiga = new JTextField();
-		textFieldNombreLiga.setBounds(499, 489, 151, 20);
+		textFieldNombreLiga.setBounds(430, 510, 199, 20);
 		contentPane.add(textFieldNombreLiga);
 		textFieldNombreLiga.setColumns(10);
 		
 		JLabel lblNumeroMaxEquiposIns = new JLabel("Num. max equipos: ");
-		lblNumeroMaxEquiposIns.setBounds(397, 529, 132, 14);
+		lblNumeroMaxEquiposIns.setBounds(428, 540, 132, 14);
 		contentPane.add(lblNumeroMaxEquiposIns);
 		
 		textFieldNumMaxEquipos = new JTextField();
-		textFieldNumMaxEquipos.setBounds(522, 526, 58, 20);
+		textFieldNumMaxEquipos.setBounds(537, 540, 92, 20);
 		contentPane.add(textFieldNumMaxEquipos);
 		textFieldNumMaxEquipos.setColumns(10);
 		
 		JLabel lblNombreEquipo = new JLabel("Nombre Equipo:");
-		lblNombreEquipo.setBounds(35, 492, 89, 14);
+		lblNombreEquipo.setBounds(33, 512, 89, 14);
 		contentPane.add(lblNombreEquipo);
 		
 		textFieldNombreEquipo = new JTextField();
-		textFieldNombreEquipo.setBounds(145, 489, 132, 20);
+		textFieldNombreEquipo.setBounds(145, 510, 223, 20);
 		contentPane.add(textFieldNombreEquipo);
 		textFieldNombreEquipo.setColumns(10);
 		
 		JButton btnCrearEquipo = new JButton("Crear Equipo");
+		btnCrearEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnCrearEquipo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -320,10 +324,14 @@ public class CrearLigaGUI extends JFrame {
 				
 			}
 		});
-		btnCrearEquipo.setBounds(165, 525, 122, 23);
+		btnCrearEquipo.setBounds(33, 564, 155, 23);
 		contentPane.add(btnCrearEquipo);
 		
 		JButton btnEliminarEquipo = new JButton("Eliminar Equipo");
+		btnEliminarEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnEliminarEquipo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -355,10 +363,20 @@ public class CrearLigaGUI extends JFrame {
 				
 			}
 		});
-		btnEliminarEquipo.setBounds(33, 551, 109, 23);
+		btnEliminarEquipo.setBounds(213, 564, 155, 23);
 		contentPane.add(btnEliminarEquipo);
 		
-		
+
+		JButton btnAtras = new JButton("Atr\u00E1s");
+		btnAtras.setBounds(0, 0, 90, 22);
+		contentPane.add(btnAtras);
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButtonAtras_actionPerformed(e);
+			}
+		});
+		getContentPane().add(btnAtras);
+				
 		tableModelLigas.setDataVector(null, columnNamesLiga);
 		
 		List<Liga> ligas=facade.getAllLigas();
@@ -380,6 +398,11 @@ public class CrearLigaGUI extends JFrame {
     	tableLigas.setRowSelectionInterval(0, 0);
     	
   
+	}
+	private void jButtonAtras_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		CreateAndQueryGUI a =CreateAndQueryGUI.getInstance();
+		a.setVisible(true);
 	}
 }
 

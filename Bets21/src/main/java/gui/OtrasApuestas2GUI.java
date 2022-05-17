@@ -95,7 +95,7 @@ public class OtrasApuestas2GUI extends JFrame {
 	
 	private void jbInit(Event event1, Date date1, int i1, Usuario user) throws Exception
 	{
-		this.setSize(new Dimension(800, 613));
+		this.setSize(new Dimension(800, 534));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 		getContentPane().setLayout(null);
 		jLabelQueries.setBounds(20, 68, 249, 14);
@@ -176,7 +176,7 @@ public class OtrasApuestas2GUI extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAtras.setBounds(672, 319, 89, 23);
+		btnAtras.setBounds(0, 0, 89, 23);
 		getContentPane().add(btnAtras);
 		
 		
@@ -201,7 +201,7 @@ public class OtrasApuestas2GUI extends JFrame {
 		getContentPane().add(btnPrueba);
 		
 		JLabel lblApuesta = new JLabel("Apuesta"); //$NON-NLS-1$ //$NON-NLS-2$
-		lblApuesta.setBounds(30, 259, 50, 14);
+		lblApuesta.setBounds(20, 259, 50, 14);
 		getContentPane().add(lblApuesta);
 		
 		textApuesta = new JTextField();
@@ -287,7 +287,7 @@ public class OtrasApuestas2GUI extends JFrame {
 		btnApostar.setBounds(249, 254, 89, 24);
 		
 		getContentPane().add(btnApostar);
-		lblMinima.setBounds(72, 289, 152, 14);
+		lblMinima.setBounds(20, 283, 152, 14);
 		
 		getContentPane().add(lblMinima);
 		
@@ -416,7 +416,7 @@ public class OtrasApuestas2GUI extends JFrame {
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
 		scrollpane1=new JScrollPane(textArea);
-		scrollpane1.setBounds(45,325,584,20);
+		scrollpane1.setBounds(139,321,584,20);
 		scrollpane1.setBounds(new Rectangle(45, 325, 500, 100));
 		getContentPane().add(scrollpane1);
 		pos=0;
@@ -446,7 +446,7 @@ public class OtrasApuestas2GUI extends JFrame {
 		JLabel lblUserComentarios = new JLabel(user.getUserName() + " :");
 		lblUserComentarios.setBounds(30, 453, 45, 13);
 		getContentPane().add(lblUserComentarios);
-		lblErrorApostar.setBounds(207, 300, 131, 14);
+		lblErrorApostar.setBounds(137, 288, 131, 14);
 		
 		getContentPane().add(lblErrorApostar);
 	
