@@ -89,7 +89,7 @@ public class RankingGUI extends JFrame {
 		
 		setTitle("Ranking");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 477, 652);
+		setBounds(100, 100, 477, 551);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 240, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -114,6 +114,10 @@ public class RankingGUI extends JFrame {
 		contentPane.add(lblTipoDeRanking);
 		
 		JButton btnPorUsuarios = new JButton("Por apuestas");
+		btnPorUsuarios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnPorUsuarios.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -136,7 +140,7 @@ public class RankingGUI extends JFrame {
 		    	tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
 			}
 		});
-		btnPorUsuarios.setBounds(33, 490, 105, 23);
+		btnPorUsuarios.setBounds(54, 477, 142, 23);
 		contentPane.add(btnPorUsuarios);
 		
 		JButton btnPorDinero = new JButton("Por dinero");
@@ -164,7 +168,7 @@ public class RankingGUI extends JFrame {
 		    	tablePronosticos.getColumnModel().getColumn(2).setPreferredWidth(25);
 			}
 		});
-		btnPorDinero.setBounds(136, 490, 89, 23);
+		btnPorDinero.setBounds(249, 477, 142, 23);
 		contentPane.add(btnPorDinero);
 		
 		

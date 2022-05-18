@@ -416,8 +416,8 @@ public class OtrasApuestas2GUI extends JFrame {
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
 		scrollpane1=new JScrollPane(textArea);
-		scrollpane1.setBounds(139,321,584,20);
-		scrollpane1.setBounds(new Rectangle(45, 325, 500, 100));
+		scrollpane1.setBounds(143,325,660,100);
+		scrollpane1.setBounds(new Rectangle(130, 325, 500, 100));
 		getContentPane().add(scrollpane1);
 		pos=0;
 		Event eventoactualizado = facade.getEventoactualizado(event1);
@@ -427,7 +427,7 @@ public class OtrasApuestas2GUI extends JFrame {
 		}
 		textField = new JTextField();
 		textField.setText("");
-		textField.setBounds(85, 449, 461, 19);
+		textField.setBounds(85, 449, 535, 19);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -440,7 +440,7 @@ public class OtrasApuestas2GUI extends JFrame {
 				textField.setText("");
 			}
 		});
-		btnComentar.setBounds(561, 449, 134, 21);
+		btnComentar.setBounds(627, 448, 134, 21);
 		getContentPane().add(btnComentar);
 		
 		JLabel lblUserComentarios = new JLabel(user.getUserName() + " :");

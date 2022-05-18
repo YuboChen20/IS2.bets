@@ -126,13 +126,13 @@ public class FQuestionInvitado2 extends JFrame {
 	
 	private void jbInit() throws Exception
 	{
-		this.setSize(new Dimension(800, 500));
+		this.setSize(new Dimension(929, 393));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
 		getContentPane().setLayout(null);
 		jLabelEventDate.setBounds(45, 34, 140, 25);
 
 		this.getContentPane().add(jLabelEventDate);
-		jLabelEvents.setBounds(365, 38, 343, 16);
+		jLabelEvents.setBounds(358, 38, 343, 16);
 		this.getContentPane().add(jLabelEvents);
 
 		BLFacade facade = MainGUI.getBusinessLogic();
@@ -317,11 +317,11 @@ public class FQuestionInvitado2 extends JFrame {
 		tablePronosticos.getColumnModel().getColumn(5).setPreferredWidth(80);
 		tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(6)); // not shown in JTable
 		scrollPanePronostico.setViewportView(tablePronosticos);
-		btnLogin.setBounds(665, 0, 123, 23);
+		btnLogin.setBounds(792, 0, 123, 23);
 		
 		getContentPane().add(btnLogin);
 		btnNewButton.setForeground(Color.RED);
-		btnNewButton.setBounds(556, 0, 107, 23);
+		btnNewButton.setBounds(677, 0, 107, 23);
 		
 		getContentPane().add(btnNewButton);
 		
@@ -330,7 +330,7 @@ public class FQuestionInvitado2 extends JFrame {
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombreLiga.setBounds(530, 32, 244, 44);
+		lblNombreLiga.setBounds(45, 242, 244, 44);
 		getContentPane().add(lblNombreLiga);
 		
     	tableLigas.setDefaultRenderer(Object.class, new Render());
@@ -393,7 +393,7 @@ public class FQuestionInvitado2 extends JFrame {
     	
     	
     	JScrollPane scrollPaneLigas = new JScrollPane();
-		scrollPaneLigas.setBounds(40, 243, 144, 209);
+		scrollPaneLigas.setBounds(761, 73, 144, 262);
 		getContentPane().add(scrollPaneLigas);
 		
 		tableModelLigas = new DefaultTableModel(null, columnNamesLiga) {
@@ -410,7 +410,7 @@ public class FQuestionInvitado2 extends JFrame {
 		tableLigas.setModel(tableModelLigas);	
 		tableLigas.getColumnModel().getColumn(0).setPreferredWidth(268);
 		scrollPaneLigas.setViewportView(tableLigas);
-		btnNoticia.setBounds(0, 0, 123, 23);
+		btnNoticia.setBounds(530, 0, 123, 23);
 		
 		getContentPane().add(btnNoticia);
 		btnNoticia.addActionListener(new ActionListener() {

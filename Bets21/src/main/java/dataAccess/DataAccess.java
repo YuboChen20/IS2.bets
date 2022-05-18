@@ -62,6 +62,8 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		try {
 			Liga ligaSantander=new Liga("Liga Santander",20);
+			Liga ligaBBVA=new Liga("Liga BBVA",20);
+			
 			Equipo atleticoDeMadrid= new Equipo("Atlético de Madrid", ligaSantander);
 			Equipo atlheticDeBilbao= new Equipo("Athletic de Bilbao", ligaSantander);
 			Equipo barcelona= new Equipo("Barcelona", ligaSantander);
@@ -290,7 +292,7 @@ public class DataAccess  {
 	
 			
 			db.persist(ligaSantander);
-			
+			db.persist(ligaBBVA);
 			db.persist(atleticoDeMadrid);
 			db.persist(atlheticDeBilbao);
 			db.persist(barcelona);
@@ -400,7 +402,8 @@ public class DataAccess  {
 		    db.getTransaction().commit();		
 			this.crearApuesta(user,10,p1);
 			this.crearApuesta(user,12,p5);
-			
+			p1.getQuestion().getEvent().getEquipos().get(1).setDineroApostado(10);
+			p5.getQuestion().getEvent().getEquipos().get(1).setDineroApostado(12);
 		    LocalDateTime now = LocalDateTime.now();     
 		    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
 		    String formatDateTime = now.format(format);  
