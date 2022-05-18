@@ -313,7 +313,7 @@ public class CrearLigaGUI extends JFrame {
 		textFieldNumMaxEquipos.setColumns(10);
 		
 		JLabel lblNombreEquipo = new JLabel("Nombre Equipo:");
-		lblNombreEquipo.setBounds(33, 512, 89, 14);
+		lblNombreEquipo.setBounds(33, 512, 116, 14);
 		contentPane.add(lblNombreEquipo);
 		
 		textFieldNombreEquipo = new JTextField();
@@ -400,6 +400,7 @@ public class CrearLigaGUI extends JFrame {
 					lblErrorCrearLiga.setText("");
 					
 					int j=tableEquiposLiga.getSelectedRow();
+				if(j>=0) {
 					String nombreEquipo=(String) tableModelEquipos.getValueAt(j, 1);
 					List<Equipo> teams =facade.getAllEquipos(2);
 					int pos=-1;
@@ -438,7 +439,9 @@ public class CrearLigaGUI extends JFrame {
 	    			
 	    			CreateAndQueryGUI.getInstance().updateTeams();
 				
-				
+				}else {
+					lblErrorCrearEquipo.setText("No se ha seleccionado un equipo");
+				}
 				}
 			}
 		});

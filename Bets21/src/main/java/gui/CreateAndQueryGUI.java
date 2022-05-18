@@ -755,7 +755,7 @@ public class CreateAndQueryGUI extends JFrame {
 				getContentPane().add(jButtonCrearNoticia);
 				
 				
-				lblConsultaCreada.setBounds(224, 373, 46, 14);
+				lblConsultaCreada.setBounds(120, 373, 150, 14);
 				getContentPane().add(lblConsultaCreada);
 				
 				

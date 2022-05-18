@@ -234,11 +234,7 @@ public class FQuestion2 extends JFrame {
 					
 					}
 					
-					int pos=-1;
-					List<Liga> ligas=facade.getAllLigas();
-					for(int i=0; i<ligas.size();i++)
-						if(ligas.get(i).getNombre().equals("Liga Santander")) pos=i;
-					tableLigas.setRowSelectionInterval(pos, pos);
+				
 					
 					
 					//tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(2)); // not shown in JTable
@@ -481,6 +477,13 @@ public class FQuestion2 extends JFrame {
     		}
     	});
     	
+    	DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar1.getLocale());
+    	Calendar calendar=Calendar.getInstance();
+		calendar.setTime(new Date());
+		jCalendar1.setCalendar(calendar);
+		List<Event> events=facade.getEvents(new Date());
+		if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendar.getTime()));
+    	
     	
     	JScrollPane scrollPaneLigas = new JScrollPane();
 		scrollPaneLigas.setBounds(749, 70, 144, 305);
@@ -529,9 +532,14 @@ public class FQuestion2 extends JFrame {
     	tableLigas.getColumnModel().removeColumn(tableLigas.getColumnModel().getColumn(1));
     	
     	tableLigas.setRowSelectionInterval(0, 0);
+    	int pos=-1;
+		List<Liga> ligas1=facade.getAllLigas();
+		for(int i=0; i<ligas1.size();i++)
+			if(ligas1.get(i).getNombre().equals("Liga Santander")) pos=i;
+		if(pos!=-1 || pos<ligas1.size())
+			tableLigas.setRowSelectionInterval(pos, pos);
 	
-	
-	
+    	
 	
 	}
 	private void btnLogin_actionPerformed(ActionEvent e) {
