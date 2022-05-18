@@ -39,7 +39,6 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
-import javax.swing.SwingConstants;
 
 public class CreateNoticiaGUI extends JFrame {
 
@@ -53,6 +52,7 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JScrollPane scrollPane = new JScrollPane();
 	private final JTextArea textTitulo = new JTextArea();
 	private final JTextArea textSubTitulo = new JTextArea();
+	private final JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 	private final JButton jButtonAtras = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back"));
@@ -72,11 +72,6 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JLabel jTitleText = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("Texto"));
 	private final TextField textFieldAutor = new TextField();
 	private final JButton jButtonNew = new JButton(ResourceBundle.getBundle("Etiquetas").getString("New"));
-	private final JLabel jLabelMedios = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Medios")); 
-	private final JLabel jLabelAutores = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Autores")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JLabel jLabelCrear = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateNoticiasLetrero")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JLabel jLabelNoticias = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Noticia"));
-	private final JLabel jLabelCreada = new JLabel(""); //$NON-NLS-1$ //$NON-NLS-2$
 	
 
 
@@ -86,7 +81,7 @@ public class CreateNoticiaGUI extends JFrame {
 	 */
 	public CreateNoticiaGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 787, 510);
+		setBounds(100, 100, 942, 510);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -97,19 +92,14 @@ public class CreateNoticiaGUI extends JFrame {
 		Font fontTexto = new Font("Verdana", Font.PLAIN, 10);
 		
 
-		JComboBoxNoticias.setBounds(271, 11, 478, 32);
+		JComboBoxNoticias.setBounds(429, 39, 478, 32);
 		JComboBoxNoticias.setModel(modelNoticia);
 		JComboBoxAutores.setModel(modelAutores);
 		contentPane.add(JComboBoxNoticias);
-		textTitulo.setBounds(272, 97, 477, 39);
+		textTitulo.setBounds(430, 80, 477, 39);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
 
-		List<Noticia> noticias=facade.getAllNoticias();
-		for(Noticia no: noticias) {
-			modelNoticia.addElement(no);
-		}
-		JComboBoxNoticias.repaint();
 
 		List<String> autores=facade.getAllNoticiasAuthor();
 		for(String au: autores) {
@@ -138,18 +128,103 @@ public class CreateNoticiaGUI extends JFrame {
 			
 		});
 		
+		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
+			public void propertyChange(PropertyChangeEvent propertychangeevent) {
+				
+				//jLabelError.setText("");
+				//jLabelMsg.setText("");
+				//jLabelMsg2.setText("");
+				//lblConsultaCreada.setText("");
+				
+//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
+//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
+				if (propertychangeevent.getPropertyName().equals("locale")) {
+					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
+				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
+					calendarAnt = (Calendar) propertychangeevent.getOldValue();
+					calendarAct = (Calendar) propertychangeevent.getNewValue();
+					System.out.println("calendarAnt: "+calendarAnt.getTime());
+					System.out.println("calendarAct: "+calendarAct.getTime());
+					
+					int monthAnt = calendarAnt.get(Calendar.MONTH);
+					int monthAct = calendarAct.get(Calendar.MONTH);
+					if (monthAct!=monthAnt) {
+						if (monthAct==monthAnt+2) { 
+							// Si en JCalendar estÃ¡ 30 de enero y se avanza al mes siguiente, devolverÃ­a 2 de marzo (se toma como equivalente a 30 de febrero)
+							// Con este cÃ³digo se dejarÃ¡ como 1 de febrero en el JCalendar
+							calendarAct.set(Calendar.MONTH, monthAnt+1);
+							calendarAct.set(Calendar.DAY_OF_MONTH, 1);
+						}
+						
+						jCalendar.setCalendar(calendarAct);
+						
+						BLFacade facade = MainGUI.getBusinessLogic();
+
+						datesWithNoticiasCurrentMonth=facade.getNoticiasDateMonth(jCalendar.getDate());
+					}
+
+					paintDaysWithNoticias(jCalendar,datesWithNoticiasCurrentMonth);
+
+					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
+					
+					Date firstDay = UtilDate.trim(calendarAct.getTime());
+
+					try {
+						BLFacade facade = MainGUI.getBusinessLogic();
+						JComboBoxNoticias.removeAllItems();
+						List<domain.Noticia> noticias = facade.getNoticiasMonth(firstDay);
+
+						if (noticias.isEmpty())
+							/*jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
+									+ ": " + dateformat1.format(calendarAct.getTime()));*/
+							System.out.println("No hay noticias en este mes.");
+						else
+							/*jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+								+ dateformat1.format(calendarAct.getTime())); */
+	
+							System.out.println("Noticias " + noticias);
+
+							
+							for (domain.Noticia no : noticias)
+								modelNoticia.addElement(no);
+								JComboBoxNoticias.repaint();
+							
+							if (noticias.size() == 0) {
+								/*jButtonCreateQuery.setEnabled(false);
+								int n=tableModelQueries.getRowCount();
+								for(int i=0;i<n;i++) {
+									tableModelQueries.removeRow(0);
+								}*/
+									
+							}else {
+								//jButtonCreateQuery.setEnabled(true);
+			                    ////////////////////////////////////////////// 
+							}
+								
+
+							} catch (Exception e1) {
+
+								//jLabelError.setText(e1.getMessage());
+								e1.printStackTrace();
+								System.out.println("No se ha podido acceder al las noticias");
+							}
+					
+
+			}
+		}});
+		
 		
 		contentPane.add(textTitulo);
 		textTitulo.setEditable(true);
 		textTitulo.setFont(fontTitulo);
-		textSubTitulo.setBounds(272, 174, 477, 39);
+		textSubTitulo.setBounds(430, 145, 477, 39);
 		textSubTitulo.setEditable(true);
 		textSubTitulo.setFont(fontSubTitulo);
 		textTitulo.setLineWrap(true);
 		textTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(textSubTitulo);
-		scrollPane.setBounds(272, 247, 477, 150);
+		scrollPane.setBounds(430, 218, 477, 150);
 		textSubTitulo.setLineWrap(true);
 		textSubTitulo.setWrapStyleWord(true);
 		
@@ -159,38 +234,42 @@ public class CreateNoticiaGUI extends JFrame {
 		textTexto.setEditable(true);
 		textTexto.setFont(fontTexto);
 		textTexto.setWrapStyleWord(true);
+		jCalendar.setBounds(54, 24, 225, 150);
+		jCalendar.setTodayButtonVisible(false);
+		
+		contentPane.add(jCalendar);
 		
 		
-		JComboBoxAutores.setBounds(12, 341, 225, 32);
+		JComboBoxAutores.setBounds(54, 332, 225, 32);
 		contentPane.add(JComboBoxAutores);
 		
 
-		jButtonAtras.setBounds(12, 7, 100, 40);
+		jButtonAtras.setBounds(668, 408, 100, 40);
 		contentPane.add(jButtonAtras);
-		jButtonCrearNoticia.setBounds(399, 408, 120, 40);
+		jButtonCrearNoticia.setBounds(429, 408, 120, 40);
 		
 		contentPane.add(jButtonCrearNoticia);
 		
 
-		jTitleListaNoticias.setBounds(171, 16, 87, 23);
+		jTitleListaNoticias.setBounds(329, 44, 87, 23);
 		contentPane.add(jTitleListaNoticias);
 		
 
-		jTitleTitulo.setBounds(268, 74, 92, 14);
+		jTitleTitulo.setBounds(329, 105, 92, 14);
 		contentPane.add(jTitleTitulo);
 		
 		
-		jTitleSubTitle.setBounds(271, 149, 92, 14);
+		jTitleSubTitle.setBounds(329, 146, 92, 14);
 		contentPane.add(jTitleSubTitle);
 		
 		
-		jTitleText.setBounds(271, 228, 54, 14);
+		jTitleText.setBounds(329, 228, 54, 14);
 		contentPane.add(jTitleText);
 		
 		
-		textFieldAutor.setBounds(10, 379, 227, 32);
+		textFieldAutor.setBounds(52, 370, 227, 32);
 		contentPane.add(textFieldAutor);
-		JComboBoxMedios.setBounds(12, 219, 225, 32);
+		JComboBoxMedios.setBounds(54, 210, 225, 32);
 		JComboBoxMedios.setModel(modelMedios);
 		List<String> medios=facade.getAllNoticiasMedio();
 		for(String me: medios) {
@@ -199,69 +278,38 @@ public class CreateNoticiaGUI extends JFrame {
 		JComboBoxAutores.repaint();
 		
 		contentPane.add(JComboBoxMedios);
-		textFieldMedios.setBounds(12, 257, 225, 32);
+		textFieldMedios.setBounds(54, 248, 225, 32);
 		
 		contentPane.add(textFieldMedios);
-		jLabelErrorTitulo.setBounds(338, 64, 411, 32);
+		jLabelErrorTitulo.setBounds(429, 118, 478, 22);
 		jLabelErrorTitulo.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorTitulo);
-		jLabelErrorSubTitulo.setBounds(338, 147, 411, 22);
+		jLabelErrorSubTitulo.setBounds(429, 183, 478, 22);
 		jLabelErrorSubTitulo.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorSubTitulo);
-		jLabelErrorTexto.setBounds(338, 220, 411, 22);
+		jLabelErrorTexto.setBounds(429, 375, 478, 22);
 		jLabelErrorTexto.setForeground(Color.red);
 		
 		contentPane.add(jLabelErrorTexto);
-		jLabelAutor.setBounds(12, 421, 225, 14);
+		jLabelAutor.setBounds(54, 312, 225, 14);
 		
 		contentPane.add(jLabelAutor);
-		jLabelMedio.setBounds(10, 295, 225, 14);
+		jLabelMedio.setBounds(54, 191, 225, 14);
 		
 		contentPane.add(jLabelMedio);
 		
 
-		jButtonNew.setBounds(529, 408, 114, 40);
+		jButtonNew.setBounds(551, 408, 114, 40);
 		contentPane.add(jButtonNew);
-		
-
-		jLabelMedios.setBounds(12, 199, 68, 14);
-		contentPane.add(jLabelMedios);
-		
-		
-		jLabelAutores.setBounds(10, 321, 72, 14);
-		contentPane.add(jLabelAutores);
-		jLabelCrear.setHorizontalAlignment(SwingConstants.CENTER);
-		jLabelCrear.setFont(new Font("Tahoma", Font.BOLD, 30));
-		jLabelCrear.setBounds(12, 82, 225, 54);
-		
-		contentPane.add(jLabelCrear);
-		jLabelNoticias.setHorizontalAlignment(SwingConstants.CENTER);
-		jLabelNoticias.setFont(new Font("Tahoma", Font.BOLD, 30));
-		jLabelNoticias.setBounds(12, 121, 225, 54);
-		
-		contentPane.add(jLabelNoticias);
-		
-
-		jLabelCreada.setBounds(293, 421, 96, 23);
-		contentPane.add(jLabelCreada);
-		jLabelCreada.setForeground(Color.green);
 		jButtonNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textTitulo.setText("");
 				textSubTitulo.setText("");
 				textTexto.setText("");
-				textFieldMedios.setText("");
-				textFieldAutor.setText("");
-				jLabelErrorTitulo.setText("");
-				jLabelErrorSubTitulo.setText("");
-				jLabelErrorTexto.setText("");
-				jLabelCreada.setText("");
-				
 			}
 		});
-		
 		
 		
 		jButtonAtras.addActionListener(new ActionListener() {
@@ -270,13 +318,19 @@ public class CreateNoticiaGUI extends JFrame {
 			}
 		});
 		
+		
+		DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
+    	Calendar calendar=Calendar.getInstance();
+		calendar.setTime(new Date());
+		jCalendar.setCalendar(calendar);
+		calendarAct=calendar;
+		
 		jButtonCrearNoticia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jLabelErrorTitulo.setText("");
 				jLabelErrorSubTitulo.setText("");
 				jLabelErrorTexto.setText("");
 				jLabelErrorTexto.setForeground(Color.red);
-				jLabelCreada.setText("");
 				String titulo = textTitulo.getText();
 				String subtitulo = textSubTitulo.getText();
 				String texto = textTexto.getText();
@@ -304,12 +358,36 @@ public class CreateNoticiaGUI extends JFrame {
 				} else{
 					nomMedio= textFieldMedios.getText();
 				}
+				Date dat = jCalendar.getDate();
 				BLFacade facade = MainGUI.getBusinessLogic();
 				try {
 					
-					facade.createNoticia(titulo, subtitulo, texto, nomAutor, nomMedio);
+					facade.createNoticia(titulo, subtitulo, texto, nomAutor, nomMedio, dat);
+					jLabelErrorTexto.setForeground(Color.green);
+					jLabelErrorTexto.setText(ResourceBundle.getBundle("Etiquetas").getString("CreatedNoticia"));
 					
-					jLabelCreada.setText(ResourceBundle.getBundle("Etiquetas").getString("CreatedNoticia"));
+					modelNoticia.removeAllElements();
+					modelMedios.removeAllElements();
+					modelAutores.removeAllElements();
+					
+					//List<Noticia> noticias=facade.getAllNoticias();
+					List<Noticia> noticias=facade.getNoticiasMonth(calendarAct.getTime());
+					List<String> medios=facade.getAllNoticiasMedio();
+					List<String> autores=facade.getAllNoticiasAuthor();
+					
+					
+	
+					for(String me: medios) {
+						modelMedios.addElement(me);
+					}
+					for(String aut: autores)
+						modelAutores.addElement(aut);
+					
+					for(Noticia not: noticias)
+						modelNoticia.addElement(not);
+					
+					JComboBoxNoticias.setSelectedIndex(modelNoticia.getSize()-1);
+					
 				}catch(Exception e1) {
 					e1.printStackTrace();
 				}

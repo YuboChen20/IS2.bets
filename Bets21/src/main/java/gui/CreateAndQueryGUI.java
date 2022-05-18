@@ -26,6 +26,7 @@ import exceptions.EventAlreadyExistsException;
 import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
+import exceptions.TeamAlreadyPlaysInDayException;
 import exceptions.UnknownTeamException;
 
 
@@ -55,7 +56,7 @@ public class CreateAndQueryGUI extends JFrame {
 	
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
-	private JLabel  lblNewLabel= new JLabel();
+	private JLabel  lblErrorPronostico= new JLabel();
 
 	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
 	private final JScrollPane scrollPaneQueries = new JScrollPane();
@@ -74,7 +75,7 @@ public class CreateAndQueryGUI extends JFrame {
             ResourceBundle.getBundle("Etiquetas").getString("Cuota"),
            
 	};
-	private final JLabel jLabelMsg2 = new JLabel();
+	private final JLabel jLabelErrorEvento = new JLabel();
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
@@ -105,6 +106,7 @@ public class CreateAndQueryGUI extends JFrame {
 	};
 	private JLabel lblNombreLiga = new JLabel("Liga Santander");
 	
+	JButton jButtonEvent = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonEvent.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	
 	private static CreateAndQueryGUI instance;
@@ -196,13 +198,18 @@ public class CreateAndQueryGUI extends JFrame {
 		
 			                		row.add(p.getPronosNumber());
 			                		row.add(p.getPronostico());
+			                		row.add(p.getCuota());
 			                		tableModelPronostico.addRow(row);	
 			                	}
 			                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 			                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+			                	System.out.println("Boolean"+ (tablePronosticos.getRowCount()>0));
+			                	if(tablePronosticos.getRowCount()>0) 
+			                		tablePronosticos.setRowSelectionInterval(0, 0);
+			                	
 			                	
 			                }catch(PronosticAlreadyExist e1) {
-			                	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+			                	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 			                }
 						
 						}
@@ -238,7 +245,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		jLabelMsg.setFont(new Font("Tahoma", Font.PLAIN, 10));
 
-		jLabelMsg.setBounds(new Rectangle(43, 377, 271, 20));
+		jLabelMsg.setBounds(new Rectangle(43, 377, 250, 20));
 		jLabelMsg.setForeground(Color.red);
 		jLabelError.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		// jLabelMsg.setSize(new Dimension(305, 20));
@@ -282,7 +289,7 @@ public class CreateAndQueryGUI extends JFrame {
 				jButtonPronostico.setEnabled(false);
 				jLabelError.setText("");
 				jLabelMsg.setText("");
-				jLabelMsg2.setText("");
+				jLabelErrorEvento.setText("");
 				lblConsultaCreada.setText("");
 				
 //				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
@@ -341,13 +348,15 @@ public class CreateAndQueryGUI extends JFrame {
 	
 		                		row.add(p.getPronosNumber());
 		                		row.add(p.getPronostico());
+		                		row.add(p.getCuota());
 		                		tableModelPronostico.addRow(row);	
 		                	}
+		                	if(tablePronosticos.getRowCount()>0) tablePronosticos.setRowSelectionInterval(0, 0);
 		                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 		                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 		                	if(tableModelQueries.getRowCount()>0) jButtonPronostico.setEnabled(true);
 		                }catch(PronosticAlreadyExist e1) {
-		                	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+		                	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 		                }
 		                
 					}
@@ -390,7 +399,7 @@ public class CreateAndQueryGUI extends JFrame {
 		tableQueries.getColumnModel().getColumn(1).setPreferredWidth(268);
 		this.getContentPane().add(scrollPaneQueries, null);
 		
-		JButton jButtonEvent = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonEvent.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		
 		jButtonEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -400,7 +409,7 @@ public class CreateAndQueryGUI extends JFrame {
 					
 					jLabelError.setText("");
 					jLabelMsg.setText("");
-					jLabelMsg2.setText("");
+					jLabelErrorEvento.setText("");
 					lblConsultaCreada.setText("");
 
 					// Displays an exception if the query field is empty
@@ -418,7 +427,7 @@ public class CreateAndQueryGUI extends JFrame {
 						
 						for(Equipo eq:eventi.getEquipos())System.out.println(eq);
 						
-						jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("EventCreated"));     
+						jLabelErrorEvento.setText(ResourceBundle.getBundle("Etiquetas").getString("EventCreated"));     
 						jCalendar.setCalendar(calendarAct);
 						datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar.getDate());
 						paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
@@ -427,10 +436,12 @@ public class CreateAndQueryGUI extends JFrame {
                 		jComboBoxEvents.setSelectedIndex(jComboBoxEvents.getItemCount()-1);
                 		
 					}
+				}  catch(TeamAlreadyPlaysInDayException eTAPIDE) {
+					jLabelErrorEvento.setText("Los equipos no pueden jugar más de dos veces el mismo día");
 				} catch(EventAlreadyExistsException e2) {
-					jLabelMsg2.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventAlreadyExisted"));
+					jLabelErrorEvento.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventAlreadyExisted"));
 				} catch(EventFinishedException e1) {
-					jLabelMsg2.setText("El evento a finalizado");
+					jLabelErrorEvento.setText("El evento a finalizado");
 				}  catch(Exception e3) {
 					e3.printStackTrace();
 				}
@@ -441,12 +452,12 @@ public class CreateAndQueryGUI extends JFrame {
 		jButtonEvent.setBounds(new Rectangle(399, 275, 130, 30));
 		jButtonEvent.setBounds(419, 274, 130, 30);
 		getContentPane().add(jButtonEvent);
-		jLabelMsg2.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		jLabelMsg2.setForeground(Color.RED);
-		jLabelMsg2.setBounds(new Rectangle(275, 191, 305, 20));
-		jLabelMsg2.setBounds(324, 383, 225, 20);
+		jLabelErrorEvento.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		jLabelErrorEvento.setForeground(Color.RED);
+		jLabelErrorEvento.setBounds(new Rectangle(275, 191, 305, 20));
+		jLabelErrorEvento.setBounds(43, 260, 284, 20);
 		
-		getContentPane().add(jLabelMsg2);
+		getContentPane().add(jLabelErrorEvento);
 		
 		scrollPanePronostico.setBounds(new Rectangle(138, 274, 406, 116));
 		scrollPanePronostico.setBounds(600, 80, 250, 184);
@@ -485,16 +496,16 @@ public class CreateAndQueryGUI extends JFrame {
                 	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
                
                 }catch(PronosticAlreadyExist e1) {
-                	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+                	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
                 }
 			}
 		});
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblErrorPronostico.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
-		lblNewLabel.setBounds(new Rectangle(600, 332, 238, 20));
-		lblNewLabel.setForeground(Color.red);
+		lblErrorPronostico.setBounds(new Rectangle(612, 332, 238, 20));
+		lblErrorPronostico.setForeground(Color.red);
 		
-		getContentPane().add(lblNewLabel); 
+		getContentPane().add(lblErrorPronostico); 
 		
 		getContentPane().add(scrollPanePronostico);
 		tableModelPronostico = new DefaultTableModel(null, columnNamesPronostico){
@@ -527,7 +538,7 @@ public class CreateAndQueryGUI extends JFrame {
 				try {
 					jLabelError.setText("");
 					jLabelMsg.setText("");
-					jLabelMsg2.setText("");
+					jLabelErrorEvento.setText("");
 					lblConsultaCreada.setText("");
 					//textFieldCuota.setText(""); 
 
@@ -546,12 +557,12 @@ public class CreateAndQueryGUI extends JFrame {
                             try {
                             	Question q= facade.createPronostic(pr,ev,i,cuota);
                             }catch(PronosticAlreadyExist e1) {
-                            	lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+                            	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
                             	
                             }
 							
       
-                            lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticCreated"));
+                            lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticCreated"));
 		
 							actualizarTabla();
 							
@@ -590,22 +601,22 @@ public class CreateAndQueryGUI extends JFrame {
 								tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 								tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 							}catch(PronosticAlreadyExist e1) {
-								lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+								lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 							}
 							
 							
 							}
 			
 					}
-					else lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+					else lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 				
 					}catch(Exception e2) {
-						lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorCuotaNoNumero"));
+						lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorCuotaNoNumero"));
 					}
 					
 				} catch (Exception e1) {
 					e1.printStackTrace();
-					lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+					lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
 				}
 
 
@@ -812,6 +823,9 @@ public class CreateAndQueryGUI extends JFrame {
 					else jComboBoxVisitante.setSelectedIndex(1);
 				}
 				lblNombreLiga.setText(l.getNombre());
+				
+				if(equipos.size()<2) jButtonEvent.setEnabled(false);
+				else jButtonEvent.setEnabled(true);
     			
     		}
     	});
@@ -912,7 +926,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		try {
 			jLabelError.setText("");
 			jLabelMsg.setText("");
-			jLabelMsg2.setText("");
+			jLabelErrorEvento.setText("");
 			lblConsultaCreada.setText("");
 
 			// Displays an exception if the query field is empty
@@ -1053,6 +1067,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 			else jComboBoxVisitante.setSelectedIndex(1);
 		}
 		
+		
 	}
 	
 	public void updateLeagues() {
@@ -1074,5 +1089,56 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
         
     	tableLigas.getColumnModel().getColumn(0).setPreferredWidth(25);
     	
+	}
+	
+	public Liga getSelectedLiga() {
+		int i=tableLigas.getSelectedRow();
+		if(i<0)i=0;
+		String nombreLiga=(String) tableModelLigas.getValueAt(i, 1).toString();
+		
+		BLFacade facade = MainGUI.getBusinessLogic();
+		List<Liga> ligas=facade.getAllLigas();
+		
+		int pos=-1;
+		for(i=0;i<ligas.size();i++) {
+        	if(ligas.get(i).getNombre().equals(nombreLiga)) pos=i;
+        }
+		if(pos!=-1) {
+			return ligas.get(pos);
+		}
+		return null;
+	}
+	
+	public int setLigaSelection(String nombreLiga) {
+		BLFacade facade = MainGUI.getBusinessLogic();
+		List<Liga> ligas=facade.getAllLigas();
+		
+		int pos=-1;
+		for(int i=0;i<ligas.size();i++) {
+        	if(ligas.get(i).getNombre().equals(nombreLiga)) pos=i;
+        }
+		if(pos!=-1) {
+			tableLigas.setRowSelectionInterval(pos, pos);
+			
+			List<domain.Equipo> equipos=facade.getEquiposPorLiga(2, ligas.get(pos));
+			
+			modelLocal.removeAllElements();
+			modelVisitante.removeAllElements();
+			
+			for (domain.Equipo eq : equipos) {
+				modelLocal.addElement(eq);
+				modelVisitante.addElement(eq);
+			}
+			
+			if(equipos.size()>=1) {
+				jComboBoxLocal.setSelectedIndex(0);
+				if(equipos.size()==1) jComboBoxVisitante.setSelectedIndex(0);
+				else jComboBoxVisitante.setSelectedIndex(1);
+			}
+			if(equipos.size()<2) jButtonEvent.setEnabled(false);
+			else jButtonEvent.setEnabled(true);
+			lblNombreLiga.setText(nombreLiga);
+		}
+		return pos;
 	}
 }

@@ -78,6 +78,7 @@ public class FQuestion2 extends JFrame {
 	private JTextField textFieldNombreLiga;
 	private final JButton btnNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("VerNoticia"));
 	
+	private JLabel lblNombreLiga = new JLabel("Liga Santander");
 	
 	/**
 	 * @wbp.parser.constructor
@@ -197,8 +198,13 @@ public class FQuestion2 extends JFrame {
 					tableModelPronostico.setColumnCount(7);
 					
 					Vector<domain.Event> events=facade.getEvents(firstDay);
-					if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
-					else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
+					if (events.isEmpty() ) {
+						jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+						lblNombreLiga.setText("");
+					}else {
+						jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
+						lblNombreLiga.setText("Liga Santander");
+					}
 					for (domain.Event ev:events){
 						
 						if(ev.getEquipos().get(0).getLiga().getNombre().equals("Liga Santander")) {
@@ -233,6 +239,7 @@ public class FQuestion2 extends JFrame {
 					for(int i=0; i<ligas.size();i++)
 						if(ligas.get(i).getNombre().equals("Liga Santander")) pos=i;
 					tableLigas.setRowSelectionInterval(pos, pos);
+					
 					
 					//tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(2)); // not shown in JTable
 					
@@ -411,7 +418,7 @@ public class FQuestion2 extends JFrame {
 		});
 		btnVerRanking.setBounds(526, 0, 129, 23);
 		getContentPane().add(btnVerRanking);
-		lblErrorAlApostar.setBounds(25, 357, 299, 16);
+		lblErrorAlApostar.setBounds(40, 357, 252, 14);
 		
 		getContentPane().add(lblErrorAlApostar);
 		
@@ -419,7 +426,7 @@ public class FQuestion2 extends JFrame {
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		JLabel lblNombreLiga = new JLabel("Liga Santander");
+		
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNombreLiga.setBounds(33, 57, 222, 44);
 		getContentPane().add(lblNombreLiga);

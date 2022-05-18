@@ -22,6 +22,7 @@ import exceptions.MaximumNumberOfTeamsReached;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.TeamAlreadyExistsException;
+import exceptions.TeamAlreadyPlaysInDayException;
 import exceptions.UnknownTeamException;
 
 /**
@@ -179,7 +180,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
     
     @WebMethod
-	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws EventFinishedException, UnknownTeamException, EventAlreadyExistsException {
+	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws EventFinishedException, UnknownTeamException, EventAlreadyExistsException, TeamAlreadyPlaysInDayException {
 		
 		dbManager.open(false);
 		Event ev=null;
@@ -194,7 +195,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		
 		if(ev==null)
-			throw new EventAlreadyExistsException();
+			throw new TeamAlreadyPlaysInDayException();
 		
 		return ev;
 		
@@ -352,9 +353,9 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		
 	}
-	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
+	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
 		dbManager.open(false);
-		Noticia noticia = dbManager.createNoticia(titulo, subTitulo, texto, nomAutor, nomMedio);
+		Noticia noticia = dbManager.createNoticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
 		dbManager.close();
 		return noticia;
 		

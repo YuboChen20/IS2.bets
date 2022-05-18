@@ -69,6 +69,8 @@ public class CrearLigaGUI extends JFrame {
 	
 	private JLabel lblErrorCrearLiga = new JLabel("");
 	
+	JButton btnEliminarEquipo = new JButton("Eliminar Equipo");
+	
 	
    
 	/**
@@ -170,8 +172,10 @@ public class CrearLigaGUI extends JFrame {
     	    		tableModelEquipos.addRow(row);	
     	        }
     			
-    			
+    			if(tableEquiposLiga.getRowCount()==0) btnEliminarEquipo.setEnabled(false);
+    			else btnEliminarEquipo.setEnabled(true);
     			tableLigas.setRowSelectionInterval(j, j);
+    			if(tableEquiposLiga.getRowCount()!=0) tableLigas.setRowSelectionInterval(0, 0);
     		}
     	});
     	
@@ -212,11 +216,13 @@ public class CrearLigaGUI extends JFrame {
 		JButton btnCrearLiga = new JButton("Crear Liga");
 		btnCrearLiga.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lblErrorCrearLiga.setText("");
+				lblErrorCrearEquipo.setText("");
 				String nombre= textFieldNombreLiga.getText();
 				String numMaxString= textFieldNumMaxEquipos.getText();
 				
 				System.out.println("nombre: "+nombre+" num: "+numMaxString);
-				if(nombre!=null && numMaxString!=null) {
+				if(nombre!=null && numMaxString!=null && !nombre.equals("")) {
 					
 					try {
 						int numMax= Integer.parseInt(numMaxString);
@@ -250,7 +256,7 @@ public class CrearLigaGUI extends JFrame {
 						List<Liga> ligas2= facade.getAllLigas();
 						int pos=-1;
 						for(int i=0; i<ligas2.size();i++) 
-							if(ligas.get(i).getNombre().equals(nombre)) pos=i;
+							if(ligas2.get(i).getNombre().equals(nombre)) pos=i;
 						tableLigas.setRowSelectionInterval(pos, pos);
 						lblNombreLiga.setText(nombre);
 						
@@ -265,10 +271,11 @@ public class CrearLigaGUI extends JFrame {
 		    	    		tableModelEquipos.addRow(row);	
 		    	        }
 						
+						btnEliminarEquipo.setEnabled(false);
 						
 						
 					}catch(NumberFormatException eNFE) {
-						lblErrorCrearLiga.setText("No se ha insertado un número máximo de equipos");
+						lblErrorCrearLiga.setText("No se ha insertado un número");
 					} catch(LessThanMinimumTeamException eLTMTE) {
 						lblErrorCrearLiga.setText("Una liga debe tener al menos dos participantes");
 					}catch(LeagueAlreadyExist eLAE) {
@@ -278,7 +285,7 @@ public class CrearLigaGUI extends JFrame {
 					
 					
 					
-				}
+				}else lblErrorCrearLiga.setText("Nombre no insertado");
 				
 				
 			}
@@ -288,29 +295,29 @@ public class CrearLigaGUI extends JFrame {
 		contentPane.add(btnCrearLiga);
 		
 		JLabel lblNombreLigaIns = new JLabel("Nombre Liga:");
-		lblNombreLigaIns.setBounds(430, 477, 108, 23);
+		lblNombreLigaIns.setBounds(430, 477, 116, 23);
 		contentPane.add(lblNombreLigaIns);
 		
 		textFieldNombreLiga = new JTextField();
-		textFieldNombreLiga.setBounds(430, 496, 199, 20);
+		textFieldNombreLiga.setBounds(430, 510, 199, 20);
 		contentPane.add(textFieldNombreLiga);
 		textFieldNombreLiga.setColumns(10);
 		
 		JLabel lblNumeroMaxEquiposIns = new JLabel("Num. max equipos: ");
-		lblNumeroMaxEquiposIns.setBounds(429, 527, 132, 14);
+		lblNumeroMaxEquiposIns.setBounds(428, 540, 132, 14);
 		contentPane.add(lblNumeroMaxEquiposIns);
 		
 		textFieldNumMaxEquipos = new JTextField();
-		textFieldNumMaxEquipos.setBounds(544, 527, 85, 20);
+		textFieldNumMaxEquipos.setBounds(537, 540, 92, 20);
 		contentPane.add(textFieldNumMaxEquipos);
 		textFieldNumMaxEquipos.setColumns(10);
 		
 		JLabel lblNombreEquipo = new JLabel("Nombre Equipo:");
-		lblNombreEquipo.setBounds(33, 499, 120, 14);
+		lblNombreEquipo.setBounds(33, 512, 89, 14);
 		contentPane.add(lblNombreEquipo);
 		
 		textFieldNombreEquipo = new JTextField();
-		textFieldNombreEquipo.setBounds(145, 496, 223, 20);
+		textFieldNombreEquipo.setBounds(145, 510, 223, 20);
 		contentPane.add(textFieldNombreEquipo);
 		textFieldNombreEquipo.setColumns(10);
 		
@@ -325,22 +332,90 @@ public class CrearLigaGUI extends JFrame {
 				lblErrorCrearEquipo.setText("");
 				lblErrorCrearLiga.setText("");
 				String nombreEquipo=textFieldNombreEquipo.getText();
-				if(nombreEquipo!=null) {
+				if(nombreEquipo!=null && !nombreEquipo.equals("")) {
 					Liga l=(Liga) tableModelLigas.getValueAt(tableLigas.getSelectedRow(), 1);
 					try {
 						facade.anadirEquipoALiga(nombreEquipo, l);
+						while(tableModelEquipos.getRowCount()>0) tableModelEquipos.removeRow(0);
+		    			
+		    			int j=tableLigas.getSelectedRow();
+		    			List <Equipo> equipos= facade.getEquiposPorLiga(2, l);
+		    			lblNombreLiga.setText(l.getNombre());
+		    			
+		    			int n=equipos.size();
+		    			
+		    	        for(int i=0;i<n;i++) {
+		    	        	Vector<Object> row = new Vector<Object>();
+		    	        	row.add(i+1);
+		    	        	row.add(equipos.get(i).getNombre());
+		    	    		tableModelEquipos.addRow(row);	
+		    	        }
+		    			
+		    			tableLigas.setRowSelectionInterval(j, j);
+		    			
+		    			int pos=-1;
+		    			for(int i=0;i<n;i++) {
+		    				if(equipos.get(i).getNombre().equals(nombreEquipo)) pos=i;
+		    	        }
+		    			
+		    			if(tableEquiposLiga.getRowCount()==1) tableEquiposLiga.setRowSelectionInterval(0, 0);
+		    			else if(pos<tableEquiposLiga.getRowCount() && pos!=-1) tableEquiposLiga.setRowSelectionInterval(pos,pos);
+		    			
+		    			Liga otherLiga=CreateAndQueryGUI.getInstance().getSelectedLiga();
+		    			if(otherLiga.getNombre().equals(l.getNombre()))
+		    				CreateAndQueryGUI.getInstance().updateTeams();
+		    			CreateAndQueryGUI.getInstance().setLigaSelection(otherLiga.getNombre());
+		    			btnEliminarEquipo.setEnabled(true);
+		 
 					} catch (TeamAlreadyExistsException e1) {
 						System.out.println("TeamAlreadyExistsException");
 						lblErrorCrearEquipo.setText("No puede haber dos equipos con el mismo nombre");
 					} catch (MaximumNumberOfTeamsReached e1) {
 						lblErrorCrearEquipo.setText("Se ha alcanzado el número máximo de Equipos");
-					} catch(Exception e1) {
+					} /*catch(Exception e1) {
 						lblErrorCrearEquipo.setText("No puede haber dos equipos con el mismo nombre");
-					}
+						System.out.println(e1.getMessage());
+					}*/
 					
+					
+				}else lblErrorCrearEquipo.setText("Nombre no insertado");
+				
+				
+			}
+		});
+		btnCrearEquipo.setBounds(33, 564, 155, 23);
+		contentPane.add(btnCrearEquipo);
+		
+		
+		btnEliminarEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEliminarEquipo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				if(btnEliminarEquipo.isEnabled()) {
+					lblErrorCrearEquipo.setText("");
+					lblErrorCrearLiga.setText("");
+					
+					int j=tableEquiposLiga.getSelectedRow();
+					String nombreEquipo=(String) tableModelEquipos.getValueAt(j, 1);
+					List<Equipo> teams =facade.getAllEquipos(2);
+					int pos=-1;
+					for(int i=0;i<teams.size();i++)
+						if(nombreEquipo.equals(teams.get(i).getNombre())) pos=i;
+					
+					Equipo eq=teams.get(pos);
+					
+					
+					Liga l=eq.getLiga();
+					facade.eliminarEquipoDeLiga(nombreEquipo, l);
+					
+					l.eliminarEquipo(eq);
 					while(tableModelEquipos.getRowCount()>0) tableModelEquipos.removeRow(0);
 	    			
-	    			int j=tableLigas.getSelectedRow();
+	    		
 	    			List <Equipo> equipos= facade.getEquiposPorLiga(2, l);
 	    			lblNombreLiga.setText(l.getNombre());
 	    			
@@ -352,59 +427,19 @@ public class CrearLigaGUI extends JFrame {
 	    	        	row.add(equipos.get(i).getNombre());
 	    	    		tableModelEquipos.addRow(row);	
 	    	        }
+	    	        
+	    	        if(tableEquiposLiga.getRowCount()>0) {
+	    	        	if(j>=tableEquiposLiga.getRowCount()) tableEquiposLiga.setRowSelectionInterval(tableEquiposLiga.getRowCount()-1, tableEquiposLiga.getRowCount()-1);
+	        	        else tableEquiposLiga.setRowSelectionInterval(j, j);
+	    	        }
+	    	        
 	    			
-	    			
-	    			tableLigas.setRowSelectionInterval(j, j);
+	    			if(tableEquiposLiga.getRowCount()==0) btnEliminarEquipo.setEnabled(false); 
 	    			
 	    			CreateAndQueryGUI.getInstance().updateTeams();
-	    			
-	 
+				
+				
 				}
-				
-				
-			}
-		});
-		btnCrearEquipo.setBounds(33, 564, 155, 23);
-		contentPane.add(btnCrearEquipo);
-		
-		JButton btnEliminarEquipo = new JButton("Eliminar Equipo");
-		btnEliminarEquipo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnEliminarEquipo.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-				lblErrorCrearEquipo.setText("");
-				lblErrorCrearLiga.setText("");
-				
-				int j=tableEquiposLiga.getSelectedRow();
-				String nombreEquipo=(String) tableModelEquipos.getValueAt(j, 1);
-				Liga l=(Liga)tableModelLigas.getValueAt(tableLigas.getSelectedRow(), 1);
-				facade.eliminarEquipoDeLiga(nombreEquipo, l);
-				
-				
-				while(tableModelEquipos.getRowCount()>0) tableModelEquipos.removeRow(0);
-    			
-    		
-    			List <Equipo> equipos= facade.getEquiposPorLiga(2, l);
-    			lblNombreLiga.setText(l.getNombre());
-    			
-    			int n=equipos.size();
-    			
-    	        for(int i=0;i<n;i++) {
-    	        	Vector<Object> row = new Vector<Object>();
-    	        	row.add(i+1);
-    	        	row.add(equipos.get(i).getNombre());
-    	    		tableModelEquipos.addRow(row);	
-    	        }
-    			
-    			
-    			
-    			CreateAndQueryGUI.getInstance().updateTeams();
-				
-				
 			}
 		});
 		btnEliminarEquipo.setBounds(213, 564, 155, 23);
@@ -422,11 +457,11 @@ public class CrearLigaGUI extends JFrame {
 		getContentPane().add(btnAtras);
 		
 		
-		lblErrorCrearEquipo.setBounds(33, 540, 335, 14);
+		lblErrorCrearEquipo.setBounds(78, 540, 290, 14);
 		contentPane.add(lblErrorCrearEquipo);
 		
 		
-		lblErrorCrearLiga.setBounds(357, 598, 306, 14);
+		lblErrorCrearLiga.setBounds(440, 588, 189, 14);
 		contentPane.add(lblErrorCrearLiga);
 				
 		tableModelLigas.setDataVector(null, columnNamesLiga);
@@ -447,8 +482,23 @@ public class CrearLigaGUI extends JFrame {
     	tableLigas.getColumnModel().getColumn(0).setPreferredWidth(25);
     	tableLigas.getColumnModel().removeColumn(tableLigas.getColumnModel().getColumn(1));
     	
-    	tableLigas.setRowSelectionInterval(0, 0);
     	
+    	
+    	if(tableLigas.getRowCount()>0) {
+    		
+    		List<Liga> leagues=facade.getAllLigas();
+    		int pos=-1;
+    		for(int i=0;i<leagues.size();i++)
+    			if(leagues.get(i).getNombre().equals("Liga Santander")) pos=i;
+    		if(pos!=-1)
+    			tableLigas.setRowSelectionInterval(pos, pos);
+    		
+    		
+    	}
+    		
+    	
+    	lblErrorCrearEquipo.setForeground(Color.red);
+    	lblErrorCrearLiga.setForeground(Color.red);
   
 	}
 	private void jButtonAtras_actionPerformed(ActionEvent e) {

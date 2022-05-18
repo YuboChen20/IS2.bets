@@ -41,7 +41,7 @@ public class ApplicationLauncher {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			
 			if (c.isBusinessLogicLocal()) {
-				
+				//////
 				//In this option the DataAccess is created by FacadeImplementationWS
 				//appFacadeInterface=new BLFacadeImplementation();
 

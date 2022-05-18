@@ -76,6 +76,7 @@ public class FQuestionInvitado2 extends JFrame {
 	};
 	private JTextField textFieldNombreLiga;
 	private final JButton btnNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("VerNoticia"));
+	JLabel lblNombreLiga = new JLabel("Liga Santander");
 	
 	
 	public FQuestionInvitado2()
@@ -131,7 +132,7 @@ public class FQuestionInvitado2 extends JFrame {
 		jLabelEventDate.setBounds(45, 34, 140, 25);
 
 		this.getContentPane().add(jLabelEventDate);
-		jLabelEvents.setBounds(286, 25, 343, 16);
+		jLabelEvents.setBounds(365, 38, 343, 16);
 		this.getContentPane().add(jLabelEvents);
 
 		BLFacade facade = MainGUI.getBusinessLogic();
@@ -191,7 +192,7 @@ public class FQuestionInvitado2 extends JFrame {
 						datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar1.getDate());
 					}
 
-
+					
 
 					CreateAndQueryGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
 													
@@ -201,8 +202,14 @@ public class FQuestionInvitado2 extends JFrame {
 					tableModelPronostico.setColumnCount(7);
 					
 					Vector<domain.Event> events=facade.getEvents(firstDay);
-					if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
-					else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
+					if (events.isEmpty() ) {
+						jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+						lblNombreLiga.setText("");
+					}
+					else {
+						jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
+						lblNombreLiga.setText("");
+					}
 					for (domain.Event ev:events){
 						
 						if(ev.getEquipos().get(0).getLiga().getNombre().equals("Liga Santander")) {
@@ -231,11 +238,7 @@ public class FQuestionInvitado2 extends JFrame {
 						}
 					
 					}
-					int pos=-1;
-					List<Liga> ligas=facade.getAllLigas();
-					for(int i=0; i<ligas.size();i++)
-						if(ligas.get(i).getNombre().equals("Liga Santander")) pos=i;
-					tableLigas.setRowSelectionInterval(pos, pos);
+					
 					//tablePronosticos.getColumnModel().getColumn(0).setCellRenderer(tablePronosticos.getTableHeader().getDefaultRenderer());
 					
 					
@@ -259,6 +262,7 @@ public class FQuestionInvitado2 extends JFrame {
 					tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(6)); // not shown in JTable
 					
 					
+					lblNombreLiga.setText("Liga Santander");
 				} 
 				
 			} 
@@ -324,9 +328,9 @@ public class FQuestionInvitado2 extends JFrame {
 		tablePronosticos.setDefaultRenderer(Object.class, new Render());
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		JLabel lblNombreLiga = new JLabel("Liga Santander");
+		
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombreLiga.setBounds(460, 34, 346, 44);
+		lblNombreLiga.setBounds(530, 32, 244, 44);
 		getContentPane().add(lblNombreLiga);
 		
     	tableLigas.setDefaultRenderer(Object.class, new Render());
@@ -342,6 +346,7 @@ public class FQuestionInvitado2 extends JFrame {
     			while(tableModelPronostico.getRowCount()>0)tableModelPronostico.removeRow(0);
     			
     			Vector<domain.Event> events=facade.getEvents(firstDay);
+    			
 				if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
 				else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
 				for (domain.Event ev:events){
@@ -378,6 +383,13 @@ public class FQuestionInvitado2 extends JFrame {
     			
     		}
     	});
+    	
+    	DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar1.getLocale());
+    	Calendar calendar=Calendar.getInstance();
+		calendar.setTime(new Date());
+		jCalendar1.setCalendar(calendar);
+		List<Event> events=facade.getEvents(new Date());
+		if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendar.getTime()));
     	
     	
     	JScrollPane scrollPaneLigas = new JScrollPane();
@@ -427,7 +439,12 @@ public class FQuestionInvitado2 extends JFrame {
     	tableLigas.getColumnModel().getColumn(0).setPreferredWidth(25);
     	tableLigas.getColumnModel().removeColumn(tableLigas.getColumnModel().getColumn(1));
     	
-    	tableLigas.setRowSelectionInterval(0, 0);
+    	int pos=-1;
+		List<Liga> ligas1=facade.getAllLigas();
+		for(int i=0; i<ligas1.size();i++)
+			if(ligas1.get(i).getNombre().equals("Liga Santander")) pos=i;
+		if(pos!=-1 || pos<ligas1.size())
+			tableLigas.setRowSelectionInterval(pos, pos);
 	
 	}
 	private void btnLogin_actionPerformed(ActionEvent e) {
