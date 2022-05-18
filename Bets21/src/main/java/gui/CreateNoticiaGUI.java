@@ -370,8 +370,8 @@ public class CreateNoticiaGUI extends JFrame {
 					modelMedios.removeAllElements();
 					modelAutores.removeAllElements();
 					
-					//List<Noticia> noticias=facade.getAllNoticias();
-					List<Noticia> noticias=facade.getNoticiasMonth(calendarAct.getTime());
+					List<Noticia> noticias=facade.getAllNoticias();
+					//List<Noticia> noticias=facade.getNoticiasMonth(calendarAct.getTime());
 					List<String> medios=facade.getAllNoticiasMedio();
 					List<String> autores=facade.getAllNoticiasAuthor();
 					
