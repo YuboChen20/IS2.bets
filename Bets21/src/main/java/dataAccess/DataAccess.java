@@ -62,7 +62,7 @@ public class DataAccess  {
 		db.getTransaction().begin();
 		try {
 			Liga ligaSantander=new Liga("Liga Santander",20);
-			Liga ligaBBVA=new Liga("Liga BBVA",20);
+			Liga premierLeague=new Liga("Premier League",20);
 			
 			Equipo atleticoDeMadrid= new Equipo("Atlético de Madrid", ligaSantander);
 			Equipo atlheticDeBilbao= new Equipo("Athletic de Bilbao", ligaSantander);
@@ -293,7 +293,7 @@ public class DataAccess  {
 	
 			
 			db.persist(ligaSantander);
-			db.persist(ligaBBVA);
+			db.persist(premierLeague);
 			db.persist(atleticoDeMadrid);
 			db.persist(atlheticDeBilbao);
 			db.persist(barcelona);

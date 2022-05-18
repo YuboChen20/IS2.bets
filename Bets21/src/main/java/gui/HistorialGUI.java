@@ -198,7 +198,8 @@ public class HistorialGUI extends JFrame {
 		btnBloquear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int i=tableUser.getSelectedRow();
-				if(i>=0) {
+				int j=tableUser.getRowCount();
+				if(i>=0 & j>0) {
 					String s= (String) jComboBoxTipoUsers.getSelectedItem();
 					String s2= (String) jcbUserAdmin.getSelectedItem(); 
 					BLFacade facade = MainGUI.getBusinessLogic();
@@ -219,7 +220,8 @@ public class HistorialGUI extends JFrame {
 		btnDesbloquear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int i=tableUser.getSelectedRow();
-				if(i>=0) {
+				int j=tableUser.getRowCount();
+				if(i>=0 & j>0) {
 					String s= (String) jComboBoxTipoUsers.getSelectedItem();
 					String s2= (String) jcbUserAdmin.getSelectedItem(); 
 					BLFacade facade = MainGUI.getBusinessLogic();
