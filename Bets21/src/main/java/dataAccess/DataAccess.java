@@ -285,6 +285,7 @@ public class DataAccess  {
 			
 			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
 			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
+			Usuario user2= new Usuario("User2","12345","1010294833",false,"usuariamasguapa@gmail.com");
 			Usuario admi1= new Usuario("Silvia","12345",null,true,null);
 			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
 			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
@@ -360,6 +361,7 @@ public class DataAccess  {
 
 			db.persist(admin);
 			db.persist(user);
+			db.persist(user2);
 			db.persist(admi1);
 			db.persist(admi2);
 			db.persist(admi3);
@@ -410,6 +412,7 @@ public class DataAccess  {
 			
 			this.createComent("Hola", ev11, user, formatDateTime);
 			this.createComent("Va a ganar Atletico", ev11, user, formatDateTime);
+			this.createComent("......", ev11, user2, formatDateTime);
 		    System.out.println("Db initialized");
 
 		}

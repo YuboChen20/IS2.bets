@@ -212,7 +212,7 @@ public class HistorialGUI extends JFrame {
 			}
 		});
 		getContentPane().add(btnBloquear);
-		
+		btnBloquear.setEnabled(false);
 		
 		btnDesbloquear.setBounds(142, 308, 121, 23);
 		contentPane.add(btnDesbloquear);
@@ -237,13 +237,15 @@ public class HistorialGUI extends JFrame {
 	
 	private void actualizarTabla1(String s) {
 		try {
-			
+			String s2= (String) jcbUserAdmin.getSelectedItem(); 
 			if(s.equals("Bloqueados")) {
 				btnDesbloquear.setEnabled(true);
 				btnBloquear.setEnabled(false);
 			}else {
 				btnDesbloquear.setEnabled(false);
-				btnBloquear.setEnabled(true);
+				if(s2.equals("Usuarios"))
+					btnBloquear.setEnabled(true);
+				else btnBloquear.setEnabled(false);
 			}
 				
 				
@@ -251,8 +253,8 @@ public class HistorialGUI extends JFrame {
 			for(int i1=0;i1<n;i1++) {
 				tableModelUserBlo.removeRow(0);
 			}
-			String s2= (String) jcbUserAdmin.getSelectedItem(); 
-			System.out.println("Seleccion: "+ s+" y "+s2);
+			
+			
 			BLFacade facade = MainGUI.getBusinessLogic();
 			List<Usuario> usuarios=facade.getUsuarios(s,s2);  //todos los usuarios q estenbloqueado/noestenbloqueados
 			for (domain.Usuario u:usuarios){
@@ -290,9 +292,14 @@ public class HistorialGUI extends JFrame {
 			Usuario us=facade.getUsuario(s,s2,i);           //obtener el usuario seleccionado
 			u=us;
 			if(s.equals("Bloqueados"))btnDesbloquear.setEnabled(true);
-			else btnBloquear.setEnabled(true);
+			else {
+				if(s2.equals("Usuarios"))
+					btnBloquear.setEnabled(true);
+				else btnBloquear.setEnabled(false);
+			}
 		}else if(u.isBloqueado())btnDesbloquear.setEnabled(true);
-		else if(!u.isBloqueado())btnBloquear.setEnabled(true);
+		else if(!u.isBloqueado() & !u.isAdmin())btnBloquear.setEnabled(true);
+		else if(!u.isBloqueado() & u.isAdmin())btnBloquear.setEnabled(false);
 		
 		
 		Vector<Entrada> historial= u.getFechas();
