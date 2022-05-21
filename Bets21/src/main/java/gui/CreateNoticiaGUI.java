@@ -1,15 +1,10 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -24,44 +19,34 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JCalendar;
 
 import businessLogic.BLFacade;
-import configuration.UtilDate;
-import domain.Event;
 import domain.Noticia;
 import java.awt.TextField;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
 
 public class CreateNoticiaGUI extends JFrame {
 
 
 	private JPanel contentPane;
-	private JComboBox JComboBoxNoticias = new JComboBox();
+	private JComboBox<Noticia> JComboBoxNoticias = new JComboBox<Noticia>();
 	DefaultComboBoxModel<Noticia> modelNoticia = new DefaultComboBoxModel<Noticia>();
-	private JComboBox JComboBoxAutores = new JComboBox();
+	private JComboBox<String> JComboBoxAutores = new JComboBox<String>();
 	DefaultComboBoxModel<String> modelAutores = new DefaultComboBoxModel<String>();
 	private JTextArea textTexto = new JTextArea();
 	private final JScrollPane scrollPane = new JScrollPane();
 	private final JTextArea textTitulo = new JTextArea();
 	private final JTextArea textSubTitulo = new JTextArea();
-	private final JCalendar jCalendar = new JCalendar();
-	private Calendar calendarAct = null;
-	private Calendar calendarAnt = null;
 	private final JButton jButtonAtras = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back"));
 	private final JButton jButtonCrearNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateNoticia"));
-	private final JComboBox JComboBoxMedios = new JComboBox();
+	private final JComboBox<String> JComboBoxMedios = new JComboBox<String>();
 	DefaultComboBoxModel<String> modelMedios = new DefaultComboBoxModel<String>();
 	private final TextField textFieldMedios = new TextField();
-	private Vector<Date> datesWithNoticiasCurrentMonth = new Vector<Date>();
 	private final JLabel jLabelErrorTitulo = new JLabel("");
 	private final JLabel jLabelErrorSubTitulo = new JLabel("");
 	private final JLabel jLabelErrorTexto = new JLabel("");
@@ -77,7 +62,7 @@ public class CreateNoticiaGUI extends JFrame {
 	private final JLabel jLabelAutores = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Autores")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel jLabelCrear = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateNoticiasLetrero")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel jLabelNoticias = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Noticia"));
-	private final JLabel jLabelCreada = new JLabel(""); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel jLabelCreada = new JLabel(""); 
 	
 
 
@@ -340,12 +325,7 @@ public class CreateNoticiaGUI extends JFrame {
 					e1.printStackTrace();
 				}
 			}
-		});
-
-
-		
-		//http://javapiola.blogspot.com/2009/11/tutorial-de-jtextarea-en-java.html
-		
+		});		
 
 	}
 	

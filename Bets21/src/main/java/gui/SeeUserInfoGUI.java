@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -15,13 +14,9 @@ import domain.Event;
 import domain.Pronostico;
 import domain.Question;
 import domain.Usuario;
-import exceptions.PronosticAlreadyExist;
-
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JScrollBar;
-import javax.swing.JSpinner;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -33,7 +28,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
-import javax.swing.ScrollPaneConstants;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 
@@ -41,7 +35,6 @@ public class SeeUserInfoGUI extends JFrame {
 	
 
 	private JPanel contentPane;
-	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
 	private String[] columnNamesPronostico = new String[] {

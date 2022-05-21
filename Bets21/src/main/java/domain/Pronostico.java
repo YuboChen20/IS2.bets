@@ -1,7 +1,6 @@
 package domain;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.persistence.*;

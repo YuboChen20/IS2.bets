@@ -1,7 +1,6 @@
 package gui;
 
 import java.text.DateFormat;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import businessLogic.BLFacade;
-import businessLogic.BLFacadeImplementation;
 import configuration.UtilDate;
 import domain.Equipo;
 import domain.Event;
@@ -27,9 +25,6 @@ import exceptions.EventFinishedException;
 import exceptions.PronosticAlreadyExist;
 import exceptions.QuestionAlreadyExist;
 import exceptions.TeamAlreadyPlaysInDayException;
-import exceptions.UnknownTeamException;
-
-
 import javax.swing.table.DefaultTableModel;
 
 public class CreateAndQueryGUI extends JFrame {
@@ -38,7 +33,6 @@ public class CreateAndQueryGUI extends JFrame {
 	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
-	//DefaultComboBoxModel<Question> modelQuestion = new DefaultComboBoxModel<Question>();
 	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
 	private JLabel jLabelQuery = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Query"));
 	private JLabel jLabelMinBet = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("MinimumBetPrice"));
@@ -83,7 +77,7 @@ public class CreateAndQueryGUI extends JFrame {
 	private final JTextField textFieldPronostico = new JTextField();
 	private final JButton jButtonPronostico = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.jButtonPronostico.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JTextField textFieldCuota;
-	private final JLabel lblCuota = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblCuota = new JLabel("Cuota"); 
 	private final JButton btnButtonCerrarApuesta = new JButton("Cerrar Apuesta");
 	
 	private JComboBox<Equipo> jComboBoxLocal = new JComboBox<Equipo>();
@@ -164,11 +158,6 @@ public class CreateAndQueryGUI extends JFrame {
 						}
 						
 
-						//if (queries.isEmpty())
-							//jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("NoQueries")+": "+ev.getDescription());
-						//else 
-							//jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectedEvent")+" "+ev.getDescription());
-
 						for (domain.Question q:queries){
 							Vector<Object> row = new Vector<Object>();
 
@@ -241,6 +230,72 @@ public class CreateAndQueryGUI extends JFrame {
 				jButtonPronostico.setEnabled(true);
 				int n=tableQueries.getRowCount();
 				tableQueries.setRowSelectionInterval(n-1, n-1);
+				
+				/*
+				Question q = ev.getQuest(i);
+				
+				BLFacade facade = MainGUI.getBusinessLogic();
+                try {
+                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+                
+				
+
+
+   
+                	for (domain.Pronostico p:pronosticos){
+                		Vector<Object> row = new Vector<Object>();
+                		row.add(p.getPronosNumber());
+                		row.add(p.getPronostico());
+                		row.add(p.getCuota());
+                		tableModelPronostico.addRow(row);	
+                	}
+                	if(tablePronosticos.getRowCount()>0) tablePronosticos.setRowSelectionInterval(0, 0);
+                	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
+                	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
+                	if(tableModelQueries.getRowCount()>0) jButtonPronostico.setEnabled(true);
+                }catch(PronosticAlreadyExist e1) {
+                	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+                }
+				*/
+				
+				domain.Event ev=(domain.Event)jComboBoxEvents.getSelectedItem(); // obtain ev object
+				
+				if(ev!=null) {
+					Vector<Question> queries=ev.getQuestions();
+					
+					while(tableModelPronostico.getRowCount()>0)
+						tableModelPronostico.removeRow(0);
+					
+						Question q=queries.get(queries.size()-1);
+						
+						BLFacade facade = MainGUI.getBusinessLogic();
+		                try {
+		                	List<Pronostico> pronosticos=facade.findPronosticos(q);
+
+		                	for (domain.Pronostico p:pronosticos){
+		                		Vector<Object> row = new Vector<Object>();
+	
+		                		row.add(p.getPronosNumber());
+		                		row.add(p.getPronostico());
+		                		row.add(p.getCuota());
+		                		tableModelPronostico.addRow(row);	
+		                	}
+		                	
+		                	System.out.println("Boolean "+ (tablePronosticos.getRowCount()>0));
+		                	if(tablePronosticos.getRowCount()>0) 
+		                		tablePronosticos.setRowSelectionInterval(0, 0);
+		                	
+		                	
+		                }catch(PronosticAlreadyExist e1) {
+		                	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
+		                }
+					
+					
+					
+				}
+				
+		
+				
 			}
 		});
 		jLabelMsg.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -248,7 +303,6 @@ public class CreateAndQueryGUI extends JFrame {
 		jLabelMsg.setBounds(new Rectangle(43, 377, 250, 20));
 		jLabelMsg.setForeground(Color.red);
 		jLabelError.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		// jLabelMsg.setSize(new Dimension(305, 20));
 
 		jLabelError.setBounds(new Rectangle(224, 347, 191, 20));
 		jLabelError.setForeground(Color.red);
@@ -332,7 +386,6 @@ public class CreateAndQueryGUI extends JFrame {
 					Event ev= (Event) jComboBoxEvents.getSelectedItem();
 					if(ev!=null && i!=0) {
 						Question q = ev.getQuest(i);
-					//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 						
 						BLFacade facade = MainGUI.getBusinessLogic();
 		                try {
@@ -345,7 +398,6 @@ public class CreateAndQueryGUI extends JFrame {
 		   
 		                	for (domain.Pronostico p:pronosticos){
 		                		Vector<Object> row = new Vector<Object>();
-	
 		                		row.add(p.getPronosNumber());
 		                		row.add(p.getPronostico());
 		                		row.add(p.getCuota());
@@ -360,22 +412,14 @@ public class CreateAndQueryGUI extends JFrame {
 		                }
 		                
 					}
-					/////////////////////////////////////
 					
 					 else { // if ev =null
-						
-						
-							//jButtonPronostico.setEnabled(false);
+				
 							int n=tableModelPronostico.getRowCount();
 							for(int i1=0;i1<n;i1++) {
 								tableModelPronostico.removeRow(0);
 							}
-								
-						
-							//jButtonPronostico.setEnabled(true);
-		                    ////////////////////////////////////////////// 
-						
-						
+	
 					}
 					
 				}
@@ -412,8 +456,6 @@ public class CreateAndQueryGUI extends JFrame {
 					jLabelErrorEvento.setText("");
 					lblConsultaCreada.setText("");
 
-					// Displays an exception if the query field is empty
-					//String inputDescription=textFieldDescripcionEvento.getText();
 
 					if (firstDay!=null) {
 						Equipo local= (Equipo) jComboBoxLocal.getSelectedItem();
@@ -468,24 +510,17 @@ public class CreateAndQueryGUI extends JFrame {
 				int i=tableQueries.getSelectedRow()+1;
 				Event ev= (Event) jComboBoxEvents.getSelectedItem();
 				Question q = facade.getQuestion(ev, i);
-				LocalDateTime time=LocalDateTime.now();
-				Date date= UtilDate.newDate(time.getYear(),time.getMonthValue()-1,time.getDayOfMonth());
 				BLFacade facade = MainGUI.getBusinessLogic();
-		
-			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
 				jButtonPronostico.setEnabled(true);
                 try {
                 	List<Pronostico> pronosticos=facade.findPronosticos(q);
-                
-				
-
+                	
                 	tableModelPronostico.setDataVector(null, columnNamesPronostico);
 
    
                 	for (domain.Pronostico p:pronosticos){
                 		Vector<Object> row = new Vector<Object>();
-
                 		row.add(p.getPronosNumber());
                 		row.add(p.getPronostico());
                 		row.add(p.getCuota());
@@ -540,7 +575,6 @@ public class CreateAndQueryGUI extends JFrame {
 					jLabelMsg.setText("");
 					jLabelErrorEvento.setText("");
 					lblConsultaCreada.setText("");
-					//textFieldCuota.setText(""); 
 
 					// Displays an exception if the query field is empty
 					String pr=textFieldPronostico.getText();
@@ -555,30 +589,22 @@ public class CreateAndQueryGUI extends JFrame {
 							// Obtain the business logic from a StartWindow class (local or remote)
 							BLFacade facade = MainGUI.getBusinessLogic();
                             try {
-                            	Question q= facade.createPronostic(pr,ev,i,cuota);
+                            	facade.createPronostic(pr,ev,i,cuota);
+                            	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticCreated"));
                             }catch(PronosticAlreadyExist e1) {
                             	lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
                             	
                             }
 							
       
-                            lblErrorPronostico.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticCreated"));
-		
 							actualizarTabla();
 							
 							tableQueries.setRowSelectionInterval(i-1, i-1);
 							
-							
-							
-							
-							
-							
-							//////////////////////////////////////////////////
 														
 							ev= (Event) jComboBoxEvents.getSelectedItem();
 							if(ev!=null) {
 							Question q = ev.getQuest(i);
-							//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 							
 							
 							facade = MainGUI.getBusinessLogic();
@@ -639,7 +665,7 @@ public class CreateAndQueryGUI extends JFrame {
 		});
 		getContentPane().add(jButtonLogout);
 		
-		JLabel jLabelCuota = new JLabel(); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel jLabelCuota = new JLabel();
 		jLabelCuota.setBounds(602, 363, 238, -22);
 		getContentPane().add(jLabelCuota);
 		
@@ -664,8 +690,6 @@ public class CreateAndQueryGUI extends JFrame {
 			}
 		});
 		getContentPane().add(btnButtonCerrarApuesta);
-
-		//////
 
 		
 		jComboBoxLocal.addActionListener(new ActionListener() {
@@ -708,17 +732,6 @@ public class CreateAndQueryGUI extends JFrame {
 				}
 				seleccionVisitante=j;
 				
-				/*
-				if(i==j) {
-					System.out.println("ddddd "+seleccionVisitante);
-					jComboBoxLocal.setSelectedIndex(seleccionVisitante);
-					modelLocal.setSelectedItem(modelLocal.getElementAt(seleccionVisitante));
-					seleccionLocal=seleccionVisitante;
-				}
-				seleccionVisitante=j;
-				
-				*/
-				
 			}
 				
 			
@@ -732,31 +745,28 @@ public class CreateAndQueryGUI extends JFrame {
 		getContentPane().add(jComboBoxVisitante);
 		
 		
-		//obtener todos los equipos y meterselos a la jComboBoxLocal y a la jComboBoxVisitante
 		
 		
-				List<domain.Equipo> equipos=facade.getEquiposPorLiga(2, "Liga Santander");
-				
-				for (domain.Equipo eq : equipos) {
-					modelLocal.addElement(eq);
-					modelVisitante.addElement(eq);
-				}
-				//jComboBoxLocal.repaint();
-				//jComboBoxVisitante.repaint();
-				jComboBoxLocal.setSelectedIndex(0);
-				jComboBoxVisitante.setSelectedIndex(1);
-				
-				
-				
-				Calendar calendar = Calendar.getInstance();
-				jCalendar.setCalendar(calendar);
-				jButtonCrearNoticia.setBounds(457, 0, 145, 23);
-				
-				getContentPane().add(jButtonCrearNoticia);
-				
-				
-				lblConsultaCreada.setBounds(120, 373, 150, 14);
-				getContentPane().add(lblConsultaCreada);
+		List<domain.Equipo> equipos=facade.getEquiposPorLiga(2, "Liga Santander");
+		
+		for (domain.Equipo eq : equipos) {
+			modelLocal.addElement(eq);
+			modelVisitante.addElement(eq);
+		}
+		jComboBoxLocal.setSelectedIndex(0);
+		jComboBoxVisitante.setSelectedIndex(1);
+		
+		
+		
+		Calendar calendar = Calendar.getInstance();
+		jCalendar.setCalendar(calendar);
+		jButtonCrearNoticia.setBounds(457, 0, 145, 23);
+		
+		getContentPane().add(jButtonCrearNoticia);
+		
+		
+		lblConsultaCreada.setBounds(120, 373, 150, 14);
+		getContentPane().add(lblConsultaCreada);
 				
 				
 		jButtonCrearNoticia.addActionListener(new ActionListener() {
@@ -788,9 +798,7 @@ public class CreateAndQueryGUI extends JFrame {
 		btnCrearLiga.setBounds(875, 351, 203, 23);
 		getContentPane().add(btnCrearLiga);
 		
-		
-		
-		///////////////////////////////////////////////
+
 		
 		
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -1034,7 +1042,6 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 						
 				}else {
 					jButtonCreateQuery.setEnabled(true);
-                    ////////////////////////////////////////////// 
 				}
 					
 

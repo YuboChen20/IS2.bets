@@ -30,7 +30,6 @@ public class CloseBetGUI extends JFrame {
 	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
-	//DefaultComboBoxModel<Question> modelQuestion = new DefaultComboBoxModel<Question>();
 	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
@@ -61,7 +60,7 @@ public class CloseBetGUI extends JFrame {
 	private final JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3 = new JLabel(); 
 	private final JLabel lblNewLabel_3_1 = new JLabel();
-	private final JButton jButtonCerrarConsulta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton jButtonCerrarConsulta = new JButton("Cerrar Consulta"); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton btnButtonCerrarApuesta = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton btnAtras = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CloseBetGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblFecha = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CloseBetGUI.lblNewLabel.text")); //$NON-NLS-1$ //$NON-NLS-2$

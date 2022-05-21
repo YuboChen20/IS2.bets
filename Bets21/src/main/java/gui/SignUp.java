@@ -2,8 +2,6 @@ package gui;
 
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Frame;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -17,9 +15,6 @@ import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
-import java.awt.Color;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,7 +29,6 @@ public class SignUp extends JFrame {
 	private JTextField nombreUsuario;
 	private JPasswordField passwordField;
 	private JTextField numTarjeta;
-	private final Action action = new SwingAction();
 	private JTextField correoField;
 
 
@@ -172,14 +166,7 @@ public class SignUp extends JFrame {
 		});
 
 	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
+	
 	private void jButtonSignUp_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 		JFrame a=new Login();

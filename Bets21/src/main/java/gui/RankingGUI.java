@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -10,39 +9,25 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import businessLogic.BLFacade;
-import domain.Bet;
 import domain.Equipo;
-import domain.Event;
-import domain.Pronostico;
-import domain.Question;
-import domain.Usuario;
-import exceptions.PronosticAlreadyExist;
-
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JScrollBar;
-import javax.swing.JSpinner;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.text.DecimalFormat;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.Vector;
 
-import javax.swing.ScrollPaneConstants;
-import javax.swing.JTextField;
 import javax.swing.JTable;
 
 public class RankingGUI extends JFrame {
 	
 
 	private JPanel contentPane;
-	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
 	private String[] columnNamesPronosticoMode1 = new String[] {
@@ -68,7 +53,6 @@ public class RankingGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Usuario userPrueba= new Usuario("P","R","1",false,"a");
 					RankingGUI frame = new RankingGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {

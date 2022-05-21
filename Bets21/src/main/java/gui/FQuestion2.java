@@ -5,14 +5,11 @@ import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
 
-import domain.Bet;
 import domain.Event;
 import domain.Liga;
 import domain.Pronostico;
 import domain.Question;
 import domain.Usuario;
-import exceptions.PronosticAlreadyExist;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -21,7 +18,6 @@ import java.text.DateFormat;
 import java.util.*;
 import java.util.List;
 
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -75,7 +71,6 @@ public class FQuestion2 extends JFrame {
 			"Liga",
 			"ObjetoLiga"
 	};
-	private JTextField textFieldNombreLiga;
 	private final JButton btnNoticia = new JButton(ResourceBundle.getBundle("Etiquetas").getString("VerNoticia"));
 	
 	private JLabel lblNombreLiga = new JLabel("Liga Santander");
@@ -96,7 +91,7 @@ public class FQuestion2 extends JFrame {
 		
 	}
 	
-//	/**
+	
 	public FQuestion2(Date date1, int i1, Usuario u)
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
@@ -119,7 +114,6 @@ public class FQuestion2 extends JFrame {
 		
 	}
 	
-//	*/
 
 	
 	private void jbInit() throws Exception
@@ -165,7 +159,6 @@ public class FQuestion2 extends JFrame {
 					calendarAnt = (Calendar) propertychangeevent.getOldValue();
 					calendarAct = (Calendar) propertychangeevent.getNewValue();
 					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar1.getLocale());
-//					jCalendar1.setCalendar(calendarAct);
 					firstDay=UtilDate.trim(new Date(jCalendar1.getCalendar().getTime().getTime()));
 
 					 
@@ -188,12 +181,9 @@ public class FQuestion2 extends JFrame {
 						datesWithEventsCurrentMonth=facade.getEventsMonth(jCalendar1.getDate());
 					}
 
-
-
 					CreateAndQueryGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
-													
+
 					
-                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					tableModelPronostico.setDataVector(null, columnNamesPronostico);
 					tableModelPronostico.setColumnCount(7);
 					
@@ -223,27 +213,15 @@ public class FQuestion2 extends JFrame {
 							row.add("    "+list.get(2).getCuota());
 							
 							JButton btn1 =new JButton("<html>Otras<br>apuestas</html>");
-						
 							row.add(btn1);
-							//row.add("<html>Otras<br>apuestas</html>");
 							row.add(ev);
-							
 							tableModelPronostico.addRow(row);
 						
 						}
 					
 					}
-					
-				
-					
-					
-					//tablePronosticos.getColumnModel().removeColumn(tablePronosticos.getColumnModel().getColumn(2)); // not shown in JTable
-					
-					
+										
 					tablePronosticos.setRowHeight(50);
-					
-					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-					
 					
 					tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
 					tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(100);
@@ -420,8 +398,6 @@ public class FQuestion2 extends JFrame {
 		
 		tablePronosticos.setDefaultRenderer(Object.class, new Render());
 		
-		////////////////////////////////////////////////////////////////////////////////////////////////////
-		
 		
 		lblNombreLiga.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNombreLiga.setBounds(33, 57, 222, 44);
@@ -459,11 +435,8 @@ public class FQuestion2 extends JFrame {
 						row.add("    "+ "1.88");
 						
 						JButton btn1 =new JButton("<html>Otras<br>apuestas</html>");
-					
 						row.add(btn1);
-						//row.add("<html>Otras<br>apuestas</html>");
 						row.add(ev);
-						
 						tableModelPronostico.addRow(row);
 					
 					}
@@ -541,11 +514,6 @@ public class FQuestion2 extends JFrame {
 	
     	
 	
-	}
-	private void btnLogin_actionPerformed(ActionEvent e) {
-		JFrame a = new Login();
-		a.setVisible(true);
-		this.setVisible(false);
 	}
 	private void btnNoticia_actionPerformed(ActionEvent e) {
 		Integer num=2;

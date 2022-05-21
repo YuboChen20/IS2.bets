@@ -99,7 +99,7 @@ public class Noticia {
 	
 	@Override
 	public String toString() {
-		return this.fechaPubli.getDate()+ ".- "+titulo +"\n";
+		return this.fechaPubli.toString()+ ".- "+titulo +"\n";
 		
 	}
 	

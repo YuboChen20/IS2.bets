@@ -1,22 +1,16 @@
 package gui;
 
 import businessLogic.BLFacade;
-import configuration.UtilDate;
-
 import com.toedter.calendar.JCalendar;
 
-import domain.Bet;
 import domain.Event;
 import domain.Pronostico;
 import domain.Question;
-import domain.Usuario;
 import exceptions.PronosticAlreadyExist;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.beans.*;
-import java.text.DateFormat;
 import java.util.*;
 import java.util.List;
 
@@ -24,14 +18,11 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class OtrasApuestasGUI extends JFrame {
-	private Usuario user;
 	private static final long serialVersionUID = 1L;
 	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries")); 
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
-	private Calendar calendarAnt = null;
-	private Calendar calendarAct = null;
 	private JScrollPane scrollPaneQueries = new JScrollPane();
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	
@@ -39,11 +30,8 @@ public class OtrasApuestasGUI extends JFrame {
 	private JTable tableQueries = new JTable();
 	private final JTable tablePronosticos = new JTable();
 
-	private DefaultTableModel tableModelEvents;
 	private DefaultTableModel tableModelQueries;
 	private DefaultTableModel tableModelPronostico;
-	
-	private final JLabel jLabelApuesta = new JLabel(); 
 	
 	private String[] columnNamesPronostico = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
@@ -105,7 +93,7 @@ public class OtrasApuestasGUI extends JFrame {
 				btnSignUp_actionPerformed(e);
 			}
 		});
-		tableModelEvents = new DefaultTableModel(null, columnNamesEvents) {
+		new DefaultTableModel(null, columnNamesEvents) {
 			boolean[] columnEditables = new boolean[] {
 					false, false, false
 				};
@@ -179,12 +167,7 @@ public class OtrasApuestasGUI extends JFrame {
 		lblEvento.setBounds(20, 11, 497, 46);
 		getContentPane().add(lblEvento);
 		
-		
-		
-		
-		
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////
+
 		
 		try {
         	List<Question> cuestiones=event1.getQuestions();
@@ -208,10 +191,7 @@ public class OtrasApuestasGUI extends JFrame {
         	//lblNewLabel.setText(ResourceBundle.getBundle("Etiquetas").getString("ErrorPronosAlreadyEx"));
         }
 		
-		
-		
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////
+
 		
 		tableQueries.addMouseListener(new MouseAdapter() {
 			@Override
@@ -224,7 +204,6 @@ public class OtrasApuestasGUI extends JFrame {
 				System.out.println(j);
 				
 				Question q = event1.getQuest(j);
-			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
 				System.out.println(q.toString());
 				
@@ -256,7 +235,7 @@ public class OtrasApuestasGUI extends JFrame {
 			}
 		});
 		
-		////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	}
 	private void btnLogin_actionPerformed(ActionEvent e) {
 		JFrame a = new Login();

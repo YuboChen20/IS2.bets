@@ -25,14 +25,11 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class OtrasApuestas2GUI extends JFrame {
-	private Usuario user;
 	private static final long serialVersionUID = 1L;
 	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries")); 
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
-	private Calendar calendarAnt = null;
-	private Calendar calendarAct = null;
 	private JScrollPane scrollPaneQueries = new JScrollPane();
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	
@@ -44,16 +41,12 @@ public class OtrasApuestas2GUI extends JFrame {
 	private DefaultTableModel tableModelQueries;
 	private DefaultTableModel tableModelPronostico;
 	
-	
-	
 	private String[] columnNamesPronostico = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("PronosticoN"), 
 			ResourceBundle.getBundle("Etiquetas").getString("Pronostico"),
             ResourceBundle.getBundle("Etiquetas").getString("Cuota"),
             ResourceBundle.getBundle("Etiquetas").getString("Usuarios"),
 	};
-	
-
 	
 	private String[] columnNamesEvents = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("EventN"), 
@@ -84,7 +77,6 @@ public class OtrasApuestas2GUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
 			try {
 				jbInit(event1,date1,i1,u);
-				this.user=u;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -200,12 +192,12 @@ public class OtrasApuestas2GUI extends JFrame {
 		btnPrueba.setVisible(true);
 		getContentPane().add(btnPrueba);
 		
-		JLabel lblApuesta = new JLabel("Apuesta"); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblApuesta = new JLabel("Apuesta"); 
 		lblApuesta.setBounds(20, 259, 50, 14);
 		getContentPane().add(lblApuesta);
 		
 		textApuesta = new JTextField();
-		textApuesta.setText(""); //$NON-NLS-1$ //$NON-NLS-2$
+		textApuesta.setText(""); 
 		textApuesta.setBounds(90, 255, 134, 23);
 		getContentPane().add(textApuesta);
 		textApuesta.setColumns(10);
@@ -358,10 +350,6 @@ public class OtrasApuestas2GUI extends JFrame {
         }
 		
 		
-		
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////
-		
 		tableQueries.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -373,7 +361,6 @@ public class OtrasApuestas2GUI extends JFrame {
 				System.out.println(j);
 				
 				Question q = event1.getQuest(j);
-			//	domain.Question ev=(domain.Question)tableModelPronostico.getValueAt(i,2); // obtain ev object
 				
 				lblMinima.setText("Apuesta Mínima: "+q.getBetMinimum());
 				
@@ -409,7 +396,7 @@ public class OtrasApuestas2GUI extends JFrame {
 			}
 		});
 		
-		////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		
 		
 		textArea = new JTextArea();
