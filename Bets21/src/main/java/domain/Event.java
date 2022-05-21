@@ -52,8 +52,8 @@ public class Event implements Serializable {
 		this.eventDate=eventDate;
 		this.isFinished=false;
 		
-		Question q1=new Question("1X2",5,this);
-		Pronostico p1=new Pronostico("1",q1,0.22);
+		Question q1=new Question("1X2",10,this);
+		Pronostico p1=new Pronostico("1",q1,1.22);
 		Pronostico p2=new Pronostico("X",q1,1.48);
 		Pronostico p3=new Pronostico("2",q1,2.34);
 		q1.addPronostico(p1);
@@ -75,8 +75,8 @@ public class Event implements Serializable {
 		this.eventDate=eventDate;
 		this.isFinished=false;
 		
-		Question q1=new Question("1X2",5,this);
-		Pronostico p1=new Pronostico("1",q1,0.22);
+		Question q1=new Question("1X2",10,this);
+		Pronostico p1=new Pronostico("1",q1,1.22);
 		Pronostico p2=new Pronostico("X",q1,1.48);
 		Pronostico p3=new Pronostico("2",q1,2.34);
 		q1.addPronostico(p1);

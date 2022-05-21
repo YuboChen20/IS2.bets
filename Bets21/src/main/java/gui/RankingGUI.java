@@ -110,7 +110,7 @@ public class RankingGUI extends JFrame {
 		
 		JLabel lblTipoDeRanking = new JLabel("Equipo por el que más dinero se apuesta");
 		lblTipoDeRanking.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTipoDeRanking.setBounds(33, 22, 378, 44);
+		lblTipoDeRanking.setBounds(20, 22, 423, 44);
 		contentPane.add(lblTipoDeRanking);
 		
 		JButton btnPorUsuarios = new JButton("Por apuestas");

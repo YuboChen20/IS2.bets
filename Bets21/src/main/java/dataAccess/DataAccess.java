@@ -404,8 +404,6 @@ public class DataAccess  {
 		    db.getTransaction().commit();		
 			this.crearApuesta(user,10,p1);
 			this.crearApuesta(user,12,p5);
-			p1.getQuestion().getEvent().getEquipos().get(1).setDineroApostado(10);
-			p5.getQuestion().getEvent().getEquipos().get(1).setDineroApostado(12);
 		    LocalDateTime now = LocalDateTime.now();     
 		    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
 		    String formatDateTime = now.format(format);  
@@ -942,14 +940,20 @@ public class DataAccess  {
 		db.getTransaction().commit();
 	}
 	
-	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio, Date fechaPubli) {
+	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
+		Calendar today = Calendar.getInstance();
+		int day=today.get(Calendar.DAY_OF_MONTH);
+		int month=today.get(Calendar.MONTH);
+		month+=1;
+		int year=today.get(Calendar.YEAR);
+		Date data = UtilDate.newDate(year, month, day);
 		TypedQuery<Noticia>  query = db.createQuery("SELECT no FROM Noticia no WHERE no.fechaPubli=?1",Noticia.class);
-		query.setParameter(1, fechaPubli);
+		query.setParameter(1, data);
 		List<Noticia> noticias = query.getResultList();
 		if(noticias!=null) 
 			for(Noticia no: noticias)if(no.getTexto().equals(texto))return null;
 		db.getTransaction().begin();
-		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, fechaPubli);
+		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, data);
 		db.persist(not);
 		db.getTransaction().commit();
 		return not;

@@ -64,6 +64,7 @@ public class NoticiasGUI extends JFrame {
 	private final JLabel jTitleListaNoticias = DefaultComponentFactory.getInstance().createTitle(ResourceBundle.getBundle("Etiquetas").getString("ListaNoticia"));
 	private Vector<Date> datesWithNoticiasCurrentMonth = new Vector<Date>();
 	private final JLabel JLabelNoticia = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Noticia")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton jButtonFiltro = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Filtro")); //$NON-NLS-1$ //$NON-NLS-2$
 
 
 
@@ -75,7 +76,7 @@ public class NoticiasGUI extends JFrame {
 	 */
 	public NoticiasGUI(Integer backNum) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 801, 421);
+		setBounds(100, 100, 801, 445);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -158,7 +159,7 @@ public class NoticiasGUI extends JFrame {
 		textTitulo.setWrapStyleWord(true);
 		
 		contentPane.add(textSubTitulo);
-		scrollPane.setBounds(298, 195, 477, 173);
+		scrollPane.setBounds(298, 195, 477, 203);
 		textSubTitulo.setLineWrap(true);
 		textSubTitulo.setWrapStyleWord(true);
 		
@@ -215,6 +216,20 @@ public class NoticiasGUI extends JFrame {
 				}else {
 					System.out.println("ERROR NOTICIAGUI");
 				}
+			}
+		});
+		jButtonFiltro.setBounds(26, 361, 225, 37);
+		contentPane.add(jButtonFiltro);
+		
+		jButtonFiltro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BLFacade facade = MainGUI.getBusinessLogic();
+				modelNoticia.removeAllElements();
+				List<Noticia> noticias=facade.getAllNoticias();
+				for(Noticia no: noticias) {
+					modelNoticia.addElement(no);
+				}
+				JComboBoxNoticias.repaint();
 			}
 		});
 		
