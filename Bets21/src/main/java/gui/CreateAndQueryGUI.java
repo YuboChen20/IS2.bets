@@ -791,7 +791,7 @@ public class CreateAndQueryGUI extends JFrame {
 		btnCrearLiga.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CrearLigaGUI a= new CrearLigaGUI();
+				CrearLigaGUI a= CrearLigaGUI.getInstance();
 				a.setVisible(true);
 			}
 		});
@@ -982,7 +982,8 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 	private void jButtonClose_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 		MainGUI a =new MainGUI();
-		a.setVisible(true);;
+		a.setVisible(true);
+		CrearLigaGUI.destroy();
 	}
 	
 

@@ -158,7 +158,7 @@ public class HistorialGUI extends JFrame {
 		tableUser1.getColumnModel().getColumn(0).setPreferredWidth(50);
 		scrollPaneUserBlo_1.setViewportView(tableUser1);
 		
-		
+		actualizarTabla1(jComboBoxTipoUsers.getSelectedItem().toString());
 		
 		
 		tableUser.addMouseListener(new MouseAdapter() {  //seleccionar una fila de la tabla1 => poner el historial del usuario seleccionado en la tabla2
@@ -261,7 +261,11 @@ public class HistorialGUI extends JFrame {
 			for(int i1=0;i1<m;i1++) {
 				tableModelUserBlo1.removeRow(0);
 			}
-			actualizarTabla2(usuarios.get(0));
+			if(usuarios.size()>0) {
+				actualizarTabla2(usuarios.get(0));
+				tableUser.setRowSelectionInterval(0, 0);
+			}
+			
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 import businessLogic.BLFacade;
 import domain.Equipo;
+import domain.Event;
 import domain.Liga;
 import exceptions.LeagueAlreadyExist;
 import exceptions.LessThanMinimumTeamException;
@@ -60,6 +61,25 @@ public class CrearLigaGUI extends JFrame {
 	JButton btnEliminarEquipo = new JButton("Eliminar Equipo");
 	
 	
+	private static CrearLigaGUI instance;
+
+	
+	public static CrearLigaGUI getInstance() {
+		if (instance==null) {
+			instance=new CrearLigaGUI();
+			
+		} 
+		return instance;
+	}
+	
+	
+	public static void destroy() {
+		instance.setVisible(false);
+		instance=null;
+		
+	}
+	
+	
    
 	/**
 	 * Launch the application.
@@ -83,7 +103,7 @@ public class CrearLigaGUI extends JFrame {
 	 */
 
 	
-	public CrearLigaGUI() {
+	private CrearLigaGUI() {
 		BLFacade facade = MainGUI.getBusinessLogic(); 
 		
 		
