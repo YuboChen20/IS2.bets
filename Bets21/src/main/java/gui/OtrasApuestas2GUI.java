@@ -387,7 +387,8 @@ public class OtrasApuestas2GUI extends JFrame {
                 	tablePronosticos.getColumnModel().getColumn(0).setPreferredWidth(25);
                 	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
                 	tablePronosticos.getColumnModel().getColumn(2).setWidth(25);
-                	tablePronosticos.setRowSelectionInterval(0, 0);
+                	if(tablePronosticos.getRowCount()>0)
+                		tablePronosticos.setRowSelectionInterval(0, 0);
             		//tablePronosticos.getColumnModel().getColumn(3).setPreferredWidth(25);
                 	
                 }catch(PronosticAlreadyExist e1) {
