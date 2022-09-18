@@ -1,17 +1,60 @@
 
-9configuration.ConfigXML#getDbFilename()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaû û("1*Ô
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaü	 ü(£
-†
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaü	 ü(
-%0java.lang.String"__id*+*)
-configuration.ConfigXML"
+,domain.Question#toString()Ljava/lang/String;L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.java‰ ‰("1*ß
 
-dbFilename"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaü ü(
+1L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ	 Â(ô
+ñ
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ	 Â(
+%0java.lang.Integer"__id*'*%
+domain.Question"
+questionNumberï
+í
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ	 Â(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+;í
+è
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ Â($
+%2java.lang.String"__id*!*
+domain.Question"
+
+questionß
+§
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ	 Â($
+%3java.lang.String"__concat*
 
-%0java.lang.StringB
-configuration.ConfigXML
+%1java.lang.String*
+
+%2java.lang.Stringî
+ë
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ	 Â((
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+;µ
+≤
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ) Â(C
+%5java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""ß
+§
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ	 Â(C
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String"h
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÂ Â(D
+
+%6java.lang.StringB
+domain.Question

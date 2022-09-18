@@ -1,16 +1,16 @@
 
-3configuration.ConfigXML#getUser()Ljava/lang/String;Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java9 9("1*„
-1Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java:	 :(õ
-ò
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java:	 :(
-%0java.lang.String"__id*%*#
-configuration.ConfigXML"
-user"m
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java: :(
+-domain.Question#getResult()Ljava/lang/String;L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÅ Å("1*Œ
+1L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÇ	 Ç(ê
+ç
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÇ	 Ç(
+%0java.lang.String"__id**
+domain.Question"
+result"h
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÇ Ç(
 
-%0java.lang.StringB
-configuration.ConfigXML
+%0java.lang.StringB
+domain.Question

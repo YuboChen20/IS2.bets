@@ -1,9 +1,16 @@
 
-*configuration.ConfigXML#isDatabaseLocal()ZQ
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaA A("1*³
-1Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaB	 B("[
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaB B(
-""B
-configuration.ConfigXML
+(domain.Question#getEvent()Ldomain/Event;L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.java˜ ˜("1*Å
+1L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.java™	 ™(‹
+ˆ
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.java™	 ™(
+%0domain.Event"__id**
+domain.Question"
+event"d
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.java™ ™(
+
+%0domain.EventB
+domain.Question

@@ -1,561 +1,511 @@
 
-%dataAccess.DataAccess#initializeDB()VO
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java3 3("105*Ù
-24Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÇ Ç(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÇ Ç(&
-%28javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÇ Ç(
-%29"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%28javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-23*¬
-46O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag g(8‰·
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag g(8
-%15boolean",java.util.Locale#equals(Ljava/lang/Object;)Z*
-
-%12java.util.Locale*
-
-%13java.util.Locale2equals(Ljava/lang/Object;)*
-30*Ó
-25O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java (•
-¢
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java (&
-%26javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbËÂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java (
-%27"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%26javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-24*ä
-47O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag2 g(6~|
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag+ g(1
-%13java.util.Locale"java.util.Locale¨
-©
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag' g(7
-%14",java.util.Locale#<init>(Ljava/lang/String;)V*
-
-%13java.util.Locale*
-en*
-46*Ó
-26O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java~ ~(•
-¢
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java~ ~(&
-%24javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbËÂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java~ ~(
-%25"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%24javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-25*í
-48O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag g(¥
-±
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javag g(
-%12java.util.Locale"/java.util.Locale#getDefault()Ljava/util/Locale;*"
-java.util.Locale*
-47*Ó
-27O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java} }(•
-¢
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java} }(&
-%22javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbËÂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java} }(
-%23"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%22javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-26*Ó
-28O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java| |(•
-¢
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java| |(&
-%20javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbËÂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java| |(
-%21"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%20javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-27*Ó
-29O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java{ {(•
-¢
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java{ {(&
-%18javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbËÂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java{ {(
-%19"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%18javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-28*Ó
-30O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaz z(•
-¢
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaz z(&
-%16javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbËÂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaz z(
-%17"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%16javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-29*Û
-10Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaê ê(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaê ê(&
-%56javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaê ê(
-%57"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%56javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-9*Ù
-11Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaè è(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaè è(&
-%54javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaè è(
-%55"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%54javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-10*Ù
-12Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaé é(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaé é(&
-%52javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaé é(
-%53"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%52javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-11*Ù
-13Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaç ç(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaç ç(&
-%50javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaç ç(
-%51"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%50javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-12*ƒ
-57O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java_ _(3‚ﬂ
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java_ _(3
-%11boolean",java.util.Locale#equals(Ljava/lang/Object;)Z*
-
-%8java.util.Locale*
-
-%9java.util.Locale2equals(Ljava/lang/Object;)*
-48
-30*Ù
-14Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaå å(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaå å(&
-%48javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaå å(
-%49"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%48javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-13*à
-58O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java_- _(1}{
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java_& _(,
-%9java.util.Locale"java.util.Locale´
-®
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java_" _(2
-%10",java.util.Locale#<init>(Ljava/lang/String;)V*
-
-%9java.util.Locale*
-es*
-57*Ù
-15Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaã ã(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaã ã(&
-%46javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaã ã(
-%47"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%46javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-14*ë
-59O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaV V(R≥
-∞
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java_ _(
-%8java.util.Locale"/java.util.Locale#getDefault()Ljava/util/Locale;*"
-java.util.Locale*
-58*Ù
-16Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaä ä(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaä ä(&
-%44javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaä ä(
-%45"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%44javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-15*Ù
-17Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â(&
-%42javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â(
-%43"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%42javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-16*Ù
-18Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaà à(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaà à(&
-%40javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaà à(
-%41"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%40javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-17*Ù
-19Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaá á(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaá á(&
-%38javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaá á(
-%39"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%38javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-18*o
-0 "h
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaù ù(
-implicit return*√
-2Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaò ò(	
-}
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaò ò(
-%71java.io.PrintStream"__id*
-""‰·
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaò ò('
-%72void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+%dataAccess.DataAccess#initializeDB()VP
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java< <("205*„
+190R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(v}{
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(
+%29domain.Noticia"domain.NoticiaÅ
+˛
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(v
+%30"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
+
+%29domain.Noticia*
+
+titulo4java.lang.String* 
+
+
+subTitulo4java.lang.String*
 
-%71java.io.PrintStream*
+texto4java.lang.String*
+√ÅLVARO PRIAN*	
+MARCA*
+""*
+189*ı
+191P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javav v(UΩ
+∫
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javav v(V
+titulo4java.lang.String"__id*CA
+?Alberto De la Bella anuncia su retirada del f√∫tbol profesional‚
+ﬂ
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaw w({
+
+subTitulo4java.lang.String"__id*ec
+aEl lateral zurdo, ex de la Real Sociedad y ahora en el Cartagena, cuelga las botas a los 36 a√±os¢
+ü
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax y(
+%23java.lang.String"__concat*üú
+ôUna de las muchas leyendas que ha tenido la Real Sociedad,Alberto de la Bella, da un paso al lado y deja el f√∫tbol profesional, tal y como ha anunciado el mismo jugador a trav√©s de sus redes sociales. El jugador catal√°n, qui√©n militaba en las filas del FC Cartagena, cuelga las botas con un emotivo reportaje en el que se muestran algunos de sus mejores momentos que ha vivido en sus diferentes equipos.\n*
+\n˘
+ˆ
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax z(ﬂ
+%24java.lang.String"__concat*
+
+%23java.lang.String*‚ﬂ
+‹En el v√≠deo, De la Bella, agradece no s√≥lo a todos los aficionados, sino tambi√©n, a todos y cada uno de los entrenadores y compa√±eros que ha tenido a lo largo de su vida deportiva. El jugador ha disputado, aproximadamente, la cifra de 300 partidos en el f√∫tbol profesional, con un total de 22.155 minutos, aportando un total de 9 goles. Donde m√°s partidos ha jugado, y donde m√°s temporadas ha militado, ha sido en la Real Sociedad, club en el que m√°s veces ha lucido la camiseta. En total han sido 6 equipos en los que ha defendido los colores, en las √∫ltimas dos temporadas, en el FC Cartagena.õ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax {(
+%25java.lang.String"__concat*
+
+%24java.lang.String*
+\nŸ
+÷
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax |(ƒ
+%26java.lang.String"__concat*
+
+%25java.lang.String*¬ø
+ºCon los albinegros ha jugado dos temporadas, disputando un total de 53 partidos, sumando un total de 2.937 minutos, aportando un gol fundamental para la salvaci√≥n del cuadro albinegro. Su tanto ante el M√°laga en la temporada 2020/2021, le permiti√≥ al Efes√© sumar los tres puntos en su pelea por la permanencia.\nõ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax }(
+%27java.lang.String"__concat*
+
+%26java.lang.String*
+\n†
+ù
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax ~(å
+%28java.lang.String"__concat*
+
+%27java.lang.String*âÜ
+ÉFinalmente, y despu√©s de algunas muchas temporadas, Alberto de la Bella, decide dejar a un lado la √©lite del f√∫tbol profesional.ì
+ê
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax ~(ç
+texto4java.lang.String"__id*
+
+%28java.lang.String*
+190*Ó
+192Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(Äå
+â
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(Ä
+no3domain.Noticia"__id*
+
+%21domain.Noticia*
+191*Á
+193P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s({y
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(
+%21domain.Noticia"domain.Noticiaâ
+Ü
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(
+%22"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
+
+%21domain.Noticia*
+
+titulo3java.lang.String* 
+
+
+subTitulo3java.lang.String*
+
+texto3java.lang.String*
+JUAN PELEGR√çN*
+MUNDODEPORTIVO*
+""*
+192*µ#
+194P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javad d(Nµ
+≤
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javad d(O
+titulo3java.lang.String"__id*;9
+7Seis jugadores del Sevilla, nominados al once de LaLiga˜
+Ù
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javae e(ã
+
+subTitulo3java.lang.String"__id*yw
+uBono, Jes√∫s Navas, Kound√©, Diego Carlos, Acu√±a y Joan Jord√°n optan al reconocimiento entre m√°s de 45 futbolistasÒ
+Ó
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf g(
+%9java.lang.String"__concat*ÔÏ
+ÈSeis jugadores del Sevilla han sido nominados por LaLiga para la elecci√≥n del mejor once de la temporada 21-22, premios que se entregar√°n en una gala que ser√° presidida por Javier Tebas. A trav√©s de la aplicaci√≥n Player App, los aficionados al f√∫tbol podr√°n votar a los mejores jugadores de la Liga entre un total de 46 futbolistas de todos los equipos que conforman la Liga Santander. Adem√°s, un comit√© de expertos formado por periodistas tambi√©n participar√° en la votaci√≥n.\n*
+\n“
+œ
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf h(ª
+%10java.lang.String"__concat*
+
+%9java.lang.String*ºπ
+∂Bono, Jes√∫s Navas, Kound√©, Diego Carlos, Acu√±a, Joan Jord√°n optan a formar parte de este once de estrellas a los que acompa√±ar√°n los cuatro siguientes jugadores m√°s votados.\nõ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf i(
+%11java.lang.String"__concat*
+
+%10java.lang.String*
+\nﬂ
+‹
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf j(R
+%12java.lang.String"__concat*
+
+%11java.lang.String*JH
+FLa lista completa de nominados la forman los siguientes futbolistas:\nõ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf k(
+%13java.lang.String"__concat*
+
+%12java.lang.String*
+\n·
+ﬁ
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf l(Õ
+%14java.lang.String"__concat*
+
+%13java.lang.String* «
+ƒ-Porteros: Yassine Bounou (Sevilla FC); Thibaut Courtois (Real Madrid); Gero Rulli (Villarreal CF); Diego L√≥pez (RCD Espanyol); Jan Oblak (Atl√©tico de Madrid) y Mat√≠as Dituro (Celta de Vigo).\nõ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf m(
+%15java.lang.String"__concat*
+
+%14java.lang.String*
+\nﬁ
+€
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf n(≈
+%16java.lang.String"__concat*
+
+%15java.lang.String*«ƒ
+¡-Defensas: Jordi Alba (FC Barcelona); Militao (Real Madrid); Marcos Acu√±a (Sevilla); Ronald Ara√∫jo (Barcelona); Le Normand (Real Sociedad); David Garc√≠a (CA Osasuna); Alaba (Real Madrid); √Ålex Moreno (Real Betis); √ç√±igo Mart√≠nez (Athletic Club); Diego Carlos (Sevilla); Kounde (Sevilla) y Jes√∫s Navas (Sevilla).\nõ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf o(
+%17java.lang.String"__concat*
+
+%16java.lang.String*
+\nπ
+∂
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf p(§
+%18java.lang.String"__concat*
+
+%17java.lang.String*¢ü
+ú-Centrocampistas: Kroos (Real Madrid); Casemiro (Real Madrid); Joan Jord√°n (Sevilla); Fekir (Betis); Muniain (Athletic Club); Modric (Real Madrid); Juanmi (Betis); Mikel Merino (Real Sociedad); Carlos Soler (Valencia CF); Canales (Betis); Lemar (Atl√©tico de Madrid); Pedri (Barcelona); Trejo (Rayo Vallecano); Brais M√©ndez (Celta); Capou√© (Villareal); Yeremi Pino (Villareal) y Frenkie De Jong (Barcelona).\nõ
+ò
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf q(
+%19java.lang.String"__concat*
+
+%18java.lang.String*
+\n 
+«
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf r(≤
+%20java.lang.String"__concat*
+
+%19java.lang.String*≥∞
+≠-Delanteros: Benzema (Real Madrid); Vini Jr (Real Madrid); Aspas (Celta); Joao F√©lix (Atl√©tico de Madrid); Mikel Oyarzabal (Real Sociedad); Joselu (Deportivo Alav√©s); Raul de Tom√°s (Espanyol); Enes √únal (Getafe CF); √Ångel Correa (Atl√©tico de Madrid); Guedes (Valencia) y Borja Iglesias (Betis).ì
+ê
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf r(≥
+texto3java.lang.String"__id*
+
+%20java.lang.String*
+193*ö
+130R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(∑
+¥
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(
+%35java.util.Locale"/java.util.Locale#getDefault()Ljava/util/Locale;*"
+java.util.Locale*
+129*Ì
+196Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(Æã
+à
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(Æ
+no2domain.Noticia"__id*
+
+%7domain.Noticia*
+194*÷
+197Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠zx
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(
+%7domain.Noticia"domain.Noticia¯
+ı
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠
+%8"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
+
+%7domain.Noticia*
+El fin del futbol*-+
+)Debido a unos sucesos, el futbol se acaba*
+ME HAN DESPEDIDO.*
+	YUBO CHEN*	
+MARCA*
+""*
+196*Ì
+198Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(íã
+à
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(í
+no1domain.Noticia"__id*
+
+%5domain.Noticia*
+197*∫
+199Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(ëzx
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(
+%5domain.Noticia"domain.Noticia‹
+Ÿ
+Q
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(ë
+%6"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
+
+%5domain.Noticia*	
+TITULO1*
+
+SUBTITULOS*" 
+ESCRIBIR TEXTO AQUI.	PLANTILLA*
+	YUBO CHEN*	
+MARCA*
+""*
+198*Œ
+139R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(3Á‰
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(3
+%34boolean",java.util.Locale#equals(Ljava/lang/Object;)Z*
+
+%31java.util.Locale*
+
+%32java.util.Locale2equals(Ljava/lang/Object;)*	
+130
+10*“
+10R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaΩ Ω(ÚÔ
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaΩ Ω( 
+%39";dataAccess.DataAccess#crearApuesta(LUsuario;DLPronostico;)I*
+dataAccess.DataAccess*
+""*2
+*
+""2$crearApuesta(LUsuario;DLPronostico;)*
+9*ñ
+140R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´- ´(1Å
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´& ´(,
+%32java.util.Locale"java.util.LocaleØ
+¨
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´" ´(2
+%33",java.util.Locale#<init>(Ljava/lang/String;)V*
+
+%32java.util.Locale*
+es*
+139*ö
+141R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java™ ™(=∑
+¥
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(
+%31java.util.Locale"/java.util.Locale#getDefault()Ljava/util/Locale;*"
+java.util.Locale*
+140*p
+0 "i
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÃ Ã(
+implicit return*«
+2R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(Ä
+~
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(
+%47java.io.PrintStream"__id*
+""Â‚
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(*
+%48void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%47java.io.PrintStream*
 Db initialized2println(Ljava/lang/String;)*
-0*¸
-102O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java; ;()l
-j
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java= =(%	
-%6int"__id*
-""Ø¨
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java= =(&	
-%7int"java.util.Calendar#get(I)I*
+0*
+189R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(wç
+ä
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(w
+no4domain.Noticia"__id*
+
+%29domain.Noticia*
+141*≈
+3R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(Ê„
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(;
+%46"edataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;*
+dataAccess.DataAccess*
+
+......*
+""*
+""*$
+"
+formatDateTimejava.lang.String2BcreateComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)*
+2*“
+4R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(Û
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(G
+%45"edataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;*
+dataAccess.DataAccess*
+Va a ganar Atletico*
+""*
+""*$
+"
+formatDateTimejava.lang.String2BcreateComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)*
+3*‚
+5R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(1ú
+ô
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(1"
+formatDateTimejava.lang.String"__id*
+
+%43java.lang.String‰·
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java√ √(8
+%44"edataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;*
+dataAccess.DataAccess*
+Hola*
+""*
+""*$
+"
+formatDateTimejava.lang.String2BcreateComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)*
+4*Ä
+203P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z()m
+k
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java\ \(%	
+%3int"__id*
+""∞≠
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java\ \(&	
+%4int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
 	
-%6int2get(I)*
-59*®
-3Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaó ó( «
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaó ó(
-%70void"-javax.persistence.EntityTransaction#commit()V*,
-*
-%69#javax.persistence.EntityTransaction2commit()*
-2*ì
-103O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java9 9(-ì
-ê
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java9 9(-
+%3int2get(I)*
+199*‚
+6R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(T∏
+µ
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(T,
+format"java.time.format.DateTimeFormatter"__id*+
+)
+%42"java.time.format.DateTimeFormatter»≈
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(0
+%43java.lang.String"Vjava.time.LocalDateTime#format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;* 
+
+nowjava.time.LocalDateTime*.
+,
+format"java.time.format.DateTimeFormatter2,format(Ljava/time/format/DateTimeFormatter;)*
+5*ó
+204P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaX X(-î
+ë
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaX X(-
 todayjava.util.Calendar"__id*
 
-%3java.util.Calendarl
-j
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java; ;('	
-%4int"__id*
-""Ø¨
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java; ;((	
-%5int"java.util.Calendar#get(I)I*
+%0java.util.Calendarm
+k
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z('	
+%1int"__id*
+""∞≠
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z((	
+%2int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
 	
-%4int2get(I)*
-102*ù
-4Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaó ó(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaó ó(&
-%68javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbïí
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaó ó(*
-%69#javax.persistence.EntityTransaction"Ujavax.persistence.EntityManager#getTransaction()Ljavax/persistence/EntityTransaction;*(
-&
-%68javax.persistence.EntityManager2getTransaction()*
-3*ú
-104O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java9 9(º
-π
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java9 9(,
-%3java.util.Calendar"4java.util.Calendar#getInstance()Ljava/util/Calendar;*"
+%1int2get(I)*
+203*…
+128R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(8Á‰
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(8
+%38boolean",java.util.Locale#equals(Ljava/lang/Object;)Z*
+
+%35java.util.Locale*
+
+%36java.util.Locale2equals(Ljava/lang/Object;)*
+10*™
+7R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(.ü
+ú
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(.
+nowjava.time.LocalDateTime"__id* 
+
+%41java.time.LocalDateTime©
+¶
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¿! ¿(S)
+%42"java.time.format.DateTimeFormatter"djava.time.format.DateTimeFormatter#ofPattern(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;*&"$
+"java.time.format.DateTimeFormatter*
+dd-MM-yyyy HH:mm:ss*
+6*û
+205P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaV V(=Ω
+∫
+P
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaX X(,
+%0java.util.Calendar"4java.util.Calendar#getInstance()Ljava/util/Calendar;*"
 java.util.Calendar*
-103*Ú
-5Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaï ï(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaï ï(&
-%66javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaï ï(
-%67"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%66javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-4*ﬂ
-105O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java5 5(§
-°
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java5 5(%
-%0javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbëé
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java5 5()
-%1#javax.persistence.EntityTransaction"Ujavax.persistence.EntityManager#getTransaction()Ljavax/persistence/EntityTransaction;*'
-%
-%0javax.persistence.EntityManager2getTransaction()ƒ¡
-O
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.java5 5(
-
-%2void",javax.persistence.EntityTransaction#begin()V*+
-)
-%1#javax.persistence.EntityTransaction2begin()*
-104*Ú
-6Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaî î(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaî î(&
-%64javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaî î(
-%65"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%64javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-5*Ú
-7Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaì ì(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaì ì(&
-%62javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaì ì(
-%63"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%62javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-6*Ú
-8Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaí í(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaí í(&
-%60javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaí í(
-%61"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%60javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-7*Ú
-9Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaë ë(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaë ë(&
-%58javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaë ë(
-%59"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%58javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-8*Ù
-20Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÜ Ü(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÜ Ü(&
-%36javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÜ Ü(
-%37"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%36javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-19*Ù
-21Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÖ Ö(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÖ Ö(&
-%34javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÖ Ö(
-%35"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%34javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-20*Ù
-22Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÑ Ñ(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÑ Ñ(&
-%32javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÑ Ñ(
-%33"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%32javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-21*Ù
-23Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(ß
-§
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(&
-%30javax.persistence.EntityManager"__id*!*
-dataAccess.DataAccess"
-dbÍÁ
-Q
-E/Users/iturrioz/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(
-%31"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
-&
-%30javax.persistence.EntityManager*
-""2persist(Ljava/lang/Object;)*
-22B
+204*ñ
+129R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥2 ≥(6Å
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥+ ≥(1
+%36java.util.Locale"java.util.LocaleØ
+¨
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥' ≥(7
+%37",java.util.Locale#<init>(Ljava/lang/String;)V*
+
+%36java.util.Locale*
+en*
+128*´
+8R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø('Ã
+…
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(-
+%41java.time.LocalDateTime"6java.time.LocalDateTime#now()Ljava/time/LocalDateTime;*"
+java.time.LocalDateTime*
+7*—
+9R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaæ æ(ÚÔ
+R
+FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaæ æ( 
+%40";dataAccess.DataAccess#crearApuesta(LUsuario;DLPronostico;)I*
+dataAccess.DataAccess*
+""*2*
+""2$crearApuesta(LUsuario;DLPronostico;)*
+8B
 dataAccess.DataAccess

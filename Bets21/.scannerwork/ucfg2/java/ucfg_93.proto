@@ -1,16 +1,9 @@
 
-5configuration.ConfigXML#getLocale()Ljava/lang/String;Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java1 1("1*Â
-1Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java2	 2(ù
-ö
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java2	 2(
-%0java.lang.String"__id*'*%
-configuration.ConfigXML"
-locale"m
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java2 2(
-
-%0java.lang.StringB
-configuration.ConfigXML
+ domain.Question#getBetMinimum()FJ
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javak k("1*•
+1J
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javal	 l("T
+J
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javal l(
+""B
+domain.Question

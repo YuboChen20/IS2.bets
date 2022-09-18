@@ -1,93 +1,51 @@
 
-,gui.MainGUI#getBoton2()Ljavax/swing/JButton;E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javan n("3*å
-2E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javap p(%yw
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javap p(#
-%1javax.swing.JButton"javax.swing.JButtonå
-â
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javap p(%
-%2"javax.swing.JButton#<init>()V*
-
-%1javax.swing.JButtonî
-ë
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javap p(%%
-gui.MainGUI"
-jButtonCreateQuery"__id*
-
-%1javax.swing.JButtonî
-ë
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javaq q(
-%3javax.swing.JButton"__id*'*%
-gui.MainGUI"
-jButtonCreateQueryÈ
-Ê
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javaq q(C
-%4java.util.ResourceBundle"Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;*"
-java.util.ResourceBundle*
-	Etiquetas˛˚
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javaq q(\
-%5java.lang.String"Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;* 
-
-%4java.util.ResourceBundle*
-CreateQuery2getString(Ljava/lang/String;)„‡
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javaq q(]
++domain.Noticia#toString()Ljava/lang/String;I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javae e("1*·
+1I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf	 f(é
+ã
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf	 f(
+%0java.util.Date"__id*"* 
+domain.Noticia"
 
-%6void"7javax.swing.AbstractButton#setText(Ljava/lang/String;)V*
-
-%3javax.swing.JButton*
+fechaPubli∑¥
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf	 f(#
+%1java.lang.String"+java.util.Date#toString()Ljava/lang/String;*
+
+%0java.util.Date2
+toString()ì
+ê
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf	 f(*
+%2java.lang.String"__concat*
 
-%5java.lang.String2setText(Ljava/lang/String;)î
-ë
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javar r(
-%7javax.swing.JButton"__id*'*%
-gui.MainGUI"
-jButtonCreateQuerywu
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javar, r(I
-%8Lgui/MainGUI$2815;"Lgui/MainGUI$2815;à
-Ö
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javar( w(
-%9"java.lang.Object#<init>()V*
-
-%8Lgui/MainGUI$2815;îë
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javar w(
-%10void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V*
-
-%7javax.swing.JButton*
-
-%8Lgui/MainGUI$2815;22addActionListener(Ljava/awt/event/ActionListener;)*
-1*È
-3E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javao o(î
-ë
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javao o(
-%0javax.swing.JButton"__id*'*%
-gui.MainGUI"
-jButtonCreateQuery*
-2
-1*…
-1E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javay	 y(ï
-í
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javay	 y(
-%11javax.swing.JButton"__id*'*%
-gui.MainGUI"
-jButtonCreateQuery"e
-E
-;/Users/iturrioz/git/Bets2021/src/main/java/gui/MainGUI.javay y(
-
-%11javax.swing.JButtonB
-gui.MainGUI
+%1java.lang.String*
+.- å
+â
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf+ f(1
+%3java.lang.String"__id**
+domain.Noticia"
+titulo§
+°
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf	 f(1
+%4java.lang.String"__concat*
+
+%2java.lang.String*
+
+%3java.lang.Stringí
+è
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf	 f(7
+%5java.lang.String"__concat*
+
+%4java.lang.String*
+\n"e
+I
+?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaf f(8
+
+%5java.lang.StringB
+domain.Noticia

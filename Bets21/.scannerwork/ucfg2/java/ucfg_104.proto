@@ -1,16 +1,20 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaš š(#"1*ö
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java›	 ›(ª
-§
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java›	 ›(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicName"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java› ›(
-
-%0java.lang.StringB
-configuration.ConfigXML
+4domain.Question#DoesPrnosExists(Ljava/lang/String;)ZL
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÜ Ü("1*ª
+1L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÝ Ý(þû
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÝ Ý(/
+%0boolean"4java.lang.String#contains(Ljava/lang/CharSequence;)Z* 
+
+
+pronosticojava.lang.String* 
+
+
+pronosticojava.lang.String2"contains(Ljava/lang/CharSequence;)"V
+L
+@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÝ	 Ý(0
+"":
+
+pronosticojava.lang.StringB
+domain.Question
