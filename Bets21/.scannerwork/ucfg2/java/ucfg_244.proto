@@ -1,0 +1,34 @@
+
+VbusinessLogic.BLFacadeImplementation#getEquiposPorLiga(ILdomain/Liga;)Ljava/util/List;f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¿! ¿(2"startingBlock*»
+startingBlockf
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¿2 ¿(G£
+ 
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¿ ¿(
+%0"
+__annotate*
+	WebMethod*
+
+ligadomain.Liga–
+“
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¿B ¿(F
+ligadomain.Liga"__annotation*
+
+%0*
+1*Š
+1f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÀ À(”
+‘
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÁ Á(A
+equiposjava.util.List"__id*
+"""…
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÃ Ã(
+
+equiposjava.util.List:
+"":
+ligadomain.LigaB(&
+$businessLogic.BLFacadeImplementation

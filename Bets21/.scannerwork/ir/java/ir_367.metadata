@@ -1,0 +1,6 @@
+gui.NoticiasGUI#paintDaysWithNoticias(LJCalendar;Ljava/util/Vector;)V
+java.util.Locale#getDefault()Ljava/util/Locale;
+java.util.Calendar#setTime(Ljava/util/Date;)V
+java.util.Locale#equals(Ljava/lang/Object;)Z
+java.util.Locale#instance-init#
+java.util.Locale#<init>(Ljava/lang/String;)V

@@ -1,0 +1,37 @@
+
+)domain.Event#toString()Ljava/lang/String;L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javar r("1*®
+1L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javas	 s(ì
+ê
+L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javas	 s(
+%0java.lang.Integer"__id*!*
+domain.Event"
+eventNumberï
+í
+L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javas	 s(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+;í
+è
+L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javas s($
+%2java.lang.String"__id*!*
+domain.Event"
+descriptionß
+§
+L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javas	 s($
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String"h
+L
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javas s(%
+
+%3java.lang.StringB
+domain.Event

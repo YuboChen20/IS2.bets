@@ -1,0 +1,23 @@
+
+,domain.Liga#eliminarEquipo(Ldomain/Equipo;)ZK
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Liga.java3 3("1*—
+1K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Liga.java4	 4(Œ
+‰
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Liga.java4	 4(
+%0java.util.Vector"__id**
+domain.Liga"	
+equiposÞÛ
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Liga.java4	 4(
+%1boolean",java.util.Vector#remove(Ljava/lang/Object;)Z*
+
+%0java.util.Vector*
+
+equipodomain.Equipo2remove(Ljava/lang/Object;)"U
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Liga.java4 4( 
+"":
+equipodomain.EquipoB
+domain.Liga

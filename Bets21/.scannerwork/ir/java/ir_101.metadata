@@ -1,0 +1,2 @@
+gui.HistorialGUI#jButtonAtras_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.CreateAndQueryGUI#getInstance()Lgui/CreateAndQueryGUI;

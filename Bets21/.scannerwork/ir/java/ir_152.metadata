@@ -1,0 +1,2 @@
+gui.RankingGUI#main([Ljava/lang/String;)V
+java.awt.EventQueue#invokeLater(Ljava/lang/Runnable;)V

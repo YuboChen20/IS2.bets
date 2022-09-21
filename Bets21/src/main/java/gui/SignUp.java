@@ -122,7 +122,7 @@ public class SignUp extends JFrame {
 			   if(us.equals("")) { tipoError= "u";}
 		   
 			   String ps= new String(passwordField.getPassword());
-			   if(ps.equals("") & tipoError==null ) tipoError="p";
+			   if(ps.equals("") && tipoError==null ) tipoError="p";
 			   
 			   String code= numTarjeta.getText();
 			   	   

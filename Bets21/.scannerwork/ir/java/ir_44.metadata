@@ -1,0 +1,2 @@
+dataAccess.DataAccess#getUsuario(Ljava/lang/String;Ljava/lang/String;I)LUsuario;
+java.lang.String#equals(Ljava/lang/Object;)Z

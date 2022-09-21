@@ -1,0 +1,5 @@
+gui.CreateAndQueryGUI#getInstance()Lgui/CreateAndQueryGUI;
+java.util.Vector#<init>()V
+java.util.Vector#instance-init#
+gui.CreateAndQueryGUI#instance-init#
+gui.CreateAndQueryGUI#<init>(Ljava/util/Vector;)V

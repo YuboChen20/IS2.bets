@@ -1,20 +1,59 @@
 
-4domain.Question#DoesPrnosExists(Ljava/lang/String;)ZL
-@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÜ Ü("1*ª
-1L
-@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÝ Ý(þû
-L
-@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÝ Ý(/
-%0boolean"4java.lang.String#contains(Ljava/lang/CharSequence;)Z* 
-
+,domain.Question#toString()Ljava/lang/String;Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÚ Ú("1*Ñ
 
-pronosticojava.lang.String* 
-
-
-pronosticojava.lang.String2"contains(Ljava/lang/CharSequence;)"V
-L
-@C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Question.javaÝ	 Ý(0
-"":
-
-pronosticojava.lang.StringB
+1Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ	 Û(ž
+›
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ	 Û(
+%0java.lang.Integer"__id*'*%
+domain.Question"
+questionNumberš
+—
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ	 Û(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+;”
+‘
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ Û(!
+%2java.lang.String"__id**
+domain.Question"
+quest¬
+©
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ	 Û(!
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String™
+–
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ	 Û(%
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+;º
+·
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ& Û(@
+%5java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""¬
+©
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ	 Û(@
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String"m
+Q
+EC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Question.javaÛ Û(A
+
+%6java.lang.StringB
 domain.Question

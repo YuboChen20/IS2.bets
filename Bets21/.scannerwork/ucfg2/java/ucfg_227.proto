@@ -1,0 +1,72 @@
+
+zbusinessLogic.BLFacadeImplementation#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zf
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java• •("startingBlock*¢
+startingBlockf
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java• •(Q¦
+£
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java” ”(
+%0"
+__annotate*
+	WebMethod*
+
+usjava.lang.String™
+–
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java•% •('
+usjava.lang.String"__annotation*
+
+%0¨
+¥
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java” ”(
+%1"
+__annotate*
+	WebMethod*
+
+passjava.lang.String›
+˜
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java•0 •(4
+passjava.lang.String"__annotation*
+
+%1©
+¦
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java” ”(
+%2"
+__annotate*
+	WebMethod*
+
+ccodejava.lang.Stringœ
+™
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java•< •(A
+ccodejava.lang.String"__annotation*
+
+%2ª
+§
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java” ”(
+%3"
+__annotate*
+	WebMethod*
+
+correojava.lang.String
+š
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java•J •(P
+correojava.lang.String"__annotation*
+
+%3*
+1*Ý
+1f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java– –("p
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java™ ™(
+"":
+usjava.lang.String:
+passjava.lang.String:
+ccodejava.lang.String:
+correojava.lang.StringB(&
+$businessLogic.BLFacadeImplementation

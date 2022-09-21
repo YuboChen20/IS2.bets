@@ -221,14 +221,14 @@ public class DataAccess  {
 			q7.addPronostico(p9);
 			q8.addPronostico(p10);
 			q9.addPronostico(p11);
-			
-			Usuario admin= new Usuario("Alfredo","12345",null,true,null);
-			Usuario user= new Usuario("User1","12345","1010293833",false,"usuariomasguapo@gmail.com");
-			Usuario user2= new Usuario("User2","12345","1010294833",false,"usuariamasguapa@gmail.com");
-			Usuario admi1= new Usuario("Silvia","12345",null,true,null);
-			Usuario admi2= new Usuario("Yubo","12345",null,true,null);
-			Usuario admi3= new Usuario("Carlos","12345",null,true,null);
-			Usuario admi4= new Usuario("Jaime","12345",null,true,null);
+			final String CONTRASEÑA = "12345";
+			Usuario admin= new Usuario("Alfredo",CONTRASEÑA,null,true,null);
+			Usuario user= new Usuario("User1",CONTRASEÑA,"1010293833",false,"usuariomasguapo@gmail.com");
+			Usuario user2= new Usuario("User2",CONTRASEÑA,"1010294833",false,"usuariamasguapa@gmail.com");
+			Usuario admi1= new Usuario("Silvia",CONTRASEÑA,null,true,null);
+			Usuario admi2= new Usuario("Yubo",CONTRASEÑA,null,true,null);
+			Usuario admi3= new Usuario("Carlos",CONTRASEÑA,null,true,null);
+			Usuario admi4= new Usuario("Jaime",CONTRASEÑA,null,true,null);
 	
 			
 			db.persist(ligaSantander);

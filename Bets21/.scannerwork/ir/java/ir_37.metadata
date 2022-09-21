@@ -1,0 +1,5 @@
+dataAccess.DataAccess#createNoticia(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldomain/Noticia;
+java.util.Calendar#getInstance()Ljava/util/Calendar;
+domain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V
+java.lang.String#equals(Ljava/lang/Object;)Z
+domain.Noticia#instance-init#

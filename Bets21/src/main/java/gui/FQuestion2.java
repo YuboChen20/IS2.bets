@@ -85,7 +85,6 @@ public class FQuestion2 extends JFrame {
 				jbInit();
 				this.user=u;
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		

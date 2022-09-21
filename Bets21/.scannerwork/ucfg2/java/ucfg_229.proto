@@ -1,0 +1,44 @@
+
+XbusinessLogic.BLFacadeImplementation#crearApuesta(Ldomain/Usuario;DLdomain/Pronostico;)If
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaä ä(&"startingBlock*†
+startingBlockf
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaä& ä(M¦
+£
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaä ä(
+%0"
+__annotate*
+	WebMethod*
+
+userdomain.Usuario™
+–
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaä/ ä(3
+userdomain.Usuario"__annotation*
+
+%0¦
+£
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaä ä(
+%1"
+__annotate*
+	WebMethod*
+
+pdomain.Pronostico™
+–
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaäK ä(L
+pdomain.Pronostico"__annotation*
+
+%1*
+1*Ý
+1f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaå å("p
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè
+ è(
+"":
+userdomain.Usuario:
+"":
+pdomain.PronosticoB(&
+$businessLogic.BLFacadeImplementation

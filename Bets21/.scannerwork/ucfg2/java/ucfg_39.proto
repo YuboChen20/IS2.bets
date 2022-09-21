@@ -1,16 +1,16 @@
 
-+domain.Noticia#getTexto()Ljava/lang/String;I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaD D("1*√
-1I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaE	 E(ã
-à
-I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaE	 E(
++domain.Noticia#getTexto()Ljava/lang/String;N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaD D("1*“
+1N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaE	 E(ê
+ç
+N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaE	 E(
 %0java.lang.String"__id**
 domain.Noticia"
-texto"e
-I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.javaE E(
+texto"j
+N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaE E(
 
 %0java.lang.StringB
 domain.Noticia

@@ -1,7 +1,7 @@
 organization=is2
-projectKey=is2
+projectKey=ise
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.31937
-dashboardUrl=https://sonarcloud.io/dashboard?id=is2
-ceTaskId=AYNANdwXngNFGFwawUDc
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYNANdwXngNFGFwawUDc
+serverVersion=8.0.0.32298
+dashboardUrl=https://sonarcloud.io/dashboard?id=ise
+ceTaskId=AYNhhAZGOLGQGkL_AaBo
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYNhhAZGOLGQGkL_AaBo

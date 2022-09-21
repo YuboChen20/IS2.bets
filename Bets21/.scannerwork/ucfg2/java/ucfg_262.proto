@@ -1,0 +1,60 @@
+
+.domain.Pronostico#toString()Ljava/lang/String;Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javaa a("1*Ø
+
+1Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(ž
+›
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(
+%0java.lang.Integer"__id*'*%
+domain.Pronostico"
+pronosNumberš
+—
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+;›
+˜
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab b($
+%2java.lang.String"__id*%*#
+domain.Pronostico"
+
+pronostico¬
+©
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab	 b($
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String™
+–
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab	 b((
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+;º
+·
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab) b(J
+%5java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""¬
+©
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(J
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String"m
+Q
+GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javab b(K
+
+%6java.lang.StringB
+domain.Pronostico

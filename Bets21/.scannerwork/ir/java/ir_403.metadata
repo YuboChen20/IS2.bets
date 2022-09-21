@@ -1,0 +1,3 @@
+gui.OtrasApuestasGUI#btnSignUp_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.SignUp#<init>()V
+gui.SignUp#instance-init#

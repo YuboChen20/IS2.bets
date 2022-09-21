@@ -1,0 +1,25 @@
+
+)domain.Event#getQuest(I)Ldomain/Question;N
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.java¶ ¶("1*î
+1N
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.java·	 ·(’
+
+N
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.java·	 ·(
+%0java.util.Vector"__id**
+domain.Event"
+	questions˜
+•
+N
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.java·	 ·(
+%1domain.Question"
+__arrayGet*
+
+%0java.util.Vector*
+"""i
+N
+BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.java· ·(
+
+%1domain.Question:
+""B
+domain.Event

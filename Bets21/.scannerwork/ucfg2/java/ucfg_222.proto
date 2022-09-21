@@ -1,0 +1,70 @@
+
+/domain.Comentarios#toString()Ljava/lang/String;R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaK K("1*—
+1R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(•
+’
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(
+%0domain.Usuario"__id* *
+domain.Comentarios"
+userÆÃ
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(
+%1java.lang.String".domain.Usuario#getUserName()Ljava/lang/String;*
+
+%0domain.Usuario2getUserName()›
+˜
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(!
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+ [—
+”
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL# L('
+%3java.lang.String"__id* *
+domain.Comentarios"
+date­
+ª
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L('
+%4java.lang.String"__concat*
+
+%2java.lang.String*
+
+%3java.lang.Stringœ
+™
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(.
+%5java.lang.String"__concat*
+
+%4java.lang.String*
+]: —
+”
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL1 L(5
+%6java.lang.String"__id* *
+domain.Comentarios"
+text­
+ª
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(5
+%7java.lang.String"__concat*
+
+%5java.lang.String*
+
+%6java.lang.String›
+˜
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL	 L(<
+%8java.lang.String"__concat*
+
+%7java.lang.String*
+\n"n
+R
+HC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Comentarios.javaL L(?
+
+%8java.lang.StringB
+domain.Comentarios

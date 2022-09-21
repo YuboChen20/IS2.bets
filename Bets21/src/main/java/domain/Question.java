@@ -19,7 +19,7 @@ public class Question implements Serializable {
 	@XmlJavaTypeAdapter(IntegerAdapter.class)
 	@GeneratedValue
 	private Integer questionNumber;
-	private String question; 
+	private String quest; 
 	private float betMinimum;
 	private String result;  
 	private Integer NºApuesta;
@@ -37,7 +37,7 @@ public class Question implements Serializable {
 	public Question(Integer queryNumber, String query, float betMinimum, Event event) {
 		super();
 		this.questionNumber = queryNumber;
-		this.question = query;
+		this.quest = query;
 		this.betMinimum=betMinimum;
 		this.event = event;
 		this.NºApuesta=0;
@@ -46,12 +46,12 @@ public class Question implements Serializable {
 	
 	public Question(String query, float betMinimum,  Event event) {
 		super();
-		this.question = query;
+		this.quest = query;
 		this.betMinimum=betMinimum;
 		this.NºApuesta=0;
 		this.event = event;
 		this.Isclosed=false;
-	}
+	};
 	
 	public Vector<Pronostico> getListPronosticos() {
 		return pronosticos;
@@ -83,7 +83,7 @@ public class Question implements Serializable {
 	 */
 
 	public String getQuestion() {
-		return question;
+		return quest;
 	}
 
 
@@ -93,7 +93,7 @@ public class Question implements Serializable {
 	 * @param question to be setted
 	 */	
 	public void setQuestion(String question) {
-		this.question = question;
+		this.quest = question;
 	}
 
 
@@ -211,22 +211,12 @@ public class Question implements Serializable {
 		this.pronosticos = pronosticos;
 	}
 
-	/**
-	 * This method checks if the pronostico already exists for that question
-	 * 
-	 * @param pronostico that needs to be checked if there exists
-	 * @return true if the pronostico exists and false in other case
-	 */
-	public boolean DoesPrnosExists(String pronostico)  {	
-         return pronostico.contains(pronostico);
-	}
-		
-    
+ 
 
 
 
 	public String toString(){
-		return questionNumber+";"+question+";"+Float.toString(betMinimum);
+		return questionNumber+";"+quest+";"+Float.toString(betMinimum);
 	}
 
 

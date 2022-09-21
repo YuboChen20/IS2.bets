@@ -1,0 +1,3 @@
+gui.CreateAndQueryGUI#jButtonCrearNoticia_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.CreateNoticiaGUI#<init>()V
+gui.CreateNoticiaGUI#instance-init#

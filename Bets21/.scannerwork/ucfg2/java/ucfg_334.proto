@@ -1,0 +1,130 @@
+
+1gui.MainGUI#getJContentPane()Ljavax/swing/JPanel;K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaT T("3*ô
+2K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaV V(}{
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaV V(
+%1javax.swing.JPanel"javax.swing.JPanelê
+ç
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaV V(
+%2"javax.swing.JPanel#<init>()V*
+
+%1javax.swing.JPanelì
+ê
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaV V(
+gui.MainGUI"
+jContentPane"__id*
+
+%1javax.swing.JPanelì
+ê
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaW W(
+%3javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPaneﬁ€
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaW W(
+
+%4void"7java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V*
+
+%3javax.swing.JPanel*
+""2#setLayout(Ljava/awt/LayoutManager;)ì
+ê
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaX X(
+%5javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPane≠
+™
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaX X($
+%6javax.swing.JLabel"0gui.MainGUI#getLblNewLabel()Ljavax/swing/JLabel;*
+gui.MainGUIˇ¸
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaX X(%
+%7java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*
+
+%5javax.swing.JPanel*
+
+%6javax.swing.JLabel2add(Ljava/awt/Component;)ì
+ê
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaY Y(
+%8javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPane™
+ß
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaY Y(
+%9javax.swing.JButton",gui.MainGUI#getBoton3()Ljavax/swing/JButton;*
+gui.MainGUIÅ˛
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaY Y( 
+%10java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*
+
+%8javax.swing.JPanel*
+
+%9javax.swing.JButton2add(Ljava/awt/Component;)î
+ë
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaZ Z(
+%11javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPane´
+®
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaZ Z(
+%12javax.swing.JButton",gui.MainGUI#getBoton2()Ljavax/swing/JButton;*
+gui.MainGUIÉÄ
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaZ Z( 
+%13java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*
+
+%11javax.swing.JPanel*
+
+%12javax.swing.JButton2add(Ljava/awt/Component;)î
+ë
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.java[ [(
+%14javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPane´
+®
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.java[ [(
+%15javax.swing.JButton",gui.MainGUI#getBoton1()Ljavax/swing/JButton;*
+gui.MainGUIÉÄ
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.java[ [( 
+%16java.awt.Component"@java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;*
+
+%14javax.swing.JPanel*
+
+%15javax.swing.JButton2add(Ljava/awt/Component;)*
+1*Ó
+3K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaU U(ì
+ê
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.javaU U(
+%0javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPane*
+2
+1*”
+1K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.java_	 _(î
+ë
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.java_	 _(
+%17javax.swing.JPanel"__id*!*
+gui.MainGUI"
+jContentPane"j
+K
+AC:/Users/34600/git/IS2.bets/Bets21/src/main/java/gui/MainGUI.java_ _(
+
+%17javax.swing.JPanelB
+gui.MainGUI

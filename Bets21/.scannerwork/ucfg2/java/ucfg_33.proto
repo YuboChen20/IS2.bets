@@ -1,17 +1,17 @@
 
-1domain.Noticia#getNumNoticia()Ljava/lang/Integer;I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java( (("1*Ê
-1I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java)	 )(‘
-Ž
-I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java)	 )(
+1domain.Noticia#getNumNoticia()Ljava/lang/Integer;N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java( (("1*Ù
+1N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java)	 )(–
+“
+N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java)	 )(
 %0java.lang.Integer"__id*"* 
 domain.Noticia"
 
-numNoticia"f
-I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java) )(
+numNoticia"k
+N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java) )(
 
 %0java.lang.IntegerB
 domain.Noticia

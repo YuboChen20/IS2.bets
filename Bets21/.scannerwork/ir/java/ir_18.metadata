@@ -1,0 +1,3 @@
+dataAccess.DataAccess#crearApuesta(LUsuario;DLPronostico;)I
+domain.Bet#<init>(LPronostico;LUsuario;D)V
+domain.Bet#instance-init#

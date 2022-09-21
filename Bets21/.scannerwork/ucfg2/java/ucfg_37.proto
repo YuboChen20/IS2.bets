@@ -1,16 +1,16 @@
 
-/domain.Noticia#getSubTitulo()Ljava/lang/String;I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java< <("1*Ç
-1I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java=	 =(
-Œ
-I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java=	 =(
+/domain.Noticia#getSubTitulo()Ljava/lang/String;N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java< <("1*Ö
+1N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java=	 =(”
+‘
+N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java=	 =(
 %0java.lang.String"__id*!*
 domain.Noticia"
-	subTitulo"e
-I
-?C:/Users/34600/git/IS2/Bets21/src/main/java/domain/Noticia.java= =(
+	subTitulo"j
+N
+DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java= =(
 
 %0java.lang.StringB
 domain.Noticia

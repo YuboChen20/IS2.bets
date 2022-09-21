@@ -1,0 +1,33 @@
+
+]businessLogic.BLFacadeImplementation#getNoticiasDateMonth(Ljava/util/Date;)Ljava/util/Vector;f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java£! £(5"startingBlock*Á
+startingBlockf
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java£5 £(@¦
+£
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java£ £(
+%0"
+__annotate*
+	WebMethod*
+
+datejava.util.Date™
+–
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java£; £(?
+datejava.util.Date"__annotation*
+
+%0*
+1*Š
+1f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¤ ¤(”
+‘
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¥ ¥(<
+datesjava.util.Vector"__id*
+"""…
+f
+ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java§ §(
+
+datesjava.util.Vector:
+datejava.util.DateB(&
+$businessLogic.BLFacadeImplementation

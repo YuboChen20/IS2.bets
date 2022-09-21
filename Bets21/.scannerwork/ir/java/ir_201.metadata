@@ -1,0 +1,3 @@
+gui.CreateAndQueryGUI#jButtonVerHistorial_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.HistorialGUI#instance-init#
+gui.HistorialGUI#<init>()V

@@ -1,14 +1,14 @@
 
-%dataAccess.DataAccess#initializeDB()VP
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java< <("205*„
-190R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(v}{
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(
-%29domain.Noticia"domain.NoticiaÅ
-˛
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(v
+%dataAccess.DataAccess#initializeDB()VU
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java< <("205*Ù
+190W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(vÉÄ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(
+%29domain.Noticia"domain.NoticiaÜ
+É
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(v
 %30"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
 
 %29domain.Noticia*
@@ -22,85 +22,85 @@ subTitulo4java.lang.String*
 √ÅLVARO PRIAN*	
 MARCA*
 ""*
-189*ı
-191P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javav v(UΩ
-∫
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javav v(V
+189*ß
+191U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javav v(U¬
+ø
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javav v(V
 titulo4java.lang.String"__id*CA
-?Alberto De la Bella anuncia su retirada del f√∫tbol profesional‚
-ﬂ
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaw w({
+?Alberto De la Bella anuncia su retirada del f√∫tbol profesionalÁ
+‰
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaw w({
 
 subTitulo4java.lang.String"__id*ec
-aEl lateral zurdo, ex de la Real Sociedad y ahora en el Cartagena, cuelga las botas a los 36 a√±os¢
-ü
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax y(
+aEl lateral zurdo, ex de la Real Sociedad y ahora en el Cartagena, cuelga las botas a los 36 a√±osß
+§
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax y(
 %23java.lang.String"__concat*üú
 ôUna de las muchas leyendas que ha tenido la Real Sociedad,Alberto de la Bella, da un paso al lado y deja el f√∫tbol profesional, tal y como ha anunciado el mismo jugador a trav√©s de sus redes sociales. El jugador catal√°n, qui√©n militaba en las filas del FC Cartagena, cuelga las botas con un emotivo reportaje en el que se muestran algunos de sus mejores momentos que ha vivido en sus diferentes equipos.\n*
-\n˘
-ˆ
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax z(ﬂ
+\n˛
+˚
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax z(ﬂ
 %24java.lang.String"__concat*
 
 %23java.lang.String*‚ﬂ
-‹En el v√≠deo, De la Bella, agradece no s√≥lo a todos los aficionados, sino tambi√©n, a todos y cada uno de los entrenadores y compa√±eros que ha tenido a lo largo de su vida deportiva. El jugador ha disputado, aproximadamente, la cifra de 300 partidos en el f√∫tbol profesional, con un total de 22.155 minutos, aportando un total de 9 goles. Donde m√°s partidos ha jugado, y donde m√°s temporadas ha militado, ha sido en la Real Sociedad, club en el que m√°s veces ha lucido la camiseta. En total han sido 6 equipos en los que ha defendido los colores, en las √∫ltimas dos temporadas, en el FC Cartagena.õ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax {(
+‹En el v√≠deo, De la Bella, agradece no s√≥lo a todos los aficionados, sino tambi√©n, a todos y cada uno de los entrenadores y compa√±eros que ha tenido a lo largo de su vida deportiva. El jugador ha disputado, aproximadamente, la cifra de 300 partidos en el f√∫tbol profesional, con un total de 22.155 minutos, aportando un total de 9 goles. Donde m√°s partidos ha jugado, y donde m√°s temporadas ha militado, ha sido en la Real Sociedad, club en el que m√°s veces ha lucido la camiseta. En total han sido 6 equipos en los que ha defendido los colores, en las √∫ltimas dos temporadas, en el FC Cartagena.†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax {(
 %25java.lang.String"__concat*
 
 %24java.lang.String*
-\nŸ
-÷
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax |(ƒ
+\nﬁ
+€
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax |(ƒ
 %26java.lang.String"__concat*
 
 %25java.lang.String*¬ø
-ºCon los albinegros ha jugado dos temporadas, disputando un total de 53 partidos, sumando un total de 2.937 minutos, aportando un gol fundamental para la salvaci√≥n del cuadro albinegro. Su tanto ante el M√°laga en la temporada 2020/2021, le permiti√≥ al Efes√© sumar los tres puntos en su pelea por la permanencia.\nõ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax }(
+ºCon los albinegros ha jugado dos temporadas, disputando un total de 53 partidos, sumando un total de 2.937 minutos, aportando un gol fundamental para la salvaci√≥n del cuadro albinegro. Su tanto ante el M√°laga en la temporada 2020/2021, le permiti√≥ al Efes√© sumar los tres puntos en su pelea por la permanencia.\n†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax }(
 %27java.lang.String"__concat*
 
 %26java.lang.String*
-\n†
-ù
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax ~(å
+\n•
+¢
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax ~(å
 %28java.lang.String"__concat*
 
 %27java.lang.String*âÜ
-ÉFinalmente, y despu√©s de algunas muchas temporadas, Alberto de la Bella, decide dejar a un lado la √©lite del f√∫tbol profesional.ì
-ê
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javax ~(ç
+ÉFinalmente, y despu√©s de algunas muchas temporadas, Alberto de la Bella, decide dejar a un lado la √©lite del f√∫tbol profesional.ò
+ï
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javax ~(ç
 texto4java.lang.String"__id*
 
 %28java.lang.String*
-190*Ó
-192Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(Äå
-â
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(Ä
+190*¯
+192V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javas s(Äë
+é
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javas s(Ä
 no3domain.Noticia"__id*
 
 %21domain.Noticia*
-191*Á
-193P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s({y
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(
-%21domain.Noticia"domain.Noticiaâ
-Ü
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javas s(
+191*˜
+193U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javas s(Ä~
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javas s(
+%21domain.Noticia"domain.Noticiaé
+ã
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javas s(
 %22"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
 
 %21domain.Noticia*
@@ -114,135 +114,135 @@ subTitulo3java.lang.String*
 JUAN PELEGR√çN*
 MUNDODEPORTIVO*
 ""*
-192*µ#
-194P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javad d(Nµ
-≤
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javad d(O
+192*Ö$
+194U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javad d(N∫
+∑
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javad d(O
 titulo3java.lang.String"__id*;9
-7Seis jugadores del Sevilla, nominados al once de LaLiga˜
-Ù
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javae e(ã
+7Seis jugadores del Sevilla, nominados al once de LaLiga¸
+˘
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javae e(ã
 
 subTitulo3java.lang.String"__id*yw
-uBono, Jes√∫s Navas, Kound√©, Diego Carlos, Acu√±a y Joan Jord√°n optan al reconocimiento entre m√°s de 45 futbolistasÒ
-Ó
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf g(
+uBono, Jes√∫s Navas, Kound√©, Diego Carlos, Acu√±a y Joan Jord√°n optan al reconocimiento entre m√°s de 45 futbolistasˆ
+Û
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf g(
 %9java.lang.String"__concat*ÔÏ
 ÈSeis jugadores del Sevilla han sido nominados por LaLiga para la elecci√≥n del mejor once de la temporada 21-22, premios que se entregar√°n en una gala que ser√° presidida por Javier Tebas. A trav√©s de la aplicaci√≥n Player App, los aficionados al f√∫tbol podr√°n votar a los mejores jugadores de la Liga entre un total de 46 futbolistas de todos los equipos que conforman la Liga Santander. Adem√°s, un comit√© de expertos formado por periodistas tambi√©n participar√° en la votaci√≥n.\n*
-\n“
-œ
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf h(ª
+\n◊
+‘
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf h(ª
 %10java.lang.String"__concat*
 
 %9java.lang.String*ºπ
-∂Bono, Jes√∫s Navas, Kound√©, Diego Carlos, Acu√±a, Joan Jord√°n optan a formar parte de este once de estrellas a los que acompa√±ar√°n los cuatro siguientes jugadores m√°s votados.\nõ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf i(
+∂Bono, Jes√∫s Navas, Kound√©, Diego Carlos, Acu√±a, Joan Jord√°n optan a formar parte de este once de estrellas a los que acompa√±ar√°n los cuatro siguientes jugadores m√°s votados.\n†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf i(
 %11java.lang.String"__concat*
 
 %10java.lang.String*
-\nﬂ
-‹
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf j(R
+\n‰
+·
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf j(R
 %12java.lang.String"__concat*
 
 %11java.lang.String*JH
-FLa lista completa de nominados la forman los siguientes futbolistas:\nõ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf k(
+FLa lista completa de nominados la forman los siguientes futbolistas:\n†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf k(
 %13java.lang.String"__concat*
 
 %12java.lang.String*
-\n·
-ﬁ
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf l(Õ
+\nÊ
+„
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf l(Õ
 %14java.lang.String"__concat*
 
 %13java.lang.String* «
-ƒ-Porteros: Yassine Bounou (Sevilla FC); Thibaut Courtois (Real Madrid); Gero Rulli (Villarreal CF); Diego L√≥pez (RCD Espanyol); Jan Oblak (Atl√©tico de Madrid) y Mat√≠as Dituro (Celta de Vigo).\nõ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf m(
+ƒ-Porteros: Yassine Bounou (Sevilla FC); Thibaut Courtois (Real Madrid); Gero Rulli (Villarreal CF); Diego L√≥pez (RCD Espanyol); Jan Oblak (Atl√©tico de Madrid) y Mat√≠as Dituro (Celta de Vigo).\n†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf m(
 %15java.lang.String"__concat*
 
 %14java.lang.String*
-\nﬁ
-€
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf n(≈
+\n„
+‡
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf n(≈
 %16java.lang.String"__concat*
 
 %15java.lang.String*«ƒ
-¡-Defensas: Jordi Alba (FC Barcelona); Militao (Real Madrid); Marcos Acu√±a (Sevilla); Ronald Ara√∫jo (Barcelona); Le Normand (Real Sociedad); David Garc√≠a (CA Osasuna); Alaba (Real Madrid); √Ålex Moreno (Real Betis); √ç√±igo Mart√≠nez (Athletic Club); Diego Carlos (Sevilla); Kounde (Sevilla) y Jes√∫s Navas (Sevilla).\nõ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf o(
+¡-Defensas: Jordi Alba (FC Barcelona); Militao (Real Madrid); Marcos Acu√±a (Sevilla); Ronald Ara√∫jo (Barcelona); Le Normand (Real Sociedad); David Garc√≠a (CA Osasuna); Alaba (Real Madrid); √Ålex Moreno (Real Betis); √ç√±igo Mart√≠nez (Athletic Club); Diego Carlos (Sevilla); Kounde (Sevilla) y Jes√∫s Navas (Sevilla).\n†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf o(
 %17java.lang.String"__concat*
 
 %16java.lang.String*
-\nπ
-∂
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf p(§
+\næ
+ª
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf p(§
 %18java.lang.String"__concat*
 
 %17java.lang.String*¢ü
-ú-Centrocampistas: Kroos (Real Madrid); Casemiro (Real Madrid); Joan Jord√°n (Sevilla); Fekir (Betis); Muniain (Athletic Club); Modric (Real Madrid); Juanmi (Betis); Mikel Merino (Real Sociedad); Carlos Soler (Valencia CF); Canales (Betis); Lemar (Atl√©tico de Madrid); Pedri (Barcelona); Trejo (Rayo Vallecano); Brais M√©ndez (Celta); Capou√© (Villareal); Yeremi Pino (Villareal) y Frenkie De Jong (Barcelona).\nõ
-ò
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf q(
+ú-Centrocampistas: Kroos (Real Madrid); Casemiro (Real Madrid); Joan Jord√°n (Sevilla); Fekir (Betis); Muniain (Athletic Club); Modric (Real Madrid); Juanmi (Betis); Mikel Merino (Real Sociedad); Carlos Soler (Valencia CF); Canales (Betis); Lemar (Atl√©tico de Madrid); Pedri (Barcelona); Trejo (Rayo Vallecano); Brais M√©ndez (Celta); Capou√© (Villareal); Yeremi Pino (Villareal) y Frenkie De Jong (Barcelona).\n†
+ù
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf q(
 %19java.lang.String"__concat*
 
 %18java.lang.String*
-\n 
-«
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf r(≤
+\nœ
+Ã
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf r(≤
 %20java.lang.String"__concat*
 
 %19java.lang.String*≥∞
-≠-Delanteros: Benzema (Real Madrid); Vini Jr (Real Madrid); Aspas (Celta); Joao F√©lix (Atl√©tico de Madrid); Mikel Oyarzabal (Real Sociedad); Joselu (Deportivo Alav√©s); Raul de Tom√°s (Espanyol); Enes √únal (Getafe CF); √Ångel Correa (Atl√©tico de Madrid); Guedes (Valencia) y Borja Iglesias (Betis).ì
-ê
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaf r(≥
+≠-Delanteros: Benzema (Real Madrid); Vini Jr (Real Madrid); Aspas (Celta); Joao F√©lix (Atl√©tico de Madrid); Mikel Oyarzabal (Real Sociedad); Joselu (Deportivo Alav√©s); Raul de Tom√°s (Espanyol); Enes √únal (Getafe CF); √Ångel Correa (Atl√©tico de Madrid); Guedes (Valencia) y Borja Iglesias (Betis).ò
+ï
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaf r(≥
 texto3java.lang.String"__id*
 
 %20java.lang.String*
-193*ö
-130R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(∑
-¥
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(
+193*§
+130W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(º
+π
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(
 %35java.util.Locale"/java.util.Locale#getDefault()Ljava/util/Locale;*"
 java.util.Locale*
-129*Ì
-196Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(Æã
-à
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(Æ
+129*˜
+196V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaa a(Æê
+ç
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaa a(Æ
 no2domain.Noticia"__id*
 
 %7domain.Noticia*
-194*÷
-197Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠zx
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(
-%7domain.Noticia"domain.Noticia¯
-ı
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠
+194*Â
+197V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠}
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaa a(
+%7domain.Noticia"domain.Noticia˝
+˙
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠
 %8"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
 
 %7domain.Noticia*
@@ -252,24 +252,24 @@ FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaa a(≠
 	YUBO CHEN*	
 MARCA*
 ""*
-196*Ì
-198Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(íã
-à
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(í
+196*˜
+198V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java` `(íê
+ç
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java` `(í
 no1domain.Noticia"__id*
 
 %5domain.Noticia*
-197*∫
-199Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(ëzx
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(
-%5domain.Noticia"domain.Noticia‹
-Ÿ
-Q
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java` `(ë
+197*…
+199V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java` `(ë}
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java` `(
+%5domain.Noticia"domain.Noticia·
+ﬁ
+V
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java` `(ë
 %6"Çdomain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
 
 %5domain.Noticia*	
@@ -280,80 +280,88 @@ SUBTITULOS*"
 	YUBO CHEN*	
 MARCA*
 ""*
-198*Œ
-139R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(3Á‰
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(3
+198*ÿ
+139W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(3ÏÈ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(3
 %34boolean",java.util.Locale#equals(Ljava/lang/Object;)Z*
 
 %31java.util.Locale*
 
 %32java.util.Locale2equals(Ljava/lang/Object;)*	
-130
-10*“
-10R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaΩ Ω(ÚÔ
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaΩ Ω( 
+90
+130*Ù
+90W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java‡ ‡($é
+ã
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java‡ ‡(%
+CONTRASE√ëAjava.lang.String"__id*	
+12345*
+10*‹
+10W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaΩ Ω(˜Ù
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaΩ Ω( 
 %39";dataAccess.DataAccess#crearApuesta(LUsuario;DLPronostico;)I*
 dataAccess.DataAccess*
 ""*2
 *
 ""2$crearApuesta(LUsuario;DLPronostico;)*
-9*ñ
-140R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´- ´(1Å
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´& ´(,
-%32java.util.Locale"java.util.LocaleØ
-¨
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´" ´(2
+9*¶
+140W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java´- ´(1áÑ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java´& ´(,
+%32java.util.Locale"java.util.Locale¥
+±
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java´" ´(2
 %33",java.util.Locale#<init>(Ljava/lang/String;)V*
 
 %32java.util.Locale*
 es*
-139*ö
-141R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java™ ™(=∑
-¥
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(
+139*§
+141W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java™ ™(=º
+π
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java´ ´(
 %31java.util.Locale"/java.util.Locale#getDefault()Ljava/util/Locale;*"
 java.util.Locale*
-140*p
-0 "i
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÃ Ã(
-implicit return*«
-2R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(Ä
-~
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(
+140*u
+0 "n
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÃ Ã(
+implicit return*◊
+2W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(Ü
+É
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(
 %47java.io.PrintStream"__id*
-""Â‚
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(*
+""ÍÁ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java∆ ∆(*
 %48void"0java.io.PrintStream#println(Ljava/lang/String;)V*
 
 %47java.io.PrintStream*
 Db initialized2println(Ljava/lang/String;)*
-0*
-189R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(wç
-ä
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(w
+0*˙
+189W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(wí
+è
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÄ Ä(w
 no4domain.Noticia"__id*
 
 %29domain.Noticia*
-141*≈
-3R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(Ê„
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(;
+141*œ
+3W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(ÎË
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(;
 %46"edataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;*
 dataAccess.DataAccess*
 
@@ -362,11 +370,11 @@ FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≈ ≈(
 ""*$
 "
 formatDateTimejava.lang.String2BcreateComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)*
-2*“
-4R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(Û
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(G
+2*‹
+4W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(¯ı
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(G
 %45"edataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;*
 dataAccess.DataAccess*
 Va a ganar Atletico*
@@ -374,17 +382,17 @@ FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaƒ ƒ(
 ""*$
 "
 formatDateTimejava.lang.String2BcreateComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)*
-3*‚
-5R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(1ú
-ô
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(1"
+3*Ò
+5W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(1°
+û
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(1"
 formatDateTimejava.lang.String"__id*
 
-%43java.lang.String‰·
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java√ √(8
+%43java.lang.StringÈÊ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java√ √(8
 %44"edataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;*
 dataAccess.DataAccess*
 Hola*
@@ -392,117 +400,117 @@ FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java√ √(
 ""*$
 "
 formatDateTimejava.lang.String2BcreateComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)*
-4*Ä
-203P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z()m
-k
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java\ \(%	
+4*è
+203U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z()r
+p
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java\ \(%	
 %3int"__id*
-""∞≠
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java\ \(&	
+""µ≤
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java\ \(&	
 %4int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
 	
 %3int2get(I)*
-199*‚
-6R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(T∏
-µ
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(T,
+199*Ò
+6W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(TΩ
+∫
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(T,
 format"java.time.format.DateTimeFormatter"__id*+
 )
-%42"java.time.format.DateTimeFormatter»≈
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(0
+%42"java.time.format.DateTimeFormatterÕ 
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java¡ ¡(0
 %43java.lang.String"Vjava.time.LocalDateTime#format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;* 
 
 nowjava.time.LocalDateTime*.
 ,
 format"java.time.format.DateTimeFormatter2,format(Ljava/time/format/DateTimeFormatter;)*
-5*ó
-204P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaX X(-î
-ë
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaX X(-
+5*´
+204U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaX X(-ô
+ñ
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaX X(-
 todayjava.util.Calendar"__id*
 
-%0java.util.Calendarm
-k
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z('	
+%0java.util.Calendarr
+p
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z('	
 %1int"__id*
-""∞≠
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z((	
+""µ≤
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaZ Z((	
 %2int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
 	
 %1int2get(I)*
-203*…
-128R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(8Á‰
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(8
+203*”
+128W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(8ÏÈ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥ ≥(8
 %38boolean",java.util.Locale#equals(Ljava/lang/Object;)Z*
 
 %35java.util.Locale*
 
 %36java.util.Locale2equals(Ljava/lang/Object;)*
-10*™
-7R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(.ü
-ú
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(.
+90*π
+7W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(.§
+°
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(.
 nowjava.time.LocalDateTime"__id* 
 
-%41java.time.LocalDateTime©
-¶
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java¿! ¿(S)
+%41java.time.LocalDateTimeÆ
+´
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java¿! ¿(S)
 %42"java.time.format.DateTimeFormatter"djava.time.format.DateTimeFormatter#ofPattern(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;*&"$
 "java.time.format.DateTimeFormatter*
 dd-MM-yyyy HH:mm:ss*
-6*û
-205P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaV V(=Ω
-∫
-P
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaX X(,
+6*®
+205U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaV V(=¬
+ø
+U
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaX X(,
 %0java.util.Calendar"4java.util.Calendar#getInstance()Ljava/util/Calendar;*"
 java.util.Calendar*
-204*ñ
-129R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥2 ≥(6Å
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥+ ≥(1
-%36java.util.Locale"java.util.LocaleØ
-¨
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.java≥' ≥(7
+204*¶
+129W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥2 ≥(6áÑ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥+ ≥(1
+%36java.util.Locale"java.util.Locale¥
+±
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java≥' ≥(7
 %37",java.util.Locale#<init>(Ljava/lang/String;)V*
 
 %36java.util.Locale*
 en*
-128*´
-8R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø('Ã
-…
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(-
+128*µ
+8W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø('—
+Œ
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(-
 %41java.time.LocalDateTime"6java.time.LocalDateTime#now()Ljava/time/LocalDateTime;*"
 java.time.LocalDateTime*
-7*—
-9R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaæ æ(ÚÔ
-R
-FC:/Users/34600/git/IS2/Bets21/src/main/java/dataAccess/DataAccess.javaæ æ( 
+7*€
+9W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaæ æ(˜Ù
+W
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaæ æ( 
 %40";dataAccess.DataAccess#crearApuesta(LUsuario;DLPronostico;)I*
 dataAccess.DataAccess*
 ""*2*
