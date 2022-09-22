@@ -1,16 +1,16 @@
 
 dataAccess.DataAccess#createNoticia(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldomain/Noticia;W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java× ×("6*Œ
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÕ Õ("6*Œ
 2W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(
 }
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(
 nodomain.Noticia"__id*
 ""¤
 ¡
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(
 nodomain.Noticia"
 __arrayGet*
 
@@ -19,20 +19,20 @@ __arrayGet*
 4
 1*¿
 3W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâB â(F"a
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaàB à(F"a
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ; â(G
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà; à(G
 ""*›
 4W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(!ÅÂ
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(!ÅÂ
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(,
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(,
 %7java.lang.String"+domain.Noticia#getTexto()Ljava/lang/String;*
 
 nodomain.Noticia2
 getTexto()ìé
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(:
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(:
 %8boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
 
 %7java.lang.String*
@@ -41,26 +41,26 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ
 2
 3*æ
 6W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaØ Ø(Ä
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÖ Ö(Ä
 Á
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaØ Ø()
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÖ Ö()
 %0java.util.Calendar"4java.util.Calendar#getInstance()Ljava/util/Calendar;*"
 java.util.Calendar›
 ˜
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaØ Ø(*
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÖ Ö(*
 todayjava.util.Calendar"__id*
 
 %0java.util.Calendart
 r
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÙ Ù()	
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java× ×()	
 %1int"__id*
 ""·´
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÙ
- Ù(*	
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java×
+ ×(*	
 %2int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
@@ -68,11 +68,11 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÙ
 %1int2get(I)t
 r
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÚ Ú($	
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaØ Ø($	
 %3int"__id*
 ""·´
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÚ Ú(%	
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaØ Ø(%	
 %4int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
@@ -80,11 +80,11 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÚ
 %3int2get(I)t
 r
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÜ Ü("	
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÚ Ú("	
 %5int"__id*
 ""·´
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÜ Ü(#	
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÚ Ú(#	
 %6int"java.util.Calendar#get(I)I*
 
 todayjava.util.Calendar*
@@ -92,24 +92,24 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÜ
 %5int2get(I)
 
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaİ İ(1
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÛ Û(1
 datajava.util.Date"__id*
 ""†
 ƒ
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(1
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaŞ Ş(1
 noticiasjava.util.List"__id*
 ""*
 2
 1*¡
 1W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaã ã(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaá á(
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaä ä(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(
 %9domain.Noticia"domain.Noticia¶
 ³
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaä ä(N
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(N
 %10"‚domain.Noticia#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V*
 
 %9domain.Noticia*
@@ -127,12 +127,12 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaä
 datajava.util.Date‘
 
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaä ä(O
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(O
 notdomain.Noticia"__id*
 
 %9domain.Noticia"r
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaç ç(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaå å(
 
 notdomain.Noticia:
 titulojava.lang.String:

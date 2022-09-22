@@ -3456,7 +3456,7 @@ $setLigaSelection(Ljava/lang/String;);gui.CreateAndQueryGUI#setLigaSelection(Lj
 	destroy() gui.CreateAndQueryGUI#destroy()Vù
 AjButtonVerHistorial_actionPerformed(Ljava/awt/event/ActionEvent;)Xgui.CreateAndQueryGUI#jButtonVerHistorial_actionPerformed(Ljava/awt/event/ActionEvent;)Vè
 :jButtonClose_actionPerformed(Ljava/awt/event/ActionEvent;)Qgui.CreateAndQueryGUI#jButtonClose_actionPerformed(Ljava/awt/event/ActionEvent;)VO
-<init>(Ljava/util/Vector;)1gui.CreateAndQueryGUI#<init>(Ljava/util/Vector;)V∞
+<init>(Ljava/util/Vector;)1gui.CreateAndQueryGUI#<init>(Ljava/util/Vector;)V”
 domain.Questionjava.lang.Objectjava.io.Serializablea
 &setQuestionNumber(Ljava/lang/Integer;)7domain.Question#setQuestionNumber(Ljava/lang/Integer;)V<
 getResult()-domain.Question#getResult()Ljava/lang/String;3
@@ -3465,8 +3465,7 @@ AjButtonVerHistorial_actionPerformed(Ljava/awt/event/ActionEvent;)Xgui.CreateAn
 getEvent()(domain.Question#getEvent()Ldomain/Event;ç
 <<init>(Ljava/lang/Integer;Ljava/lang/String;FLdomain/Event;)Mdomain.Question#<init>(Ljava/lang/Integer;Ljava/lang/String;FLdomain/Event;)V:
 
-toString(),domain.Question#toString()Ljava/lang/String;[
-#DoesPrnosExists(Ljava/lang/String;)4domain.Question#DoesPrnosExists(Ljava/lang/String;)Z-
+toString(),domain.Question#toString()Ljava/lang/String;-
 isIsclosed()domain.Question#isIsclosed()Zg
 )<init>(Ljava/lang/String;FLdomain/Event;):domain.Question#<init>(Ljava/lang/String;FLdomain/Event;)VS
 setQuestion(Ljava/lang/String;)0domain.Question#setQuestion(Ljava/lang/String;)V4

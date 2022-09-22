@@ -429,6 +429,7 @@ public class DataAccess  {
 		Event ev = db.find(Event.class, event.getEventNumber());
 		return ev.DoesQuestionExists(question);
 		
+	
 	}
 	public void close(){
 			db.close();
@@ -445,6 +446,10 @@ public class DataAccess  {
 		System.out.println(">> DataAccess: createUser=> User: "+ userName +" registered");
 		return true;
 	}
+	
+	
+	
+	
 	public Usuario login(String uName, String pass) {
 		Usuario u = db.find(Usuario.class,uName);
 		if(u==null)return null;
@@ -477,6 +482,10 @@ public class DataAccess  {
 	    db.getTransaction().commit();
 		return u;
 	}
+	
+	
+	
+
 	public Event createEvent(String inputDescription, Date firstDay) throws UnknownTeamException {
 		
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
@@ -485,10 +494,8 @@ public class DataAccess  {
 		List<Event> eventos = query.getResultList();
 		if(eventos!=null) 
 			for(Event e: eventos)if(e.getDescription().equals(inputDescription))return null;
-		
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);
-		
 		String[] equipos=inputDescription.split("-");
 		Equipo local= db.find(Equipo.class,equipos[0]);
 		Equipo visitante=db.find(Equipo.class,equipos[1]);
@@ -512,10 +519,8 @@ public class DataAccess  {
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
 		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
 		query.setParameter(1, firstDay);
-		List<Event> eventos = query.getResultList();
-		if(eventos!=null) {
-			
-			for(Event e: eventos) {
+		List<Event> eventos = query.getResultList();		
+		for(Event e: eventos) {
 				if(e.getDescription().equals(inputDescription))throw new EventAlreadyExistsException();
 				String [] equipos=e.getDescription().split("-");
 				
@@ -523,10 +528,7 @@ public class DataAccess  {
 				
 				if(local.getNombre().equals(equipos[0])||local.getNombre().equals(equipos[1])) return null;
 				if(visitante.getNombre().equals(equipos[0])||visitante.getNombre().equals(equipos[1])) return null;
-			}
-			
 		}
-			
 		
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);

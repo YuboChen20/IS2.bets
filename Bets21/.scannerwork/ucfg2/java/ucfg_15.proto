@@ -1,16 +1,16 @@
 
 KdataAccess.DataAccess#getNoticiasAuthor(Ljava/lang/String;)Ljava/util/List;W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaò ò('"5*Œ
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javað ð('"5*Œ
 2W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö(
 }
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö(
 nodomain.Noticia"__id*
 ""¤
 ¡
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö(
 nodomain.Noticia"
 __arrayGet*
 
@@ -19,14 +19,14 @@ __arrayGet*
 3
 1*Ø
 3W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø("…
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö("…
 ‚
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(&
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö(&
 %3java.io.PrintStream"__id*
 ""ìé
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø ø(2
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö(2
 
 %4void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
 
@@ -35,14 +35,14 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaø
 nodomain.Noticia2println(Ljava/lang/Object;)*
 2*Å
 5W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaó ó(…
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javañ ñ(…
 ‚
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaó ó(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javañ ñ(
 %0java.io.PrintStream"__id*
 ""ú÷
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaó ó(8
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javañ ñ(8
 
 %1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
 
@@ -50,12 +50,12 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaó
  >> DataAccess: getNoticiasAuthor2println(Ljava/lang/String;)†
 ƒ
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaö ö(1
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaô ô(1
 noticiasjava.util.List"__id*
 ""Ó
 Ð
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java÷ ÷(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaõ õ(
 
 %2void"0java.util.Collections#reverse(Ljava/util/List;)V*"
 java.util.Collections*
@@ -63,10 +63,10 @@ KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java÷
 noticiasjava.util.List*
 2*Õ
 1W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaù
- ù("w
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java÷
+ ÷("w
 W
-KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.javaù ù(
+KC:/Users/34600/git/IS2.bets/Bets21/src/main/java/dataAccess/DataAccess.java÷ ÷(
 
 noticiasjava.util.List:
 autjava.lang.StringB

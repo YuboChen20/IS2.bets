@@ -1,0 +1,89 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-09-22 09:31:35 #1 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' is opened by 72224@LAPTOP-ILS8TMDB
+
+[2022-09-22 09:31:35 #2 type.registry] 
+New type domain.Noticia
+
+[2022-09-22 09:31:35 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-09-22 09:31:35 #4 type.registry] 
+New type domain.Liga
+
+[2022-09-22 09:31:35 #5 type] 
+Type domain.Liga is not enhanced.
+
+[2022-09-22 09:31:35 #6 type.registry] 
+New type domain.Equipo
+
+[2022-09-22 09:31:35 #7 type.registry] 
+New type java.util.Vector<domain.Equipo>
+
+[2022-09-22 09:31:35 #8 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-09-22 09:31:35 #9 type.registry] 
+New type domain.Event
+
+[2022-09-22 09:31:35 #10 type.registry] 
+New type java.util.Vector<domain.Event>
+
+[2022-09-22 09:31:35 #11 type] 
+Type domain.Event is not enhanced.
+
+[2022-09-22 09:31:35 #12 type.registry] 
+New type domain.Comentarios
+
+[2022-09-22 09:31:35 #13 type.registry] 
+New type java.util.Vector<domain.Comentarios>
+
+[2022-09-22 09:31:35 #14 type.registry] 
+New type domain.Question
+
+[2022-09-22 09:31:35 #15 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-09-22 09:31:35 #16 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-09-22 09:31:35 #17 type.registry] 
+New type domain.Usuario
+
+[2022-09-22 09:31:35 #18 type] 
+Type domain.Question is not enhanced.
+
+[2022-09-22 09:31:35 #19 type.registry] 
+New type domain.Pronostico
+
+[2022-09-22 09:31:35 #20 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-09-22 09:31:35 #21 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-09-22 09:31:35 #22 type.registry] 
+New type domain.Entrada
+
+[2022-09-22 09:31:35 #23 type.registry] 
+New type java.util.Vector<domain.Entrada>
+
+[2022-09-22 09:31:35 #24 type.registry] 
+New type domain.Bet
+
+[2022-09-22 09:31:35 #25 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-09-22 09:31:35 #26 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-09-22 09:31:35 #27 type] 
+Type domain.Entrada is not enhanced.
+
+[2022-09-22 09:31:35 #28 type] 
+Type domain.Bet is not enhanced.
+
+[2022-09-22 09:31:35 #29 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
