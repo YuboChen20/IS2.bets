@@ -512,19 +512,17 @@ public class DataAccess  {
 		
 	}
 	
-	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws UnknownTeamException, EventAlreadyExistsException {
+	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws  EventAlreadyExistsException {
 		String inputDescription=local.getNombre()+"-"+visitante.getNombre();
-		String reverseDescription=visitante.getNombre()+"-"+ local.getNombre();
 		
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
 		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
 		query.setParameter(1, firstDay);
-		List<Event> eventos = query.getResultList();		
+		List<Event> eventos = query.getResultList();	
 		for(Event e: eventos) {
 				if(e.getDescription().equals(inputDescription))throw new EventAlreadyExistsException();
 				String [] equipos=e.getDescription().split("-");
 				
-				//if(e.getDescription().equals(inputDescription)||e.getDescription().equals(reverseDescription))return null;
 				
 				if(local.getNombre().equals(equipos[0])||local.getNombre().equals(equipos[1])) return null;
 				if(visitante.getNombre().equals(equipos[0])||visitante.getNombre().equals(equipos[1])) return null;
@@ -537,8 +535,7 @@ public class DataAccess  {
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 		
-		for(Pronostico p: ev.getQuestions().get(0).getPronosticos())System.out.println(p.getCuota());
-		
+
 		db.getTransaction().commit();
 		return ev;
 	}
