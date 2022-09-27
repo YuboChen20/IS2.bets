@@ -584,7 +584,7 @@ public class CreateAndQueryGUI extends JFrame {
 						double cuota= Double.parseDouble(textFieldCuota.getText());
 					
 					
-					if (pr.length() > 0 & i>=0) {
+					if (pr.length() > 0 && i>=0) {
 
 							// Obtain the business logic from a StartWindow class (local or remote)
 							BLFacade facade = MainGUI.getBusinessLogic();

@@ -23,9 +23,20 @@ public class Comentarios {
 	private Usuario user;
 	private String date;
 	
-	public Comentarios (String text , Event evento, Usuario user, String date) {
+	public Comentarios() {
+		super();
+	}
+	
+	public Comentarios (Integer comtNumber,String text , Event evento, Usuario user, String date) {
 		super();
 		this.comtNumber=comtNumber;
+		this.text=text;
+		this.evento=evento;
+		this.user=user;
+		this.date=date;
+	}
+	public Comentarios (String text , Event evento, Usuario user, String date) {
+		super();
 		this.text=text;
 		this.evento=evento;
 		this.user=user;

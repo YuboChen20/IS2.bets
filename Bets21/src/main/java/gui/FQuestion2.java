@@ -107,7 +107,6 @@ public class FQuestion2 extends JFrame {
 				tablePronosticos.setRowSelectionInterval(i1, i1);
 				
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		

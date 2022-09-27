@@ -79,6 +79,14 @@ public class Equipo {
 		return true;
 	}
 	
+	 @Override
+	  public int hashCode() {
+		 int prime = 31;
+		 int result = 1;
+		 result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		 return result;
+	  }
+	
 	@Override
 	public String toString() {
 		return nombre;
