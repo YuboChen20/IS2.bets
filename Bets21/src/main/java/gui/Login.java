@@ -83,7 +83,7 @@ public class Login extends JFrame {
 		
 				   BLFacade facade = MainGUI.getBusinessLogic();
 				   Usuario user = facade.login(us, ps);
-				   if(user==null & tipoError==null) tipoError="n";
+				   if(user==null && tipoError==null) tipoError="n";
 				   if(tipoError==null){
 					   if(user.isAdmin()) {
 						   if(user.isBloqueado())editorPane.setText("Administrador bloqueado");

@@ -172,7 +172,6 @@ public class BLFacadeImplementation  implements BLFacade {
 			throw new EventFinishedException(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
 				
 		
-		 //qry=dbManager.createQuestion(event,question,betMinimum);	
 		 ev=dbManager.createEvent(inputDescription,firstDay);
 		dbManager.close();
 		
@@ -245,8 +244,7 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     @WebMethod public boolean isEventoCerrar(Date date,Event evento) {
     	Vector<Event> vec= this.getEventosAc(date);
-    	boolean res=vec.contains(evento);
-    	return res;
+    	return vec.contains(evento);
     }
     
     @WebMethod public void cerrarApuesta(Pronostico prono) {

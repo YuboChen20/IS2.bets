@@ -61,7 +61,6 @@ public class OtrasApuestasGUI extends JFrame {
 			try {
 				jbInit(event1,date1,i1);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
