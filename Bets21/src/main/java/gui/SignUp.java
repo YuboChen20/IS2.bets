@@ -127,9 +127,9 @@ public class SignUp extends JFrame {
 			   String code= numTarjeta.getText();
 			   	   
 			   if (code.length()!=12 && tipoError==null) tipoError="n";
-			   String correo = correoField.getText();		
+			   String correo = correoField.getText();
 		
-			   	Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+			   	Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
 			   
 		        Matcher mather = pattern.matcher(correo);
 		        if(!mather.find()) tipoError= "c";
