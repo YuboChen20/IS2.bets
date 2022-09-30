@@ -81,9 +81,7 @@ public class Liga {
 		if (getClass() != obj.getClass())
 			return false;
 		Liga other = (Liga) obj;
-		if (nombre != other.nombre)
-			return false;
-		return true;
+		return nombre == other.nombre;
 	}
 	
 	
