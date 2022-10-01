@@ -58,13 +58,13 @@ public class CloseBetGUI extends JFrame {
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
 	private final JButton jButtonCerrarEvento = new JButton(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.btnNewButton_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblNewLabel2 = new JLabel(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3 = new JLabel(); 
 	private final JLabel lblNewLabel_3_1 = new JLabel();
 	private final JButton jButtonCerrarConsulta = new JButton("Cerrar Consulta"); //$NON-NLS-1$ //$NON-NLS-2$
-	private final JButton btnButtonCerrarApuesta = new JButton(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton btnAtras = new JButton(ResourceBundle.getBundle(etiqueta).getString("CloseBetGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblFecha = new JLabel(ResourceBundle.getBundle(etiqueta).getString("CloseBetGUI.lblNewLabel.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	String errorPronosNoSelect = "ErrorPronosNoSelect";
 	
 	
 	public CloseBetGUI(Vector<domain.Event> v) {
@@ -119,7 +119,7 @@ public class CloseBetGUI extends JFrame {
 			            	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 						}catch(Exception e1) {
 							e1.printStackTrace();
-							lblNewLabel_3.setText(ResourceBundle.getBundle(etiqueta).getString("ErrorPronosNoSelect"));
+							lblNewLabel_3.setText(ResourceBundle.getBundle(etiqueta).getString(errorPronosNoSelect));
 						}
 						
 					}
@@ -271,7 +271,7 @@ public class CloseBetGUI extends JFrame {
 					}
 				}catch(Exception e1) {
 					e1.printStackTrace();
-					lblNewLabel_3.setText(ResourceBundle.getBundle(etiqueta).getString("ErrorPronosNoSelect"));
+					lblNewLabel_3.setText(ResourceBundle.getBundle(etiqueta).getString(errorPronosNoSelect));
 				}
 			}
 		});
@@ -297,10 +297,10 @@ public class CloseBetGUI extends JFrame {
 		});
 		
 		getContentPane().add(jButtonCerrarEvento);
-		lblNewLabel_2.setBounds(54, 195, 112, 13);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblNewLabel2.setBounds(54, 195, 112, 13);
+		lblNewLabel2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
-		getContentPane().add(lblNewLabel_2);
+		getContentPane().add(lblNewLabel2);
 		lblNewLabel_3.setBounds(155, 195, 149, 13);
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
@@ -374,7 +374,7 @@ public class CloseBetGUI extends JFrame {
             	tablePronosticos.getColumnModel().getColumn(1).setPreferredWidth(268);
 			}catch(Exception e1) {
 				e1.printStackTrace();
-				lblNewLabel_3.setText(ResourceBundle.getBundle(etiqueta).getString("ErrorPronosNoSelect"));
+				lblNewLabel_3.setText(ResourceBundle.getBundle(etiqueta).getString(errorPronosNoSelect));
 			}
            
 			}
