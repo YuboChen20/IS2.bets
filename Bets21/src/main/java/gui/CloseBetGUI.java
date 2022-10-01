@@ -57,7 +57,6 @@ public class CloseBetGUI extends JFrame {
 	private final JScrollPane scrollPanePronostico = new JScrollPane();
 	private final JTable tablePronosticos = new JTable();
 	private DefaultTableModel tableModelPronostico;
-	private final JButton jButtonListaEventosFinalizados = new JButton(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.btnNewButton_1.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton jButtonCerrarEvento = new JButton(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.btnNewButton_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_2 = new JLabel(ResourceBundle.getBundle(etiqueta).getString("CreateAndQueryGUI.lblNewLabel_2.text")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_3 = new JLabel(); 

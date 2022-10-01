@@ -51,7 +51,7 @@ public class Question implements Serializable {
 		this.NºApuesta=0;
 		this.event = event;
 		this.Isclosed=false;
-	};
+	}
 	
 	public Vector<Pronostico> getListPronosticos() {
 		return pronosticos;

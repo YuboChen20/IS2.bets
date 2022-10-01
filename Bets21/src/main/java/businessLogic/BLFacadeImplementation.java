@@ -30,15 +30,15 @@ import exceptions.UnknownTeamException;
  */
 @WebService(endpointInterface = "businessLogic.BLFacade")
 public class BLFacadeImplementation  implements BLFacade {
-	static final String ini="initialize";
+	static final String INI="initialize";
 	DataAccess dbManager;
 
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
 		ConfigXML c=ConfigXML.getInstance();
 		
-		if (c.getDataBaseOpenMode().equals(ini)) {
-		    dbManager=new DataAccess(c.getDataBaseOpenMode().equals(ini));
+		if (c.getDataBaseOpenMode().equals(INI)) {
+		    dbManager=new DataAccess(c.getDataBaseOpenMode().equals(INI));
 		    dbManager.initializeDB();
 		    } else
 		     dbManager=new DataAccess();
@@ -52,7 +52,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
 		ConfigXML c=ConfigXML.getInstance();
 		
-		if (c.getDataBaseOpenMode().equals(ini)) {
+		if (c.getDataBaseOpenMode().equals(INI)) {
 			da.open(true);
 			da.initializeDB();
 			da.close();
