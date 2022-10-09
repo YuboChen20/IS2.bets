@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getNoticiasMonth(Ljava/util/Date;)Ljava/util/List;
+businessLogic.BLFacadeImplementation#getEventosFinalizadosNoCerrados(Ljava/util/Date;)Ljava/util/Vector;

@@ -1,2 +1,1 @@
-domain.Pronostico#toString()Ljava/lang/String;
-java.lang.Float#toString(F)Ljava/lang/String;
+domain.Pronostico#getQuestion()LQuestion;

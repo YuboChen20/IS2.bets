@@ -1,1 +1,1 @@
-configuration.ConfigXML#isBusinessLogicLocal()Z
+configuration.ConfigXML#getDatabasePort()I

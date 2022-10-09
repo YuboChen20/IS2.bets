@@ -1,1 +1,1 @@
-domain.Usuario#addCom(Ldomain/Comentarios;)Ldomain/Comentarios;
+domain.Usuario#setApuestas(Ljava/util/Vector;)V

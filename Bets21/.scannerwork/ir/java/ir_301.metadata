@@ -1,1 +1,1 @@
-domain.Pronostico#setCuota(D)V
+domain.Pronostico#getApuestas()Ljava/util/Vector;

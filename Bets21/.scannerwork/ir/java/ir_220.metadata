@@ -1,1 +1,1 @@
-domain.Comentarios#setEvento(LEvent;)V
+domain.Comentarios#setText(Ljava/lang/String;)V

@@ -1,1 +1,1 @@
-configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;
+configuration.ConfigXML#getTagValue(Ljava/lang/String;Lorg/w3c/dom/Element;)Ljava/lang/String;

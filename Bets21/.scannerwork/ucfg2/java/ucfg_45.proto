@@ -1,17 +1,17 @@
 
-.domain.Noticia#getFechaPubli()Ljava/util/Date;N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java\ \("1*”
-1N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java]	 ](ì
-ê
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java]	 ](
+.domain.Noticia#getFechaPubli()Ljava/util/Date;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java\ \("1*Ë
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java]	 ](ö
+ó
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java]	 ](
 %0java.util.Date"__id*"* 
 domain.Noticia"
 
-fechaPubli"h
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.java] ](
+fechaPubli"o
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java] ](
 
 %0java.util.DateB
 domain.Noticia

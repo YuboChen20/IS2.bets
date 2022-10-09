@@ -1,1 +1,1 @@
-exceptions.TeamAlreadyExistsException#instance-init#
+configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;

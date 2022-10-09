@@ -1,3 +1,1 @@
-domain.Usuario#instance-init#
-java.util.Vector#<init>()V
-java.util.Vector#instance-init#
+domain.Liga#setNumEquipos(I)V

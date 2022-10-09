@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#aumentarDinero(Ldomain/Usuario;D)V
+businessLogic.BLFacadeImplementation#getBet(Ldomain/Usuario;)Ljava/util/List;

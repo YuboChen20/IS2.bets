@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#cerrarEvento(LEvent;)V
+businessLogic.BLFacadeImplementation#getQuestion(LEvent;I)LQuestion;

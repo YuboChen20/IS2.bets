@@ -1,44 +1,17 @@
 
-XbusinessLogic.BLFacadeImplementation#crearApuesta(Ldomain/Usuario;DLdomain/Pronostico;)If
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰ ‰(&"startingBlock*Ü
-startingBlockf
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰& ‰(M¶
-£
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰ ‰(
-%0"
-__annotate*
-	WebMethod*
-
-userdomain.Usuarioô
-ñ
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰/ ‰(3
-userdomain.Usuario"__annotation*
-
-%0¶
-£
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰ ‰(
-%1"
-__annotate*
-	WebMethod*
-
-pdomain.Pronosticoô
-ñ
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰K ‰(L
-pdomain.Pronostico"__annotation*
-
-%1*
-1*›
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÂ Â("p
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaË
- Ë(
-"":
-userdomain.Usuario:
-"":
-pdomain.PronosticoB(&
+`businessLogic.BLFacadeImplementation#login(Ljava/lang/String;Ljava/lang/String;)Ldomain/Usuario;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaù ù("1*ì
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaû û(	ï
+í
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaü ü(,
+udomain.Usuario"__id*
+"""Ü
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java° °(
+
+udomain.Usuario:
+userjava.lang.String:
+passjava.lang.StringB(&
 $businessLogic.BLFacadeImplementation

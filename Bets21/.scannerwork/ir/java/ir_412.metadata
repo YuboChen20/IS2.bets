@@ -1,1 +1,1 @@
-configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;
+configuration.ConfigXML#getPassword()Ljava/lang/String;

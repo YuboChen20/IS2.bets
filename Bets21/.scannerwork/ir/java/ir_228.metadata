@@ -1,8 +1,1 @@
-businessLogic.BLFacadeImplementation#<init>(LDataAccess;)V
-configuration.UtilDate#newDate(III)Ljava/util/Date;
-java.time.LocalDateTime#getYear()I
-java.time.LocalDateTime#getMonthValue()I
-java.lang.String#equals(Ljava/lang/Object;)Z
-configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;
-java.time.LocalDateTime#now()Ljava/time/LocalDateTime;
-java.time.LocalDateTime#getDayOfMonth()I
+businessLogic.BLFacadeImplementation#instance-init#

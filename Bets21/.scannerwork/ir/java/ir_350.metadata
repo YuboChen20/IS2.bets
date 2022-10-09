@@ -1,1 +1,1 @@
-domain.Usuario#addDinero(D)V
+domain.Usuario#getApuestas()Ljava/util/Vector;

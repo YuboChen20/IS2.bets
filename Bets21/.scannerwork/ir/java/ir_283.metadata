@@ -1,1 +1,2 @@
-domain.Pronostico#<init>(Ljava/lang/Integer;Ljava/lang/String;LQuestion;D)V
+domain.Pronostico#instance-init#
+java.util.Vector#<init>()V

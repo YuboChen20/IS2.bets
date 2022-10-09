@@ -1,1 +1,2 @@
-domain.Equipo#setNumUsuariosApuestan(D)V
+domain.Equipo#hashCode()I
+java.lang.String#hashCode()I

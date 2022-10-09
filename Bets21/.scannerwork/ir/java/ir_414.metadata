@@ -1,1 +1,1 @@
-configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;
+configuration.ConfigXML#isBusinessLogicLocal()Z

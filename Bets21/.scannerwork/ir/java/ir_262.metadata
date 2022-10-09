@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getAllNoticiasMedio()Ljava/util/List;
+businessLogic.BLFacadeImplementation#getAllNoticiasAuthor()Ljava/util/List;

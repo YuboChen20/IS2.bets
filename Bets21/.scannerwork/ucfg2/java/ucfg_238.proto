@@ -1,49 +1,48 @@
 
-fbusinessLogic.BLFacadeImplementation#getUsuario(Ljava/lang/String;Ljava/lang/String;I)Ldomain/Usuario;f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ ñ("startingBlock*Ñ
-startingBlockf
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ ñ(:•
-¢
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
+fbusinessLogic.BLFacadeImplementation#getUsuarios(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç ç(%"startingBlock*ß
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç% ç(:¨
+©
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaå å(
 %0"
 __annotate*
 	WebMethod*
 
-sjava.lang.Stringò
-ï
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ& ñ('
+sjava.lang.Stringü
+ú
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç- ç(.
 sjava.lang.String"__annotation*
 
-%0¶
-£
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
+%0≠
+™
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaå å(
 %1"
 __annotate*
 	WebMethod*
 
-s2java.lang.Stringô
-ñ
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ0 ñ(2
+s2java.lang.String†
+ù
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç7 ç(9
 s2java.lang.String"__annotation*
 
 %1*
-1*˝
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaó ó(é
-ã
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaò ò(+
-udomain.Usuario"__id*
-"""
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaö ö(
-
-udomain.Usuario:
+1*°
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaé é(ú
+ô
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè è(7
+usuariosjava.util.List"__id*
+"""ç
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaë ë(
+
+usuariosjava.util.List:
 sjava.lang.String:
-s2java.lang.String:
-""B(&
+s2java.lang.StringB(&
 $businessLogic.BLFacadeImplementation

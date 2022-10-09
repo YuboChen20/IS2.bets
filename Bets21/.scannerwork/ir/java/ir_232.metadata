@@ -1,2 +1,1 @@
-businessLogic.BLFacadeImplementation#close()V
-null
+businessLogic.BLFacadeImplementation#getEvents(Ljava/util/Date;)Ljava/util/Vector;

@@ -610,7 +610,7 @@ public class DataAccess  {
 		return b;
 		
 	}
-
+ 
 	public int crearApuesta(Usuario user,double apuesta,Pronostico pos ) {
 		Usuario u= db.find(Usuario.class,user.getUserName());
 		Pronostico p= db.find(Pronostico.class,pos.getPronosNumber());

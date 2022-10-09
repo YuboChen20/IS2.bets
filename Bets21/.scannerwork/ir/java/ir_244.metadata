@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#isEventoCerrar(Ljava/util/Date;LEvent;)Z
+businessLogic.BLFacadeImplementation#aumentarDinero(Ldomain/Usuario;D)V

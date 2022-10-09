@@ -1,9 +1,16 @@
 
-/configuration.ConfigXML#isBusinessLogicLocal()ZW
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaE E($"1*¿
-1W
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaF	 F("a
-W
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaF F(
-""B
+3configuration.ConfigXML#getUser()Ljava/lang/String;^
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java9 9("1*Š
+1^
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java:	 :(¨
+¥
+^
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java:	 :(
+%0java.lang.String"__id*%*#
+configuration.ConfigXML"
+user"z
+^
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java: :(
+
+%0java.lang.StringB
 configuration.ConfigXML

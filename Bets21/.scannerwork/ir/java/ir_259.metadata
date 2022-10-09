@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#createNoticia(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LNoticia;
+businessLogic.BLFacadeImplementation#getAllNoticias()Ljava/util/List;

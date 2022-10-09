@@ -1,2 +1,2 @@
-domain.Usuario#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
-java.util.Vector#<init>()V
+domain.Liga#hashCode()I
+java.lang.String#hashCode()I

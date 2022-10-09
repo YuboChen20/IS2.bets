@@ -1,6 +1,4 @@
-businessLogic.BLFacadeImplementation#createQuestion(LEvent;Ljava/lang/String;F)LQuestion;
+businessLogic.BLFacadeImplementation#<init>()V
 null
-java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
-java.util.Date#<init>()V
-java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
-java.util.Date#instance-init#
+java.lang.String#equals(Ljava/lang/Object;)Z
+configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;

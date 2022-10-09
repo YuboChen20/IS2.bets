@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#eliminarNoticia(LNoticia;)V
+businessLogic.BLFacadeImplementation#getNoticias(Ljava/util/Date;)Ljava/util/List;

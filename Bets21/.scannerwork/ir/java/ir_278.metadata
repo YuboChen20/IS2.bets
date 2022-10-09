@@ -1,2 +1,2 @@
-gui.Login#btnLoginUser_actionPerformed(Ljava/awt/event/ActionEvent;Ldomain/Usuario;)V
-null
+gui.Login#main([Ljava/lang/String;)V
+java.awt.EventQueue#invokeLater(Ljava/lang/Runnable;)V

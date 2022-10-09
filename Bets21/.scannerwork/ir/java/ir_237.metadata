@@ -1,6 +1,1 @@
-businessLogic.BLFacadeImplementation#createEvent(Ldomain/Equipo;Ldomain/Equipo;Ljava/util/Date;)LEvent;
-null
-java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
-java.util.Date#<init>()V
-java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
-java.util.Date#instance-init#
+businessLogic.BLFacadeImplementation#login(Ljava/lang/String;Ljava/lang/String;)Ldomain/Usuario;

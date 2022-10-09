@@ -1,1 +1,1 @@
-domain.Comentarios#getEvento()LEvent;
+domain.Comentarios#getText()Ljava/lang/String;

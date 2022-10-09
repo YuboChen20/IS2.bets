@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getEventosAc(Ljava/util/Date;)Ljava/util/Vector;
+businessLogic.BLFacadeImplementation#crearApuesta(Ldomain/Usuario;DLdomain/Pronostico;)I

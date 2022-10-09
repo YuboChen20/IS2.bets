@@ -1,1 +1,1 @@
-domain.Equipo#halfIncrNumUsuariosApuestan()V
+domain.Equipo#getNumUsuariosApuestan()D

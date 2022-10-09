@@ -1,1 +1,4 @@
-businessLogic.BLFacadeImplementation#getBet(Ldomain/Usuario;)Ljava/util/List;
+businessLogic.BLFacadeImplementation#createPronostic(Ljava/lang/String;LEvent;ID)LQuestion;
+null
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;

@@ -1,48 +1,16 @@
 
-fbusinessLogic.BLFacadeImplementation#getUsuarios(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè è(%"startingBlock*Ñ
-startingBlockf
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè% è(:•
-¢
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaé é(
-%0"
-__annotate*
-	WebMethod*
-
-sjava.lang.Stringò
-ï
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè- è(.
-sjava.lang.String"__annotation*
-
-%0¶
-£
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaé é(
-%1"
-__annotate*
-	WebMethod*
-
-s2java.lang.Stringô
-ñ
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè7 è(9
-s2java.lang.String"__annotation*
-
-%1*
-1*å
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaê ê(ï
-í
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaë ë(7
-usuariosjava.util.List"__id*
-"""Ü
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaì ì(
-
-usuariosjava.util.List:
-sjava.lang.String:
-s2java.lang.StringB(&
+EbusinessLogic.BLFacadeImplementation#getAllEquipos(I)Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÜ  Ü(-"1*ü
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaá á(õ
+ò
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaà à(7
+equiposjava.util.List"__id*
+"""å
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaä ä(
+
+equiposjava.util.List:
+""B(&
 $businessLogic.BLFacadeImplementation

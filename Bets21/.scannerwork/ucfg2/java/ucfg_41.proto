@@ -1,17 +1,17 @@
 
-.domain.Noticia#getNomAutor()Ljava/lang/String;N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaL L("1*’
-1N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaM	 M(ì
-ê
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaM	 M(
+.domain.Noticia#getNomAutor()Ljava/lang/String;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaL L("1*Í
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaM	 M(ö
+ó
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaM	 M(
 %0java.lang.String"__id* *
 domain.Noticia"
 
-nomAutor"j
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaM M(
+nomAutor"q
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaM M(
 
 %0java.lang.StringB
 domain.Noticia

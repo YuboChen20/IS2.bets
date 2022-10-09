@@ -1,1 +1,1 @@
-domain.Comentarios#getDate()Ljava/lang/String;
+domain.Comentarios#getUser()Ldomain/Usuario;

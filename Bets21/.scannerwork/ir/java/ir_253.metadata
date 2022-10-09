@@ -1,1 +1,4 @@
-businessLogic.BLFacadeImplementation#getEventosFinalizadosNoCerrados(Ljava/util/Date;)Ljava/util/Vector;
+businessLogic.BLFacadeImplementation#createComent(Ljava/lang/String;LEvent;Ldomain/Usuario;)Ldomain/Comentarios;
+java.time.LocalDateTime#format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+java.time.LocalDateTime#now()Ljava/time/LocalDateTime;
+java.time.format.DateTimeFormatter#ofPattern(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;

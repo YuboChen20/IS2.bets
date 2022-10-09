@@ -1,51 +1,51 @@
 
-+domain.Noticia#toString()Ljava/lang/String;N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javae e("1*â	
-1N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(ì
-ê
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(
++domain.Noticia#toString()Ljava/lang/String;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javae e("1*¡	
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(ö
+ó
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(
 %0java.util.Date"__id*"* 
 domain.Noticia"
 
-fechaPubliºπ
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(#
+fechaPubli√¿
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(#
 %1java.lang.String"+java.util.Date#toString()Ljava/lang/String;*
 
 %0java.util.Date2
-toString()ò
-ï
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(*
+toString()ü
+ú
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(*
 %2java.lang.String"__concat*
 
 %1java.lang.String*
-.- ë
-é
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf+ f(1
+.- ò
+ï
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf+ f(1
 %3java.lang.String"__id**
 domain.Noticia"
-titulo©
-¶
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(1
+titulo∞
+≠
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(1
 %4java.lang.String"__concat*
 
 %2java.lang.String*
 
-%3java.lang.Stringó
-î
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(7
+%3java.lang.Stringû
+õ
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf	 f(7
 %5java.lang.String"__concat*
 
 %4java.lang.String*
-\n"j
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaf f(8
+\n"q
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaf f(8
 
 %5java.lang.StringB
 domain.Noticia

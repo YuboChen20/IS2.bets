@@ -1,17 +1,17 @@
 
-,domain.Bet#getBetNumber()Ljava/lang/Integer;J
-@C:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Bet.java; ;("1*È
-1J
-@C:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Bet.java<	 <(
-Š
-J
-@C:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Bet.java<	 <(
+,domain.Bet#getBetNumber()Ljava/lang/Integer;Q
+GC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Bet.java; ;("1*İ
+1Q
+GC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Bet.java<	 <(”
+‘
+Q
+GC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Bet.java<	 <(
 %0java.lang.Integer"__id**
 
 domain.Bet"
-	betNumber"g
-J
-@C:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Bet.java< <(
+	betNumber"n
+Q
+GC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Bet.java< <(
 
 %0java.lang.IntegerB
 

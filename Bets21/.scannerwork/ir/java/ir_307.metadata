@@ -1,1 +1,1 @@
-domain.Equipo#setNombre(Ljava/lang/String;)V
+domain.Equipo#getNombre()Ljava/lang/String;

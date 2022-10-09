@@ -1,9 +1,16 @@
 
-domain.Usuario#isAdmin()ZN
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Usuario.java5 5("1*≠
-1N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Usuario.java6	 6("X
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Usuario.java6 6(
-""B
-domain.Usuario
+(domain.Liga#toString()Ljava/lang/String;R
+HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaY Y("1*‹
+1R
+HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaZ	 Z(í
+è
+R
+HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaZ	 Z(
+%0java.lang.String"__id**
+domain.Liga"
+nombre"n
+R
+HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaZ Z(
+
+%0java.lang.StringB
+domain.Liga

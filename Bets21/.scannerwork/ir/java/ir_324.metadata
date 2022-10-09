@@ -1,1 +1,1 @@
-domain.Liga#getEquipos()Ljava/util/Vector;
+domain.Liga#<init>(Ljava/lang/String;I)V

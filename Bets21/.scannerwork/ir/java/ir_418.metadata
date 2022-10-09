@@ -1,1 +1,1 @@
-configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;
+configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;

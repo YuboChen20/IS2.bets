@@ -1,1 +1,1 @@
-domain.Equipo#toString()Ljava/lang/String;
+domain.Equipo#anadirEvento(LEvent;)V

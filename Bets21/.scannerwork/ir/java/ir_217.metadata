@@ -1,1 +1,1 @@
-domain.Comentarios#getText()Ljava/lang/String;
+domain.Comentarios#getComtNumber()Ljava/lang/Integer;

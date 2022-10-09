@@ -1,16 +1,16 @@
 
-;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.java¶ ¶("1*É
-1Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaß	 ß(´
-®
-Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaß	 ß(
-%0java.lang.String"__id*-*+
-configuration.ConfigXML"
-databaseNode"u
-Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaß ß(
+@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaõ õ(#"1*ù
+1`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaú	 ú(∑
+¥
+`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaú	 ú(
+%0java.lang.String"__id*2*0
+configuration.ConfigXML"
+businessLogicName"|
+`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaú ú(
 
 %0java.lang.StringB
 configuration.ConfigXML

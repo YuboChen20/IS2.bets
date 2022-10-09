@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getUsuario(Ljava/lang/String;Ljava/lang/String;I)Ldomain/Usuario;
+businessLogic.BLFacadeImplementation#getAllEquipos(I)Ljava/util/List;

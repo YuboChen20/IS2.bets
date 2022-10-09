@@ -1,1 +1,1 @@
-domain.Usuario#setCorreo(Ljava/lang/String;)V
+domain.Usuario#setPassword(Ljava/lang/String;)V

@@ -1,1 +1,1 @@
-domain.Usuario#setUserName(Ljava/lang/String;)V
+domain.Usuario#<init>()V

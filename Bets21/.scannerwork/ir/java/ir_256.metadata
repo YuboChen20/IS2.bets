@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getNoticias(Ljava/util/Date;)Ljava/util/List;
+businessLogic.BLFacadeImplementation#obtenerEquipos()Ljava/util/List;

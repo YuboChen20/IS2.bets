@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#obtenerEquipos()Ljava/util/List;
+businessLogic.BLFacadeImplementation#getEventoactualizado(LEvent;)LEvent;

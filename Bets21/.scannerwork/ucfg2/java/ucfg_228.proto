@@ -1,17 +1,72 @@
 
-`businessLogic.BLFacadeImplementation#login(Ljava/lang/String;Ljava/lang/String;)Ldomain/Usuario;f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaú ú("1*˝
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaù ù(	é
-ã
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaû û(,
-udomain.Usuario"__id*
-"""
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java† †(
-
-udomain.Usuario:
-userjava.lang.String:
-passjava.lang.StringB(&
+zbusinessLogic.BLFacadeImplementation#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ ñ("startingBlock*·
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ ñ(Q≠
+™
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
+%0"
+__annotate*
+	WebMethod*
+
+usjava.lang.String†
+ù
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ% ñ('
+usjava.lang.String"__annotation*
+
+%0Ø
+¨
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
+%1"
+__annotate*
+	WebMethod*
+
+passjava.lang.String¢
+ü
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ0 ñ(4
+passjava.lang.String"__annotation*
+
+%1∞
+≠
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
+%2"
+__annotate*
+	WebMethod*
+
+ccodejava.lang.String£
+†
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ< ñ(A
+ccodejava.lang.String"__annotation*
+
+%2±
+Æ
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
+%3"
+__annotate*
+	WebMethod*
+
+correojava.lang.String§
+°
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañJ ñ(P
+correojava.lang.String"__annotation*
+
+%3*
+1*Î
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaó ó("w
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaö ö(
+"":
+usjava.lang.String:
+passjava.lang.String:
+ccodejava.lang.String:
+correojava.lang.StringB(&
 $businessLogic.BLFacadeImplementation

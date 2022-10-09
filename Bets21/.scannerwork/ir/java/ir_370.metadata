@@ -1,1 +1,1 @@
-exceptions.EventAlreadyExistsException#<init>(Ljava/lang/String;)V
+gui.NoticiasGUI#jButtonAtras_actionPerformed2(Ljava/awt/event/ActionEvent;)V

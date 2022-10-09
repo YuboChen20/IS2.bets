@@ -1,1 +1,1 @@
-domain.Pronostico#setNumUser(I)V
+domain.Pronostico#addUser()V

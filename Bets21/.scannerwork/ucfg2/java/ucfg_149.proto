@@ -1,16 +1,16 @@
 
-/domain.Event#getDescription()Ljava/lang/String;L
-BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javaa a("1*–
-1L
-BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javab	 b(í
-è
-L
-BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javab	 b(
+/domain.Event#getDescription()Ljava/lang/String;S
+IC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Event.javaa a("1*Â
+1S
+IC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Event.javab	 b(ô
+ñ
+S
+IC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Event.javab	 b(
 %0java.lang.String"__id*!*
 domain.Event"
-description"h
-L
-BC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Event.javab b(
+description"o
+S
+IC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Event.javab b(
 
 %0java.lang.StringB
 domain.Event

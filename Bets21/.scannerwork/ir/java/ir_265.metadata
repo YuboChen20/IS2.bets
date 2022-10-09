@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getUsuarios(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+businessLogic.BLFacadeImplementation#getNoticiasMedio(Ljava/lang/String;)Ljava/util/List;

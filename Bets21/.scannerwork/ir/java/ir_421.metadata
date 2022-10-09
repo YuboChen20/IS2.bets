@@ -1,1 +1,1 @@
-exceptions.TeamAlreadyExistsException#<init>(Ljava/lang/String;)V
+configuration.ConfigXML#getDataBaseOpenMode()Ljava/lang/String;

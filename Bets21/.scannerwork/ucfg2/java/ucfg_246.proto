@@ -1,37 +1,15 @@
 
-[businessLogic.BLFacadeImplementation#getEquiposPorLiga(ILjava/lang/String;)Ljava/util/List;f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÏ Ï('"startingBlock*Ú
-startingBlockf
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÏ' Ï(D·
-´
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÎ Î(
-%0"
-__annotate*
-java.lang.Override* 
-
-
-nombreLigajava.lang.String¡
-ž
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÏ9 Ï(C
-
-nombreLigajava.lang.String"__annotation*
-
-%0*
-1*Š
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÐ Ð(”
-‘
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÑ Ñ(G
-equiposjava.util.List"__id*
-"""…
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÓ Ó(
-
-equiposjava.util.List:
-"":
-
-nombreLigajava.lang.StringB(&
+BbusinessLogic.BLFacadeImplementation#getAllLigas()Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÅ Å("1*›
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÆ Æ(™
+–
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÇ Ç(.
+ligasjava.util.List"__id*
+"""Š
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÉ É(
+
+ligasjava.util.ListB(&
 $businessLogic.BLFacadeImplementation

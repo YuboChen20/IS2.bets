@@ -1,1 +1,1 @@
-domain.Usuario#getCardCode()Ljava/lang/String;
+domain.Usuario#getUserName()Ljava/lang/String;

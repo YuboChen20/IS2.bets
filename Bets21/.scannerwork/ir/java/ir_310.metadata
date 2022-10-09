@@ -1,1 +1,1 @@
-domain.Equipo#setDineroApostado(D)V
+domain.Equipo#setEvents(Ljava/util/Vector;)V

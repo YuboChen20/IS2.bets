@@ -1,1 +1,1 @@
-domain.Equipo#setEvents(Ljava/util/Vector;)V
+domain.Equipo#getEvents()Ljava/util/Vector;

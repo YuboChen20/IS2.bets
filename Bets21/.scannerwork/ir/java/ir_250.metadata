@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getUser(Ldomain/Usuario;)Ldomain/Usuario;
+businessLogic.BLFacadeImplementation#cerrarEvento(LEvent;)V

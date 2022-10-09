@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getQuestionList(LEvent;)Ljava/util/Vector;
+businessLogic.BLFacadeImplementation#cerrarApuesta(Ldomain/Pronostico;)V

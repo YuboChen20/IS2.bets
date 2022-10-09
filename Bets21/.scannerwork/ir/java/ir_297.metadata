@@ -1,1 +1,1 @@
-domain.Pronostico#getNumUser()I
+domain.Pronostico#setCuota(Ljava/lang/Float;)V

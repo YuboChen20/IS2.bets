@@ -1,1 +1,1 @@
-domain.Pronostico#setPronostico(Ljava/lang/String;)V
+domain.Pronostico#setPronosNumber(Ljava/lang/Integer;)V

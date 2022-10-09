@@ -1,1 +1,1 @@
-domain.Pronostico#setApuestas(Ljava/util/Vector;)V
+domain.Pronostico#setNumUser(I)V

@@ -1,1 +1,1 @@
-domain.Pronostico#setQuestion(LQuestion;)V
+domain.Pronostico#setPorcentajeApuesta(F)V

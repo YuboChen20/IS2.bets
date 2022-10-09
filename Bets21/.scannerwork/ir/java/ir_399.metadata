@@ -1,1 +1,3 @@
-gui.CrearLigaGUI#jButtonAtras_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.CrearLigaGUI#getInstance()Lgui/CrearLigaGUI;
+gui.CrearLigaGUI#instance-init#
+gui.CrearLigaGUI#<init>()V

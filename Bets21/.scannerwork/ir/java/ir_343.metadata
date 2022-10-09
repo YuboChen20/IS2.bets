@@ -1,1 +1,1 @@
-domain.Usuario#getCorreo()Ljava/lang/String;
+domain.Usuario#getPassword()Ljava/lang/String;

@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#crearLiga(Ljava/lang/String;I)V
+businessLogic.BLFacadeImplementation#desBloquear(Ljava/lang/String;Ldomain/Usuario;)V

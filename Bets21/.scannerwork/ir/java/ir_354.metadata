@@ -1,1 +1,1 @@
-domain.Usuario#getFecha()Ljava/util/Date;
+domain.Usuario#addDinero(D)V

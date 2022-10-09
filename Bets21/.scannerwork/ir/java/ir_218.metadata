@@ -1,1 +1,1 @@
-domain.Comentarios#setText(Ljava/lang/String;)V
+domain.Comentarios#setComtNumber(Ljava/lang/Integer;)V

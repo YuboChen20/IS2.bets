@@ -1,9 +1,59 @@
 
-domain.Pronostico#getCuota()DQ
-GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javae e("1*≥
-1Q
-GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javaf	 f("[
-Q
-GC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Pronostico.javaf f(
-""B
+.domain.Pronostico#toString()Ljava/lang/String;X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javaa a("1*ó
+1X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(•
+¢
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(
+%0java.lang.Integer"__id*'*%
+domain.Pronostico"
+pronosNumber°
+û
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+;¢
+ü
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab b($
+%2java.lang.String"__id*%*#
+domain.Pronostico"
+
+pronostico≥
+∞
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab	 b($
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String†
+ù
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab	 b((
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+;¡
+æ
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab) b(J
+%5java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""≥
+∞
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab	 b(J
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String"t
+X
+NC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Pronostico.javab b(K
+
+%6java.lang.StringB
 domain.Pronostico

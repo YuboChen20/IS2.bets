@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getEventoactualizado(LEvent;)LEvent;
+businessLogic.BLFacadeImplementation#getUser(Ldomain/Usuario;)Ldomain/Usuario;

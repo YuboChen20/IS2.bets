@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getQuestion(LQuestion;)LQuestion;
+businessLogic.BLFacadeImplementation#getQuestionList(LEvent;)Ljava/util/Vector;

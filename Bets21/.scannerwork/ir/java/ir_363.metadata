@@ -1,15 +1,1 @@
-gui.NoticiasGUI#instance-init#
-javax.swing.JTextArea#<init>()V
-javax.swing.DefaultComboBoxModel#<init>()V
-java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
-javax.swing.JTextArea#instance-init#
-javax.swing.JButton#<init>(Ljava/lang/String;)V
-javax.swing.JScrollPane#instance-init#
-javax.swing.JScrollPane#<init>()V
-javax.swing.JLabel#<init>(Ljava/lang/String;)V
-java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
-javax.swing.JLabel#instance-init#
-javax.swing.JComboBox#instance-init#
-javax.swing.DefaultComboBoxModel#instance-init#
-javax.swing.JComboBox#<init>()V
-javax.swing.JButton#instance-init#
+domain.Usuario#addFechas(LEntrada;)V

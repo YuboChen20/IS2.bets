@@ -1,1 +1,1 @@
-domain.Usuario#setNumIntento(I)V
+domain.Usuario#isBloqueado()Z

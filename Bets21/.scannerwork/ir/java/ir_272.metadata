@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getEquiposPorLiga(ILdomain/Liga;)Ljava/util/List;
+businessLogic.BLFacadeImplementation#anadirEquipoALiga(Ljava/lang/String;Ldomain/Liga;)V

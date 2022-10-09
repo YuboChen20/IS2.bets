@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#eliminarEquipoDeLiga(Ljava/lang/String;Ldomain/Liga;)V
+businessLogic.BLFacadeImplementation#crearLiga(Ljava/lang/String;I)V

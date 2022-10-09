@@ -1,1 +1,1 @@
-domain.Comentarios#toString()Ljava/lang/String;
+domain.Comentarios#getDate()Ljava/lang/String;

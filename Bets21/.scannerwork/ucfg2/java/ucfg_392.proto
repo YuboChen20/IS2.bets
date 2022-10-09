@@ -1,16 +1,16 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaö ö(#"1*à
-1Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaõ	 õ(∞
-≠
-Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaõ	 õ(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicName"u
-Y
-MC:/Users/34600/git/IS2.bets/Bets21/src/main/java/configuration/ConfigXML.javaõ õ(
-
-%0java.lang.StringB
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaè è($"1*¶
+1`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaê	 ê(∏
+µ
+`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaê	 ê(
+%0configuration.ConfigXML"__id*,**
+configuration.ConfigXML"
+theInstance"É
+`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaê ê(
+
+%0configuration.ConfigXMLB"
 configuration.ConfigXML

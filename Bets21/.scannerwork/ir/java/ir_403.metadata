@@ -1,3 +1,1 @@
-gui.OtrasApuestasGUI#btnSignUp_actionPerformed(Ljava/awt/event/ActionEvent;)V
-gui.SignUp#<init>()V
-gui.SignUp#instance-init#
+gui.CrearLigaGUI#jButtonAtras_actionPerformed(Ljava/awt/event/ActionEvent;)V

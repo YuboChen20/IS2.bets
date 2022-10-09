@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getAllNoticiasAuthor()Ljava/util/List;
+businessLogic.BLFacadeImplementation#eliminarNoticia(LNoticia;)V

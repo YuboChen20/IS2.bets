@@ -1,16 +1,15 @@
 
-EbusinessLogic.BLFacadeImplementation#getAllEquipos(I)Ljava/util/List;f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaˆ  ˆ(-"1*Š
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‰ ‰(”
-‘
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaŠ Š(7
-equiposjava.util.List"__id*
-"""…
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaŒ Œ(
-
-equiposjava.util.List:
-""B(&
+JbusinessLogic.BLFacadeImplementation#getAllNoticiasMedio()Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaø  ø(3"1*
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaù ù(š
+—
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaú ú(8
+mediosjava.util.List"__id*
+"""‹
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaü ü(
+
+mediosjava.util.ListB(&
 $businessLogic.BLFacadeImplementation

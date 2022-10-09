@@ -1,17 +1,17 @@
 
-.domain.Noticia#getNomMedio()Ljava/lang/String;N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaT T("1*’
-1N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaU	 U(ì
-ê
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaU	 U(
+.domain.Noticia#getNomMedio()Ljava/lang/String;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaT T("1*Í
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaU	 U(ö
+ó
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaU	 U(
 %0java.lang.String"__id* *
 domain.Noticia"
 
-nomMedio"j
-N
-DC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Noticia.javaU U(
+nomMedio"q
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.javaU U(
 
 %0java.lang.StringB
 domain.Noticia

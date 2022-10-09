@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#desBloquear(Ljava/lang/String;Ldomain/Usuario;)V
+businessLogic.BLFacadeImplementation#getUsuarios(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;

@@ -1,1 +1,1 @@
-domain.Pronostico#setPorcentajeApuesta(F)V
+domain.Pronostico#setPronostico(Ljava/lang/String;)V

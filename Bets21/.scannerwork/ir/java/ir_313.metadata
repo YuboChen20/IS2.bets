@@ -1,1 +1,1 @@
-domain.Equipo#anadirEvento(LEvent;)V
+domain.Equipo#getLiga()Ldomain/Liga;

@@ -1,1 +1,1 @@
-domain.Pronostico#getPorcentajeApuesta()F
+domain.Pronostico#getPronostico()Ljava/lang/String;

@@ -1,16 +1,92 @@
 
-*domain.Equipo#toString()Ljava/lang/String;M
-CC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Equipo.javaS S("1*œ
-1M
-CC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Equipo.javaT	 T(è
-å
-M
-CC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Equipo.javaT	 T(
-%0java.lang.String"__id**
+)domain.Equipo#equals(Ljava/lang/Object;)ZT
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaE E("startingBlock*π
+2T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaN
+ N("^
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaN N(
+""*Ø
+3T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaL L(í
+è
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaL L(
+otherdomain.Equipo"__id*
+
+objjava.lang.Objectñ
+ì
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaM M(
+%2java.lang.String"__id**
 domain.Equipo"
-nombre"i
-M
-CC:/Users/34600/git/IS2.bets/Bets21/src/main/java/domain/Equipo.javaT T(
+nombreù
+ö
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaM M(
+%3java.lang.String"__id*$*"
 
-%0java.lang.StringB
+otherdomain.Equipo"
+nombre*
+2
+1*ú
+startingBlockT
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaE E("û
+õ
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaD D(
+
+%4"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Objectà
+Ö
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaE E(!
+objjava.lang.Object"__annotation*
+
+%4*	
+5
+6
+8*π
+4T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaK
+ K("^
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaK K(
+""*È
+5T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaJ J(Ω∫
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaJ J(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+domain.Equipo2
+getClass()≈¬
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaJ J("
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+
+objjava.lang.Object2
+getClass()*
+3
+4*π
+6T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaI
+ I("^
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaI I(
+""*π
+8T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaG
+ G("^
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaG G(
+""*π
+1T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaO	 O("^
+T
+JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.javaO O(
+"":
+objjava.lang.ObjectB
 domain.Equipo

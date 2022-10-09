@@ -4373,12 +4373,13 @@ getCuota()domain.Pronostico#getCuota()DM
 -actionPerformed(Ljava/awt/event/ActionEvent;)@gui.CloseBetGUI$6#actionPerformed(Ljava/awt/event/ActionEvent;)Và
 gui.CloseBetGUI$7java.awt.event.ActionListenerjava.lang.Object'
 <init>()gui.CloseBetGUI$7#<init>()Vq
--actionPerformed(Ljava/awt/event/ActionEvent;)@gui.CloseBetGUI$7#actionPerformed(Ljava/awt/event/ActionEvent;)Vä
+-actionPerformed(Ljava/awt/event/ActionEvent;)@gui.CloseBetGUI$7#actionPerformed(Ljava/awt/event/ActionEvent;)VŽ
 domain.Comentariosjava.lang.Object9
 	getUser(),domain.Comentarios#getUser()Ldomain/Usuario;4
 getEvento()%domain.Comentarios#getEvento()LEvent;H
 getComtNumber()5domain.Comentarios#getComtNumber()Ljava/lang/Integer;;
-	getText().domain.Comentarios#getText()Ljava/lang/String;=
+	getText().domain.Comentarios#getText()Ljava/lang/String;(
+<init>()domain.Comentarios#<init>()V=
 
 toString()/domain.Comentarios#toString()Ljava/lang/String;N
 setDate(Ljava/lang/String;)/domain.Comentarios#setDate(Ljava/lang/String;)V\
@@ -4549,7 +4550,7 @@ EregisterEditorKitForContentType(Ljava/lang/String;Ljava/lang/String;)^javax.sw
 getPostData()7javax.swing.JEditorPane#getPostData()Ljava/lang/Object;ä
 gui.Login$3java.awt.event.ActionListenerjava.lang.Object7
 <init>(Lgui/Login;) gui.Login$3#<init>(Lgui/Login;)Vk
--actionPerformed(Ljava/awt/event/ActionEvent;):gui.Login$3#actionPerformed(Ljava/awt/event/ActionEvent;)VÜ
+-actionPerformed(Ljava/awt/event/ActionEvent;):gui.Login$3#actionPerformed(Ljava/awt/event/ActionEvent;)V…
 domain.Equipojava.lang.ObjectG
 equals(Ljava/lang/Object;))domain.Equipo#equals(Ljava/lang/Object;)Z?
 setLiga(Ldomain/Liga;)%domain.Equipo#setLiga(Ldomain/Liga;)VE
@@ -4559,13 +4560,15 @@ EregisterEditorKitForContentType(Ljava/lang/String;Ljava/lang/String;)^javax.sw
 toString()*domain.Equipo#toString()Ljava/lang/String;E
 setNumUsuariosApuestan(D)(domain.Equipo#setNumUsuariosApuestan(D)V:
 getNombre()+domain.Equipo#getNombre()Ljava/lang/String;9
-getDineroApostado()"domain.Equipo#getDineroApostado()D;
+getDineroApostado()"domain.Equipo#getDineroApostado()D'
+
+hashCode()domain.Equipo#hashCode()I;
 setDineroApostado(D)#domain.Equipo#setDineroApostado(D)V1
 	getLiga()$domain.Equipo#getLiga()Ldomain/Liga;M
 setNombre(Ljava/lang/String;),domain.Equipo#setNombre(Ljava/lang/String;)VC
 getNumUsuariosApuestan()'domain.Equipo#getNumUsuariosApuestan()Da
 '<init>(Ljava/lang/String;Ldomain/Liga;)6domain.Equipo#<init>(Ljava/lang/String;Ldomain/Liga;)V:
-getEvents()+domain.Equipo#getEvents()Ljava/util/Vector;û
+getEvents()+domain.Equipo#getEvents()Ljava/util/Vector;¢
 domain.Ligajava.lang.ObjectM
 setEquipos(Ljava/util/Vector;)+domain.Liga#setEquipos(Ljava/util/Vector;)VE
 equals(Ljava/lang/Object;)'domain.Liga#equals(Ljava/lang/Object;)Z1
@@ -4578,7 +4581,9 @@ toString()(domain.Liga#toString()Ljava/lang/String;/
 <init>(Ljava/lang/String;I)(domain.Liga#<init>(Ljava/lang/String;I)V8
 getNombre())domain.Liga#getNombre()Ljava/lang/String;:
 getEquipos()*domain.Liga#getEquipos()Ljava/util/Vector;K
-anadirEquipo(Ldomain/Equipo;)*domain.Liga#anadirEquipo(Ldomain/Equipo;)ZÈ
+anadirEquipo(Ldomain/Equipo;)*domain.Liga#anadirEquipo(Ldomain/Equipo;)Z%
+
+hashCode()domain.Liga#hashCode()IÈ
 exceptions.QuestionAlreadyExistjava.lang.Exception5
 <init>())exceptions.QuestionAlreadyExist#<init>()VY
 <init>(Ljava/lang/String;);exceptions.QuestionAlreadyExist#<init>(Ljava/lang/String;)VŽ

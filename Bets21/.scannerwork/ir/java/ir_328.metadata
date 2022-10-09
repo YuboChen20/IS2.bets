@@ -1,1 +1,1 @@
-domain.Liga#getNumEquipos()I
+domain.Liga#setEquipos(Ljava/util/Vector;)V

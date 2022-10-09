@@ -1,1 +1,1 @@
-gui.Login#instance-init#
+businessLogic.BLFacadeImplementation#getAllLigas()Ljava/util/List;

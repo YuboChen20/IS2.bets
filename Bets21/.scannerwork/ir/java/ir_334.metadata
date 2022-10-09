@@ -1,1 +1,2 @@
-domain.Usuario#<init>()V
+domain.Liga#equals(Ljava/lang/Object;)Z
+java.lang.Object#getClass()Ljava/lang/Class;

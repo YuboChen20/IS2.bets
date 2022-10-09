@@ -1,1 +1,1 @@
-domain.Pronostico#addApuesta(LBet;)V
+domain.Pronostico#setApuestas(Ljava/util/Vector;)V

@@ -1,1 +1,2 @@
-domain.Equipo#getNombre()Ljava/lang/String;
+domain.Equipo#instance-init#
+java.util.Vector#<init>()V

@@ -1,3 +1,1 @@
-domain.Liga#instance-init#
-java.util.Vector#<init>()V
-java.util.Vector#instance-init#
+domain.Equipo#setNumUsuariosApuestan(D)V

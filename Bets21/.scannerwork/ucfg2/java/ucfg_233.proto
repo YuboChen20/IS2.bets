@@ -1,15 +1,33 @@
 
-EbusinessLogic.BLFacadeImplementation#obtenerEquipos()Ljava/util/List;f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaª ª(&"1*ä
-1f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaº º(î
-ë
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaΩ Ω(3
-equiposjava.util.List"__id*
-"""Ö
-f
-ZC:/Users/34600/git/IS2.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaø ø(
-
-equiposjava.util.ListB(&
+NbusinessLogic.BLFacadeImplementation#getUser(Ldomain/Usuario;)Ldomain/Usuario;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaò ò(%"startingBlock*÷
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaò% ò(3≠
+™
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaò ò(
+%0"
+__annotate*
+	WebMethod*
+
+userdomain.Usuario†
+ù
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaò. ò(2
+userdomain.Usuario"__annotation*
+
+%0*
+1*ì
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaô ô(	ï
+í
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaö ö(-
+udomain.Usuario"__id*
+"""Ü
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaú ú(
+
+udomain.Usuario:
+userdomain.UsuarioB(&
 $businessLogic.BLFacadeImplementation
