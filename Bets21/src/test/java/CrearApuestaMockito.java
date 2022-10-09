@@ -60,17 +60,13 @@ public class CrearApuestaMockito {
 				//configure Mock
 				Mockito.doReturn(0).when(dataAccess).crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
 
-				
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+	
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
-
 
 				assertEquals(0,num);
 			   }catch (Exception e) {
@@ -94,17 +90,13 @@ public class CrearApuestaMockito {
 				//configure Mock
 				Mockito.doReturn(0).when(dataAccess).crearApuesta(user, 10, ev1.getQuest(0).getPron(1));
 
-				
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, ev1.getQuest(0).getPron(1));
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+		
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, ev1.getQuest(0).getPron(1));
-
 
 				assertEquals(0,num);
 			   }catch (Exception e) {
@@ -126,19 +118,15 @@ public class CrearApuestaMockito {
 				Usuario user= new Usuario("Pepe","dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
 				
 				//configure Mock
-				Mockito.doReturn(0).when(dataAccess).crearApuesta(user, 10, ev1.getQuest(0).getPron(2));
-
-				
+				Mockito.doReturn(0).when(dataAccess).crearApuesta(user, 10, ev1.getQuest(0).getPron(2));			
 
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, ev1.getQuest(0).getPron(2));
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+		
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, ev1.getQuest(0).getPron(2));
-
 
 				assertEquals(0,num);
 			   }catch (Exception e) {
@@ -163,19 +151,15 @@ public class CrearApuestaMockito {
 				Usuario user= new Usuario("Pepe","dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
 				
 				//configure Mock
-				Mockito.doReturn(0).when(dataAccess).crearApuesta(user, 10, p1);
-
-				
+				Mockito.doReturn(0).when(dataAccess).crearApuesta(user, 10, p1);		
 
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, p1);
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+		
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, p1);
-
 
 				assertEquals(0,num);
 			   }catch (Exception e) {
@@ -200,19 +184,15 @@ public class CrearApuestaMockito {
 				Usuario user= new Usuario(null,"dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
 				
 				//configure Mock
-				Mockito.when(dataAccess.crearApuesta(user,10,p1)).thenThrow(new Exception());
-				
-
+				Mockito.when(dataAccess.crearApuesta(user,10,p1)).thenThrow(new Exception());		
 
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, p1);
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
 				
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, p1);
-
 
 				fail();
 			   }catch (Exception e) {
@@ -235,16 +215,13 @@ public class CrearApuestaMockito {
 				//configure Mock
 				Mockito.when(dataAccess.crearApuesta(user,10,null)).thenThrow(new Exception());
 
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, null);
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
 				
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, null);
-
 
 				fail();
 			   }catch (Exception e) {
@@ -269,16 +246,13 @@ public class CrearApuestaMockito {
 				//configure Mock
 				Mockito.when(dataAccess.crearApuesta(user, 10, ev1.getQuest(0).getPron(0))).thenThrow(new Exception());
 
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+			
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
-
 
 				fail();
 			   }catch (Exception e) {
@@ -302,14 +276,12 @@ public class CrearApuestaMockito {
 				//configure Mock
 				Mockito.when(dataAccess.crearApuesta(user,dinero,ev1.getQuest(0).getPron(0))).thenThrow(new Exception());
 
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, dinero, ev1.getQuest(0).getPron(0));
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+			
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
 
 
@@ -335,16 +307,13 @@ public class CrearApuestaMockito {
 				//configure Mock
 				Mockito.when(dataAccess.crearApuesta(user,10,ev1.getQuest(0).getPron(0))).thenThrow(new Exception());
 
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(user, 10, ev1.getQuest(0).getPron(0));
 				
 				//verify the results
 				//Mockito.verify(dataAccess,Mockito.times(1)).createQuestion(Mockito.any(Event.class),Mockito.any(String.class), Mockito.any(Integer.class));
-
-				
+			
 				Mockito.verify(dataAccess,Mockito.times(1)).crearApuesta(user, 10, ev1.getQuest(0).getPron(2));
-
 
 				fail();
 			   }catch (Exception e) {

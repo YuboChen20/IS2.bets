@@ -29,7 +29,54 @@ public class CrearApuestaDAWTest {
 	 private Bet b;
 
 	 
+	 @Test
+	public void test1() {
+		try {
+			//define paramaters
+			Liga ligaSantander=new Liga("Liga Santander",20);
+			Equipo atleticoDeMadrid= new Equipo("Atlético de Madrid", ligaSantander);
+			Equipo atlheticDeBilbao= new Equipo("Athletic de Bilbao", ligaSantander);
+			Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(1,1,17), atleticoDeMadrid, atlheticDeBilbao);
+			Question q1=ev1.addQuestion("dfddgd",1);
+			Pronostico p1=new Pronostico("fg",q1,1.2);
+			q1.addPronostico(p1);
+			Usuario user= new Usuario("User1","dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
+			Bet b1 = new Bet(p1,user,10);
+			Bet b2 = new Bet(ev1.getQuest(0).getPron(0),user,10);
+			Vector<Bet> bets=new Vector<Bet>();
+			bets.add(b2);
+			
 
+			//configure the state of the system (create object in the dabatase)
+			testDA.open();
+			ev = testDA.addEvent(ev1);
+			u = testDA.addUser(user);	
+			b = testDA.addBets(b1);
+			p = testDA.addPronos(p1);
+			testDA.close();
+		
+			//invoke System Under Test (sut)  
+			sut.añadirApuesta(u, b);
+			int num = sut.crearApuesta(u, 10, p);
+			assertEquals(0,num);
+		}catch(Exception e) {
+			fail("Not yet implemented");
+		}finally {
+			  //Remove the created objects in the database (cascade removing)   
+			testDA.open();
+	          boolean a=testDA.removeEvent(ev);
+	          boolean c= testDA.removeUser(u);
+	          boolean x= testDA.removeBet(b);
+	          boolean z = testDA.removePronostico(p);
+	          testDA.close();
+	      //     System.out.println("Finally "+b);          
+	        }
+	}
+	 
+
+	 
+	 
+	 
 	 
 	 @Test
 	public void test2() {
@@ -48,9 +95,7 @@ public class CrearApuestaDAWTest {
 			Vector<Bet> bets=new Vector<Bet>();
 			bets.add(b2);
 			
-			
 
-		
 			//configure the state of the system (create object in the dabatase)
 			testDA.open();
 			ev = testDA.addEvent(ev1);

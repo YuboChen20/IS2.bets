@@ -46,15 +46,12 @@ public class CrearApuestaIntTest {
 				Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(1,1,17), atleticoDeMadrid, atlheticDeBilbao);
 				Usuario user= new Usuario("Pepe1","dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
 				
-				
+		
 				ev = testBL.addEvent(ev1);
 				u = testBL.addUser(user);
 
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, ev.getQuest(0).getPron(0));
-				
-				
-
 
 				assertEquals(0,num);
 			   }catch (Exception e) {
@@ -78,14 +75,11 @@ public class CrearApuestaIntTest {
 				Event ev1=new Event(1, "Atlético de Madrid-Athletic de Bilbao", UtilDate.newDate(1,1,17), atleticoDeMadrid, atlheticDeBilbao);
 				Usuario user= new Usuario("Pepe2","dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
 				
-
 				ev = testBL.addEvent(ev1);
 				u = testBL.addUser(user);
 				
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, ev1.getQuest(0).getPron(1));
-				
 
 				assertEquals(0,num);
 			   }catch (Exception e) {
@@ -112,13 +106,9 @@ public class CrearApuestaIntTest {
 				ev = testBL.addEvent(ev1);
 				u = testBL.addUser(user);
 
-				
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, ev1.getQuest(0).getPron(2));
 				
-
-
 				assertEquals(0,num);
 			   }catch (Exception e) {
 				    fail();
@@ -144,19 +134,13 @@ public class CrearApuestaIntTest {
 				q1.addPronostico(p1);
 				Usuario user= new Usuario("Pepe4","dsfdsf","1010293833",false,"usuariomasguapo@gmail.com");
 				
-
 				ev = testBL.addEvent(ev1);
 				u = testBL.addUser(user);
 				p = testBL.addPronostico(p1);
 
-				
-
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, p);
 				
-
-
-
 				assertEquals(0,num);
 			   }catch (Exception e) {
 				    fail();
@@ -191,9 +175,6 @@ public class CrearApuestaIntTest {
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, p);
 				
-
-
-
 				fail();
 			   }catch (Exception e) {
 				    assertTrue(true);
@@ -218,8 +199,6 @@ public class CrearApuestaIntTest {
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, null);
 				
-
-
 
 				fail();
 			   }catch (Exception e) {
@@ -253,8 +232,6 @@ public class CrearApuestaIntTest {
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, ev.getQuest(0).getPron(0));
 
-
-
 				assertEquals(2,num);
 			   }catch (Exception e) {
 					fail();
@@ -283,9 +260,6 @@ public class CrearApuestaIntTest {
 
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, dinero, ev.getQuest(0).getPron(0));
-				
-
-
 
 				assertEquals(2,num);
 			   }catch (Exception e) {
@@ -318,9 +292,6 @@ public class CrearApuestaIntTest {
 				//invoke System Under Test (sut) 
 				int num = sut.crearApuesta(u, 10, ev.getQuest(0).getPron(1));
 				
-
-
-
 				fail();
 			   }catch (Exception e) {
 				   assertTrue(true);
