@@ -1,3 +1,2 @@
-gui.CreateAndQueryGUI#jButtonCrearNoticia_actionPerformed(Ljava/awt/event/ActionEvent;)V
-gui.CreateNoticiaGUI#<init>()V
-gui.CreateNoticiaGUI#instance-init#
+dataAccess.DataAccess#createEvent(LEquipo;LEquipo;Ljava/util/Date;)LEvent;
+null

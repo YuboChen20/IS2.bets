@@ -1,7 +1,1 @@
-gui.CrearLigaGUI#instance-init#
-javax.swing.JLabel#<init>(Ljava/lang/String;)V
-javax.swing.JTable#<init>()V
-javax.swing.JLabel#instance-init#
-javax.swing.JButton#<init>(Ljava/lang/String;)V
-javax.swing.JTable#instance-init#
-javax.swing.JButton#instance-init#
+businessLogic.BLFacadeImplementation#getAllLigas()Ljava/util/List;

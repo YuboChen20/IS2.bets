@@ -1,1 +1,1 @@
-domain.Event#setEquipos(LEquipo;LEquipo;)V
+configuration.ConfigXML#getDataBaseOpenMode()Ljava/lang/String;

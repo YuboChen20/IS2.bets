@@ -1,2 +1,1 @@
-gui.MainGUI#<init>()V
-gui.MainGUI#initialize()V
+businessLogic.BLFacadeImplementation#eliminarNoticia(LNoticia;)V

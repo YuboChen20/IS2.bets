@@ -1,2 +1,5 @@
-gui.CreateAndQueryGUI#jButtonClose_actionPerformed(Ljava/awt/event/ActionEvent;)V
-null
+dataAccess.DataAccess#login(Ljava/lang/String;Ljava/lang/String;)LUsuario;
+domain.Entrada#<init>(Ljava/util/Date;ZLUsuario;ZZ)V
+java.util.Calendar#getInstance()Ljava/util/Calendar;
+domain.Entrada#instance-init#
+java.util.Calendar#getTime()Ljava/util/Date;

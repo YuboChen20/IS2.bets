@@ -1,1 +1,1 @@
-domain.Bet#setUsuario(LUsuario;)V
+exceptions.LeagueAlreadyExist#<init>(Ljava/lang/String;)V

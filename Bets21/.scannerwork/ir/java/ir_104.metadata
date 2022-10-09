@@ -1,1 +1,1 @@
-domain.Question#<init>(Ljava/lang/Integer;Ljava/lang/String;FLdomain/Event;)V
+domain.Pronostico#<init>(Ljava/lang/Integer;Ljava/lang/String;LQuestion;D)V

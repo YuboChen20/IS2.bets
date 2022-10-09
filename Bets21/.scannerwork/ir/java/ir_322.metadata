@@ -1,1 +1,1 @@
-domain.Equipo#halfIncrNumUsuariosApuestan()V
+domain.Event#toString()Ljava/lang/String;

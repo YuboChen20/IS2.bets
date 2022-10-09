@@ -1,1 +1,1 @@
-domain.Usuario#getCardCode()Ljava/lang/String;
+exceptions.MaximumNumberOfTeamsReached#<init>(Ljava/lang/String;)V

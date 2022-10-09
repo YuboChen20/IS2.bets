@@ -1,1 +1,2 @@
-domain.Noticia#getTexto()Ljava/lang/String;
+gui.CreateAndQueryGUI#jButtonVerHistorial_actionPerformed(Ljava/awt/event/ActionEvent;)V
+null

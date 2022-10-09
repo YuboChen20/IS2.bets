@@ -1,1 +1,1 @@
-domain.Event#getQuest(I)Ldomain/Question;
+configuration.ConfigXML#getTagValue(Ljava/lang/String;Lorg/w3c/dom/Element;)Ljava/lang/String;

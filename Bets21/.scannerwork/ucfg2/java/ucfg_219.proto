@@ -1,16 +1,75 @@
 
-,domain.Comentarios#getUser()Ldomain/Usuario;Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaF F("1*Ú
-1Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaG	 G(ú
-ô
-Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaG	 G(
-%0domain.Usuario"__id* *
-domain.Comentarios"
-user"s
-Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaG G(
+HdataAccess.DataAccess#getNoticiasMonth(Ljava/util/Date;)Ljava/util/List;^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaó ó(&"5*£
+2^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java£ £(á
+Ñ
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java£ £(
+nodomain.Noticia"__id*
+""´
+®
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java£ £(
+nodomain.Noticia"
+__arrayGet*
+
+noticiasjava.util.List*
+""*
+3
+1*Ì
+3^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java£ £(!å
+â
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java£ £(%
+%2java.io.PrintStream"__id*
+""Û
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java£ £(1
+
+%3void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
+
+%2java.io.PrintStream*
 
-%0domain.UsuarioB
-domain.Comentarios
+nodomain.Noticia2println(Ljava/lang/Object;)*
+2*ª
+5^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaò ò(å
+â
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaò ò(
+%0java.io.PrintStream"__id*
+""Ä˝
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaò ò(7
+
+%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*#!
+>> DataAccess: getNoticiasMonth2println(Ljava/lang/String;)ñ
+ì
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaõ õ(7#
+firstDayMonthDatejava.util.Date"__id*
+""ï
+í
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaú ú(5"
+lastDayMonthDatejava.util.Date"__id*
+""ç
+ä
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¢ ¢(1
+noticiasjava.util.List"__id*
+""*
+2*„
+1^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java§
+ §("~
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java§ §(
+
+noticiasjava.util.List:
+datejava.util.DateB
+dataAccess.DataAccess

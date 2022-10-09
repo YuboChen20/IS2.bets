@@ -1,1 +1,1 @@
-domain.Comentarios#getText()Ljava/lang/String;
+dataAccess.DataAccess#obtenerEquipos()Ljava/util/List;

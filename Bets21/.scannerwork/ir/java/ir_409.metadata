@@ -1,1 +1,1 @@
-configuration.ConfigXML#getLocale()Ljava/lang/String;
+domain.Equipo#getNombre()Ljava/lang/String;

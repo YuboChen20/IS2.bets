@@ -1,2 +1,1 @@
-gui.MainGUI#jB3_actionPerformed(Ljava/awt/event/ActionEvent;)V
-null
+businessLogic.BLFacadeImplementation#desBloquear(Ljava/lang/String;Ldomain/Usuario;)V

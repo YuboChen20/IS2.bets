@@ -1,72 +1,73 @@
 
-zbusinessLogic.BLFacadeImplementation#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zm
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ ñ("startingBlock*·
-startingBlockm
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ ñ(Q≠
-™
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
-%0"
-__annotate*
-	WebMethod*
-
-usjava.lang.String†
-ù
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ% ñ('
-usjava.lang.String"__annotation*
-
-%0Ø
-¨
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
-%1"
-__annotate*
-	WebMethod*
-
-passjava.lang.String¢
-ü
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ0 ñ(4
-passjava.lang.String"__annotation*
-
-%1∞
-≠
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
-%2"
-__annotate*
-	WebMethod*
-
-ccodejava.lang.String£
-†
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañ< ñ(A
-ccodejava.lang.String"__annotation*
-
-%2±
-Æ
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaï ï(
-%3"
-__annotate*
-	WebMethod*
+JdataAccess.DataAccess#getNoticiasMedio(Ljava/lang/String;)Ljava/util/List;^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÉ É(&"5*£
+2^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(á
+Ñ
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(
+nodomain.Noticia"__id*
+""´
+®
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(
+nodomain.Noticia"
+__arrayGet*
 
-correojava.lang.String§
-°
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javañJ ñ(P
-correojava.lang.String"__annotation*
-
-%3*
-1*Î
-1m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaó ó("w
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaö ö(
-"":
-usjava.lang.String:
-passjava.lang.String:
-ccodejava.lang.String:
-correojava.lang.StringB(&
-$businessLogic.BLFacadeImplementation
+noticiasjava.util.List*
+""*
+3
+1*Ì
+3^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â("å
+â
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(&
+%3java.io.PrintStream"__id*
+""Û
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaâ â(2
+
+%4void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
+
+%3java.io.PrintStream*
+
+nodomain.Noticia2println(Ljava/lang/Object;)*
+2*Ë
+5^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÑ Ñ(å
+â
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÑ Ñ(
+%0java.io.PrintStream"__id*
+""Å˛
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÑ Ñ(8
+
+%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*$"
+ >> DataAccess: getNoticiasMedios2println(Ljava/lang/String;)ç
+ä
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaá á(1
+noticiasjava.util.List"__id*
+""⁄
+◊
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaà à(
+
+%2void"0java.util.Collections#reverse(Ljava/util/List;)V*"
+java.util.Collections*
+
+noticiasjava.util.List*
+2*„
+1^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaä
+ ä("~
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaä ä(
+
+noticiasjava.util.List:
+medjava.lang.StringB
+dataAccess.DataAccess

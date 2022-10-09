@@ -1,1 +1,2 @@
-domain.Noticia#setSubTitulo(Ljava/lang/String;)V
+gui.CreateAndQueryGUI#jButtonCrearNoticia_actionPerformed(Ljava/awt/event/ActionEvent;)V
+null

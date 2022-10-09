@@ -1,5 +1,4 @@
-configuration.UtilDate#trim(Ljava/util/Date;)Ljava/util/Date;
-java.util.Calendar#getInstance()Ljava/util/Calendar;
-java.util.TimeZone#getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-java.util.Calendar#setTime(Ljava/util/Date;)V
-java.util.Calendar#getTime()Ljava/util/Date;
+businessLogic.BLFacadeImplementation#createComent(Ljava/lang/String;Ldomain/Event;Ldomain/Usuario;)LComentarios;
+java.time.LocalDateTime#format(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+java.time.LocalDateTime#now()Ljava/time/LocalDateTime;
+java.time.format.DateTimeFormatter#ofPattern(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;

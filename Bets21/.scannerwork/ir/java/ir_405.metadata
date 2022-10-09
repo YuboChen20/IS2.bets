@@ -1,14 +1,2 @@
-gui.OtrasApuestasGUI#instance-init#
+gui.Login#jButtonMenu_actionPerformed(Ljava/awt/event/ActionEvent;)V
 null
-java.util.Vector#<init>()V
-javax.swing.JTable#<init>()V
-java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
-javax.swing.JButton#<init>(Ljava/lang/String;)V
-javax.swing.JScrollPane#instance-init#
-javax.swing.JScrollPane#<init>()V
-javax.swing.JLabel#<init>(Ljava/lang/String;)V
-java.util.Vector#instance-init#
-javax.swing.JLabel#instance-init#
-java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
-javax.swing.JTable#instance-init#
-javax.swing.JButton#instance-init#

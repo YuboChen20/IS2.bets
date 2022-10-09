@@ -1,1 +1,2 @@
-gui.Login#instance-init#
+domain.Question#addPronosticoNoHecho(Ljava/lang/String;D)LPronostico;
+null

@@ -1,3 +1,1 @@
-gui.SignUp#jButtonSignUp_actionPerformed(Ljava/awt/event/ActionEvent;)V
-gui.Login#<init>()V
-gui.Login#instance-init#
+businessLogic.BLFacadeImplementation#eliminarEquipoDeLiga(Ljava/lang/String;LLiga;)V

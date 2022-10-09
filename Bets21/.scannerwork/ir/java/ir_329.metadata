@@ -1,1 +1,2 @@
-domain.Liga#anadirEquipo(Ldomain/Equipo;)Z
+domain.Event#equals(Ljava/lang/Object;)Z
+java.lang.Object#getClass()Ljava/lang/Class;

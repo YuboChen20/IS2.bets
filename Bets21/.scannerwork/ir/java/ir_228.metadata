@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#instance-init#
+dataAccess.DataAccess#getAllNoticiasMedio()Ljava/util/List;

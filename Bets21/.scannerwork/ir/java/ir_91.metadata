@@ -1,2 +1,1 @@
-gui.OtrasApuestas2GUI#btnLogin_actionPerformed(Ljava/awt/event/ActionEvent;)V
-null
+domain.Comentarios#getComtNumber()Ljava/lang/Integer;

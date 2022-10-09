@@ -1,9 +1,21 @@
 
- domain.Entrada#isBloqueoAdmin()ZU
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java9 9("1*»
-1U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java:	 :("_
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java: :(
-""B
-domain.Entrada
+/domain.Comentarios#toString()Ljava/lang/String;Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaV V("1*…
+1Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaW	 W(ž
+›
+Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaW# W('
+%0java.lang.String"__id* *
+domain.Comentarios"
+datež
+›
+Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaW1 W(5
+%1java.lang.String"__id* *
+domain.Comentarios"
+text"c
+Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaW W(?
+""B
+domain.Comentarios

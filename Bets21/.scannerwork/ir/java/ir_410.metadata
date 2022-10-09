@@ -1,1 +1,1 @@
-configuration.ConfigXML#getDatabasePort()I
+domain.Equipo#getEvents()Ljava/util/Vector;

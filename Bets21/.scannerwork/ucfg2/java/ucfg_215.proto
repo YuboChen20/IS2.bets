@@ -1,17 +1,45 @@
 
-5domain.Comentarios#getComtNumber()Ljava/lang/Integer;Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.java. .("1*þ
-1Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.java/	 /(¥
-¢
-Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.java/	 /(
-%0java.lang.Integer"__id*&*$
-domain.Comentarios"
+kdataAccess.DataAccess#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java· ·("2"1*Í
+2^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¹ ¹("h
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¹ ¹(
+""*×
+1^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaº º(Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¾ ¾(
+%0java.io.PrintStream"__id*
+""Í
+Ê
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¾ ¾(C
+%1java.lang.String"__concat*&$
+">> DataAccess: createUser=> User: *
+
+userNamejava.lang.String°
+­
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¾ ¾(R
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+ registeredõò
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¾ ¾(S
 
-comtNumber"v
-Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.java/ /(
-
-%0java.lang.IntegerB
-domain.Comentarios
+%3void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*
+
+%2java.lang.String2println(Ljava/lang/String;)"h
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¿ ¿(
+"":
+userNamejava.lang.String:
+passjava.lang.String:
+cCodejava.lang.String:
+correojava.lang.StringB
+dataAccess.DataAccess

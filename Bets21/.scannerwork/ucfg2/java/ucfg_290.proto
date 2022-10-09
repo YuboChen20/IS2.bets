@@ -1,23 +1,9 @@
 
-,domain.Liga#eliminarEquipo(Ldomain/Equipo;)ZR
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java3 3("1*≥
-1R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java4	 4(ì
-ê
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java4	 4(
-%0java.util.Vector"__id**
-domain.Liga"	
-equiposÂ‚
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java4	 4(
-%1boolean",java.util.Vector#remove(Ljava/lang/Object;)Z*
-
-%0java.util.Vector*
-
-equipodomain.Equipo2remove(Ljava/lang/Object;)"\
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java4 4( 
-"":
-equipodomain.EquipoB
-domain.Liga
+domain.Entrada#isExito()ZU
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java% %("1*ª
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java&	 &("_
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java& &(
+""B
+domain.Entrada

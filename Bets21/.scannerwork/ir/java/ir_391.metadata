@@ -1,3 +1,1 @@
-gui.MainGUI#jB2_actionPerformed(Ljava/awt/event/ActionEvent;)V
-gui.Login#<init>()V
-gui.Login#instance-init#
+businessLogic.BLFacadeImplementation#getUsuario(Ljava/lang/String;Ljava/lang/String;I)Ldomain/Usuario;

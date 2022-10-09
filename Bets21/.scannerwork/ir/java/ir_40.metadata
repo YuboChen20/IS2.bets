@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getAllNoticiasMedio()Ljava/util/List;
+test.dataAccess.TestDataAccess#removeBet(Ldomain/Bet;)Z

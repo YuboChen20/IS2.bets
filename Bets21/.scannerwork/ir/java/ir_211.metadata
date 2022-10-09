@@ -1,9 +1,1 @@
-gui.CloseBetGUI#jbInit(Ljava/util/Vector;)V
-java.awt.Dimension#<init>(II)V
-java.awt.Dimension#instance-init#
-gui.MainGUI#getBusinessLogic()LBLFacade;
-javax.swing.JLabel#instance-init#
-java.awt.Font#<init>(Ljava/lang/String;II)V
-java.awt.Font#instance-init#
-javax.swing.JLabel#<init>()V
-gui.CloseBetGUI#actualizarTabla()V
+dataAccess.DataAccess#getQuestion(LEvent;)Ljava/util/Vector;

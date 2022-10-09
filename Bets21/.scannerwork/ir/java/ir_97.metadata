@@ -1,2 +1,1 @@
-gui.FQuestion2#btnNoticia_actionPerformed(Ljava/awt/event/ActionEvent;)V
-null
+domain.Comentarios#getUser()LUsuario;

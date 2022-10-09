@@ -1,1 +1,1 @@
-exceptions.EventAlreadyExistsException#<init>(Ljava/lang/String;)V
+businessLogic.BLFacadeImplementation#getQuestion(LQuestion;)LQuestion;

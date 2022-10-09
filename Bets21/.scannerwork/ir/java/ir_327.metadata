@@ -1,1 +1,1 @@
-domain.Liga#getEquipos()Ljava/util/Vector;
+domain.Event#setComentarios(Ljava/util/Vector;)V

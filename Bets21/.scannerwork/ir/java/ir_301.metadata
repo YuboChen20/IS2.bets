@@ -1,1 +1,2 @@
-domain.Pronostico#getApuestas()Ljava/util/Vector;
+gui.CreateNoticiaGUI#paintDaysWithNoticias(LJCalendar;Ljava/util/Vector;)V
+java.util.Calendar#setTime(Ljava/util/Date;)V

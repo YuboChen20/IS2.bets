@@ -1,2 +1,1 @@
-domain.Usuario#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
-java.util.Vector#<init>()V
+exceptions.EventFinishedException#instance-init#

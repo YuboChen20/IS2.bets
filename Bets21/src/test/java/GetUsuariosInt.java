@@ -73,7 +73,7 @@ public class GetUsuariosInt {
 		//verify parameter values as usual using JUnit asserts
 		int i=0;
 		while(i<list1.size()) {
-			if(list.get(i).getUserName()==u.getUserName()) assertTrue(true);
+			if(list.get(i).getUserName().equals(u.getUserName())) assertTrue(true);
 			i++;
 		}
 	}

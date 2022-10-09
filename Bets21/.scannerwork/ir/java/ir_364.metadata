@@ -1,1 +1,5 @@
-exceptions.QuestionAlreadyExist#instance-init#
+businessLogic.BLFacadeImplementation#findPronosticos(LQuestion;)Ljava/util/List;
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+exceptions.PronosticAlreadyExist#instance-init#
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+exceptions.PronosticAlreadyExist#<init>(Ljava/lang/String;)V

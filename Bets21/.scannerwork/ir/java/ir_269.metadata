@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#desBloquear(Ljava/lang/String;Ldomain/Usuario;)V
+domain.Question#setQuestion(Ljava/lang/String;)V

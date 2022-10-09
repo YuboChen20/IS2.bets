@@ -1,11 +1,16 @@
 
-%gui.CloseBetGUI$2#isCellEditable(II)ZX
-LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/CloseBetGUI.javaš š(!"1*Á
-1X
-LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/CloseBetGUI.java› ›("b
-X
-LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/CloseBetGUI.java› ›($
-"":
-"":
-""B
-gui.CloseBetGUI$2
+;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java§ §("1*˜
+1`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java¨	 ¨(²
+¯
+`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java¨	 ¨(
+%0java.lang.String"__id*-*+
+configuration.ConfigXML"
+databaseNode"|
+`
+TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java¨ ¨(
+
+%0java.lang.StringB
+configuration.ConfigXML

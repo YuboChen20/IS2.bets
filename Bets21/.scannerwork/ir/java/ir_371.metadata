@@ -1,2 +1,1 @@
-gui.NoticiasGUI#paintDaysWithNoticias(LJCalendar;Ljava/util/Vector;)V
-java.util.Calendar#setTime(Ljava/util/Date;)V
+businessLogic.BLFacadeImplementation#getQuestion(Ldomain/Event;I)LQuestion;

@@ -1,2 +1,1 @@
-domain.Question#addPronosticoNoHecho(Ljava/lang/String;D)LPronostico;
-null
+domain.Pronostico#getNumUser()I

@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getNoticiasMonth(Ljava/util/Date;)Ljava/util/List;
+test.dataAccess.TestDataAccess#instance-init#

@@ -1,1 +1,1 @@
-domain.Event#setClosed(Z)V
+configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;

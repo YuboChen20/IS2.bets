@@ -1,2 +1,2 @@
-gui.FQuestionInvitado2#btnNoticia_actionPerformed(Ljava/awt/event/ActionEvent;)V
-null
+domain.Liga#hashCode()I
+java.lang.String#hashCode()I

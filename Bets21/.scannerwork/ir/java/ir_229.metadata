@@ -1,4 +1,2 @@
-businessLogic.BLFacadeImplementation#<init>()V
-null
-java.lang.String#equals(Ljava/lang/Object;)Z
-configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;
+dataAccess.DataAccess#getNoticiasMedio(Ljava/lang/String;)Ljava/util/List;
+java.util.Collections#reverse(Ljava/util/List;)V

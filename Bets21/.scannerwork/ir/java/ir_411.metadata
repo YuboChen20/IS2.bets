@@ -1,1 +1,1 @@
-configuration.ConfigXML#getUser()Ljava/lang/String;
+domain.Equipo#setNombre(Ljava/lang/String;)V

@@ -1,1 +1,1 @@
-gui.MainGUI#instance-init#
+businessLogic.BLFacadeImplementation#getNoticiasMonth(Ljava/util/Date;)Ljava/util/List;

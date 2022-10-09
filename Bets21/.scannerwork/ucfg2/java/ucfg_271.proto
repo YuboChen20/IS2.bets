@@ -1,16 +1,9 @@
 
-+domain.Equipo#getNombre()Ljava/lang/String;T
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java$ $("1*ä
-1T
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java%	 %(–
-“
-T
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java%	 %(
-%0java.lang.String"__id**
-domain.Equipo"
-nombre"p
-T
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java% %(
-
-%0java.lang.StringB
-domain.Equipo
+domain.Question#isIsclosed()ZX
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.javaÆ Æ("1*Á
+1X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.javaÇ	 Ç("b
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.javaÇ Ç(
+""B
+domain.Question

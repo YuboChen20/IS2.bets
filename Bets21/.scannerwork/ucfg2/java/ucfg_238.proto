@@ -1,48 +1,16 @@
 
-fbusinessLogic.BLFacadeImplementation#getUsuarios(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç ç(%"startingBlock*ß
-startingBlockm
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç% ç(:¨
-©
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaå å(
-%0"
-__annotate*
-	WebMethod*
-
-sjava.lang.Stringü
-ú
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç- ç(.
-sjava.lang.String"__annotation*
-
-%0≠
-™
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaå å(
-%1"
-__annotate*
-	WebMethod*
+/domain.Noticia#getSubTitulo()Ljava/lang/String;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java< <("1*Î
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java=	 =(õ
+ò
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java=	 =(
+%0java.lang.String"__id*!*
+domain.Noticia"
+	subTitulo"q
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java= =(
 
-s2java.lang.String†
-ù
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaç7 ç(9
-s2java.lang.String"__annotation*
-
-%1*
-1*°
-1m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaé é(ú
-ô
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaè è(7
-usuariosjava.util.List"__id*
-"""ç
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaë ë(
-
-usuariosjava.util.List:
-sjava.lang.String:
-s2java.lang.StringB(&
-$businessLogic.BLFacadeImplementation
+%0java.lang.StringB
+domain.Noticia

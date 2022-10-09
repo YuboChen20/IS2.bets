@@ -1,2 +1,1 @@
-domain.Equipo#instance-init#
-java.util.Vector#<init>()V
+exceptions.PronosticAlreadyExist#instance-init#

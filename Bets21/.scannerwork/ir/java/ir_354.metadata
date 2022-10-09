@@ -1,1 +1,7 @@
-domain.Usuario#addDinero(D)V
+businessLogic.BLFacadeImplementation#createQuestion(Ldomain/Event;Ljava/lang/String;F)LQuestion;
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+exceptions.EventFinishedException#<init>(Ljava/lang/String;)V
+java.util.Date#<init>()V
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+java.util.Date#instance-init#
+exceptions.EventFinishedException#instance-init#

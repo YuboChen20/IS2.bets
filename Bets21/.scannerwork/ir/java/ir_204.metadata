@@ -1,1 +1,1 @@
-gui.CreateAndQueryGUI#getSelectedLiga()LLiga;
+dataAccess.DataAccess#añadirApuesta(LUsuario;LBet;)V

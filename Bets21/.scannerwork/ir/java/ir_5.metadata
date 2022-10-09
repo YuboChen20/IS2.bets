@@ -1,3 +1,1 @@
-dataAccess.DataAccess#getEventsMonth(Ljava/util/Date;)Ljava/util/Vector;
-java.util.Vector#<init>()V
-java.util.Vector#instance-init#
+domain.Bet#<init>(Ljava/lang/Integer;LPronostico;LUsuario;D)V

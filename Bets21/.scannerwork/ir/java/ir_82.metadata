@@ -1,1 +1,2 @@
-domain.Noticia#setTexto(Ljava/lang/String;)V
+gui.CreateAndQueryGUI#updateTeams()V
+gui.MainGUI#getBusinessLogic()LBLFacade;

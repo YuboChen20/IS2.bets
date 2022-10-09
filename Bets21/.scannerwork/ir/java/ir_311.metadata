@@ -1,1 +1,1 @@
-domain.Equipo#getDineroApostado()D
+domain.Event#getQuestions()Ljava/util/Vector;

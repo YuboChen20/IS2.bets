@@ -1,1 +1,1 @@
-configuration.ConfigXML#getDbFilename()Ljava/lang/String;
+domain.Equipo#toString()Ljava/lang/String;

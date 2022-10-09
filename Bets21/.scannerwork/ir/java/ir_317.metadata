@@ -1,2 +1,1 @@
-domain.Equipo#hashCode()I
-java.lang.String#hashCode()I
+domain.Event#setEventNumber(Ljava/lang/Integer;)V

@@ -1,1 +1,3 @@
-businessLogic.BLFacadeImplementation#initializeBD()V
+dataAccess.DataAccess#anadirEquipoALiga(Ljava/lang/String;LLiga;)V
+null
+java.lang.String#equals(Ljava/lang/Object;)Z

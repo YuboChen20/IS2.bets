@@ -1,1 +1,2 @@
-dataAccess.DataAccess#aumentarDinero(LUsuario;D)V
+domain.IntegerAdapter#marshal(Ljava/lang/Integer;)Ljava/lang/String;
+java.lang.Integer#toString()Ljava/lang/String;

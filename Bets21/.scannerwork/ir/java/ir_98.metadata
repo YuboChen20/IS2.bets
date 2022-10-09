@@ -1,11 +1,1 @@
-gui.HistorialGUI#instance-init#
-javax.swing.JTable#<init>()V
-javax.swing.DefaultComboBoxModel#<init>()V
-java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
-java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
-javax.swing.JButton#<init>(Ljava/lang/String;)V
-javax.swing.JTable#instance-init#
-javax.swing.JComboBox#instance-init#
-javax.swing.DefaultComboBoxModel#instance-init#
-javax.swing.JComboBox#<init>()V
-javax.swing.JButton#instance-init#
+domain.Comentarios#setUser(LUsuario;)V

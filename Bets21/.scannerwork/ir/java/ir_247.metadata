@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#cerrarApuesta(Ldomain/Pronostico;)V
+domain.Noticia#setTitulo(Ljava/lang/String;)V

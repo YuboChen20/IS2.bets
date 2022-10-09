@@ -1,15 +1,17 @@
 
-BbusinessLogic.BLFacadeImplementation#getAllLigas()Ljava/util/List;m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÅ Å("1*›
-1m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÆ Æ(™
-–
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÇ Ç(.
-ligasjava.util.List"__id*
-"""Š
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÉ É(
-
-ligasjava.util.ListB(&
-$businessLogic.BLFacadeImplementation
+.domain.Noticia#getFechaPubli()Ljava/util/Date;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java\ \("1*è
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java]	 ](š
+—
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java]	 ](
+%0java.util.Date"__id*"* 
+domain.Noticia"
+
+fechaPubli"o
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java] ](
+
+%0java.util.DateB
+domain.Noticia

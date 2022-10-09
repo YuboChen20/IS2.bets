@@ -1,1 +1,1 @@
-domain.Pronostico#setPorcentajeApuesta(F)V
+domain.Entrada#<init>(Ljava/util/Date;ZLUsuario;ZZ)V

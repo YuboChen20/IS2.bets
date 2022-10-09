@@ -1,16 +1,11 @@
 
-,domain.Noticia#getTitulo()Ljava/lang/String;U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java4 4("1*è
-1U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java5	 5(˜
-•
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java5	 5(
-%0java.lang.String"__id**
-domain.Noticia"
-titulo"q
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java5 5(
-
-%0java.lang.StringB
-domain.Noticia
+&gui.HistorialGUI$4#isCellEditable(II)ZY
+MC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/HistorialGUI.java† †(!"1*Ã
+1Y
+MC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/HistorialGUI.java‡ ‡("c
+Y
+MC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/HistorialGUI.java‡ ‡($
+"":
+"":
+""B
+gui.HistorialGUI$4

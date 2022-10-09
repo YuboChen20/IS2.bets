@@ -1,3 +1,2 @@
-dataAccess.DataAccess#crearApuesta(LUsuario;DLPronostico;)I
-domain.Bet#<init>(LPronostico;LUsuario;D)V
-domain.Bet#instance-init#
+domain.IntegerAdapter#unmarshal(Ljava/lang/String;)Ljava/lang/Integer;
+java.lang.Integer#parseInt(Ljava/lang/String;)I

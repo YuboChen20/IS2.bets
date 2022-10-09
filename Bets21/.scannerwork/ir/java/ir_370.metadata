@@ -1,1 +1,1 @@
-gui.NoticiasGUI#jButtonAtras_actionPerformed2(Ljava/awt/event/ActionEvent;)V
+businessLogic.BLFacadeImplementation#cerrarApuesta(LPronostico;)V

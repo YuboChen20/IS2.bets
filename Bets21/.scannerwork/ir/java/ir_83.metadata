@@ -1,1 +1,6 @@
-domain.Noticia#getNomAutor()Ljava/lang/String;
+gui.CreateAndQueryGUI#updateLeagues()V
+java.util.Vector#<init>()V
+java.util.Vector#instance-init#
+gui.MainGUI#getBusinessLogic()LBLFacade;
+javax.swing.JButton#<init>(Ljava/lang/String;)V
+javax.swing.JButton#instance-init#

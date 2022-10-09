@@ -1,1 +1,1 @@
-gui.MainGUI#setBussinessLogic(LBLFacade;)V
+businessLogic.BLFacadeImplementation#getAllNoticias()Ljava/util/List;

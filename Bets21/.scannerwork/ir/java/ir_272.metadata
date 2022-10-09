@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#anadirEquipoALiga(Ljava/lang/String;Ldomain/Liga;)V
+domain.Question#getResult()Ljava/lang/String;

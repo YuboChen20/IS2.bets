@@ -1,1 +1,1 @@
-domain.Event#getisFinished()Z
+configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;

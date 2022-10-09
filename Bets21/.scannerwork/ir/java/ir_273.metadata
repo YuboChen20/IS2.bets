@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#eliminarEquipoDeLiga(Ljava/lang/String;Ldomain/Liga;)V
+domain.Question#setResult(Ljava/lang/String;)V

@@ -1,2 +1,1 @@
-gui.Login#btnLoginUser_actionPerformed(Ljava/awt/event/ActionEvent;Ldomain/Usuario;)V
-null
+domain.Question#setNºApuesta(Ljava/lang/Integer;)V

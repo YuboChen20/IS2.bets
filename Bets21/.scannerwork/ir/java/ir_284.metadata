@@ -1,1 +1,1 @@
-domain.Pronostico#<init>()V
+domain.Question#setPronosticos(Ljava/util/Vector;)V

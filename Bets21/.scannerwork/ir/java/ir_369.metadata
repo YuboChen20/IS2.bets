@@ -1,2 +1,1 @@
-gui.NoticiasGUI#jButtonAtras_actionPerformed1(Ljava/awt/event/ActionEvent;)V
-null
+businessLogic.BLFacadeImplementation#isEventoCerrar(Ljava/util/Date;Ldomain/Event;)Z

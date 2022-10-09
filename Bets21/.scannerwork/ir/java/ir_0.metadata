@@ -1,1 +1,5 @@
-dataAccess.DataAccess#instance-init#
+gui.SeeUserInfoGUI#instance-init#
+javax.swing.JTable#<init>()V
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+javax.swing.JTable#instance-init#

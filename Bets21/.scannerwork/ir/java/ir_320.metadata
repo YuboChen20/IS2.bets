@@ -1,1 +1,1 @@
-domain.Equipo#setNumUsuariosApuestan(D)V
+domain.Event#getEventDate()Ljava/util/Date;

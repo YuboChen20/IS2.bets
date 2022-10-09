@@ -45,7 +45,7 @@ public class GetUsuariosDABTest {
 			List<Usuario> list=sut.getUsuarios("Bloqueados","Admin");
 			int i=0;
 			while(i<list.size()) {
-				if(list.get(i).getUserName()==u.getUserName()) assertTrue(true);
+				if(list.get(i).getUserName().equals(u.getUserName())) assertTrue(true);
 				i++;
 			}
 			
@@ -91,7 +91,7 @@ public class GetUsuariosDABTest {
 			//verify the results
 			int i=0;
 			while(i<list.size()) {
-				if(list.get(i).getUserName()==u.getUserName()) assertTrue(true);
+				if(list.get(i).getUserName().equals(u.getUserName())) assertTrue(true);
 				i++;
 			}
 			

@@ -1,16 +1,33 @@
 
-@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaì ì(#"1*ù
-1`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaî	 î(∑
-¥
-`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaî	 î(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicNode"|
-`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaî î(
+]businessLogic.BLFacadeImplementation#getNoticiasDateMonth(Ljava/util/Date;)Ljava/util/Vector;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java°! °(5"startingBlock*÷
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java°5 °(@≠
+™
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java° °(
+%0"
+__annotate*
+	WebMethod*
 
-%0java.lang.StringB
-configuration.ConfigXML
+datejava.util.Date†
+ù
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java°; °(?
+datejava.util.Date"__annotation*
+
+%0*
+1*ü
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¢ ¢(õ
+ò
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java£ £(<
+datesjava.util.Vector"__id*
+"""å
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java• •(
+
+datesjava.util.Vector:
+datejava.util.DateB(&
+$businessLogic.BLFacadeImplementation

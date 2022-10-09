@@ -1,1 +1,1 @@
-domain.Usuario#añadirApuesta(LBet;)LBet;
+gui.CloseBetGUI#jButtonAtras_actionPerformed(Ljava/awt/event/ActionEvent;)V

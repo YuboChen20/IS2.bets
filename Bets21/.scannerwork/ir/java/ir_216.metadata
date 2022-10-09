@@ -1,1 +1,2 @@
-domain.Comentarios#<init>(Ljava/lang/String;LEvent;Ldomain/Usuario;Ljava/lang/String;)V
+dataAccess.DataAccess#createComent(Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)LComentarios;
+null

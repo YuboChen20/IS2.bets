@@ -1,4 +1,3 @@
-dataAccess.DataAccess#desBloquear(Ljava/lang/String;LUsuario;)V
-null
-java.util.Calendar#getInstance()Ljava/util/Calendar;
-java.util.Calendar#getTime()Ljava/util/Date;
+test.businessLogic.TestFacadeImplementation#<init>()V
+test.dataAccess.TestDataAccess#instance-init#
+test.dataAccess.TestDataAccess#<init>()V

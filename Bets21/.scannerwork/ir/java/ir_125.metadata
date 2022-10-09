@@ -1,1 +1,2 @@
-domain.Question#setPronosticos(Ljava/util/Vector;)V
+domain.Liga#instance-init#
+java.util.Vector#<init>()V

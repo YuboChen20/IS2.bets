@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getEquiposPorLiga(ILdomain/Liga;)Ljava/util/List;
+domain.Question#getEvent()LEvent;

@@ -1,2 +1,1 @@
-dataAccess.DataAccess#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
-null
+domain.Bet#getBetNumber()Ljava/lang/Integer;

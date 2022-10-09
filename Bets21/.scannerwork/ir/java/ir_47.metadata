@@ -1,3 +1,1 @@
-dataAccess.DataAccess#anadirEquipoALiga(Ljava/lang/String;LLiga;)V
-null
-java.lang.String#equals(Ljava/lang/Object;)Z
+test.businessLogic.TestFacadeImplementation#addEventWithQuestion(Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;F)LEvent;

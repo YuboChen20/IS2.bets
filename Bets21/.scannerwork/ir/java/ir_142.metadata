@@ -1,1 +1,8 @@
-domain.Entrada#isBloqueado()Z
+gui.NoticiasGUI#<init>(Ljava/lang/Integer;)V
+javax.swing.border.EmptyBorder#<init>(IIII)V
+gui.MainGUI#getBusinessLogic()LBLFacade;
+javax.swing.JPanel#<init>()V
+java.awt.Font#<init>(Ljava/lang/String;II)V
+javax.swing.border.EmptyBorder#instance-init#
+java.awt.Font#instance-init#
+javax.swing.JPanel#instance-init#

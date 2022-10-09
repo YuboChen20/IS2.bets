@@ -1,9 +1,16 @@
 
-domain.Liga#getNumEquipos()IR
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java7 7("1*µ
-1R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java8	 8("\
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.java8 8(
-""B
-domain.Liga
+)domain.Entrada#getFecha()Ljava/util/Date;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java( (("1*ã
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java)	 )(•
+’
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java)	 )(
+%0java.util.Date"__id**
+domain.Entrada"
+fecha"o
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java) )(
+
+%0java.util.DateB
+domain.Entrada

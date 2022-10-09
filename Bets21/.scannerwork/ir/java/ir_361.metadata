@@ -1,1 +1,7 @@
-domain.Usuario#getNumIntento()I
+businessLogic.BLFacadeImplementation#createEvent(Ljava/lang/String;Ljava/util/Date;)Ldomain/Event;
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+exceptions.EventFinishedException#<init>(Ljava/lang/String;)V
+java.util.Date#<init>()V
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+java.util.Date#instance-init#
+exceptions.EventFinishedException#instance-init#

@@ -1,1 +1,1 @@
-domain.Liga#toString()Ljava/lang/String;
+domain.Event#getEquipos()Ljava/util/Vector;

@@ -1,1 +1,1 @@
-domain.Comentarios#setUser(Ldomain/Usuario;)V
+dataAccess.DataAccess#eliminarNoticia(Ldomain/Noticia;)V

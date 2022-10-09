@@ -1,1 +1,2 @@
-domain.Noticia#getTitulo()Ljava/lang/String;
+gui.CreateAndQueryGUI#paintDaysWithEvents(LJCalendar;Ljava/util/Vector;)V
+java.util.Calendar#setTime(Ljava/util/Date;)V

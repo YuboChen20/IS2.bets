@@ -1,33 +1,64 @@
 
-WbusinessLogic.BLFacadeImplementation#getEventsMonth(Ljava/util/Date;)Ljava/util/Vector;k
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java{  {(."startingBlock*Ð
-startingBlockk
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java{. {(9«
-¨
-k
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java{ {(
-%0"
-__annotate*
-	WebMethod*
-
-datejava.util.Datež
-›
-k
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java{4 {(8
-datejava.util.Date"__annotation*
-
-%0*
-1*™
-1k
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java| |(™
-–
-k
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java} }(5
-datesjava.util.Vector"__id*
-"""Š
-k
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java (
+<dataAccess.DataAccess#getAllNoticiasAuthor()Ljava/util/List;^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaé é()"5*¦
+2^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaí í(‰
+†
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaí í(
+aujava.lang.String"__id*
+""¬
+©
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaí í(
+aujava.lang.String"
+__arrayGet*
 
-datesjava.util.Vector:
-datejava.util.DateB(&
-$businessLogic.BLFacadeImplementation
+autoresjava.util.List*
+""*
+3
+1*ï
+3^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaí í( Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaí í($
+%2java.io.PrintStream"__id*
+""õò
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaí í(0
+
+%3void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%2java.io.PrintStream*
+
+aujava.lang.String2println(Ljava/lang/String;)*
+2*
+5^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaê ê(Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaê ê(
+%0java.io.PrintStream"__id*
+""„
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaê ê(;
+
+%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*'%
+#>> DataAccess: getAllNoticiasAuthor2println(Ljava/lang/String;)Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaì ì(/
+autoresjava.util.List"__id*
+""*
+2*â
+1^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaî
+ î("}
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaî î(
+
+autoresjava.util.ListB
+dataAccess.DataAccess

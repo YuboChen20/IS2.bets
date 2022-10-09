@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#obtenerEquipos()Ljava/util/List;
+domain.Noticia#getFechaPubli()Ljava/util/Date;

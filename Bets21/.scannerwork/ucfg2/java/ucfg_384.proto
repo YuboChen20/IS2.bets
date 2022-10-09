@@ -1,16 +1,33 @@
 
-5configuration.ConfigXML#getLocale()Ljava/lang/String;^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java1 1("1*Œ
-1^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java2	 2(ª
-§
-^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java2	 2(
-%0java.lang.String"__id*'*%
-configuration.ConfigXML"
-locale"z
-^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java2 2(
-
-%0java.lang.StringB
-configuration.ConfigXML
+WbusinessLogic.BLFacadeImplementation#getEventoactualizado(Ldomain/Event;)Ldomain/Event;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java© ©(0"startingBlock*Î
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java©0 ©(:©
+¦
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java© ©(
+%0"
+__annotate*
+	WebMethod*
+
+evdomain.Eventœ
+™
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java©7 ©(9
+evdomain.Event"__annotation*
+
+%0*
+1*“
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaª ª(	•
+’
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java« «(9
+evedomain.Event"__id*
+"""†
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java­ ­(
+
+evedomain.Event:
+evdomain.EventB(&
+$businessLogic.BLFacadeImplementation

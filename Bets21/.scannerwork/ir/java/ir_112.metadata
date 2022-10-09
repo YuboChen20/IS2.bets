@@ -1,1 +1,1 @@
-domain.Question#setBetMinimum(F)V
+domain.Pronostico#getQuestion()LQuestion;

@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getBets(LUsuario;)Ljava/util/List;
+domain.IntegerAdapter#instance-init#

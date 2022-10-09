@@ -1,15 +1,17 @@
 
-EbusinessLogic.BLFacadeImplementation#obtenerEquipos()Ljava/util/List;m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaπ π(&"1*ü
-1m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java∫ ∫(õ
-ò
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaª ª(3
-equiposjava.util.List"__id*
-"""å
-m
-aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaΩ Ω(
-
-equiposjava.util.ListB(&
-$businessLogic.BLFacadeImplementation
+1domain.Noticia#getNumNoticia()Ljava/lang/Integer;U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java( (("1*Ó
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java)	 )(ù
+ö
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java)	 )(
+%0java.lang.Integer"__id*"* 
+domain.Noticia"
+
+numNoticia"r
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Noticia.java) )(
+
+%0java.lang.IntegerB
+domain.Noticia

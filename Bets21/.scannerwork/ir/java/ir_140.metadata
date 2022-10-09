@@ -1,1 +1,1 @@
-domain.Entrada#getFecha()Ljava/util/Date;
+exceptions.QuestionAlreadyExist#<init>(Ljava/lang/String;)V

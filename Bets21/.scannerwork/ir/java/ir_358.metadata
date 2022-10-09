@@ -1,1 +1,1 @@
-domain.Usuario#getFecha()Ljava/util/Date;
+businessLogic.BLFacadeImplementation#initializeBD()V

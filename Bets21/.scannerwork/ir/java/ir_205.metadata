@@ -1,1 +1,1 @@
-gui.CreateAndQueryGUI#setLigaSelection(Ljava/lang/String;)I
+dataAccess.DataAccess#getBets(LUsuario;)Ljava/util/List;

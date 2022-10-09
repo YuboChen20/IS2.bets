@@ -1,1 +1,3 @@
-businessLogic.BLFacade#instance-init#
+gui.Render#getTableCellRendererComponent(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;
+java.awt.Color#instance-init#
+java.awt.Color#<init>(IIII)V

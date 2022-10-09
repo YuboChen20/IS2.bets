@@ -1,1 +1,1 @@
-exceptions.EventFinishedException#instance-init#
+exceptions.TeamAlreadyExistsException#<init>(Ljava/lang/String;)V

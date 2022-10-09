@@ -1,2 +1,1 @@
-gui.CreateNoticiaGUI#jButtonAtras_actionPerformed(Ljava/awt/event/ActionEvent;)V
-gui.CreateAndQueryGUI#getInstance()Lgui/CreateAndQueryGUI;
+configuration.UtilDate#instance-init#

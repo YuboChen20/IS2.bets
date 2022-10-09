@@ -1,1 +1,1 @@
-dataAccess.DataAccess#findPronosticos(LQuestion;)Ljava/util/List;
+domain.Bet#getUsuario()LUsuario;

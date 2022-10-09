@@ -1,1 +1,2 @@
-domain.Event#setDescription(Ljava/lang/String;)V
+gui.SignUp#main([Ljava/lang/String;)V
+java.awt.EventQueue#invokeLater(Ljava/lang/Runnable;)V

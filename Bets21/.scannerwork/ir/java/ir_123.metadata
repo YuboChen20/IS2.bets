@@ -1,1 +1,1 @@
-domain.Question#setIsclosed(Z)V
+domain.Pronostico#addApuesta(LBet;)V

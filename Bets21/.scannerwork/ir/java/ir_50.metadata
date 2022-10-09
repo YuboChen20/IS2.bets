@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getAllLigas()Ljava/util/List;
+test.businessLogic.TestFacadeImplementation#addUsuario(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Z)LUsuario;

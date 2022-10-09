@@ -1,1 +1,3 @@
-domain.Pronostico#setApuestas(Ljava/util/Vector;)V
+gui.RankingGUI#instance-init#
+javax.swing.JTable#<init>()V
+javax.swing.JTable#instance-init#

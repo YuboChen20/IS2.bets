@@ -1,1 +1,2 @@
-configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;
+domain.Equipo#hashCode()I
+java.lang.String#hashCode()I

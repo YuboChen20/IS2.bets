@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getAllEquipos(I)Ljava/util/List;
+test.dataAccess.TestDataAccess#existEvent(LEvent;)Z

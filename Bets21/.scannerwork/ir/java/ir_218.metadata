@@ -1,1 +1,2 @@
-domain.Comentarios#setComtNumber(Ljava/lang/Integer;)V
+dataAccess.DataAccess#getEventosFinalizadosNoCerrados(Ljava/util/Date;)Ljava/util/Vector;
+java.util.Vector#<init>()V

@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getEquiposPorLiga(ILjava/lang/String;)Ljava/util/List;
+domain.Question#addPronostico(LPronostico;)LPronostico;

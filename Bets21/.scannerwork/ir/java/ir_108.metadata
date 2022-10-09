@@ -1,1 +1,1 @@
-domain.Question#setQuestionNumber(Ljava/lang/Integer;)V
+domain.Pronostico#getPronostico()Ljava/lang/String;

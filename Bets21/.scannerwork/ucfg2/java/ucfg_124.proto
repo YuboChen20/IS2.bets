@@ -1,72 +1,16 @@
 
-'domain.Entrada#getS()Ljava/lang/String;U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java+ +("2"3"6"1*
-2U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java1
- 1(•
-’
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java1
- 1(
-%4java.util.Date"__id**
-domain.Entrada"
-fecha¨
-¥
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java1
- 1(
-%5java.lang.String"__concat*
-
-%4java.util.Date*
- :  sin Ã©xito"q
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java1 1( 
+.domain.Comentarios#getDate()Ljava/lang/String;Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaN N("1*ö
+1Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaO	 O(
+›
+Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaO	 O(
+%0java.lang.String"__id* *
+domain.Comentarios"
+date"u
+Y
+OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaO O(
 
-%5java.lang.String*‹
-3U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java0 0(•
-’
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java0 0(
-%2java.util.Date"__id**
-domain.Entrada"
-fecha£
- 
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java0 0(+
-%3java.lang.String"__concat*
-
-%2java.util.Date*
-	 :  admin"q
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java0 0(,
-
-%3java.lang.String*
-6U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java-
- -(•
-’
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java-
- -(
-%0java.util.Date"__id**
-domain.Entrada"
-fecha§
-¤
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java-
- -(
-%1java.lang.String"__concat*
-
-%0java.util.Date*
- : con Ã©xito"q
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java- -(
-
-%1java.lang.String*»
-1U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java3	 3("_
-U
-KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java3 3(
-""B
-domain.Entrada
+%0java.lang.StringB
+domain.Comentarios

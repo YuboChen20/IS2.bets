@@ -1,2 +1,1 @@
-dataAccess.DataAccess#getAllNoticias()Ljava/util/List;
-java.util.Collections#reverse(Ljava/util/List;)V
+test.dataAccess.TestDataAccess#close()V

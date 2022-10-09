@@ -1,1 +1,4 @@
-domain.Equipo#setNombre(Ljava/lang/String;)V
+GetUsuariosInt#setUpClass()V
+null
+businessLogic.BLFacadeImplementation#<init>(LDataAccess;)V
+businessLogic.BLFacadeImplementation#instance-init#

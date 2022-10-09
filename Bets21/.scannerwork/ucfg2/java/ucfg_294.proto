@@ -1,82 +1,9 @@
 
-'domain.Liga#equals(Ljava/lang/Object;)ZR
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaL L("startingBlock*µ
-2R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaR
- R("\
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaR R(
-""*·
-3R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaQ Q(π∂
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaQ Q(
-%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
-domain.Liga2
-getClass()√¿
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaQ Q("
-%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
-
-objjava.lang.Object2
-getClass()*
-2
-1*ñ
-startingBlockR
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaL L("ú
-ô
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaK K(
-
-%4"
-__annotate*
-java.lang.Override*
-
-objjava.lang.ObjectÜ
-É
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaL L(!
-objjava.lang.Object"__annotation*
-
-%4*	
-3
-4
-6*µ
-4R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaP
- P("\
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaP P(
-""*µ
-6R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaN
- N("\
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaN N(
-""*˜
-1R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaS S(é
-ã
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaS S(
-otherdomain.Liga"__id*
-
-objjava.lang.Objectí
-è
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaT	 T(
-%2java.lang.String"__id**
-domain.Liga"
-nombreô
-ñ
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaT T(
-%3java.lang.String"__id*"* 
-
-otherdomain.Liga"
-nombre"\
-R
-HC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Liga.javaT T( 
-"":
-objjava.lang.ObjectB
-domain.Liga
+ domain.Entrada#isBloqueoAdmin()ZU
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java9 9("1*ª
+1U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java:	 :("_
+U
+KC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Entrada.java: :(
+""B
+domain.Entrada

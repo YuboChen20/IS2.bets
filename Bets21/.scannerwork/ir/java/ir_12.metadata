@@ -1,2 +1,1 @@
-dataAccess.DataAccess#createEvent(LEquipo;LEquipo;Ljava/util/Date;)LEvent;
-null
+domain.Bet#setPronostico(LPronostico;)V

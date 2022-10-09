@@ -1,1 +1,1 @@
-domain.Question#getPron(I)LPronostico;
+domain.Liga#getNombre()Ljava/lang/String;

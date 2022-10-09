@@ -1,1 +1,2 @@
-gui.ApplicationLauncher#instance-init#
+dataAccess.DataAccess#getEvents(Ljava/util/Date;)Ljava/util/Vector;
+java.util.Vector#<init>()V

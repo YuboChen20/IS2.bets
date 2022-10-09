@@ -1,1 +1,8 @@
-domain.Usuario#getFechas()Ljava/util/Vector;
+businessLogic.BLFacadeImplementation#createEvent(Ldomain/Equipo;Ldomain/Equipo;Ljava/util/Date;)Ldomain/Event;
+null
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+exceptions.EventFinishedException#<init>(Ljava/lang/String;)V
+java.util.Date#<init>()V
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+java.util.Date#instance-init#
+exceptions.EventFinishedException#instance-init#

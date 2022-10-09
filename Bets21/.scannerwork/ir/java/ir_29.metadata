@@ -1,1 +1,2 @@
-dataAccess.DataAccess#getEventoActualizado(LEvent;)LEvent;
+gui.HistorialGUI#main([Ljava/lang/String;)V
+java.awt.EventQueue#invokeLater(Ljava/lang/Runnable;)V

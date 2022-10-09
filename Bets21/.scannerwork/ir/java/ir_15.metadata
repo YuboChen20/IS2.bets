@@ -1,1 +1,1 @@
-dataAccess.DataAccess#calcularPorcentajePronostico(LQuestion;)V
+domain.Bet#getBet()Ljava/lang/Double;

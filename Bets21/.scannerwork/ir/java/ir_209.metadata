@@ -1,1 +1,1 @@
-exceptions.MaximumNumberOfTeamsReached#<init>(Ljava/lang/String;)V
+dataAccess.DataAccess#cerrarApuesta(LPronostico;)V

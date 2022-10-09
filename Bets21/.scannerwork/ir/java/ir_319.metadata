@@ -1,1 +1,1 @@
-domain.Equipo#getNumUsuariosApuestan()D
+domain.Event#setDescription(Ljava/lang/String;)V

@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getQuestionList(LEvent;)Ljava/util/Vector;
+domain.Noticia#setSubTitulo(Ljava/lang/String;)V

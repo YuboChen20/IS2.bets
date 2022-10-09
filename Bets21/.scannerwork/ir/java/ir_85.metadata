@@ -1,1 +1,3 @@
-domain.Noticia#getNomMedio()Ljava/lang/String;
+gui.CreateAndQueryGUI#setLigaSelection(Ljava/lang/String;)I
+gui.MainGUI#getBusinessLogic()LBLFacade;
+java.lang.String#equals(Ljava/lang/Object;)Z

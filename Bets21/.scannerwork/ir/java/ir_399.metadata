@@ -1,3 +1,1 @@
-gui.CrearLigaGUI#getInstance()Lgui/CrearLigaGUI;
-gui.CrearLigaGUI#instance-init#
-gui.CrearLigaGUI#<init>()V
+businessLogic.BLFacadeImplementation#getEquiposPorLiga(ILjava/lang/String;)Ljava/util/List;

@@ -1,1 +1,1 @@
-domain.Liga#<init>(Ljava/lang/String;I)V
+domain.Event#DoesQuestionExists(Ljava/lang/String;)Z

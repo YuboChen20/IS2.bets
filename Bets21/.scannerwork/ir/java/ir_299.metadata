@@ -1,1 +1,7 @@
-domain.Pronostico#getNumUser()I
+gui.CreateNoticiaGUI#<init>()V
+javax.swing.border.EmptyBorder#<init>(IIII)V
+javax.swing.JPanel#<init>()V
+java.awt.Font#<init>(Ljava/lang/String;II)V
+javax.swing.border.EmptyBorder#instance-init#
+java.awt.Font#instance-init#
+javax.swing.JPanel#instance-init#

@@ -1,2 +1,1 @@
-domain.Question#toString()Ljava/lang/String;
-java.lang.Float#toString(F)Ljava/lang/String;
+domain.Liga#<init>(Ljava/lang/String;I)V

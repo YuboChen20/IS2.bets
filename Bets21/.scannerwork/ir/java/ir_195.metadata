@@ -1,1 +1,1 @@
-gui.CreateAndQueryGUI#destroy()V
+dataAccess.DataAccess#existQuestion(LEvent;Ljava/lang/String;)Z

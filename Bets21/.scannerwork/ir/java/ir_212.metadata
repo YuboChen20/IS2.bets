@@ -1,1 +1,1 @@
-gui.CloseBetGUI#jButtonAtras_actionPerformed(Ljava/awt/event/ActionEvent;)V
+dataAccess.DataAccess#cerrarEvento(LEvent;)V

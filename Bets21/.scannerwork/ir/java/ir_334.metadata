@@ -1,2 +1,1 @@
-domain.Liga#equals(Ljava/lang/Object;)Z
-java.lang.Object#getClass()Ljava/lang/Class;
+domain.Event#setClosed(Z)V

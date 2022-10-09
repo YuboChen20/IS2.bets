@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getUser(Ldomain/Usuario;)Ldomain/Usuario;
+domain.Noticia#getNomAutor()Ljava/lang/String;

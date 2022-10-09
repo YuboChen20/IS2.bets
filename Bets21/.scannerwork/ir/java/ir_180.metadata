@@ -1,1 +1,1 @@
-domain.Event#isClosed()Z
+configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;

@@ -1,1 +1,1 @@
-domain.Equipo#getNombre()Ljava/lang/String;
+exceptions.PronosticAlreadyExist#<init>(Ljava/lang/String;)V

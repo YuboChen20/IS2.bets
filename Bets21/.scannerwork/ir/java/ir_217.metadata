@@ -1,1 +1,1 @@
-domain.Comentarios#getComtNumber()Ljava/lang/Integer;
+dataAccess.DataAccess#getEventoActualizado(LEvent;)LEvent;

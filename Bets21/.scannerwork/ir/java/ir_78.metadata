@@ -1,1 +1,3 @@
-domain.Noticia#setTitulo(Ljava/lang/String;)V
+gui.CreateAndQueryGUI#jButtonClose_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.MainGUI#instance-init#
+gui.MainGUI#<init>()V

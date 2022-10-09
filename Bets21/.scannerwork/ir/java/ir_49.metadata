@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getEquiposPorLiga(ILLiga;)Ljava/util/List;
+test.businessLogic.TestFacadeImplementation#getEquipoById(Ljava/lang/String;)LEquipo;

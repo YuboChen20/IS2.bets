@@ -1,1 +1,1 @@
-domain.IntegerAdapter#instance-init#
+exceptions.UnknownTeamException#<init>(Ljava/lang/String;)V

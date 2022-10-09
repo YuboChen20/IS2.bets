@@ -1,2 +1,1 @@
-dataAccess.DataAccess#getNoticiasAuthor(Ljava/lang/String;)Ljava/util/List;
-java.util.Collections#reverse(Ljava/util/List;)V
+test.dataAccess.TestDataAccess#removePronostico(LPronostico;)Z

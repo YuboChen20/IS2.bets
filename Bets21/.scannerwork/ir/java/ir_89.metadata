@@ -1,1 +1,1 @@
-domain.Noticia#toString()Ljava/lang/String;
+domain.Comentarios#<init>(Ljava/lang/Integer;Ljava/lang/String;LEvent;LUsuario;Ljava/lang/String;)V

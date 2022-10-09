@@ -1,1 +1,2 @@
-exceptions.TeamAlreadyExistsException#<init>(Ljava/lang/String;)V
+domain.Usuario#instance-init#
+java.util.Vector#<init>()V

@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getAllEquipos(I)Ljava/util/List;
+domain.Question#getQuestionNumber()Ljava/lang/Integer;

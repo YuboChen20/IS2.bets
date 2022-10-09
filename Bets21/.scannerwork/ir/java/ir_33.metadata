@@ -1,3 +1,1 @@
-dataAccess.DataAccess#getNoticiasDateMonth(Ljava/util/Date;)Ljava/util/Vector;
-java.util.Vector#<init>()V
-java.util.Vector#instance-init#
+test.dataAccess.TestDataAccess#<init>()V

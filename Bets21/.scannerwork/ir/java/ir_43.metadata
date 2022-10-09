@@ -1,2 +1,1 @@
-dataAccess.DataAccess#getUsuarios(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-java.lang.String#equals(Ljava/lang/Object;)Z
+test.dataAccess.TestDataAccess#removeUsuario(LUsuario;)Z

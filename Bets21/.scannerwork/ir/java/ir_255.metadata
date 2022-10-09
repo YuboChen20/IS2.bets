@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getEventosFinalizadosNoCerrados(Ljava/util/Date;)Ljava/util/Vector;
+domain.Noticia#setNomMedio(Ljava/lang/String;)V

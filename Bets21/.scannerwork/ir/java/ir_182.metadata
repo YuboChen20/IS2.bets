@@ -1,1 +1,1 @@
-domain.Event#getEquipos()Ljava/util/Vector;
+configuration.ConfigXML#getDbFilename()Ljava/lang/String;

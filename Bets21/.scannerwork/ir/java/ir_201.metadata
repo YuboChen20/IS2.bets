@@ -1,3 +1,1 @@
-gui.CreateAndQueryGUI#jButtonVerHistorial_actionPerformed(Ljava/awt/event/ActionEvent;)V
-gui.HistorialGUI#instance-init#
-gui.HistorialGUI#<init>()V
+dataAccess.DataAccess#findPronosticos(Ldomain/Question;)Ljava/util/List;

@@ -1,0 +1,3 @@
+gui.CrearLigaGUI#getInstance()Lgui/CrearLigaGUI;
+gui.CrearLigaGUI#instance-init#
+gui.CrearLigaGUI#<init>()V

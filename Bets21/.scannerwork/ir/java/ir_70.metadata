@@ -1,2 +1,1 @@
-domain.IntegerAdapter#unmarshal(Ljava/lang/String;)Ljava/lang/Integer;
-java.lang.Integer#parseInt(Ljava/lang/String;)I
+CrearApuestaDABTest#instance-init#

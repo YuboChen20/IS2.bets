@@ -1,2 +1,1 @@
-dataAccess.DataAccess#getEventstoClose(Ljava/util/Date;)Ljava/util/Vector;
-java.util.Vector#<init>()V
+exceptions.TeamAlreadyPlaysInDayException#instance-init#

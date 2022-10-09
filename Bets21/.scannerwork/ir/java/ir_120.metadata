@@ -1,1 +1,1 @@
-domain.Question#addNºApuesta()V
+domain.Pronostico#getApuestas()Ljava/util/Vector;

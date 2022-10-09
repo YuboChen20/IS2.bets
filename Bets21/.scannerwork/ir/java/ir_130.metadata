@@ -1,1 +1,1 @@
-exceptions.LessThanMinimumTeamException#<init>(Ljava/lang/String;)V
+domain.Liga#setEquipos(Ljava/util/Vector;)V

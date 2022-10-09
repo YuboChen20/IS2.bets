@@ -1,1 +1,1 @@
-domain.Comentarios#<init>()V
+dataAccess.DataAccess#getQuestion(Ldomain/Question;)Ldomain/Question;

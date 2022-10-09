@@ -1,11 +1,17 @@
 
-*gui.OtrasApuestasGUI$3#isCellEditable(II)Z[
-QC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/OtrasApuestasGUI.javac c(!"1*«
-1[
-QC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/OtrasApuestasGUI.javad d("e
-[
-QC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/gui/OtrasApuestasGUI.javad d($
-"":
-"":
-""B
-gui.OtrasApuestasGUI$3
+`businessLogic.BLFacadeImplementation#login(Ljava/lang/String;Ljava/lang/String;)Ldomain/Usuario;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaù ù("1*ì
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaû û(	ï
+í
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaü ü(,
+udomain.Usuario"__id*
+"""Ü
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java° °(
+
+udomain.Usuario:
+userjava.lang.String:
+passjava.lang.StringB(&
+$businessLogic.BLFacadeImplementation

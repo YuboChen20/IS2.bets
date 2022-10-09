@@ -1,1 +1,1 @@
-gui.Login#btnLoginAdmi_actionPerformed(Ljava/awt/event/ActionEvent;)V
+domain.Question#isIsclosed()Z

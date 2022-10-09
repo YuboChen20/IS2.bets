@@ -1,1 +1,1 @@
-domain.Question#getNºApuesta()Ljava/lang/Integer;
+domain.Pronostico#setNumUser(I)V

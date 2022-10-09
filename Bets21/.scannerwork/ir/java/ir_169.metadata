@@ -1,1 +1,3 @@
-domain.Event#toString()Ljava/lang/String;
+gui.SignUp#jButtonMenu_actionPerformed(Ljava/awt/event/ActionEvent;)V
+gui.MainGUI#instance-init#
+gui.MainGUI#<init>()V

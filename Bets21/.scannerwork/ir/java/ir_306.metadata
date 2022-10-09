@@ -1,1 +1,1 @@
-domain.Equipo#<init>(Ljava/lang/String;Ldomain/Liga;)V
+exceptions.PronosticAlreadyExist#<init>()V

@@ -1,1 +1,1 @@
-gui.CreateAndQueryGUI#updateTeams()V
+dataAccess.DataAccess#createPronostic(Ljava/lang/String;LEvent;ID)Ldomain/Question;

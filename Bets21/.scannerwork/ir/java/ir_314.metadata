@@ -1,1 +1,2 @@
-domain.Equipo#setLiga(Ldomain/Liga;)V
+domain.Event#<init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/util/Date;Ldomain/Equipo;Ldomain/Equipo;)V
+null

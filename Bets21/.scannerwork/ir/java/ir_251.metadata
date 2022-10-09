@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getQuestion(LQuestion;)LQuestion;
+domain.Noticia#setTexto(Ljava/lang/String;)V

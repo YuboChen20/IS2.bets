@@ -1,1 +1,5 @@
-domain.Usuario#setDinero(D)V
+businessLogic.BLFacadeImplementation#<init>(LDataAccess;)V
+java.time.LocalDateTime#getYear()I
+java.time.LocalDateTime#getMonthValue()I
+java.time.LocalDateTime#now()Ljava/time/LocalDateTime;
+java.time.LocalDateTime#getDayOfMonth()I

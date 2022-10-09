@@ -1,1 +1,1 @@
-gui.SignUp#instance-init#
+businessLogic.BLFacadeImplementation#getNoticiasDateMonth(Ljava/util/Date;)Ljava/util/Vector;

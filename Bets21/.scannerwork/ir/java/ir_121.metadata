@@ -1,1 +1,1 @@
-domain.Question#setNºApuesta(Ljava/lang/Integer;)V
+domain.Pronostico#setApuestas(Ljava/util/Vector;)V

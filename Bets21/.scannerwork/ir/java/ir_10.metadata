@@ -1,4 +1,1 @@
-dataAccess.DataAccess#login(Ljava/lang/String;Ljava/lang/String;)LUsuario;
-null
-java.util.Calendar#getInstance()Ljava/util/Calendar;
-java.util.Calendar#getTime()Ljava/util/Date;
+domain.Bet#setBetNumber(Ljava/lang/Integer;)V

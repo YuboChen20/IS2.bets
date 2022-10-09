@@ -1,1 +1,1 @@
-configuration.ConfigXML#getDataBaseOpenMode()Ljava/lang/String;
+domain.Equipo#getNumUsuariosApuestan()D

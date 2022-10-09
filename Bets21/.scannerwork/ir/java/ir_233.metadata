@@ -1,1 +1,5 @@
-businessLogic.BLFacadeImplementation#getEventsMonth(Ljava/util/Date;)Ljava/util/Vector;
+dataAccess.DataAccess#desBloquear(Ljava/lang/String;LUsuario;)V
+domain.Entrada#<init>(Ljava/util/Date;ZLUsuario;ZZ)V
+java.util.Calendar#getInstance()Ljava/util/Calendar;
+domain.Entrada#instance-init#
+java.util.Calendar#getTime()Ljava/util/Date;

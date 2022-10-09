@@ -1,1 +1,2 @@
-businessLogic.BLFacadeImplementation#createNoticia(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LNoticia;
+domain.Question#instance-init#
+java.util.Vector#<init>()V

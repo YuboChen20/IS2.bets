@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getQuestion(LEvent;I)LQuestion;
+domain.Noticia#getSubTitulo()Ljava/lang/String;

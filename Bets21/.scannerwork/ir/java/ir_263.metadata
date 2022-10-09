@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#getNoticiasAuthor(Ljava/lang/String;)Ljava/util/List;
+domain.Question#<init>(Ljava/lang/Integer;Ljava/lang/String;FLEvent;)V

@@ -1,3 +1,4 @@
-gui.Render#getTableCellRendererComponent(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;
-java.awt.Color#instance-init#
-java.awt.Color#<init>(IIII)V
+dataAccess.DataAccess#createQuestion(LEvent;Ljava/lang/String;F)Ldomain/Question;
+null
+java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
+java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;

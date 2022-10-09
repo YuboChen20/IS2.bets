@@ -1,4 +1,1 @@
-dataAccess.DataAccess#createQuestion(LEvent;Ljava/lang/String;F)LQuestion;
-null
-java.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;
-java.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+domain.Bet#instance-init#

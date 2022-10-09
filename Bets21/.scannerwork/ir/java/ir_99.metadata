@@ -1,2 +1,1 @@
-gui.HistorialGUI#main([Ljava/lang/String;)V
-java.awt.EventQueue#invokeLater(Ljava/lang/Runnable;)V
+domain.Comentarios#getDate()Ljava/lang/String;

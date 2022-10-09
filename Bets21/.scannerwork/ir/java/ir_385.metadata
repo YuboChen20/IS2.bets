@@ -1,7 +1,1 @@
-gui.MainGUI#getJContentPane()Ljavax/swing/JPanel;
-gui.MainGUI#getLblNewLabel()Ljavax/swing/JLabel;
-gui.MainGUI#getBoton3()Ljavax/swing/JButton;
-javax.swing.JPanel#<init>()V
-gui.MainGUI#getBoton2()Ljavax/swing/JButton;
-gui.MainGUI#getBoton1()Ljavax/swing/JButton;
-javax.swing.JPanel#instance-init#
+businessLogic.BLFacadeImplementation#getAllNoticiasAuthor()Ljava/util/List;

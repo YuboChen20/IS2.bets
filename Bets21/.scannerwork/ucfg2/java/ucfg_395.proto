@@ -1,16 +1,37 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaõ õ(#"1*ù
-1`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaú	 ú(∑
-¥
-`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaú	 ú(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicName"|
-`
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaú ú(
-
-%0java.lang.StringB
-configuration.ConfigXML
+[businessLogic.BLFacadeImplementation#getEquiposPorLiga(ILjava/lang/String;)Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÕ Õ('"startingBlock*Ô
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÕ' Õ(Dæ
+ª
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÃ Ã(
+%0"
+__annotate*
+java.lang.Override* 
+
+
+nombreLigajava.lang.String®
+•
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaÕ9 Õ(C
+
+nombreLigajava.lang.String"__annotation*
+
+%0*
+1*ü
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaŒ Œ(õ
+ò
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaœ œ(G
+equiposjava.util.List"__id*
+"""å
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java— —(
+
+equiposjava.util.List:
+"":
+
+nombreLigajava.lang.StringB(&
+$businessLogic.BLFacadeImplementation

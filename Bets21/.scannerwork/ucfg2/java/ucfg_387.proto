@@ -1,17 +1,15 @@
 
-7configuration.ConfigXML#getPassword()Ljava/lang/String;^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java= =("1*Ž
-1^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java>	 >(¬
-©
-^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java>	 >(
-%0java.lang.String"__id*)*'
-configuration.ConfigXML"
-
-password"z
-^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java> >(
-
-%0java.lang.StringB
-configuration.ConfigXML
+KbusinessLogic.BLFacadeImplementation#getAllNoticiasAuthor()Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaê  ê(4"1*Ÿ
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaë ë(›
+˜
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaì ì(:
+autoresjava.util.List"__id*
+"""Œ
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaî î(
+
+autoresjava.util.ListB(&
+$businessLogic.BLFacadeImplementation

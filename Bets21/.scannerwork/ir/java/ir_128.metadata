@@ -1,1 +1,1 @@
-exceptions.LessThanMinimumTeamException#instance-init#
+domain.Liga#setNombre(Ljava/lang/String;)V

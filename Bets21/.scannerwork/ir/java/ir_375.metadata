@@ -1,1 +1,1 @@
-configuration.UtilDate#instance-init#
+businessLogic.BLFacadeImplementation#getUser(Ldomain/Usuario;)Ldomain/Usuario;

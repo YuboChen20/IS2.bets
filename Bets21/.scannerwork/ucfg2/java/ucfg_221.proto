@@ -1,16 +1,78 @@
 
-.domain.Comentarios#getDate()Ljava/lang/String;Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaN N("1*ö
-1Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaO	 O(
-›
-Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaO	 O(
-%0java.lang.String"__id* *
-domain.Comentarios"
-date"u
-Y
-OC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Comentarios.javaO O(
+CdataAccess.DataAccess#getNoticias(Ljava/util/Date;)Ljava/util/List;^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java» »(!"5*£
+2^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÁ Á(‡
+„
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÁ Á(
+nodomain.Noticia"__id*
+""«
+¨
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÁ Á(
+nodomain.Noticia"
+__arrayGet*
+
+noticiasjava.util.List*
+""*
+3
+1*í
+3^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÁ Á(!Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÁ Á(%
+%4java.io.PrintStream"__id*
+""óğ
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÁ Á(1
+
+%5void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
+
+%4java.io.PrintStream*
+
+nodomain.Noticia2println(Ljava/lang/Object;)*
+2*‹
+5^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¼ ¼(Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¼ ¼(
+%0java.io.PrintStream"__id*
+""ú÷
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java¼ ¼(1
+
+%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*
+>> DataAccess: getNoticia2println(Ljava/lang/String;)Œ
+‰
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java½ ½(
+%2java.io.PrintStream"__id*
+""õò
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.java½ ½(
+
+%3void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
+
+%2java.io.PrintStream*
 
-%0java.lang.StringB
-domain.Comentarios
+datejava.util.Date2println(Ljava/lang/Object;)
+Š
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÀ À(1
+noticiasjava.util.List"__id*
+""*
+2*ã
+1^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÂ
+ Â("~
+^
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÂ Â(
+
+noticiasjava.util.List:
+datejava.util.DateB
+dataAccess.DataAccess

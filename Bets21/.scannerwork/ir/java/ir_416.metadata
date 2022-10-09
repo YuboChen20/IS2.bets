@@ -1,1 +1,1 @@
-configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;
+domain.Equipo#setLiga(LLiga;)V

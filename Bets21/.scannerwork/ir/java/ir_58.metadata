@@ -1,1 +1,1 @@
-domain.Bet#<init>(LPronostico;LUsuario;D)V
+exceptions.LessThanMinimumTeamException#<init>(Ljava/lang/String;)V

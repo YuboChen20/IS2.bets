@@ -1,1 +1,1 @@
-domain.Event#getComentarios()Ljava/util/Vector;
+configuration.ConfigXML#getUser()Ljava/lang/String;

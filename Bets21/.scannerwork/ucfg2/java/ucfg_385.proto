@@ -1,9 +1,33 @@
 
-*configuration.ConfigXML#getDatabasePort()I^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java5 5("1*Õ
-1^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java6	 6("h
-^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.java6 6(
-""B
-configuration.ConfigXML
+hbusinessLogic.BLFacadeImplementation#getEventosFinalizadosNoCerrados(Ljava/util/Date;)Ljava/util/Vector;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java∞ ∞(8"startingBlock*÷
+startingBlockm
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java∞8 ∞(C≠
+™
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaØ Ø(
+%0"
+__annotate*
+	WebMethod*
+
+datejava.util.Date†
+ù
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java∞> ∞(B
+datejava.util.Date"__annotation*
+
+%0*
+1*°
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java± ±(ú
+ô
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java≤ ≤(H
+eventsjava.util.Vector"__id*
+"""ç
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java¥ ¥(
+
+eventsjava.util.Vector:
+datejava.util.DateB(&
+$businessLogic.BLFacadeImplementation

@@ -1,1 +1,1 @@
-dataAccess.DataAccess#eliminarNoticia(Ldomain/Noticia;)V
+test.dataAccess.TestDataAccess#removeEvent(LEvent;)Z

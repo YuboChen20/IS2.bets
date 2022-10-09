@@ -1,1 +1,1 @@
-exceptions.UnknownTeamException#<init>(Ljava/lang/String;)V
+exceptions.TeamAlreadyExistsException#<init>()V

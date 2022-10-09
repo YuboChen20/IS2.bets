@@ -1,1 +1,1 @@
-domain.Event#setComentarios(Ljava/util/Vector;)V
+configuration.ConfigXML#getPassword()Ljava/lang/String;

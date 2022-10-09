@@ -1,1 +1,1 @@
-dataAccess.DataAccess#getAllNoticiasAuthor()Ljava/util/List;
+test.dataAccess.TestDataAccess#removeUser(LUsuario;)Z

@@ -1,72 +1,18 @@
 
-6dataAccess.DataAccess#getAllNoticias()Ljava/util/List;^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÅ Å($"5*£
-2^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÊ Ê(‡
-„
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÊ Ê(
-nodomain.Noticia"__id*
-""«
-¨
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÊ Ê(
-nodomain.Noticia"
-__arrayGet*
-
-noticiasjava.util.List*
-""*
-3
-1*í
-3^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÊ Ê("Œ
-‰
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÊ Ê(&
-%3java.io.PrintStream"__id*
-""óğ
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÊ Ê(2
-
-%4void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
-
-%3java.io.PrintStream*
-
-nodomain.Noticia2println(Ljava/lang/Object;)*
-2*å
-5^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÆ Æ(Œ
-‰
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÆ Æ(
-%0java.io.PrintStream"__id*
-""şû
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÆ Æ(5
-
-%1void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%0java.io.PrintStream*!
->> DataAccess: getAllNoticias2println(Ljava/lang/String;)
-Š
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÈ È(1
-noticiasjava.util.List"__id*
-""Ú
-×
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaÉ É(
-
-%2void"0java.util.Collections#reverse(Ljava/util/List;)V*"
-java.util.Collections*
-
-noticiasjava.util.List*
-2*ã
-1^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaË
- Ë("~
-^
-RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/dataAccess/DataAccess.javaË Ë(
-
-noticiasjava.util.ListB
-dataAccess.DataAccess
+Fdomain.IntegerAdapter#unmarshal(Ljava/lang/String;)Ljava/lang/Integer;\
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/IntegerAdapter.java ("1*
+1\
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/IntegerAdapter.java (Í
+Ê
+\
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/IntegerAdapter.java ("	
+%0int"/java.lang.Integer#parseInt(Ljava/lang/String;)I*"
+java.lang.Integer*
+
+sjava.lang.String"k
+\
+RC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/IntegerAdapter.java (#
+	
+%0int:
+sjava.lang.StringB
+domain.IntegerAdapter

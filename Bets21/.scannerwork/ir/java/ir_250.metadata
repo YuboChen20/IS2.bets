@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#cerrarEvento(LEvent;)V
+domain.Noticia#getTexto()Ljava/lang/String;

@@ -1,1 +1,2 @@
-domain.Comentarios#toString()Ljava/lang/String;
+dataAccess.DataAccess#getNoticiasAuthor(Ljava/lang/String;)Ljava/util/List;
+java.util.Collections#reverse(Ljava/util/List;)V

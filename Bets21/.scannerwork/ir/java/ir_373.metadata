@@ -1,1 +1,1 @@
-exceptions.EventAlreadyExistsException#<init>()V
+businessLogic.BLFacadeImplementation#cerrarEvento(Ldomain/Event;)V

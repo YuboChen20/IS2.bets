@@ -1,1 +1,1 @@
-businessLogic.BLFacadeImplementation#aumentarDinero(Ldomain/Usuario;D)V
+domain.Noticia#getNumNoticia()Ljava/lang/Integer;

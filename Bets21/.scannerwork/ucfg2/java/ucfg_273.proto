@@ -1,9 +1,58 @@
 
-"domain.Equipo#getDineroApostado()DT
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java4 4( "1*π
-1T
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java5	 5("^
-T
-JC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Equipo.java5 5(
-""B
-domain.Equipo
+,domain.Question#toString()Ljava/lang/String;X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java⁄ ⁄("1*ê
+1X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€	 €(•
+¢
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€	 €(
+%0java.lang.Integer"__id*'*%
+domain.Question"
+questionNumber°
+û
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€	 €(
+%1java.lang.String"__concat*
+
+%0java.lang.Integer*
+;õ
+ò
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€ €(!
+%2java.lang.String"__id**
+domain.Question"
+quest≥
+∞
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€	 €(!
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String†
+ù
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€	 €(%
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+;¡
+æ
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€& €(@
+%5java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""≥
+∞
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€	 €(@
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String"t
+X
+LC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/domain/Question.java€ €(A
+
+%6java.lang.StringB
+domain.Question

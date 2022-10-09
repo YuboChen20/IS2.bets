@@ -1,9 +1,16 @@
 
-/configuration.ConfigXML#isBusinessLogicLocal()Z^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaE E($"1*Í
-1^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaF	 F("h
-^
-TC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/configuration/ConfigXML.javaF F(
-""B
-configuration.ConfigXML
+EbusinessLogic.BLFacadeImplementation#getAllEquipos(I)Ljava/util/List;m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java†  †(-"1*Ÿ
+1m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.java‡ ‡(›
+˜
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaˆ ˆ(7
+equiposjava.util.List"__id*
+"""Œ
+m
+aC:/Users/Carlos Diez/git/IS21.bets/Bets21/src/main/java/businessLogic/BLFacadeImplementation.javaŠ Š(
+
+equiposjava.util.List:
+""B(&
+$businessLogic.BLFacadeImplementation

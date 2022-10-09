@@ -1,1 +1,2 @@
-domain.Usuario#setBloqueado(Z)V
+businessLogic.BLFacadeImplementation#close()V
+null

@@ -1,1 +1,4 @@
-domain.Noticia#getSubTitulo()Ljava/lang/String;
+gui.CreateAndQueryGUI#jButtonCerrarApuesta_actionPerformed(Ljava/awt/event/ActionEvent;)V
+null
+java.util.Vector#<init>()V
+java.util.Vector#instance-init#

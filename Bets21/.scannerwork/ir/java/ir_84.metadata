@@ -1,1 +1,3 @@
-domain.Noticia#setNomAutor(Ljava/lang/String;)V
+gui.CreateAndQueryGUI#getSelectedLiga()Ldomain/Liga;
+gui.MainGUI#getBusinessLogic()LBLFacade;
+java.lang.String#equals(Ljava/lang/Object;)Z
