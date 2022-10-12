@@ -459,22 +459,7 @@ public class DataAccess  {
 		Calendar calendar = Calendar.getInstance();
 	    Date d = calendar.getTime();
 		if(!u.getPassword().equals(pass) | u.isBloqueado()==true) {
-			db.getTransaction().begin();
-			int i=u.getNumIntento();
-			u.setNumIntento(i+1);
-			Entrada f=null;
-			if(i+1==5) {
-				u.setBloqueado(true);     //se acaban de bloquear
-				f = new Entrada(d,false,u,true,false);
-				u.setFecha(d);
-			}
-			else if(i<5) f = new Entrada(d,false,u,false,false);   //no están bloqueados
-			else f=new Entrada(d,false,u,true,false); //estaban bloqueados de antes
-			db.persist(f);
-			u.addFechas(f);
-			db.persist(u);
-			db.getTransaction().commit();
-			return u;
+			return this.modificarIntentosLogin(u, d);
 		}
 		db.getTransaction().begin();
 		u.setNumIntento(0);
@@ -483,6 +468,25 @@ public class DataAccess  {
 	    u.addFechas(f);
 	    u.setFecha(d);
 	    db.getTransaction().commit();
+		return u;
+	}
+
+	private Usuario modificarIntentosLogin(Usuario u, Date d) {
+		db.getTransaction().begin();
+		int i=u.getNumIntento();
+		u.setNumIntento(i+1);
+		Entrada f=null;
+		if(i+1==5) {
+			u.setBloqueado(true);     //se acaban de bloquear
+			f = new Entrada(d,false,u,true,false);
+			u.setFecha(d);
+		}
+		else if(i<5) f = new Entrada(d,false,u,false,false);   //no están bloqueados
+		else f=new Entrada(d,false,u,true,false); //estaban bloqueados de antes
+		db.persist(f);
+		u.addFechas(f);
+		db.persist(u);
+		db.getTransaction().commit();
 		return u;
 	}
 	
@@ -622,65 +626,70 @@ public class DataAccess  {
  
 	public int crearApuesta(Usuario user,double apuesta,Pronostico pos ) {
 		Usuario u= db.find(Usuario.class,user.getUserName());
-		Pronostico p= db.find(Pronostico.class,pos.getPronosNumber());
-		
+		Pronostico p= db.find(Pronostico.class,pos.getPronosNumber());		
 		Question q=p.getQuestion();
-		List<Pronostico> pronosticos = this.findPronosticos(q);
-		Vector<Bet> apuestas= u.getApuestas();
-	
-		for(Bet be: apuestas) {
-			for(Pronostico pr: pronosticos) {
-				if(be.getPronostico().equals(pr))return 1;
-			}
-		}
+		if(this.comprobarApuestasExistentes(u, q))return 1;
 		double d= u.getDinero()-apuesta;
-		if(d<0)return 2;
-		
-		db.getTransaction().begin();
-		
+		if(d<0)return 2;		
+		Bet b = this.guardarDatosApuesta(apuesta,u, p);		
+		System.out.println("APUESTA   "+ b);		
+		this.añadirApuesta(u,b);
+		this.calcularPorcentajePronostico(q);
+		return 0;	
+	}
+
+	private Bet guardarDatosApuesta(double apuesta,Usuario u, Pronostico p) {
+		double d= u.getDinero()-apuesta;
+		Question q=p.getQuestion();
+		db.getTransaction().begin();	
 		q. addNºApuesta();
 		u.setDinero(d);
-		user.setDinero(d);
 		Bet b=new Bet(p, u, apuesta);
 		p.addApuesta(b);
 		db.persist(q);
 		db.persist(b);
-
 		if(q.getQuestion().equals("1X2")) {
-			
-			Equipo local=q.getEvent().getEquipos().get(0);
-			Equipo visitante=q.getEvent().getEquipos().get(1);
-			
-			if(pos.getPronostico().equals("1")) {
-				local.incrNumUsuariosApuestan();
-				local.setDineroApostado(local.getDineroApostado()+apuesta);
-			} else if(pos.getPronostico().equals("X")) {
-				local.halfIncrNumUsuariosApuestan();
-				visitante.halfIncrNumUsuariosApuestan();
-				local.setDineroApostado(local.getDineroApostado()+apuesta/2);
-				visitante.setDineroApostado(visitante.getDineroApostado()+apuesta/2);
-			} else if(pos.getPronostico().equals("2")) {
-				visitante.incrNumUsuariosApuestan();
-				visitante.setDineroApostado(visitante.getDineroApostado()+apuesta);
-			}
-			
-			if(local != null && visitante !=null) {
-				db.persist(local);
-				db.persist(visitante);
-			}
-			
-			System.out.println("Local: "+local + " Visitante"+visitante);
-			
-		}
-		
+			this.completarApuestaPrimaria(apuesta, p, q);	
+		}		
 		db.getTransaction().commit();
-		
-		System.out.println("APUESTA   "+ b);
-		
-		
-		this.añadirApuesta(u,b);
-		this.calcularPorcentajePronostico(q);
-		return 0;	
+		return b;
+	}
+
+	private boolean comprobarApuestasExistentes(Usuario u, Question q) {
+		List<Pronostico> pronosticos = this.findPronosticos(q);
+		Vector<Bet> apuestas= u.getApuestas();
+		for(Bet be: apuestas) {
+			for(Pronostico pr: pronosticos) {
+				if(be.getPronostico().equals(pr))return true;
+			}
+		}
+		return false;
+	}
+
+	private void completarApuestaPrimaria(double apuesta, Pronostico pos, Question q) {
+		Equipo local=q.getEvent().getEquipos().get(0);
+		Equipo visitante=q.getEvent().getEquipos().get(1);		
+		this.modificarEquiposApuesta(apuesta, pos, local, visitante);		
+		if(local != null && visitante !=null) {
+			db.persist(local);
+			db.persist(visitante);
+		}	
+		System.out.println("Local: "+local + " Visitante"+visitante);
+	}
+
+	private void modificarEquiposApuesta(double apuesta, Pronostico pos, Equipo local, Equipo visitante) {
+		if(pos.getPronostico().equals("1")) {
+			local.incrNumUsuariosApuestan();
+			local.setDineroApostado(local.getDineroApostado()+apuesta);
+		} else if(pos.getPronostico().equals("X")) {
+			local.halfIncrNumUsuariosApuestan();
+			visitante.halfIncrNumUsuariosApuestan();
+			local.setDineroApostado(local.getDineroApostado()+apuesta/2);
+			visitante.setDineroApostado(visitante.getDineroApostado()+apuesta/2);
+		} else if(pos.getPronostico().equals("2")) {
+			visitante.incrNumUsuariosApuestan();
+			visitante.setDineroApostado(visitante.getDineroApostado()+apuesta);
+		}
 	}
 	
 	public void aumentarDinero(Usuario user, double cant) {
@@ -1026,32 +1035,6 @@ public class DataAccess  {
 		
 		
 	}
-
-	public List<Equipo> getEquiposPorLiga(int mode, Liga liga) {
-		System.out.println(">> DataAccess: getEquiposPorLiga");
-		String atributo;
-		String nombreLiga=liga.getNombre();
-		String orden=" desc";
-		switch(mode) {
-		case 0:
-			atributo="dineroApostado";
-			break;
-		case 1:
-			atributo="numUsuariosApuestan";
-			break;
-		default:
-			atributo="nombre";
-			orden=" asc";
-			break;
-					
-		}
-		
-		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq where eq.liga.nombre='"+nombreLiga+"' order by "+ atributo + orden,Equipo.class);
-		
-		List<Equipo> equipos = query.getResultList();
-	 	for(Equipo eq: equipos)System.out.println(eq);
-	 	return equipos;
-	}
 	
 	public List<Liga> getAllLigas() {
 		System.out.println(">> DataAccess: getAllLigas");
@@ -1060,10 +1043,19 @@ public class DataAccess  {
 	 	for(Liga lig: ligas)System.out.println(lig);
 	 	return ligas;
 	}
-	
+
+	public List<Equipo> getEquiposPorLiga(int mode, Liga liga) {
+		System.out.println(">> DataAccess: getEquiposPorLiga");
+		String nombreLiga=liga.getNombre();
+		return getEstadoEquipoLiga(mode, nombreLiga);
+	}
 	
 	public List<Equipo> getEquiposPorLiga(int mode, String nombreLiga) {
 		System.out.println(">> DataAccess: getEquiposPorLiga");
+		return this.getEstadoEquipoLiga(mode, nombreLiga);
+	}
+
+	private List<Equipo> getEstadoEquipoLiga(int mode, String nombreLiga) {
 		String atributo;
 		String orden=" desc";
 		switch(mode) {
@@ -1079,7 +1071,6 @@ public class DataAccess  {
 			break;
 					
 		}
-		
 		TypedQuery<Equipo> query = db.createQuery("select eq from Equipo eq where eq.liga.nombre='"+nombreLiga+"' order by "+ atributo + orden,Equipo.class);
 		
 		List<Equipo> equipos = query.getResultList();
