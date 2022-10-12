@@ -13,13 +13,13 @@ import dataAccess.DataAccess;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 
-public class ApplicationLauncher { 
+public class ApplicationLauncher {  
 	
 	
 	
 	public static void main(String[] args) {
 
-		ConfigXML c=ConfigXML.getInstance();
+		ConfigXML c=ConfigXML.getInstance(); 
 	
 		System.out.println(c.getLocale());
 		

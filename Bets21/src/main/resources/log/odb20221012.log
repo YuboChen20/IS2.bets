@@ -1,0 +1,241 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-12 15:44:33 #1 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' has been recovered (tr. 3224-3446)
+
+[2022-10-12 15:44:34 #2 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' is opened by 54488@LAPTOP-ILS8TMDB
+
+[2022-10-12 15:44:34 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-10-12 15:44:34 #4 type] 
+Type domain.Liga is not enhanced.
+
+[2022-10-12 15:44:34 #5 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-10-12 15:44:34 #6 type] 
+Type domain.Event is not enhanced.
+
+[2022-10-12 15:44:34 #7 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-10-12 15:44:34 #8 type] 
+Type domain.Question is not enhanced.
+
+[2022-10-12 15:44:34 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-12 15:44:34 #10 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-12 15:44:34 #11 type] 
+Type domain.Entrada is not enhanced.
+
+[2022-10-12 15:44:34 #12 type] 
+Type domain.Bet is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-12 17:32:21 #1 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' has been recovered (tr. 3447-3658)
+
+[2022-10-12 17:32:21 #2 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' is opened by 53956@LAPTOP-ILS8TMDB
+
+[2022-10-12 17:32:21 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-10-12 17:32:21 #4 type] 
+Type domain.Liga is not enhanced.
+
+[2022-10-12 17:32:21 #5 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-10-12 17:32:21 #6 type] 
+Type domain.Event is not enhanced.
+
+[2022-10-12 17:32:21 #7 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-10-12 17:32:21 #8 type] 
+Type domain.Question is not enhanced.
+
+[2022-10-12 17:32:21 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-12 17:32:21 #10 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-12 17:32:21 #11 type] 
+Type domain.Entrada is not enhanced.
+
+[2022-10-12 17:32:21 #12 type] 
+Type domain.Bet is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-12 18:03:08 #1 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' has been recovered (tr. 3659-3870)
+
+[2022-10-12 18:03:08 #2 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' is opened by 71068@LAPTOP-ILS8TMDB
+
+[2022-10-12 18:03:08 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-10-12 18:03:08 #4 type] 
+Type domain.Liga is not enhanced.
+
+[2022-10-12 18:03:08 #5 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-10-12 18:03:08 #6 type] 
+Type domain.Event is not enhanced.
+
+[2022-10-12 18:03:08 #7 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-10-12 18:03:08 #8 type] 
+Type domain.Question is not enhanced.
+
+[2022-10-12 18:03:08 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-12 18:03:08 #10 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-12 18:03:08 #11 type] 
+Type domain.Entrada is not enhanced.
+
+[2022-10-12 18:03:08 #12 type] 
+Type domain.Bet is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-12 18:03:29 #1 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' is opened by 68524@LAPTOP-ILS8TMDB
+
+[2022-10-12 18:03:29 #2 type.registry] 
+New type domain.Noticia
+
+[2022-10-12 18:03:29 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-10-12 18:03:29 #4 type.registry] 
+New type domain.Liga
+
+[2022-10-12 18:03:29 #5 type] 
+Type domain.Liga is not enhanced.
+
+[2022-10-12 18:03:29 #6 type.registry] 
+New type domain.Equipo
+
+[2022-10-12 18:03:29 #7 type.registry] 
+New type java.util.Vector<domain.Equipo>
+
+[2022-10-12 18:03:29 #8 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-10-12 18:03:29 #9 type.registry] 
+New type domain.Event
+
+[2022-10-12 18:03:29 #10 type.registry] 
+New type java.util.Vector<domain.Event>
+
+[2022-10-12 18:03:29 #11 type] 
+Type domain.Event is not enhanced.
+
+[2022-10-12 18:03:29 #12 type.registry] 
+New type domain.Comentarios
+
+[2022-10-12 18:03:29 #13 type.registry] 
+New type java.util.Vector<domain.Comentarios>
+
+[2022-10-12 18:03:29 #14 type.registry] 
+New type domain.Question
+
+[2022-10-12 18:03:29 #15 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2022-10-12 18:03:29 #16 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-10-12 18:03:29 #17 type.registry] 
+New type domain.Usuario
+
+[2022-10-12 18:03:29 #18 type] 
+Type domain.Question is not enhanced.
+
+[2022-10-12 18:03:29 #19 type.registry] 
+New type domain.Pronostico
+
+[2022-10-12 18:03:29 #20 type.registry] 
+New type java.util.Vector<domain.Pronostico>
+
+[2022-10-12 18:03:29 #21 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-12 18:03:29 #22 type.registry] 
+New type domain.Entrada
+
+[2022-10-12 18:03:29 #23 type.registry] 
+New type java.util.Vector<domain.Entrada>
+
+[2022-10-12 18:03:29 #24 type.registry] 
+New type domain.Bet
+
+[2022-10-12 18:03:29 #25 type.registry] 
+New type java.util.Vector<domain.Bet>
+
+[2022-10-12 18:03:29 #26 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-12 18:03:29 #27 type] 
+Type domain.Entrada is not enhanced.
+
+[2022-10-12 18:03:29 #28 type] 
+Type domain.Bet is not enhanced.
+
+[2022-10-12 18:03:29 #29 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-10-12 18:04:03 #1 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' has been recovered (tr. 1-16)
+
+[2022-10-12 18:04:03 #2 store] 
+Database 'C:\Users\34600\git\IS2.bets\Bets21\src\main\resources\bets.temp' is opened by 71464@LAPTOP-ILS8TMDB
+
+[2022-10-12 18:04:03 #3 type] 
+Type domain.Noticia is not enhanced.
+
+[2022-10-12 18:04:03 #4 type] 
+Type domain.Liga is not enhanced.
+
+[2022-10-12 18:04:03 #5 type] 
+Type domain.Equipo is not enhanced.
+
+[2022-10-12 18:04:03 #6 type] 
+Type domain.Event is not enhanced.
+
+[2022-10-12 18:04:03 #7 type] 
+Type domain.Comentarios is not enhanced.
+
+[2022-10-12 18:04:03 #8 type] 
+Type domain.Question is not enhanced.
+
+[2022-10-12 18:04:03 #9 type] 
+Type domain.Usuario is not enhanced.
+
+[2022-10-12 18:04:03 #10 type] 
+Type domain.Pronostico is not enhanced.
+
+[2022-10-12 18:04:03 #11 type] 
+Type domain.Entrada is not enhanced.
+
+[2022-10-12 18:04:03 #12 type] 
+Type domain.Bet is not enhanced.
+

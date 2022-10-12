@@ -284,17 +284,19 @@ public class BLFacadeImplementation  implements BLFacade {
     	return u;
     }
     
-    @WebMethod public Comentarios createComent(String text,Event ev, Usuario us) {
+    @WebMethod 
+    public Comentarios createComent(String text,Event ev, Usuario us) {
 	    LocalDateTime now = LocalDateTime.now();     
 	    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
 	    String formatDateTime = now.format(format);  
 		this.dbManager.open(false);
-		Comentarios com= dbManager.createComent(text, ev, us, formatDateTime);
+		Comentarios com= dbManager.createComent(new Comentarios(text,ev,us,formatDateTime));
 		this.dbManager.close();
 		return com;
     }
     
-    @WebMethod public Event getEventoactualizado(Event ev) {
+    @WebMethod 
+    public Event getEventoactualizado(Event ev) {
     	this.dbManager.open(false);
     	Event eve = this.dbManager.getEventoActualizado(ev);
     	this.dbManager.close();
@@ -353,7 +355,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
 	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
 		dbManager.open(false);
-		Noticia noticia = dbManager.createNoticia(titulo, subTitulo, texto, nomAutor, nomMedio);
+		Noticia noticia = dbManager.createNoticia(new Noticia(titulo,subTitulo,texto,nomAutor,nomMedio,null));
 		dbManager.close();
 		return noticia;
 		

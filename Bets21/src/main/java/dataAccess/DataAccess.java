@@ -320,10 +320,13 @@ public class DataAccess  {
 		    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
 		    String formatDateTime = now.format(format);  
 			
-			this.createComent("Hola", ev11, user, formatDateTime);
-			this.createComent("Va a ganar Atletico", ev11, user, formatDateTime);
-			this.createComent("......", ev11, user2, formatDateTime);
-		    System.out.println("Db initialized");
+		    Comentarios com1 = new Comentarios("Hola", ev11, user, formatDateTime);
+		    Comentarios com2 = new Comentarios("Va a ganar Atletico", ev11, user, formatDateTime);
+		    Comentarios com3 = new Comentarios("......", ev11, user2, formatDateTime);
+			this.createComent(com1);
+			this.createComent(com2);
+			this.createComent(com3);
+		    System.out.println("Db initialized"); 
 
 		}
 		catch (Exception e){
@@ -514,30 +517,36 @@ public class DataAccess  {
 	
 	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws  EventAlreadyExistsException {
 		String inputDescription=local.getNombre()+"-"+visitante.getNombre();
-		
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
 		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
 		query.setParameter(1, firstDay);
 		List<Event> eventos = query.getResultList();	
-		for(Event e: eventos) {
-				if(e.getDescription().equals(inputDescription))throw new EventAlreadyExistsException();
-				String [] equipos=e.getDescription().split("-");
-				
-				
-				if(local.getNombre().equals(equipos[0])||local.getNombre().equals(equipos[1])) return null;
-				if(visitante.getNombre().equals(equipos[0])||visitante.getNombre().equals(equipos[1])) return null;
-		}
+		if (!cEquipo(local, visitante, inputDescription, eventos)) return null;
 		
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);
 		ev.setEquipos(local, visitante);
-		
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-		
-
 		db.getTransaction().commit();
 		return ev;
+	}
+
+	private boolean cEquipo(Equipo local, Equipo visitante, String inputDescription, List<Event> eventos)
+			throws EventAlreadyExistsException {
+		for(Event e: eventos) {
+				if(!noJugando(local, visitante, inputDescription, e))return false;
+		}
+		return true;
+	}
+
+	private boolean noJugando(Equipo local, Equipo visitante, String inputDescription, Event e)
+			throws EventAlreadyExistsException {
+		if(e.getDescription().equals(inputDescription))throw new EventAlreadyExistsException();
+		String [] equipos=e.getDescription().split("-");			
+		if(local.getNombre().equals(equipos[0])||local.getNombre().equals(equipos[1])) return false;
+		if(visitante.getNombre().equals(equipos[0])||visitante.getNombre().equals(equipos[1])) return false;
+		return true;
 	}
 
 	public List<Pronostico> findPronosticos(Question q) {
@@ -747,11 +756,11 @@ public class DataAccess  {
 		return u;
 	}
 	
-	public Comentarios createComent (String text, Event ev, Usuario us, String Date) {
-		Usuario user= db.find(Usuario.class, us.getUserName());
-		Event eve=db.find(Event.class, ev.getEventNumber());
+	public Comentarios createComent(Comentarios com) {
+		Usuario user= db.find(Usuario.class, com.getUser().getUserName());
+		Event eve=db.find(Event.class, com.getEvento().getEventNumber());
 		db.getTransaction().begin();
-		Comentarios cm= new Comentarios(text, eve,  user, Date);
+		Comentarios cm= new Comentarios(com.getText(), eve,  user, com.getDate());
 		db.persist(cm);
 		eve.addCom(cm);
 		user.addCom(cm);
@@ -851,7 +860,7 @@ public class DataAccess  {
 		db.getTransaction().commit();
 	}
 	
-	public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
+	public Noticia createNoticia(Noticia notic) {
 		Calendar today = Calendar.getInstance();
 		int day=today.get(Calendar.DAY_OF_MONTH);
 		int month=today.get(Calendar.MONTH);
@@ -862,9 +871,9 @@ public class DataAccess  {
 		query.setParameter(1, data);
 		List<Noticia> noticias = query.getResultList();
 		if(noticias!=null) 
-			for(Noticia no: noticias)if(no.getTexto().equals(texto))return null;
+			for(Noticia no: noticias)if(no.getTexto().equals(notic.getTexto()))return null;
 		db.getTransaction().begin();
-		Noticia not= new Noticia(titulo, subTitulo, texto, nomAutor, nomMedio, data);
+		Noticia not= new Noticia(notic.getTitulo(), notic.getSubTitulo(), notic.getTexto(), notic.getNomAutor(), notic.getNomMedio(), data);
 		db.persist(not);
 		db.getTransaction().commit();
 		return not;
@@ -929,6 +938,15 @@ public class DataAccess  {
 	 	return equipos;
 	}
 	public List<Usuario> getUsuarios(String s, String s2) {
+		return setUsuario(s, s2);	
+	}
+	
+	public Usuario getUsuario(String s, String s2, int i) {
+		List<Usuario> u = setUsuario(s, s2);
+		return u.get(i);
+	}
+
+	private List<Usuario> setUsuario(String s, String s2) {
 		TypedQuery<Usuario> query= db.createQuery("SELECT us FROM Usuario us WHERE us.isBloqueado()=?1 and us.isAdmin()=?2",Usuario.class); 
 		if(s.equals("Bloqueados")) query.setParameter(1, true); 
 		if(s.equals("No Bloqueados")) query.setParameter(1,false);
@@ -936,19 +954,6 @@ public class DataAccess  {
 		if(s2.equals("Usuarios"))  query.setParameter(2, false);  
 		List<Usuario> u  =  query.getResultList();
 		return u;
-		
-	}
-
-	public Usuario getUsuario(String s, String s2, int i) {
-		TypedQuery<Usuario> query= db.createQuery("SELECT us FROM Usuario us WHERE us.isBloqueado()=?1 and us.isAdmin()=?2",Usuario.class); 
-		if(s.equals("Bloqueados")) query.setParameter(1, true); 
-		if(s.equals("No Bloqueados")) query.setParameter(1,false);
-		if(s2.equals("Admin"))query.setParameter(2, true); 
-		if(s2.equals("Usuarios"))  query.setParameter(2, false);  
-		List<Usuario> u  =  query.getResultList();
-
-		return u.get(i);
-
 	}
 
 	public void desBloquear(String s,Usuario u) {
@@ -965,7 +970,7 @@ public class DataAccess  {
 				if(!en.isBloqueado() & en.isExito()) {
 					us.setFecha(en.getFecha());
 					break;
-				}
+				} 
 			}
 		f = new Entrada(d,false,us,false,true); 
 		}
