@@ -386,7 +386,6 @@ public class DataAccess  {
 	 * @return collection of dates
 	 */
 	public Vector<Date> getEventsMonth(Date date) {
-		System.out.println(">> DataAccess: getEventsMonth");
 		Vector<Date> res = new Vector<Date>();	
 		
 		Date firstDayMonthDate= UtilDate.firstDayMonth(date);
@@ -496,11 +495,7 @@ public class DataAccess  {
 	public Event createEvent(String inputDescription, Date firstDay) throws UnknownTeamException {
 		
 		System.out.println(">> DataAccess: createEvent=> description= "+inputDescription+" date="+firstDay.toString());
-		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
-		query.setParameter(1, firstDay);
-		List<Event> eventos = query.getResultList();
-		if(eventos!=null) 
-			for(Event e: eventos)if(e.getDescription().equals(inputDescription))return null;
+		if(!noEventIgual(inputDescription,firstDay))return null;
 		db.getTransaction().begin();
 		Event ev=new Event(inputDescription,firstDay);
 		String[] equipos=inputDescription.split("-");
@@ -508,15 +503,22 @@ public class DataAccess  {
 		Equipo visitante=db.find(Equipo.class,equipos[1]);
 		if(local==null || visitante==null) throw new UnknownTeamException();
 		ev.setEquipos(local, visitante);
-		
 		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions property of Event class
 		// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	
 		for(Pronostico p: ev.getQuestions().get(0).getPronosticos())System.out.println(p.getCuota());
-		
 		db.getTransaction().commit();
 		return ev;
 		
+	}
+	
+	public boolean noEventIgual(String inputDescription, Date firstDay) {
+		TypedQuery<Event>  query = db.createQuery("SELECT e FROM Event e WHERE e.eventDate=?1",Event.class);
+		query.setParameter(1, firstDay);
+		List<Event> eventos = query.getResultList();
+		if(eventos!=null) 
+			for(Event e: eventos)if(e.getDescription().equals(inputDescription))return false;
+		return true;
 	}
 	
 	public Event createEvent(Equipo local, Equipo visitante, Date firstDay) throws  EventAlreadyExistsException {
@@ -822,24 +824,7 @@ public class DataAccess  {
 	 	return noticias;
 	}
 	
-	public Vector<Date> getNoticiasDateMonth(Date date) {
-		System.out.println(">> DataAccess: getNoticiasDateMonth");
-		Vector<Date> res = new Vector<Date>();	
-		
-		Date firstDayMonthDate= UtilDate.firstDayMonth(date);
-		Date lastDayMonthDate= UtilDate.lastDayMonth(date);
-				
-		
-		TypedQuery<Date> query = db.createQuery("SELECT DISTINCT no.fechaPubli FROM Noticia no WHERE no.fechaPubli BETWEEN ?1 and ?2",Date.class);   
-		query.setParameter(1, firstDayMonthDate);
-		query.setParameter(2, lastDayMonthDate);
-		List<Date> dates = query.getResultList();
-	 	 for (Date d:dates){
-	 	   System.out.println(d.toString());		 
-		   res.add(d);
-		  }
-	 	return res;
-	}
+	
 	
 	
 	public List<Noticia> getNoticias(Date date) {
@@ -965,36 +950,36 @@ public class DataAccess  {
 		return u;
 	}
 
-	public void desBloquear(String s,Usuario u) {
+	public void desBloquear(String s,Usuario u) {  
 		Usuario us=db.find(Usuario.class,u);
 		Calendar calendar = Calendar.getInstance();
 	    Date d = calendar.getTime();
-	    Entrada f =null;
+		us=cambiarBloqueo(us.isBloqueado(),d,us);
 		db.getTransaction().begin();
-		if(us.isBloqueado()) {
-			us.setBloqueado(false);
-			Vector<Entrada> e=us.getFechas();
-			for(int i=e.size()-1; i>=0; i--) {
-				Entrada en = e.get(i);
-				if(!en.isBloqueado() & en.isExito()) {
-					us.setFecha(en.getFecha());
-					break;
-				} 
-			}
-		f = new Entrada(d,false,us,false,true); 
-		}
-		else {
-			us.setBloqueado(true);
-			f = new Entrada(d,false,us,true,true); 
-			us.setFecha(d);
-		}
+		Entrada f = new Entrada(d,false,us,us.isBloqueado(),true); 
 		us.addFechas(f);
 		db.persist(f);
 		db.persist(us);
 		db.getTransaction().commit();
 		
 	}
-	
+	public Usuario cambiarBloqueo(boolean bloqueo,Date d,Usuario us) {
+		if(bloqueo==true) {
+			us.setBloqueado(false);  
+			Vector<Entrada> e=us.getFechas();
+			for(int i=e.size()-1; i>=0; i--) {
+				Entrada en = e.get(i);
+				if(!en.isBloqueado() && en.isExito()) {
+					us.setFecha(en.getFecha()); 
+					break;
+				} 
+			}
+		}else {
+			us.setBloqueado(true);  
+			us.setFecha(d);  
+		}
+		return us;
+	}
 	
 	public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException {
 		

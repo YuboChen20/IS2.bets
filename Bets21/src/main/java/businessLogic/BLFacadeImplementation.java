@@ -347,15 +347,15 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
 	
 	
-	@WebMethod public void eliminarNoticia(Noticia no) {
+	@WebMethod public void eliminarNoticia(Noticia n) {
 		dbManager.open(false);
-		dbManager.eliminarNoticia(no);
+		dbManager.eliminarNoticia(n);
 		dbManager.close();
 		
 	}
-	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio) {
+	@WebMethod public Noticia createNoticia(Noticia n) {
 		dbManager.open(false);
-		Noticia noticia = dbManager.createNoticia(new Noticia(titulo,subTitulo,texto,nomAutor,nomMedio,null));
+		Noticia noticia = dbManager.createNoticia(n);
 		dbManager.close();
 		return noticia;
 		
@@ -416,12 +416,7 @@ public class BLFacadeImplementation  implements BLFacade {
 			dbManager.close();
 		}
 		
-		@WebMethod public Vector<Date> getNoticiasDateMonth(Date date){
-			dbManager.open(false);
-			Vector<Date>  dates=dbManager.getNoticiasDateMonth(date);
-			dbManager.close();
-			return dates;
-		}
+		
 
 		@Override
 		public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException {

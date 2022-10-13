@@ -92,7 +92,7 @@ public interface BLFacade  {
 	@WebMethod public List<Noticia> getNoticias(Date date);
 	@WebMethod public List<Noticia> getAllNoticias();
 	@WebMethod public void eliminarNoticia(Noticia no);
-	@WebMethod public Noticia createNoticia(String titulo, String subTitulo, String texto, String nomAutor, String nomMedio);
+	@WebMethod public Noticia createNoticia(Noticia n);
 	@WebMethod public List<String> getAllNoticiasAuthor();
 	@WebMethod public List<Noticia> getNoticiasAuthor(String aut);
 	@WebMethod public List<String> getAllNoticiasMedio();
@@ -101,7 +101,6 @@ public interface BLFacade  {
 	@WebMethod public List<Usuario> getUsuarios(String s, String s2);
 	@WebMethod public Usuario getUsuario(String s, String s2,int i);
 	@WebMethod public void desBloquear(String s,Usuario u);
-	@WebMethod public Vector<Date> getNoticiasDateMonth(Date date);
 	
 	@WebMethod public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException;
 	@WebMethod public void anadirEquipoALiga(String nombreEquipo, Liga liga) throws TeamAlreadyExistsException, MaximumNumberOfTeamsReached;

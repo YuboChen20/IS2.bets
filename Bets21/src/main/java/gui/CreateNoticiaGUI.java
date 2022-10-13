@@ -294,8 +294,8 @@ public class CreateNoticiaGUI extends JFrame {
 				}
 				BLFacade facade = MainGUI.getBusinessLogic();
 				try {
-					
-					facade.createNoticia(titulo, subtitulo, texto, nomAutor, nomMedio);
+					Noticia n= new Noticia(titulo,subtitulo,texto,nomAutor,nomMedio,null);
+					facade.createNoticia(n);
 					jLabelCreada.setForeground(Color.green);
 					jLabelCreada.setText(ResourceBundle.getBundle("Etiquetas").getString("CreatedNoticia"));
 					
