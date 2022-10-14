@@ -1,17 +1,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Bets21</groupId>
-  <artifactId>Bets21</artifactId>
+  <artifactId>Bets</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-    
-<build> 
+
+<build>
     <plugins>
+      <plugin>
+  		<groupId>org.jacoco</groupId>
+  		<artifactId>jacoco-maven-plugin</artifactId>
+  		<version>0.8.5</version>
+  		<executions>
+      		<execution>
+        		<id>prepare-agent</id>
+        		<goals>
+         			<goal>prepare-agent</goal>
+        		</goals>
+      		</execution>
+      		<execution>
+        		<id>report</id>
+        		<goals>
+         			<goal>report</goal>
+        		</goals>
+     		 </execution>
+    	</executions>
+	</plugin>
 	<plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.19.1</version>
           <configuration>
                <testFailureIgnore>true</testFailureIgnore>
+	       <includes>
+                <include>*Int.java</include>
+                <include>*INT.java</include>
+                <include>*DAB.java</include>
+                <include>*DAW.java</include>
+               </includes>
             </configuration>
         </plugin>
    </plugins>
@@ -27,6 +52,10 @@
 <properties>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
+    <sonar.organization>is2</sonar.organization>
+    <sonar.login>0b66c8567a8896a7d8d067b75a8d207643f10b62</sonar.login> 
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>   
+    <sonar.projectKey>ise</sonar.projectKey>   
 </properties>
 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -34,7 +63,7 @@
 	<dependency>
   	  <groupId>junit</groupId>
   	  <artifactId>junit</artifactId>
-  	  <version>4.5</version>
+  	  <version>4.13.2</version>
  	   <scope>test</scope>
 	</dependency> 
 		<dependency>
@@ -69,7 +98,7 @@
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
-			<version>2.3.5</version>
+			<version>2.3.2</version>
 		</dependency>
 
 		<dependency>
@@ -87,13 +116,29 @@
 			<artifactId>jta</artifactId>
 			<version>1.1</version>
 		</dependency>
-			<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+		
+	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 		<dependency>
     		<groupId>org.mockito</groupId>
     		<artifactId>mockito-all</artifactId>
     		<version>1.9.5</version>
     		<scope>test</scope>
-		</dependency>		
+		</dependency>
+
+	
+	<!-- test the Gui -->
+		
+		 <dependency>
+ 			 <groupId>org.assertj</groupId>
+  			 <artifactId>assertj-swing-junit</artifactId>
+ 			 <version>3.8.0</version>
+		 </dependency>
+		 <dependency>
+	<groupId>com.jgoodies</groupId>
+	<artifactId>jgoodies-forms</artifactId>
+	<version>1.8.0</version>
+</dependency>
+
 
 	</dependencies>
 
