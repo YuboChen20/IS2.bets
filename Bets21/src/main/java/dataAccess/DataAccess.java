@@ -978,7 +978,7 @@ public class DataAccess  {
 			us.setBloqueado(true);  
 			us.setFecha(d);  
 		}
-		return us;
+		return us; 
 	}
 	
 	public void crearLiga(String nombre, int numEquipos) throws LeagueAlreadyExist, LessThanMinimumTeamException {
@@ -993,7 +993,7 @@ public class DataAccess  {
 		db.getTransaction().commit();
 		System.out.println(">> DataAccess: crearLiga=> Nombre= "+nombre +" Numero máximo de equipos " + numEquipos);
 	}
-	
+	//gggg
 	public void anadirEquipoALiga(String nombreEquipo, Liga liga) throws TeamAlreadyExistsException, MaximumNumberOfTeamsReached {
 		Liga l=db.find(Liga.class,liga.getNombre());
 		if(l.getEquipos().size()>=l.getNumEquipos()) throw new MaximumNumberOfTeamsReached();
